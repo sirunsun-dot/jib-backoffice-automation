@@ -4,13 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean:report": "node -e \"require('fs').rmSync('cypress/reports',{recursive:true,force:true});require('fs').rmSync('cypress/screenshots',{recursive:true,force:true});require('fs').rmSync('cypress/videos',{recursive:true,force:true})\"",
+    "cy:run": "cypress run",
+    "merge:report": "mochawesome-merge \"cypress/reports/.jsons/*.json\" > cypress/reports/report.json",
+    "gen:html": "marge cypress/reports/report.json -f index -o cypress/reports --inline --charts",
+    "test": "npm run clean:report && npm run cy:run; npm run merge:report && npm run gen:html",
+    "test:category": "npm run clean:report && cypress run --spec cypress/e2e/category.cy.js; npm run merge:report && npm run gen:html",
+    "test:template": "npm run clean:report && cypress run --spec cypress/e2e/template-attributes.cy.js; npm run merge:report && npm run gen:html",
+    "open": "cypress open"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "cypress": "^15.11.0"
+    "cypress": "^15.11.0",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.2",
+    "playwright-webkit": "^1.60.0"
   }
 }

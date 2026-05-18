@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Cypress generated artifacts
+cypress/reports/
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+
+# Logs
+*.log
+
+# Playwright MCP temp files
+.playwright-mcp/
+
+# Debug artifacts
+scripts/debug-*.png
+scripts/template-form.html
+scripts/template-form.png
+scripts/template-form-list.txt
+mcp-success.png
+
+# OS / editor
+.DS_Store
+Thumbs.db
