@@ -11,6 +11,10 @@
     "test": "npm run clean:report && npm run cy:run; npm run merge:report && npm run gen:html",
     "test:category": "npm run clean:report && cypress run --spec cypress/e2e/category.cy.js; npm run merge:report && npm run gen:html",
     "test:template": "npm run clean:report && cypress run --spec cypress/e2e/template-attributes.cy.js; npm run merge:report && npm run gen:html",
+    "test:brand": "npm run clean:report && cypress run --spec cypress/e2e/brand.cy.js; npm run merge:report && npm run gen:html",
+    "test:supplier": "npm run clean:report && cypress run --spec cypress/e2e/supplier.cy.js; npm run merge:report && npm run gen:html",
+    "test:product": "npm run clean:report && cypress run --spec cypress/e2e/product.cy.js; npm run merge:report && npm run gen:html",
+    "test:tag": "npm run clean:report && cypress run --spec cypress/e2e/tag.cy.js; npm run merge:report && npm run gen:html",
     "open": "cypress open"
   },
   "keywords": [],

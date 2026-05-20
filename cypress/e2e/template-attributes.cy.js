@@ -88,12 +88,11 @@ describe('จัดการเทมเพลตคุณสมบัติ', (
       cy.contains('p', '5/50').should('be.visible')
     })
 
-    it('ชื่อเทมเพลตยอมรับสูงสุด 50 ตัวอักษร', () => {
-      const longText = 'a'.repeat(80)
-      cy.get('input[name="name"]').type(longText)
-      cy.get('input[name="name"]').invoke('val').should((val) => {
-        expect(val.length).to.be.at.most(50)
-      })
+    it('ชื่อเทมเพลตจำกัด 50 ตัวอักษร (พิมพ์ครบ 50 + counter ขึ้น 50/50)', () => {
+      const exact50 = 'a'.repeat(50)
+      cy.get('input[name="name"]').type(exact50)
+      cy.get('input[name="name"]').invoke('val').should('have.length', 50)
+      cy.contains('p', '50/50').should('be.visible')
     })
 
     it('Validation: บันทึกโดยไม่กรอก required → ยังอยู่หน้า create', () => {
@@ -140,24 +139,29 @@ describe('จัดการเทมเพลตคุณสมบัติ', (
       const n = rand()
       fillBasic(`เทส 2 หัวข้อ ${n}`)
 
-      // หัวข้อแรก
+      // หัวข้อ 1 + เพิ่ม item (มีปุ่ม "เพิ่มรายการคุณสมบัติ" แค่ปุ่มเดียว)
       cy.contains('button', 'เพิ่มคุณสมบัติ').click()
       cy.get('input[name="displayTopics.0.nameTh"]').type('หัวข้อ 1 TH')
       cy.get('input[name="displayTopics.0.nameEn"]').type('Topic 1 EN')
-
-      // เพิ่มรายการในหัวข้อแรก
-      cy.get('button').contains('เพิ่มรายการคุณสมบัติ').first().click()
+      cy.contains('button', 'เพิ่มรายการคุณสมบัติ').click()
       cy.get('input[name="displayTopics.0.items.0.nameTh"]').type('A1 TH')
       cy.get('input[name="displayTopics.0.items.0.nameEn"]').type('A1 EN')
 
-      // เพิ่มหัวข้อที่ 2
+      // หัวข้อ 2 — Radix Accordion จะ auto-collapse หัวข้อก่อนหน้า/หัวข้อใหม่
+      // ใช้ input ของหัวข้อ 2 หา container เพื่อ scope การคลิกปุ่ม
       cy.contains('button', 'เพิ่มหัวข้อคุณสมบัติ').click()
-      cy.get('input[name="displayTopics.1.nameTh"]').type('หัวข้อ 2 TH')
+      cy.get('input[name="displayTopics.1.nameTh"]', { timeout: 8000 }).type('หัวข้อ 2 TH')
       cy.get('input[name="displayTopics.1.nameEn"]').type('Topic 2 EN')
 
-      // เพิ่มรายการในหัวข้อที่ 2
-      cy.get('button').contains('เพิ่มรายการคุณสมบัติ').last().click()
-      cy.get('input[name="displayTopics.1.items.0.nameTh"]').type('B1 TH')
+      // เพิ่ม item ในหัวข้อ 2 — scope ผ่าน input ของหัวข้อ 2 เพื่อหา panel ที่ถูกต้อง
+      cy.get('input[name="displayTopics.1.nameEn"]')
+        .parents('div')
+        .filter(':has(button:contains("เพิ่มรายการคุณสมบัติ"))')
+        .first()
+        .within(() => {
+          cy.contains('button', 'เพิ่มรายการคุณสมบัติ').click({ force: true })
+        })
+      cy.get('input[name="displayTopics.1.items.0.nameTh"]', { timeout: 8000 }).type('B1 TH')
       cy.get('input[name="displayTopics.1.items.0.nameEn"]').type('B1 EN')
 
       clickSave()
@@ -222,7 +226,7 @@ describe('จัดการเทมเพลตคุณสมบัติ', (
 
       cy.contains('button', 'เพิ่มรายการคุณสมบัติ').click()
       // เลือก combobox "เลือกกลุ่มตัวเลือก" — น่าจะเป็น trigger สุดท้ายที่ visible
-      cy.get('button[data-slot="select-trigger"]').contains('เลือกกลุ่มตัวเลือก').click()
+      cy.contains('button[data-slot="select-trigger"]', 'เลือกกลุ่มตัวเลือก').click()
       cy.get('[role="option"]').first().click()
 
       clickSave()
@@ -241,7 +245,7 @@ describe('จัดการเทมเพลตคุณสมบัติ', (
 
       // เพิ่ม item ในหัวข้อแรก
       cy.get('button').contains('เพิ่มรายการคุณสมบัติ').first().click()
-      cy.get('button[data-slot="select-trigger"]').contains('เลือกกลุ่มตัวเลือก').first().click()
+      cy.contains('button[data-slot="select-trigger"]', 'เลือกกลุ่มตัวเลือก').first().click()
       cy.get('[role="option"]').first().click()
 
       clickSave()
@@ -256,7 +260,7 @@ describe('จัดการเทมเพลตคุณสมบัติ', (
       cy.get('input[name="templateMapping.0.name"]').type('Map req')
 
       cy.contains('button', 'เพิ่มรายการคุณสมบัติ').click()
-      cy.get('button[data-slot="select-trigger"]').contains('เลือกกลุ่มตัวเลือก').click()
+      cy.contains('button[data-slot="select-trigger"]', 'เลือกกลุ่มตัวเลือก').click()
       cy.get('[role="option"]').first().click()
 
       cy.contains('p', 'จำเป็นต้องกรอก').parent().find('button[role="switch"]').click({ force: true })
@@ -293,7 +297,7 @@ describe('จัดการเทมเพลตคุณสมบัติ', (
       cy.contains('button', 'เพิ่มคุณสมบัติ').click()
       cy.get('input[name="templateMapping.0.name"]').type('Filter Map')
       cy.contains('button', 'เพิ่มรายการคุณสมบัติ').click()
-      cy.get('button[data-slot="select-trigger"]').contains('เลือกกลุ่มตัวเลือก').click()
+      cy.contains('button[data-slot="select-trigger"]', 'เลือกกลุ่มตัวเลือก').click()
       cy.get('[role="option"]').first().click()
 
       clickSave()

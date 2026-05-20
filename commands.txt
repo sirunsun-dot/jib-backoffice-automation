@@ -1,0 +1,138 @@
+==========================================
+  jib-backoffice-automation - คู่มือคำสั่ง
+==========================================
+
+ชุด E2E test อัตโนมัติสำหรับเว็บ Backoffice ของ JIB
+ใช้ Cypress 15 + รายงาน mochawesome
+Environment ทดสอบ: https://backoffice.jibc.codelabdev.co/
+
+
+------------------------------------------
+  ติดตั้งครั้งแรก
+------------------------------------------
+
+  npm install
+
+ใช้เวลา ~1-3 นาที (โหลด Cypress binary ~200MB)
+
+
+------------------------------------------
+  คำสั่งรัน Test
+------------------------------------------
+
+  npm run open
+    -> เปิด Cypress GUI (รัน test แบบดูได้ทีละขั้น)
+
+  npm test
+    -> รันทุก spec แบบ headless + สร้าง HTML report
+
+  npm run test:category
+    -> รันเฉพาะ category.cy.js + สร้าง report
+
+  npm run test:template
+    -> รันเฉพาะ template-attributes.cy.js + สร้าง report
+
+  npm run cy:run
+    -> รัน cypress headless อย่างเดียว (ไม่สร้าง report)
+
+  npm run clean:report
+    -> ลบ reports/screenshots/videos เก่า
+
+  npm run merge:report
+    -> merge JSON ของ mochawesome เป็นไฟล์เดียว
+
+  npm run gen:html
+    -> สร้าง HTML report จาก JSON ที่ merge แล้ว
+
+
+รันเฉพาะ spec ที่ต้องการเอง:
+
+  npx cypress run --spec cypress/e2e/login.cy.js
+
+
+เปิด Cypress GUI:
+
+  npm run open
+  หรือ
+  npx cypress open
+
+จากนั้น เลือก E2E Testing -> เลือก browser -> คลิก spec ที่จะรัน
+
+
+------------------------------------------
+  เปิด Report
+------------------------------------------
+
+หลังรัน npm test จะได้ไฟล์ HTML ที่:
+
+  cypress/reports/index.html
+
+วิธีเปิด (เลือกอันใดอันหนึ่ง):
+
+  1) Mac terminal (ง่ายสุด):
+       open cypress/reports/index.html
+
+  2) ลากไฟล์เข้า browser:
+       เปิด Finder -> ไปที่ cypress/reports/
+       -> ลาก index.html ไปวางใน Chrome / Safari
+
+  3) คลิกขวาที่ไฟล์ใน VSCode:
+       คลิกขวา -> Reveal in Finder -> ดับเบิลคลิก
+       หรือใช้ extension Live Server
+
+
+Artifacts อื่นๆ หลังรัน:
+
+  cypress/reports/index.html    -> HTML report หลัก
+  cypress/reports/report.json   -> JSON test results (รวมแล้ว)
+  cypress/reports/.jsons/       -> JSON ดิบของแต่ละ spec
+  cypress/screenshots/          -> screenshot ตอน test fail
+  cypress/videos/               -> วิดีโอบันทึกการรัน
+
+
+------------------------------------------
+  โครงสร้างโปรเจ็ค
+------------------------------------------
+
+cypress/
+  e2e/
+    login.cy.js               -> ทดสอบ login
+    category.cy.js            -> CRUD หมวดหมู่สินค้า
+    template-attributes.cy.js -> เทมเพลตคุณสมบัติสินค้า
+  fixtures/
+    jib.png                   -> ใช้ทดสอบอัปโหลดรูป
+  support/
+    commands.js               -> custom commands เช่น cy.loginJIB(...)
+    e2e.js                    -> โหลด commands ก่อนทุก test
+
+scripts/
+  discover-template-form.js   -> สคริปต์ Playwright ไว้ explore DOM
+
+
+------------------------------------------
+  ข้อมูล Login สำหรับเทส
+------------------------------------------
+
+  email:    admin00@email.com
+  password: password123
+
+ทุก spec ใช้ cy.session('jib-admin', ...) cache session ไว้
+จึง login แค่ครั้งแรกของแต่ละไฟล์
+
+
+------------------------------------------
+  Troubleshooting
+------------------------------------------
+
+ปัญหา: npx cypress open ไม่ทำงาน
+  -> ต้อง npm install ก่อนครั้งแรก
+
+ปัญหา: Cypress binary ดาวน์โหลดค้าง
+  -> npx cypress install --force
+
+ปัญหา: macOS Gatekeeper บล็อก
+  -> System Settings -> Privacy & Security -> Allow
+
+ลบ report เก่าก่อนรันใหม่:
+  -> script npm test ทำให้อัตโนมัติแล้ว
+  -> หรือเรียกเอง: npm run clean:report
