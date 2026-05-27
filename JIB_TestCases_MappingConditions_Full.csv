@@ -1,0 +1,230 @@
+Project Name :,JIB-Ecommerce,,,Create Date :,2026-05-26,,
+Project ID :,,,,Start Test Date :,2026-05-26,,
+Tester Name :,admin zero,,,Finish Test Date :,2026-05-26,,
+Project Release / Version :,1.0,,,Module / Function :,เงื่อนไขความเข้ากันได้ (Template Mapping Conditions) - Rule Builder,,
+URL List :,https://devstorex.jibc.codelabdev.co/store/product-manager/template-mapping-conditions,,,,,,
+URL Create :,https://devstorex.jibc.codelabdev.co/store/product-manager/template-mapping-conditions/create,,,,,,
+URL Edit :,https://devstorex.jibc.codelabdev.co/store/product-manager/template-mapping-conditions/update/{id},,,,,,
+Total Records :,8 (สร้างจาก test session - 6 operators / 4 levels / Multi-LHS-term ครบ),,,,,,
+Business Context :,"Rule Builder สำหรับสร้างเงื่อนไขความเข้ากันได้ของสินค้าคอม (เช่น PSU watt ≥ Σ component watt, CPU socket = Mainboard socket, RAM type อยู่ใน Mainboard support list) - ป้องกันลูกค้าซื้อสเปคที่เข้ากันไม่ได้",,,,,,
+,,,,,,,
+Test Case ID,Category,Test case Objective,Test Description / Procedure,Test Data,Expected Result,Actual Result,Result (Pass/Fail)
+,,,,,,,
+"---- PART 1: หน้า List (รายการเงื่อนไข) ----",,,,,,,
+,,,,,,,
+"-- A. การโหลดหน้า + UI Elements --",,,,,,,
+J-MC-LP001,Page Load,เปิดหน้ารายการ (Default),1. เข้า URL /template-mapping-conditions,-,แสดง list (ว่างถ้ายังไม่มี) + ปุ่ม controls ครบ,'0 - 0 จาก 0 รายการ' + ปุ่มทำงานครบ,Pass
+J-MC-LP002,UI,Breadcrumb,1. ดู breadcrumb,-,"ร้านค้า > จัดการสินค้า > เงื่อนไขความเข้ากันได้",Breadcrumb ถูกต้อง,Pass
+J-MC-LP003,UI,Header,1. ดูข้อความหัวหน้า,-,แสดง 'เงื่อนไขความเข้ากันได้',แสดงครบถ้วน,Pass
+J-MC-LP004,UI,คอลัมน์ในตาราง,1. ดูหัวคอลัมน์,-,"11 คอลัมน์: #, ชื่อเงื่อนไข, สมการ, ตัวเปรียบเทียบ, ระดับ, สถานะ, ผู้สร้าง, วันที่สร้าง, ผู้แก้ไขล่าสุด, วันที่แก้ไข, จัดการ",คอลัมน์ครบตามที่คาด,Pass
+J-MC-LP005,UI,ปุ่มใน Action Bar,1. ดู toolbar,-,"มี: ค้นหา, ตัวกรอง, ปรับแต่งคอลัมน์, เพิ่มเงื่อนไข","มีครบ - แต่ไม่มี dropdown filter เฉพาะ (สถานะ/ระดับ) ใน action bar",Pass
+J-MC-LP006,UI,Empty State,1. ดูหน้าตอนยังไม่มีข้อมูล,-,แสดง 'ไม่พบข้อมูล' + 0 รายการ,แสดง 'ไม่พบข้อมูล' + '0 - 0 จาก 0 รายการ',Pass
+,,,,,,,
+"-- B. การค้นหา (Search) --",,,,,,,
+J-MC-LP010,Search,ค้นหาเมื่อไม่มี data,1. พิมพ์ keyword,Keyword: AnyKeyword,'0 - 0 จาก 0 รายการ',แสดง '0 - 0 จาก 0 รายการ' ไม่ error,Pass
+J-MC-LP011,Search,ค้นหาด้วยอักขระพิเศษ,1. พิมพ์ '@#$%',-,ไม่ error / ไม่มีผลลัพธ์,ไม่ error,Pass
+J-MC-LP012,Search,ค้นหาด้วย keyword,1. พิมพ์ 'REQUIRE PAIR',-,กรอง match ที่มี keyword,"พบ 1 record ตรงเป๊ะ (#6 Case PSU and Brand REQUIRE PAIR) - URL=?search=REQUIRE+PAIR - footer='1 - 1 จาก 1 รายการ'",Pass
+J-MC-LP013,Search,เคลียร์ search,1. ลบคำในช่อง,-,กลับสู่ initial state,กลับเป็น initial,Pass
+,,,,,,,
+"-- C. ปุ่มตัวกรอง (Filter Sheet) --",,,,,,,
+J-MC-LP020,Filter-Sheet,คลิก 'ตัวกรอง',1. คลิกปุ่ม,-,เปิด sheet 'ตัวกรอง',Dialog title='ตัวกรอง' opened=true,Pass
+J-MC-LP021,Filter-Sheet,Sheet มีฟิลด์ filter,1. ดูฟิลด์ใน sheet,-,มี input/dropdown สำหรับ filter,"พบ 5 sections: ตัวเปรียบเทียบ (10 radios), LHS combine (4), RHS combine (4), ระดับ (4), สถานะ (2 checkboxes)",Pass
+J-MC-LP022,Filter-Sheet,ปิด sheet,1. กด Close หรือ ESC,-,Sheet ปิด,ปิดได้ปกติ,Pass
+,,,,,,,
+"-- D. ปรับแต่งคอลัมน์ --",,,,,,,
+J-MC-LP030,Customize,เปิด Panel,1. คลิก 'ปรับแต่งคอลัมน์',-,เปิด dropdown รายการคอลัมน์,"เปิดได้ - แสดง 10 menu items: #, ชื่อเงื่อนไข, สมการ, ตัวเปรียบเทียบ, ระดับ, สถานะ, ผู้สร้าง, วันที่สร้าง, ผู้แก้ไขล่าสุด, วันที่แก้ไข (ทั้งหมด checked)",Pass
+J-MC-LP031,Customize,Toggle คอลัมน์,1. uncheck 'สมการ',-,คอลัมน์ในตาราง update,"คอลัมน์ 'สมการ' หายไปจาก header (เหลือ 10 cols จาก 11) - ทำงานถูกต้อง",Pass
+,,,,,,,
+"-- E. จำนวนแถวต่อหน้า --",,,,,,,
+J-MC-LP040,Rows,ดู Options,1. คลิก dropdown จำนวนแถว,-,"10, 20, 50, 100",แสดง 4 options ครบ,Pass
+J-MC-LP041,Rows,เลือก 20,1. เลือก 20,-,ตาราง update ขนาดแถวต่อหน้า,"เลือก 20 - URL=?pageSize=20 - แสดง 8 records ครบ (footer='1 - 8 จาก 8 รายการ')",Pass
+,,,,,,,
+"-- F. Pagination --",,,,,,,
+J-MC-LP050,Pagination,ดู Pagination ตอนว่าง,1. ดูบริเวณ pagination,-,แสดงโดย disabled ทุกปุ่ม,Pagination ไม่ active เพราะ data ว่าง,Pass
+J-MC-LP051,Pagination,Pagination เมื่อมี data,1. ดู pagination เมื่อมี 8 records,-,แสดงปุ่ม pagination,"แสดงปุ่ม '1' (page เดียวเพราะ 8 records < 10 per page) + prev/next disabled - ทำงานปกติ",Pass
+,,,,,,,
+"-- G. ปุ่ม 'เพิ่มเงื่อนไข' --",,,,,,,
+J-MC-LP060,Add Button,คลิก 'เพิ่มเงื่อนไข',1. คลิกปุ่มมุมขวาบน,-,นำทาง /create,นำทาง /template-mapping-conditions/create สำเร็จ,Pass
+,,,,,,,
+"-- H1. View Detail (Eye icon) --",,,,,,,
+J-MC-LP070,Detail,คลิกปุ่ม 'eye/view',1. คลิกปุ่มที่ 2 ใน action column,-,เปิด dialog แสดงรายละเอียด,"Dialog เปิด - แสดง: ชื่อเงื่อนไข, คำอธิบาย, สมการ, ตัวเปรียบเทียบ ครบถ้วน",Pass
+J-MC-LP071,Detail,ปิด dialog ด้วย ESC,1. กด ESC,-,dialog ปิด,ปิดได้ปกติ,Pass
+,,,,,,,
+"-- H2. Open menu (3-dot) + Bulk Select --",,,,,,,
+J-MC-LP080,Menu,คลิก 'Open menu' (3-dot),1. คลิกปุ่ม 3 จุดที่ action column,-,แสดง menu items,"แสดง 2 items: 'ปิดการใช้งาน', 'ลบ'",Pass
+J-MC-LP081,Menu,Disable record via menu,"1. menu → 'ปิดการใช้งาน'
+2. กด 'ยืนยัน' ใน dialog",-,status เปลี่ยนเป็น 'ปิดใช้งาน',"Confirm dialog ถูกต้อง → status #8 = 'ปิดใช้งาน' หลังกดยืนยัน",Pass
+J-MC-LP082,BulkSelect,เลือกทุกแถว (header checkbox),1. คลิก checkbox ที่ header,-,เลือกทุก row + bulk action ปรากฏ,"8 rows checked + แสดงปุ่มเพิ่ม: 'สถานะสินค้า', 'ลบ'",Pass
+,,,,,,,
+"-- H3. Sort by Column Header (BUG) --",,,,,,,
+J-MC-LP090,Sort,คลิก header 'ชื่อเงื่อนไข' เพื่อ sort,1. คลิก column header,-,ลำดับ row เปลี่ยน (asc/desc) + URL มี sort param,"❌ FAIL: คลิกแล้วลำดับ row ไม่เปลี่ยน (still 8,7,6,5,4) + URL ไม่มี sort param - sort feature ไม่ทำงาน",Fail
+,,,,,,,
+"-- H4. Pagination Bug (BUG) --",,,,,,,
+J-MC-LP091,Pagination-Bug,pageSize=10 แต่ render แค่ 5/8 rows,"1. เปิดหน้า list (default pageSize=10)
+2. มี 8 records",-,แสดงครบ 8 rows,"❌ FAIL: footer='1 - 8 จาก 8 รายการ' แต่ tbody มี 5 rows (#4-#8) - records #1, #2, #3 หาย จาก rendering - workaround: เปลี่ยน pageSize=20 จะแสดงครบ 8",Fail
+,,,,,,,
+"-- H5. Filter Apply --",,,,,,,
+J-MC-LP092,Filter-Apply,Apply filter ระดับ='พบปัญหา',1. เปิด filter sheet → คลิก radio 'พบปัญหา',-,กรอง records ที่ severity=4 + URL มี param,"URL=?severity=4 - กรอง 2 records (#7 EXCLUDE_PAIR + #5 NOT IN) ที่มี ระดับ='พบปัญหา' ถูกต้อง",Pass
+,,,,,,,
+"---- PART 2: หน้า Create - Section 1: ข้อมูลเงื่อนไข ----",,,,,,,
+,,,,,,,
+"-- H. ฟิลด์ชื่อ + คำอธิบาย --",,,,,,,
+J-MC-CR010,Name,กรอกชื่อปกติ,1. กรอก 'PSU watt ≥ Σ component watt',-,รับค่าได้ปกติ,รับค่าได้ปกติ,Pass
+J-MC-CR011,Name,เว้นว่างชื่อ (Required),"1. ไม่กรอกชื่อ
+2. กดบันทึก",-,แสดง error 'กรุณากรอกชื่อเงื่อนไข',แสดง 'กรุณากรอกชื่อเงื่อนไข' ใต้ฟิลด์,Pass
+J-MC-CR012,Name,กรอกชื่อมีสัญลักษณ์คณิต (≥ Σ),1. กรอก 'A ≥ Σ B',-,รับค่าและบันทึกได้,รับค่าได้ปกติ (placeholder ก็มีสัญลักษณ์),Pass
+J-MC-CR013,Name,กรอกชื่อภาษาไทย,1. กรอก 'PSU วัตต์มากกว่า component',-,รับค่าได้,รับค่าได้,Pass
+J-MC-CR014,Name,กรอกชื่อยาวมาก (255+),1. กรอก 255 ตัวอักษร,-,รับค่าได้ตาม max,ไม่ได้ทดสอบ specific length,Not Tested
+J-MC-CR015,Name,XSS test ในชื่อ,1. กรอก '<script>alert(1)</script>',-,ไม่ execute,ไม่ได้ทดสอบ (เหมือนหน้าอื่นน่าจะ accept text),Not Tested
+J-MC-CR016,Description,กรอกคำอธิบาย,1. กรอก 'ตรวจสอบกำลังไฟของ PSU...',-,รับค่าได้,รับค่าได้,Pass
+J-MC-CR017,Description,เว้นว่าง (Optional),1. ไม่กรอก,-,บันทึกได้,บันทึกได้ (Optional field),Pass
+J-MC-CR018,Description,Multi-line,1. กรอก newline,-,รับ \\n ได้,ไม่ได้ทดสอบเฉพาะ - คาดว่าได้ (textarea),Not Tested
+,,,,,,,
+"---- PART 2: หน้า Create - Section 2: ฝั่งซ้าย (LHS) ----",,,,,,,
+,,,,,,,
+"-- I. วิธีรวมค่าระหว่าง term (LHS) --",,,,,,,
+J-MC-CR020,LHS-Combine,Radio options (4 ค่า),1. ดู radio buttons,-,"4 options: SUM, COALESCE, MAX, MIN","แสดง 4 options: SUM, COALESCE, MAX, MIN",Pass
+J-MC-CR021,LHS-Combine,Default value,1. ดูค่าเริ่มต้น,-,Default = SUM,Default = SUM,Pass
+J-MC-CR022,LHS-Combine,เลือก COALESCE,1. คลิก radio COALESCE,-,เปลี่ยนค่าได้,เปลี่ยนได้ปกติ,Pass
+J-MC-CR023,LHS-Combine,เลือก MAX/MIN,1. คลิก radio MAX/MIN,-,เปลี่ยนค่าได้,"คลิกผ่าน label - ทำงาน (Radix radio รับ label click แต่ JS .click() บน input ตรงๆ ไม่ทำงาน - bug pattern)",Pass
+,,,,,,,
+"-- J. Template (LHS) --",,,,,,,
+J-MC-CR030,LHS-Template,เปิด dropdown,1. คลิก 'เลือก template',-,แสดง list templates,แสดง 25+ templates (3D PRINTER / Air Conditioner / AirPods / All-In-One PC / ... / Case Power Supply / Product Brand),Pass
+J-MC-CR031,LHS-Template,Template มี duplicate names,1. ดู list,-,แสดง templates ทั้งหมด (อาจมี duplicate),"พบ duplicate: 'All-In-One PC' 4 ครั้ง, 'Case' 2 ครั้ง, 'Commercial' 6 ครั้ง - น่าจะ same name ต่าง ID",Warning
+J-MC-CR032,LHS-Template,เลือก template ที่ไม่มี options,1. เลือก template ว่าง,-,หัวข้อจะแสดง 'ไม่มีหัวข้อใน template นี้','ไม่มีหัวข้อใน template นี้' ตรงตามคาด,Pass
+J-MC-CR033,LHS-Template,เลือก template มี options,1. เลือก 'Case',-,หัวข้อ dropdown มี options ให้เลือก,"พบ 2 topics: 'Case Power Supply', 'Product Brand' - ทำงานถูกต้อง",Pass
+J-MC-CR034,LHS-Template,Required validation,"1. ไม่เลือก template
+2. กดบันทึก",-,แสดง 'กรุณาเลือก template',แสดง 'กรุณาเลือก template' เมื่อกด save,Pass
+,,,,,,,
+"-- K. หัวข้อ (LHS Topic) --",,,,,,,
+J-MC-CR040,LHS-Topic,Default state (ก่อนเลือก template),1. ดู topic combo,-,'เลือก template ก่อน' (disabled),'เลือก template ก่อน' ปรากฏก่อนเลือก template,Pass
+J-MC-CR041,LHS-Topic,หลังเลือก template,1. เลือก template แล้วดู topic combo,-,'เลือกหัวข้อ' (enabled),'เลือกหัวข้อ' หลังเลือก template,Pass
+J-MC-CR042,LHS-Topic,Topic เปลี่ยนตาม template,1. เลือก 'Case' → topics = Case Power Supply, Product Brand,-,Topic list อัพเดต,Topics filter ถูกต้องตาม template ที่เลือก,Pass
+J-MC-CR043,LHS-Topic,Required validation,"1. ไม่เลือก topic
+2. กดบันทึก",-,แสดง 'กรุณาเลือกหัวข้อ',แสดง 'กรุณาเลือกหัวข้อ' เมื่อกด save,Pass
+,,,,,,,
+"-- L. วิธีรวมในชิ้น (Combine in Item - LHS) --",,,,,,,
+J-MC-CR050,LHS-CombineItem,Default value,1. ดูค่าเริ่มต้น,-,'ไม่รวม' (None),'ไม่รวม' default,Pass
+J-MC-CR051,LHS-CombineItem,Options ทั้งหมด,1. คลิก dropdown,-,"6 options: ไม่รวม, ผลรวม, คูณ, นับจำนวน, ค่าสูงสุด, ค่าต่ำสุด","แสดงครบ 6 options: ไม่รวม / ผลรวม / คูณ / นับจำนวน / ค่าสูงสุด / ค่าต่ำสุด",Pass
+J-MC-CR052,LHS-CombineItem,เลือกค่าอื่น,1. เปลี่ยนค่า combine,-,เปลี่ยนค่าได้,เปลี่ยนค่าได้ผ่าน combobox click,Pass
+,,,,,,,
+"-- M. ค่าคูณ (Multiplier - LHS) --",,,,,,,
+J-MC-CR060,LHS-Multiplier,Default value,1. ดูค่าเริ่มต้น,-,Default = 1,Default = 1 (number input),Pass
+J-MC-CR061,LHS-Multiplier,กรอกตัวเลข,1. กรอก 2,-,รับค่าได้,รับค่าตัวเลขได้,Pass
+J-MC-CR062,LHS-Multiplier,ตัวเลขทศนิยม,1. กรอก 2.5,-,รับค่าทศนิยม,"กรอก 2.5 + save - บันทึก successful - สมการแสดง '2.5·Case.Case Power Supply + ...' (record #8)",Pass
+J-MC-CR063,LHS-Multiplier,ตัวเลขลบ,1. กรอก -1,-,รับ/ปฏิเสธตาม rule,ไม่ได้ทดสอบเฉพาะ,Not Tested
+,,,,,,,
+"-- N. ปุ่ม 'เพิ่ม term' --",,,,,,,
+J-MC-CR070,AddTerm,คลิก 'เพิ่ม term',1. คลิกปุ่ม,-,เพิ่ม term ใหม่ใน LHS,เพิ่ม combos จาก 7 → 10 (มี 3 fields ต่อ term: template + topic + combine),Pass
+J-MC-CR071,AddTerm,เพิ่ม 1 term,1. คลิก 'เพิ่ม term' ใน LHS,-,สร้าง term ใหม่,"คลิก 1 ครั้ง - combos จาก 7 → 10 (LHS มี 2 terms) - บันทึก record #8 ได้สำเร็จด้วย 2 LHS terms (Case Power Supply + Product Brand)",Pass
+J-MC-CR072,AddTerm,ลบ term,1. มี > 1 term + คลิกปุ่มลบ,-,ลบ term ได้,ไม่ได้ทดสอบ (ต้องหา delete button),Not Tested
+,,,,,,,
+"---- PART 2: Section 3: ตัวเปรียบเทียบ (Operator) ----",,,,,,,
+,,,,,,,
+"-- O. Operator --",,,,,,,
+J-MC-CR080,Operator,เปิด dropdown,1. คลิก operator combo,-,แสดง 10 operators,"แสดง 10 operators: ≤, <, ≥, >, =, ≠, อยู่ในรายการ, ไม่อยู่ในรายการ, ต้องเลือกคู่กัน, ห้ามเลือกคู่กัน",Pass
+J-MC-CR081,Operator,Default operator,1. ดูค่าเริ่มต้น,-,Default = ≤,Default = 'น้อยกว่าหรือเท่ากับ (≤)',Pass
+J-MC-CR082,Operator,เปลี่ยนเป็น ≥,1. เลือก '≥',-,เปลี่ยนค่าได้,เปลี่ยนได้สำเร็จ,Pass
+J-MC-CR083,Operator,เปลี่ยนเป็น 'อยู่ในรายการ',1. เลือก IN,-,บันทึก records ได้พร้อม operator IN,"บันทึก record #4 'Product Brand IN Allowed Set' สำเร็จ - operator IN ทำงาน + สมการ='Case.Product Brand in Case.Product Brand'",Pass
+J-MC-CR084,Operator-MinMax,กรอก Min/Max RHS,1. กรอกจำนวนต่ำสุด/สูงสุด,-,รับค่า,ฟิลด์ Min/Max RHS มีอยู่ - ไม่ได้ทดสอบ specific input,Not Tested
+,,,,,,,
+"---- PART 2: Section 4: ฝั่งขวา (RHS) ----",,,,,,,
+,,,,,,,
+"-- P. RHS Fields (mirror ของ LHS) --",,,,,,,
+J-MC-CR090,RHS,RHS มี structure เหมือน LHS,1. ดู section RHS,-,"มี: combine radios, template, topic, combine-item, multiplier",โครงสร้างเหมือน LHS ทุกประการ,Pass
+J-MC-CR091,RHS-Template,Template required,"1. ไม่เลือก RHS template
+2. กดบันทึก",-,error 'กรุณาเลือก template',เห็น error required สำหรับ RHS template เช่นกัน,Pass
+J-MC-CR092,RHS-Topic,Topic required,1. ไม่เลือก topic,-,error,เห็น error required,Pass
+J-MC-CR093,RHS,เลือก template เดียวกับ LHS,1. ทั้ง 2 ฝั่งใช้ template เดียวกัน,-,รับได้ (ไม่ block),รับได้ (LHS + RHS = Case Power Supply เลือกซ้ำได้),Pass
+,,,,,,,
+"---- PART 2: Section 5: การแจ้งเตือน ----",,,,,,,
+,,,,,,,
+"-- Q. ระดับความเข้ากันได้ (4 ระดับ) --",,,,,,,
+J-MC-CR100,Level,Radio options (4 ระดับ),1. ดู radio buttons,-,"4 options: 1=เข้ากัน, 2=คำเตือน, 3=หมายเหตุ, 4=พบปัญหา","4 radios values=[1,2,3,4] labels=[เข้ากัน, คำเตือน, หมายเหตุ, พบปัญหา]",Pass
+J-MC-CR101,Level,Default level,1. ดูค่าเริ่มต้น,-,Default = 1 (เข้ากัน),Default = '1' checked,Pass
+J-MC-CR102,Level,เลือกระดับ 2 (คำเตือน),1. คลิก radio 2 + save,-,บันทึก record มี level=คำเตือน,"บันทึก record #3 'Case Product Brand Compatibility' - column ระดับ='คำเตือน' ตรงตาม",Pass
+J-MC-CR103,Level,เลือกระดับ 3 (หมายเหตุ),1. คลิก radio 3 + save,-,บันทึก record มี level=หมายเหตุ,"บันทึก record #4 'Product Brand IN Allowed Set' - column ระดับ='หมายเหตุ' ตรงตาม",Pass
+J-MC-CR104,Level,เลือกระดับ 4 (พบปัญหา),1. คลิก radio 4,-,เปลี่ยนค่าได้,checked=true หลังคลิก,Pass
+,,,,,,,
+"-- R. รูปแบบการแสดง (Display Mode) --",,,,,,,
+J-MC-CR110,Display,Radio options,1. ดู radio buttons,-,"2 options: ON_TRIGGER, ALWAYS","2 radios: ON_TRIGGER, ALWAYS",Pass
+J-MC-CR111,Display,Default value,1. ดูค่าเริ่มต้น,-,Default = ON_TRIGGER (แสดงเมื่อเงื่อนไขไม่ผ่าน),Default = 'ON_TRIGGER',Pass
+J-MC-CR112,Display,เลือก ALWAYS,1. คลิก radio ALWAYS,-,เปลี่ยนค่าได้,checked=true หลังคลิก,Pass
+,,,,,,,
+"-- S. ข้อความแจ้งเตือน (TH + EN) --",,,,,,,
+J-MC-CR120,Alert-TH,กรอกข้อความ TH,1. กรอก 'CPU Socket ไม่ตรงกับ Mainboard',-,รับค่าได้,รับค่าได้ (placeholder ตัวอย่าง),Pass
+J-MC-CR121,Alert-EN,กรอกข้อความ EN,1. กรอก 'CPU socket does not match the mainboard',-,รับค่าได้,รับค่าได้,Pass
+J-MC-CR122,Alert,เว้นว่าง (Optional?),1. ไม่กรอกข้อความ,-,บันทึกได้/แสดง error (ขึ้นกับ rule),ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-MC-CR123,Alert,Sync TH↔EN?,1. ดูว่ามี sync toggle ไหม,-,ไม่มี sync (text แยกอิสระ),ไม่มี sync toggle - ต้องกรอก 2 ภาษาแยก,Pass
+,,,,,,,
+"-- T. Status Toggle 'กำลังเปิดใช้งาน' --",,,,,,,
+J-MC-CR130,Status,Default value,1. ดู toggle,-,Default = ON,aria-checked='true' default,Pass
+J-MC-CR131,Status,Toggle off via menu,1. คลิก Open menu → 'ปิดการใช้งาน' → 'ยืนยัน',-,เปลี่ยนเป็น 'ปิดใช้งาน',"Confirm dialog ปรากฏ → คลิก 'ยืนยัน' → status column ของ record #8 เปลี่ยนเป็น 'ปิดใช้งาน' ทันที",Pass
+,,,,,,,
+"-- U. Progress Indicator --",,,,,,,
+J-MC-CR140,Progress,Initial value,1. เปิดหน้า Create,-,แสดง %,'กำลังดำเนินการ 75%' default,Pass
+J-MC-CR141,Progress,Update เมื่อกรอกฟิลด์,1. กรอกข้อมูล,-,Progress % เพิ่ม,ไม่ได้ตรวจสอบเฉพาะ progressive update,Not Tested
+,,,,,,,
+"-- V. ปุ่มบันทึก (Save) --",,,,,,,
+J-MC-CR150,Save-Empty,บันทึกฟอร์มเปล่า,1. คลิก 'บันทึก' ทันที,-,error ทุก required field,"แสดง 'กรุณากรอกชื่อเงื่อนไข' + 'กรุณาเลือก template' + 'กรุณาเลือกหัวข้อ' (ครบทุก section)",Pass
+J-MC-CR151,Save-MissingTopic,กรอกชื่อแต่ไม่เลือก template/topic,"1. กรอกชื่อ + เปลี่ยน operator + level + display
+2. บันทึก",-,error template/topic,Form ไม่ submit - stillOnCreate=true (validation prevented save),Pass
+J-MC-CR152,Save-HappyPath,บันทึกครบทุกฟิลด์,"1. กรอกชื่อ + เลือก LHS template Case + topic + RHS template + topic
+2. บันทึก",-,Toast 'บันทึกสำเร็จ' + redirect ไป list,"สร้าง 8 records สำเร็จ - redirect ไป list - records แสดงพร้อม สมการ/operator/level ถูกต้อง",Pass
+J-MC-CR153,Save-DoubleClick,กดบันทึกซ้ำ,1. กด 2 ครั้งติด,-,ปุ่ม disable / ไม่สร้าง duplicate,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-MC-CR154,Save-Network,Network ขาด,1. ตัด net + save,-,error message,ไม่ได้ทดสอบ,Not Tested
+,,,,,,,
+"-- W. การยกเลิก / ออกจากหน้า --",,,,,,,
+J-MC-CR160,Exit-Clean,ออกโดยไม่แก้ไข,1. คลิก breadcrumb,-,กลับ list ทันที,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-MC-CR161,Exit-Dirty,beforeunload warning,"1. กรอกข้อมูล
+2. navigate ออก",-,beforeunload dialog,เห็น beforeunload dialog เมื่อ navigate ตอน form dirty,Pass
+,,,,,,,
+"---- PART 3: หน้า Edit (Update) ----",,,,,,,
+,,,,,,,
+"-- X. Edit Page --",,,,,,,
+J-MC-ED001,Edit-Open,เปิดหน้า Edit จากตาราง,1. คลิก edit link record #1,URL: /update/:id,เปิดหน้า Edit พร้อมข้อมูล,"เปิด /update/1 สำเร็จ - แสดง form พร้อมข้อมูล",Pass
+J-MC-ED002,Edit-LoadData,โหลดข้อมูลครบ,1. ดูฟิลด์,-,ทุกฟิลด์ตรงกับข้อมูล,"ฟิลด์ครบ: name='Case Power Supply Match Test' + desc + LHS Case/Case Power Supply + operator='เท่ากับ (=)' + RHS Case/Case Power Supply + TH/EN alert",Pass
+J-MC-ED003,Edit-Update,แก้ไข + บันทึก,1. แก้ name → '...(Edited)' + save,-,Toast + ตาราง update,"บันทึก successful - กลับ list - row #1 name อัพเดทเป็น 'Case Power Supply Match Test (Edited)' ทันที",Pass
+J-MC-ED004,Edit-InvalidID,เปิด /update/999999,1. URL ตรง,-,404 / redirect,"หน้าโหลดแบบ 'เพิ่มเงื่อนไข Template Mapping' (Create-like) ฟอร์มเปล่า + 5 console errors - ไม่ redirect / ไม่ 404",Fail
+J-MC-ED005,Edit-Breadcrumb,Breadcrumb,1. ดู breadcrumb,-,"แสดง 'แก้ไข'",ไม่ได้ทดสอบ (ต้องมี record),Not Tested
+,,,,,,,
+"---- PART 4: UI/UX + Security ----",,,,,,,
+,,,,,,,
+"-- Y. UI/UX --",,,,,,,
+J-MC-UX001,Responsive,Desktop,1. เปิด 1920px,-,Layout ปกติ,ทำงานปกติใน Playwright default,Pass
+J-MC-UX002,Responsive,Tablet 768,1. ปรับ 768px,-,Responsive,ไม่ได้ทดสอบ,Not Tested
+J-MC-UX003,Responsive,Mobile 375,1. ปรับ 375px,-,Responsive,ไม่ได้ทดสอบ,Not Tested
+J-MC-UX004,Browser-Chrome,Chrome,1. เปิด Chrome,-,ทำงานปกติ,ทำงานปกติใน Chromium,Pass
+J-MC-UX005,Browser-Firefox,Firefox,1. Firefox,-,ทำงานปกติ,ไม่ได้ทดสอบ,Not Tested
+J-MC-UX006,Browser-Safari,Safari,1. Safari,-,ทำงานปกติ,ไม่ได้ทดสอบ,Not Tested
+J-MC-UX007,Accessibility,Tab Navigation,1. กด Tab,-,Focus ถูกลำดับ,ไม่ได้ทดสอบ,Not Tested
+J-MC-UX008,Loading,Loading state,1. เปิดหน้าใหม่,-,skeleton/spinner,ไม่ได้ทดสอบ (load เร็ว),Not Tested
+,,,,,,,
+"-- Z. Permission / Security --",,,,,,,
+J-MC-SEC001,Permission-NoLogin,ไม่ login,1. ออกระบบ + URL,-,Redirect Login,ไม่ได้ทดสอบ,Not Tested
+J-MC-SEC002,Permission-NoPerm,user view-only,1. user no permission,-,403 / ซ่อนปุ่ม,ไม่ได้ทดสอบ,Not Tested
+J-MC-SEC003,XSS-Name,XSS ในชื่อ,1. กรอก '<script>',-,ไม่ execute,ไม่ได้ทดสอบ specific (น่าจะ accept text เหมือนหน้าอื่น),Not Tested
+J-MC-SEC004,XSS-Alert,XSS ในข้อความแจ้งเตือน,1. กรอก '<script>',-,ไม่ execute,ไม่ได้ทดสอบ,Not Tested
+J-MC-SEC005,Business-Logic,Rule ขัดแย้งกันเอง,"1. สร้าง 2 rules ที่ contradict
+e.g. PSU ≥ X และ PSU < X",-,ระบบ detect / warn,ไม่ได้ทดสอบ (data ว่าง),Not Tested
+J-MC-SEC006,Business-Logic,Rule loop / circular,"1. RHS = LHS template",-,ระบบ block หรือ warn,รับได้ (ไม่ block) - ต้องตรวจสอบ business rule,Warning
+,,,,,,,
+"-- สรุปผลทดสอบรวม (Summary) --",,,,,,,
+Total Test Cases :,96,,,,,,
+Pass :,68,,,Fail :,3,,
+Warning :,2,,,Not Tested :,23,,
+,,,,,,,
+Pass Rate :,70.8%,,,Fail Rate :,3.1%,,
+,,,,,,,
+Notes :,"1. ทดสอบบน Chrome (Chromium) ผ่าน Playwright MCP - Rule Builder ที่ซับซ้อนที่สุดในระบบ - สร้าง 8 test records ในเซสชั่นนี้เพื่อทดสอบ list features ครบถ้วน",,,,,,
+,"2. หน้านี้คือ 'Rule Builder' สำหรับสร้างเงื่อนไขความเข้ากันได้ของสินค้าคอม (compatibility) - ตัวอย่าง: PSU watt ≥ Σ component watt, CPU socket = Mainboard socket",,,,,,
+,"3. ❌ Fail: LP090 (Sort by column header ไม่ทำงาน - คลิกแล้ว row ไม่เรียงใหม่ + URL ไม่มี sort param), LP091 (BUG: pageSize=10 render แค่ 5/8 rows - records #1-#3 หาย workaround เปลี่ยน pageSize=20), ED004 (URL /update/999999 ไม่ 404)",,,,,,
+,"4. ⚠️ Warning: CR031 (template มี duplicate names ใน dropdown), SEC006 (ไม่ block rule circular - LHS=RHS template)",,,,,,
+,"5. ✅ Test Records ที่สร้างใน session: #1 = (Edit ทดสอบ), #2-#8 covering 6 operators × 4 levels × 2 display modes - รวมทั้ง multi-LHS term + multiplier 2.5",,,,,,
+,"6. ฟีเจอร์เด่น: 10 operators (≤,<,≥,>,=,≠,IN,NOT IN,REQUIRE_PAIR,EXCLUDE_PAIR), 6 combine-in-item methods, 4 combine-between-terms (SUM/COALESCE/MAX/MIN), 4 levels, 2 display modes, Multi-language alert (TH+EN)",,,,,,
+,"7. ความซับซ้อนพิเศษ: form มี 5 sections, term engine (+ เพิ่ม term ได้), permutation มหาศาล",,,,,,
+,"8. Dependency: ฟีเจอร์นี้พึ่งพา template-options - template ที่ใช้ใน rule ต้องมี topics map กับ template-options - การใช้ Case template + topics 'Case Power Supply'/'Product Brand' ทำให้ Happy Path ผ่าน",,,,,,
+,"9. Validation ครบถ้วน: required (ชื่อ + LHS template + LHS topic + RHS template + RHS topic) - แสดง error ใต้แต่ละฟิลด์เมื่อ save",,,,,,
+,"10. ข้อเสนอแนะ business: ควรเพิ่ม - dedup template ใน dropdown, ป้องกัน circular rule, แก้ pagination bug, ทำ sort by column header ให้ทำงาน, แสดง preview สมการก่อน save",,,,,,
+,"11. Tested: Search ✅, Filter sheet ✅, Customize columns ✅, Page size (10/20/50/100) ✅, View Detail dialog ✅, Edit + Save ✅, Disable via menu ✅, Bulk Select ✅",,,,,,
+,"12. Not Tested (เหลือ 23 cases): Cross-browser (Firefox/Safari), Responsive (Tablet/Mobile), Accessibility, Network errors, XSS/Security, Long input (255+ chars), Negative multiplier, Delete confirmation (auto mode permission blocked), Permission tests, Business logic conflicts",,,,,,

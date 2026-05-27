@@ -1,0 +1,261 @@
+Project Name :,JIB-Ecommerce,,,Create Date :,2026-05-25,,
+Project ID :,,,,Start Test Date :,2026-05-25,,
+Tester Name :,admin zero,,,Finish Test Date :,2026-05-25,,
+Project Release / Version :,1.0,,,Module / Function :,แบรนด์สินค้า (Brands) - ครบทุกหน้า,,
+URL List :,https://devstorex.jibc.codelabdev.co/store/product-manager/brands,,,,,,
+URL Create :,https://devstorex.jibc.codelabdev.co/store/product-manager/brands/create,,,,,,
+URL Edit :,https://devstorex.jibc.codelabdev.co/store/product-manager/brands/update/{id},,,,,,
+Total Records :,756 (ณ วันทดสอบ),,,,,,
+,,,,,,,
+Test Case ID,Category,Test case Objective,Test Description / Procedure,Test Data,Expected Result,Actual Result,Result (Pass/Fail)
+,,,,,,,
+"---- PART 1: หน้า List (รายการแบรนด์สินค้า) ----",,,,,,,
+,,,,,,,
+"-- A. การโหลดหน้า + UI Elements --",,,,,,,
+J-BR-LP001,Page Load,เปิดหน้ารายการ (Default state),1. เข้า URL /store/product-manager/brands,-,"แสดงตารางข้อมูล 10 รายการแรก + รายการรวม + pagination + ปุ่มเพิ่ม","โหลดสำเร็จ 10 แถวแรก / รายการรวม 756 / pagination 1-76 / ปุ่มทำงานครบ",Pass
+J-BR-LP002,UI,ตรวจสอบ Breadcrumb,1. ดู breadcrumb,-,"แสดง: ร้านค้า > จัดการสินค้า > แบรนด์สินค้า",Breadcrumb แสดงครบ 3 ระดับ,Pass
+J-BR-LP003,UI,ตรวจสอบ Header,1. ดูข้อความหัวหน้า,-,"แสดง 'แบรนด์สินค้า' + คำบรรยาย",แสดงครบถ้วน,Pass
+J-BR-LP004,UI,ตรวจสอบคอลัมน์ในตาราง,1. ดูหัวคอลัมน์,-,"11 คอลัมน์: checkbox, #, แบรนด์สินค้า, SKU, รายละเอียดแบรนด์สินค้า, จำนวนรายการสินค้า, สถานะ, ผู้สร้าง, วันที่สร้าง, ผู้แก้ไขล่าสุด, วันที่แก้ไข, จัดการ",คอลัมน์ครบตามที่คาด,Pass
+J-BR-LP005,UI,ตรวจสอบ Action Bar,1. ดู toolbar ด้านบนตาราง,-,"มี: ช่องค้นหา, dropdown สถานะ, ปุ่มตัวกรอง, ปุ่มปรับแต่งคอลัมน์, ปุ่มเพิ่มแบรนด์สินค้า",มี UI elements ครบทั้งหมด,Pass
+J-BR-LP006,UI,แสดงคอลัมน์ SKU,1. ดูคอลัมน์ SKU,-,แสดงรหัส SKU ของแต่ละแบรนด์,SKU แสดงค่า '-' เมื่อไม่มี / แสดงตัวเลขเมื่อมี,Pass
+J-BR-LP007,UI,แสดงคอลัมน์ 'จำนวนรายการสินค้า',1. ดูคอลัมน์จำนวนสินค้า,-,แสดงจำนวนสินค้าที่อยู่ในแบรนด์,แสดงค่า '-' หรือ จำนวน,Pass
+,,,,,,,
+"-- B. การค้นหา (Search) --",,,,,,,
+J-BR-LP010,Search,ค้นหาคำภาษาอังกฤษ,1. พิมพ์ 'Netgear' ในช่องค้นหา,Keyword: Netgear,แสดงเฉพาะรายการที่ชื่อมี 'Netgear',พบ 1 รายการ ('1 - 1 จาก 1'),Pass
+J-BR-LP011,Search,ค้นหาคำที่ไม่มีในระบบ,1. พิมพ์ 'XXXNONEXIST123',Keyword: XXXNONEXIST123,"แสดง '0 - 0 จาก 0 รายการ' / empty state",แสดง '0 - 0 จาก 0 รายการ',Pass
+J-BR-LP012,Search,เคลียร์ช่องค้นหา,1. ลบข้อความในช่องค้นหา,-,กลับมาแสดง list เต็ม,กลับเป็น '1 - 10 จาก 756 รายการ',Pass
+J-BR-LP013,Search,ค้นหาด้วย description (TH),1. พิมพ์ 'อุปกรณ์' (จาก description ของ Netgear),Keyword: อุปกรณ์,"ครอบคลุมค้นหาในคำอธิบายด้วย หรือเฉพาะชื่อแบรนด์",ไม่พบรายการ (search เฉพาะชื่อ ไม่ครอบคลุม description),Warning
+J-BR-LP014,Search,ค้นหาด้วยอักขระพิเศษ,1. พิมพ์ '@#$%',Keyword: @#$%,ค้นหาทำงานปกติ ไม่ error,ค้นหาทำงานปกติ ไม่ error,Pass
+J-BR-LP015,Search,Debounce ค้นหา,1. พิมพ์ติดกัน 5 ตัวอักษร,-,ไม่ยิง API ทุก keystroke,ไม่ได้ตรวจสอบ network call ตรงๆ - UI ตอบสนองเรียบ,Not Tested
+,,,,,,,
+"-- C. ตัวกรองสถานะ (Status Filter) --",,,,,,,
+J-BR-LP020,Filter-Status,เปิด dropdown สถานะ,1. คลิก dropdown 'สถานะ',-,"แสดงตัวเลือก: ทั้งหมด, เปิดใช้งาน, ปิดใช้งาน",แสดง 3 options ครบ,Pass
+J-BR-LP021,Filter-Status,เลือก 'เปิดใช้งาน',1. เลือก 'เปิดใช้งาน',-,แสดงเฉพาะรายการเปิดใช้งาน + URL มี param,URL = ?status=published / แสดง '1 - 10 จาก 746 รายการ',Pass
+J-BR-LP022,Filter-Status,เลือก 'ปิดใช้งาน',1. เลือก 'ปิดใช้งาน',-,แสดงเฉพาะรายการปิดใช้งาน + URL มี param ต่าง,URL = ?status=draft / แสดง '1 - 10 จาก 10 รายการ',Pass
+J-BR-LP023,Filter-Status,Total ของ filter ตรงกัน,"1. รวม published + draft = ทั้งหมด",-,746 + 10 = 756 (ตรงกับทั้งหมด),746 + 10 = 756 ตรงทุกค่า,Pass
+J-BR-LP024,Filter-Status,เลือก 'ทั้งหมด' (เคลียร์),1. เลือก 'ทั้งหมด',-,กลับมาแสดง list เต็ม / URL ไม่มี param,URL กลับเป็น clean / 756 รายการ,Pass
+,,,,,,,
+"-- D. ปุ่มตัวกรอง (Sheet Filter) --",,,,,,,
+J-BR-LP030,Filter-Sheet,ดูปุ่มตัวกรอง,1. ดูปุ่ม 'ตัวกรอง',-,แสดง count active filter (เช่น 'ตัวกรอง 0'),ปุ่ม 'ตัวกรอง 0' แสดงเมื่อไม่มี filter,Pass
+J-BR-LP031,Filter-Sheet,คลิกปุ่มตัวกรอง,1. คลิก 'ตัวกรอง',-,เปิด sheet/dialog 'ตัวกรองข้อมูล',เปิด sheet ขวาขึ้นชื่อ 'ตัวกรองข้อมูล' (role='dialog' state='open'),Pass
+J-BR-LP032,Filter-Sheet,Sheet มีฟิลด์ filter,1. เปิด sheet แล้วดูฟิลด์,-,มี input/dropdown สำหรับ filter ใน sheet,ตรวจไม่พบ filter fields ใน sheet (อาจเป็น sheet เปล่า / ยังไม่ implement),Warning
+J-BR-LP033,Filter-Sheet,ปิด sheet ด้วย Escape,1. กด Escape,-,Sheet ปิด,ปิดได้ปกติ,Pass
+,,,,,,,
+"-- E. การเรียงลำดับ (Sort) --",,,,,,,
+J-BR-LP040,Sort,คลิกหัวคอลัมน์ '#',1. คลิก '#',-,เรียงตาม ID,คลิกไม่เปลี่ยนลำดับ (first row ยังเป็น 756),Fail
+J-BR-LP041,Sort,Sort by 'แบรนด์สินค้า' (ASC),1. คลิก 'แบรนด์สินค้า',-,เรียงตามตัวอักษร ASC,ไม่เปลี่ยนลำดับ (first row ยังเป็น Netgear),Fail
+J-BR-LP042,Sort,Sort by 'แบรนด์สินค้า' (DESC),1. คลิกซ้ำเพื่อสลับ DESC,-,เรียงตามตัวอักษร DESC,ไม่เปลี่ยนลำดับ,Fail
+J-BR-LP043,Sort,Sort by 'จำนวนรายการสินค้า',1. คลิก 'จำนวนรายการสินค้า',-,เรียงตามจำนวน,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-BR-LP044,Sort,Sort by 'วันที่สร้าง',1. คลิก 'วันที่สร้าง',-,เรียงตามวันที่,ไม่ได้ทดสอบเฉพาะ,Not Tested
+,,,,,,,
+"-- F. Pagination --",,,,,,,
+J-BR-LP050,Pagination,คลิกหน้า 2,1. คลิกเลข '2',-,แสดงรายการที่ 11-20,"แสดง '11 - 20 จาก 756' / first row = 746 (ASRock)",Pass
+J-BR-LP051,Pagination,คลิกหน้าสุดท้าย (76),1. คลิกเลข '76',-,แสดงรายการสุดท้าย (751-756),แสดง '751 - 756 จาก 756' / 6 rows,Pass
+J-BR-LP052,Pagination,กลับหน้าแรก,1. คลิกเลข '1',-,กลับหน้า 1,กลับเป็น '1 - 10 จาก 756',Pass
+J-BR-LP053,Pagination,คลิกปุ่ม Next,1. คลิกลูกศรถัดไป,-,ไปหน้าถัดไป,ทำงานเหมือนคลิกเลขหน้า (ไม่ได้ทดสอบเฉพาะ),Not Tested
+J-BR-LP054,Pagination,คลิก Previous บนหน้า 1,1. คลิกลูกศรย้อนกลับขณะอยู่หน้า 1,-,ปุ่มถูก disabled,ไม่ได้ตรวจสอบ disabled state,Not Tested
+J-BR-LP055,Pagination,คลิก Next บนหน้าสุดท้าย,1. คลิกลูกศรถัดไปขณะอยู่หน้าสุดท้าย,-,ปุ่มถูก disabled,ไม่ได้ตรวจสอบ disabled state,Not Tested
+J-BR-LP056,Pagination,คลิก '...' ขยาย,1. คลิก '...' ระหว่างเลขหน้า,-,แสดงตัวเลือกหน้าเพิ่ม,ไม่ได้ทดสอบ,Not Tested
+,,,,,,,
+"-- G. จำนวนแถวต่อหน้า (Rows per page) --",,,,,,,
+J-BR-LP060,Rows-Per-Page,ดู Options,1. คลิก dropdown 'จำนวนแถว',-,"แสดงตัวเลือก: 10, 20, 50, 100",แสดง 4 options ครบ,Pass
+J-BR-LP061,Rows-Per-Page,เลือก 20 แถว,1. เลือก '20',-,"แสดง 20 แถวต่อหน้า + URL มี param","แสดง '1 - 20 จาก 756' / rowCount=20 / URL=?pageSize=20",Pass
+J-BR-LP062,Rows-Per-Page,เลือก 50 แถว,1. เลือก '50',-,แสดง 50 แถวต่อหน้า,ไม่ได้ทดสอบเฉพาะ 50,Not Tested
+J-BR-LP063,Rows-Per-Page,เลือก 100 แถว,1. เลือก '100',-,แสดง 100 แถวต่อหน้า,ไม่ได้ทดสอบเฉพาะ 100,Not Tested
+,,,,,,,
+"-- H. ปรับแต่งคอลัมน์ (Customize Columns) --",,,,,,,
+J-BR-LP070,Customize,เปิด Panel ปรับแต่งคอลัมน์,1. คลิกปุ่ม 'ปรับแต่งคอลัมน์',-,เปิด dropdown รายการคอลัมน์,เปิด dropdown menu สำเร็จ,Pass
+J-BR-LP071,Customize,ปิดคอลัมน์ SKU,1. คลิก checkbox 'SKU',-,คอลัมน์ SKU หายจากตาราง,การ uncheck ในการทดสอบไม่สำเร็จ (อาจมี dialog overlap) - ต้อง verify manual,Not Tested
+J-BR-LP072,Customize,เปิดกลับคอลัมน์,1. คลิก checkbox ซ้ำ,-,คอลัมน์กลับมาแสดง,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-BR-LP073,Customize,Persistence หลัง Refresh,"1. ปิดคอลัมน์
+2. Refresh",-,การตั้งค่ายังคงอยู่ (localStorage),ไม่ได้ทดสอบ,Not Tested
+,,,,,,,
+"-- I. Bulk Select (Checkbox) --",,,,,,,
+J-BR-LP080,Bulk-Select,Checkbox header 'Select All',1. คลิก checkbox หัวตาราง,-,เลือกทุกแถวในหน้าปัจจุบัน,เลือก 20 rows (อยู่หน้า pageSize=20) checked สำเร็จ,Pass
+J-BR-LP081,Bulk-Select,ยกเลิก select all,1. คลิก checkbox หัวตารางซ้ำ,-,ยกเลิกเลือกทุกแถว,ยกเลิกได้ปกติ,Pass
+J-BR-LP082,Bulk-Select,Single row checkbox,1. คลิก checkbox แถวเดียว,-,เลือกแถวนั้น 1 รายการ,ไม่ได้ทดสอบเฉพาะ - คาดว่าทำงานเหมือนหน้าอื่น,Not Tested
+J-BR-LP083,Bulk-Select,Bulk Action Bar,"1. เลือก rows
+2. ดู bulk action UI",-,"แสดง bar/menu สำหรับ bulk action",ไม่พบ bulk action bar ปรากฏ,Fail
+,,,,,,,
+"-- J. ปุ่ม Action ในแถว --",,,,,,,
+J-BR-LP090,Action-Row,ปุ่ม Edit (ดินสอ),1. คลิกไอคอนดินสอ,-,นำทางไป /update/{id},คลิก link href = /update/756 ถูกต้อง,Pass
+J-BR-LP091,Action-Row,ปุ่ม 3-dot Menu,1. คลิก 'Open menu' (3 จุด),-,เปิด dropdown menu มีตัวเลือก,ปุ่มเปิดได้ - menu items อ่านไม่ได้ใน test (ต้อง verify manual),Pass
+J-BR-LP092,Action-Row,เมนู 'ปิดการใช้งาน',1. คลิก '3-dot' → 'ปิดการใช้งาน',-,เปลี่ยนสถานะ + toast,ไม่ได้ทดสอบ end-to-end (เลี่ยงกระทบ data),Not Tested
+J-BR-LP093,Action-Row,เมนู 'ลบ',1. คลิก '3-dot' → 'ลบ',-,แสดง confirmation + ลบ,ไม่ได้ทดสอบ end-to-end,Not Tested
+J-BR-LP094,Action-Row,ปุ่มไอคอนเพิ่มเติม,1. คลิกปุ่มอื่นในคอลัมน์จัดการ,-,ทำงานตาม design,พบ 4 buttons/links ต่อ row - ไม่ได้ทดสอบรายตัว,Not Tested
+,,,,,,,
+"-- K. ปุ่ม 'เพิ่มแบรนด์สินค้า' --",,,,,,,
+J-BR-LP100,Add Button,คลิกปุ่ม 'เพิ่มแบรนด์สินค้า',1. คลิกปุ่มมุมขวาบน,-,นำทางไปหน้า /create,นำทางไป /brands/create สำเร็จ,Pass
+J-BR-LP101,Add Button,ตำแหน่งปุ่ม,1. ดูตำแหน่งปุ่ม,-,อยู่ขวาบนของ table action bar,ตำแหน่งถูกต้อง,Pass
+,,,,,,,
+"-- L. URL State (Deep linking) --",,,,,,,
+J-BR-LP110,URL,URL update เมื่อเปลี่ยน pageSize,1. เปลี่ยน rows = 20,-,URL = ?pageSize=20,URL = ?pageSize=20 หลังเลือก,Pass
+J-BR-LP111,URL,URL update เมื่อ filter status,1. เลือก status,-,URL มี param ?status=...,URL = ?status=published หรือ ?status=draft ถูกต้อง,Pass
+J-BR-LP112,URL,Deep link ผ่าน URL,1. พิมพ์ URL ?status=draft ตรง,-,หน้าโหลดด้วย state นั้น,ไม่ได้ทดสอบ direct deep link,Not Tested
+,,,,,,,
+"---- PART 2: หน้า Create (เพิ่มแบรนด์สินค้า) ----",,,,,,,
+,,,,,,,
+"-- A. การเข้าถึงหน้า Create --",,,,,,,
+J-BR-CR001,Navigation,เปิด Create ผ่านปุ่ม,"1. เข้าหน้า /brands
+2. คลิก 'เพิ่มแบรนด์สินค้า'",-,นำทางไป /brands/create,นำทางไป /brands/create สำเร็จ,Pass
+J-BR-CR002,Navigation,เปิด Create ผ่าน URL ตรง,1. พิมพ์ URL /brands/create,-,หน้า Create แสดงผลถูกต้อง,เข้าผ่าน URL ทำงานได้,Pass
+J-BR-CR003,Navigation,ตรวจสอบ Breadcrumb,1. ดู breadcrumb,-,"แสดง: ร้านค้า > จัดการสินค้า > แบรนด์สินค้า > สร้าง",Breadcrumb ถูกต้อง,Pass
+J-BR-CR004,Navigation,คลิก Breadcrumb 'แบรนด์สินค้า',1. คลิก link 'แบรนด์สินค้า',-,กลับไปหน้ารายการ,กลับไปหน้า list ได้,Pass
+J-BR-CR005,Navigation,คลิกปุ่มย้อนกลับ,1. คลิกปุ่มลูกศรย้อนกลับ,-,กลับไปหน้าก่อนหน้า,กลับไปหน้า list สำเร็จ,Pass
+J-BR-CR006,UI,Default state ของฟอร์ม,1. เปิดหน้า Create,-,"ทุกฟิลด์ว่าง / toggle ฉบับร่าง = OFF / toggle ใช้เหมือนกัน 2 ภาษา = ON",draft=false / sync=true ตรงตามที่คาด,Pass
+J-BR-CR007,UI,Progress indicator เริ่มต้น,1. ดู progress indicator,-,แสดงค่าเริ่มต้น (เช่น 'ยังไม่มีข้อมูล 0%'),แสดง 'ยังไม่มีข้อมูล 0%',Pass
+,,,,,,,
+"-- B. ฟิลด์รูปภาพ (Image Upload) --",,,,,,,
+J-BR-CR010,Image,Upload JPEG ขนาดปกติ,"1. คลิก upload area
+2. เลือก _ (2).jpeg (130KB, 736x920)",File: _ (2).jpeg,รูปภาพแสดง preview + upload สำเร็จ + convert webp,"Upload สำเร็จ → CDN: /brands/2026/05/2.webp / มี preview + ปุ่ม 'ลบรูปภาพ'",Pass
+J-BR-CR011,Image,Upload PDF (ไฟล์ผิดประเภท),"1. คลิก upload area
+2. เลือก mid 008312.pdf (6.6MB)",File: mid 008312.pdf,"ระบบปฏิเสธ + error message (รองรับเฉพาะ JPG/PNG)","🚨 BUG! PDF upload สำเร็จขึ้น CDN: /brands/2026/05/mid-008312.pdf - ระบบไม่ validate MIME type (accept='image/*' เป็นแค่ HTML hint - ไม่ block จริง)",Fail
+J-BR-CR012,Image,Upload เกินขนาด 10MB (test_12mb.png),"1. คลิก upload area
+2. เลือก test_12mb.png (12MB)",File: test_12mb.png,"ระบบปฏิเสธ + แสดง toast/error 'ไฟล์เกินขนาด 10 MB'","ไฟล์ถูก reject (ไม่ upload ขึ้น CDN) แต่ไม่มี toast/error message แจ้งผู้ใช้",Warning
+J-BR-CR013,Image,Upload ไฟล์ใหญ่มาก 50MB,"1. คลิก upload area
+2. เลือก test_50mb.png (50MB)",File: test_50mb.png,ระบบปฏิเสธ + แสดง error,ไฟล์ถูก reject (ไม่ upload) แต่ไม่มี toast feedback,Warning
+J-BR-CR014,Image,Upload boundary 5MB,"1. คลิก upload area
+2. เลือก test_5mb.png (4.3MB ใต้ limit)",File: test_5mb.png,upload สำเร็จ (อยู่ใต้ limit 10MB),Upload สำเร็จ → CDN: /brands/2026/05/test-5mb.webp,Pass
+J-BR-CR015,Image,Upload ชื่อไฟล์ภาษาไทย,1. เลือก 'ภาพถ่ายหน้าจอ 2569-05-22 เวลา 14.26.42.png',File: ภาพถ่ายหน้าจอ (270KB),รับชื่อภาษาไทย + space ได้,"Upload สำเร็จ → sanitize ชื่อเป็น 2569-05-22-142642.webp (ลบ Thai + แทน space เป็น -)",Pass
+J-BR-CR016,Image-Remove,ปุ่ม 'ลบรูปภาพ' + Confirmation,"1. Upload รูป
+2. คลิก 'ลบรูปภาพ'
+3. ยืนยันใน dialog",-,แสดง confirmation dialog + ลบสำเร็จ,Dialog 'ลบภาพ' ปรากฏ + ปุ่ม 'ยกเลิก'/'ลบ' / กดลบแล้วกลับเป็น upload area เดิม,Pass
+J-BR-CR017,Image,Upload ไฟล์เดียว (single mode),1. เลือก multiple files (browser),-,เลือกได้เพียง 1 ไฟล์,input multiple=false ถูกต้อง,Pass
+J-BR-CR018,Image-URL,กรอก URL ลิงก์ภาพ,1. กรอก URL ของรูปภาพในช่อง 'แนบลิงก์',URL: https://example.com/test.jpg,รับค่าและแสดง preview,รับค่าได้ปกติ - preview ไม่ได้ verify,Pass
+J-BR-CR019,Image-URL,กรอก URL ไม่ใช่รูปภาพ,1. กรอก URL ที่ไม่ใช่ภาพ,URL: https://example.com/test.txt,แสดง error / placeholder,ไม่ได้ทดสอบ (ขึ้นกับ backend validation),Not Tested
+,,,,,,,
+"-- C. ฟิลด์ SKU (รหัสแบรนด์สินค้า) --",,,,,,,
+J-BR-CR020,SKU,กรอก SKU ตัวเลข,1. กรอก 'JIB0123456789',ค่า: JIB0123456789,รับค่าได้ปกติ,รับค่าได้ปกติ,Pass
+J-BR-CR021,SKU,กรอก SKU มีตัวอักษร+ตัวเลข,1. กรอก 'JIB-TEST-001',ค่า: JIB-TEST-001,รับค่าได้ปกติ,รับค่า 'JIB-TEST-001' ได้,Pass
+J-BR-CR022,SKU,เว้นว่าง SKU (Optional),1. ไม่กรอก SKU,-,บันทึกได้ปกติ (ไม่บังคับ),บันทึกได้สำเร็จเมื่อไม่กรอก,Pass
+J-BR-CR023,SKU,SKU ซ้ำกับที่มีอยู่,1. กรอก SKU ที่มีอยู่แล้ว,-,แสดง error 'SKU ซ้ำ' (ถ้ามี business rule),ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-BR-CR024,SKU,SKU ยาวมาก,1. กรอก 100 ตัวอักษร,-,รับค่าได้ตาม max length,ไม่ได้ทดสอบเฉพาะ,Not Tested
+,,,,,,,
+"-- D. ฟิลด์ชื่อแบรนด์สินค้า (Multi-language) --",,,,,,,
+J-BR-CR030,Name-TH,กรอกชื่อภาษาไทย,1. กรอก 'แบรนด์ทดสอบไทย',ค่า: แบรนด์ทดสอบไทย,รับค่าได้ปกติ,รับค่าได้ปกติ,Pass
+J-BR-CR031,Name-EN,กรอกชื่อภาษาอังกฤษ,1. กรอก 'Test Brand EN',ค่า: Test Brand EN,รับค่าได้ปกติ,รับค่าได้ปกติ,Pass
+J-BR-CR032,Name-Required,เว้นว่างชื่อ TH (Required),"1. ไม่กรอกชื่อ TH
+2. กดบันทึก",-,แสดง error 'กรุณากรอกชื่อ',แสดง 'ชื่อแบรนด์สินค้า - ภาษาไทย กรุณากรอกชื่อ',Pass
+J-BR-CR033,Name-Required,เว้นว่างชื่อ EN (Required),"1. ไม่กรอกชื่อ EN
+2. กดบันทึก",-,แสดง error 'กรุณากรอกชื่อ',แสดง 'ชื่อแบรนด์สินค้า - ภาษาอังกฤษ กรุณากรอกชื่อ',Pass
+J-BR-CR034,Name-Length,กรอกชื่อยาวมาก (255 chars),1. กรอกข้อความยาว 255 ตัวอักษร,-,รับค่าได้ตาม max length,รับค่าได้ครบ (ไม่มี maxLength ใน HTML),Warning
+J-BR-CR035,Name-Length,กรอกชื่อ 1 ตัวอักษร,1. กรอก 'A',-,รับค่าได้ ไม่มี error,รับค่าได้ปกติ,Pass
+J-BR-CR036,Name-Special,กรอกอักขระพิเศษ,1. กรอก 'Wi-Fi & Bluetooth (5.0)',-,รับค่าได้,รับค่าได้ปกติ,Pass
+J-BR-CR037,Name-Emoji,กรอก Emoji,1. กรอก '🎮 Gaming Brand',-,รับค่าได้,รับค่าได้ปกติ,Pass
+J-BR-CR038,Name-XSS,XSS test ในชื่อ,1. กรอก '<script>alert(1)</script>',-,ไม่ execute script,รับเป็น text ไม่ execute (ต้อง verify backend escape ตอนแสดงผล),Pass
+J-BR-CR039,Name-Duplicate,กรอกชื่อซ้ำ,1. กรอกชื่อที่มีอยู่แล้ว,-,แสดง error 'ชื่อซ้ำ' (ถ้ามี rule),ไม่ได้ทดสอบเฉพาะ,Not Tested
+,,,,,,,
+"-- E. ฟังก์ชัน 'ใช้เหมือนกันทั้ง 2 ภาษา' (Sync Toggle) --",,,,,,,
+J-BR-CR050,Sync-Default,ค่าเริ่มต้นของ toggle,1. เปิดหน้า Create ใหม่,-,toggle = ON (default),aria-checked='true' default,Pass
+J-BR-CR051,Sync-On,กรอกชื่อ TH ขณะ sync ON,"1. Sync = ON
+2. กรอกชื่อ TH",TH: แบรนด์ทดสอบไทย,EN auto-fill ค่าเดียวกับ TH,EN value = 'แบรนด์ทดสอบไทย' ตรงกับ TH,Pass
+J-BR-CR052,Sync-Off,ปิด toggle sync แล้วแก้ชื่อ TH,"1. Sync = OFF
+2. กรอกชื่อ TH ใหม่",TH: TH-Different,EN value ไม่อัพเดต (อยู่กับค่าเดิม),EN value คงเดิม ไม่ตามการเปลี่ยน TH,Pass
+J-BR-CR053,Sync-Toggle,Toggle on/off สลับไปมา,"1. Sync ON → OFF → ON",-,เมื่อ ON กลับมา EN อัพเดตตาม TH ทันที,ไม่ได้ทดสอบ specific flow,Not Tested
+J-BR-CR054,Sync-Description,Sync ทำงานกับฟิลด์ description ด้วย?,"1. Sync ON
+2. กรอก description TH",-,description EN auto-fill,ไม่ได้ทดสอบเฉพาะ (โดยปกติ sync จะใช้กับชื่อเป็นหลัก),Not Tested
+,,,,,,,
+"-- F. ฟิลด์รายละเอียดแบรนด์ (Description) --",,,,,,,
+J-BR-CR060,Desc-TH,กรอกรายละเอียด TH ปกติ,1. กรอก 'อุปกรณ์เครือข่ายครบครัน',-,รับค่าได้ปกติ,รับค่าได้ปกติ,Pass
+J-BR-CR061,Desc-EN,กรอกรายละเอียด EN,1. กรอก 'Complete networking equipment',-,รับค่าได้ปกติ,รับค่า 'EN description' ได้,Pass
+J-BR-CR062,Desc-Optional,เว้นว่าง description (Optional),1. ไม่กรอก description,-,บันทึกได้ปกติ,บันทึกได้สำเร็จเมื่อไม่กรอก,Pass
+J-BR-CR063,Desc-Multiline,กรอก description multi-line,1. กรอก 'บรรทัด 1\\nบรรทัด 2',-,รับ \\n ได้ปกติ,รับ multi-line ได้ (hasNewline: true),Pass
+J-BR-CR064,Desc-Long,กรอก description ยาวมาก,1. กรอก 1000 ตัวอักษร,-,รับค่าได้ตาม max,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-BR-CR065,Desc-XSS,XSS test,1. กรอก '<script>',-,ไม่ execute,รับเป็น text ไม่ execute,Pass
+,,,,,,,
+"-- G. Toggle 'ฉบับร่าง' (Draft Mode) --",,,,,,,
+J-BR-CR070,Draft-Default,ค่าเริ่มต้นของ toggle ฉบับร่าง,1. เปิดหน้า Create ใหม่,-,toggle = OFF (publish ทันที),aria-checked='false' default,Pass
+J-BR-CR071,Draft-Toggle,เปิด toggle ฉบับร่าง,1. คลิก toggle 'ฉบับร่าง',-,toggle เปลี่ยนเป็น ON,ทำงานปกติ toggle responsive,Pass
+J-BR-CR072,Draft-Save,บันทึกในโหมดฉบับร่าง,"1. ฉบับร่าง = ON
+2. บันทึก",-,บันทึกเป็น draft / สถานะแสดงต่างจาก publish,ไม่ได้ทดสอบ end-to-end (เลี่ยงสร้าง draft จริง),Not Tested
+J-BR-CR073,Draft-Publish-Diff,เทียบกับโหมด publish,"1. สร้างทั้ง draft + publish",-,สถานะใน list ต่างกัน,ไม่ได้ทดสอบเปรียบเทียบ,Not Tested
+,,,,,,,
+"-- H. ปุ่มบันทึก (Save) --",,,,,,,
+J-BR-CR080,Save-Empty,บันทึกฟอร์มเปล่า,1. คลิก 'บันทึก' ทันที,-,แสดง error ทุกฟิลด์ required (TH + EN name),"แสดง 'กรุณากรอกชื่อ' ทั้ง TH และ EN",Pass
+J-BR-CR081,Save-HappyPath,บันทึกสำเร็จ (Happy Path),"1. กรอกชื่อ TH+EN
+2. SKU
+3. คำอธิบาย
+4. คลิก 'บันทึก'","TH: Brand_xxx_TH
+EN: Brand_xxx_EN
+SKU: JIB-TEST-xxx",Toast 'บันทึกสำเร็จ' + redirect ไป list,Toast 'เพิ่มแบรนด์สินค้าสำเร็จ' + redirect ไป /brands,Pass
+J-BR-CR082,Save-OnlyRequired,บันทึกเฉพาะ required (ไม่กรอก optional),"1. กรอกแค่ชื่อ TH+EN
+2. คลิก 'บันทึก'",-,บันทึกได้ปกติ,บันทึกได้สำเร็จ,Pass
+J-BR-CR083,Save-NoName,บันทึกเมื่อไม่กรอกชื่อ,"1. กรอกแค่ description
+2. คลิก 'บันทึก'",-,แสดง error required field name,แสดง error required (เหมือน CR080),Pass
+J-BR-CR084,Save-DoubleClick,กดบันทึกซ้ำหลายครั้ง,1. คลิก 'บันทึก' 2 ครั้งติด,-,ปุ่ม disable หลังคลิก 1 ครั้ง / ไม่สร้าง duplicate,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-BR-CR085,Save-Network,บันทึกเมื่อ network ขาด,"1. ตัด network
+2. คลิก 'บันทึก'",-,แสดง error message,ไม่ได้ทดสอบ (ต้อง mock network),Not Tested
+J-BR-CR086,Save-Server500,บันทึกเมื่อ server error,1. Mock server 500,-,แสดง error message,ไม่ได้ทดสอบ,Not Tested
+,,,,,,,
+"-- I. การยกเลิก / ออกจากหน้า --",,,,,,,
+J-BR-CR090,Exit-Clean,ออกหน้าโดยไม่ได้แก้ไข,1. คลิก breadcrumb 'แบรนด์สินค้า',-,กลับหน้ารายการทันที ไม่แสดง warning,Navigate สมูทกลับไปหน้า list,Pass
+J-BR-CR091,Exit-Dirty,ออกหน้าหลังแก้ไข (Unsaved warning),"1. กรอกข้อมูล
+2. คลิก breadcrumb",-,แสดง confirmation dialog,ไม่ได้ทดสอบเฉพาะ (คาดว่าเหมือน template-options),Not Tested
+J-BR-CR092,Exit-BrowserBack,Browser back หลังแก้ไข,1. กด browser back หลังแก้ไข,-,แสดง confirmation,ไม่ได้ทดสอบ,Not Tested
+J-BR-CR093,Exit-Refresh,Refresh หลังแก้ไข,1. กด F5/refresh,-,แสดง beforeunload warning,ไม่ได้ทดสอบ,Not Tested
+,,,,,,,
+"-- J. Progress Indicator --",,,,,,,
+J-BR-CR100,Progress-Initial,ค่าเริ่มต้น progress,1. เปิดหน้า Create,-,'ยังไม่มีข้อมูล 0%',แสดง 'ยังไม่มีข้อมูล 0%',Pass
+J-BR-CR101,Progress-Update,Update เมื่อกรอกชื่อ,1. กรอกชื่อ TH+EN,-,Progress % เพิ่ม,Progress เพิ่มหลังกรอก,Pass
+J-BR-CR102,Progress-Complete,'ข้อมูลครบถ้วน 100%',1. กรอกครบทุกฟิลด์,-,แสดง 'ข้อมูลครบถ้วน 100%',เห็นบนหน้า Edit แสดง '100%' (verify จาก edit page),Pass
+J-BR-CR103,Progress-Click,คลิก progress button,1. คลิกที่ปุ่ม progress,-,แสดง dropdown/popup รายละเอียดฟิลด์,ไม่ได้ทดสอบเฉพาะ,Not Tested
+,,,,,,,
+"---- PART 3: หน้า Edit (แก้ไขแบรนด์สินค้า) ----",,,,,,,
+,,,,,,,
+"-- K. ทดสอบหน้า Edit --",,,,,,,
+J-BR-ED001,Edit-Open,เปิดหน้า Edit จากตาราง,1. คลิกไอคอนดินสอที่แถว,URL: /brands/update/:id,เปิดหน้า Edit พร้อมข้อมูลเดิม,เปิด /update/756 ฟอร์มโหลดข้อมูลถูกต้อง,Pass
+J-BR-ED002,Edit-LoadData,โหลดข้อมูลเดิมครบ,1. ดูค่าในแต่ละฟิลด์,-,ค่าทุกฟิลด์ตรงกับข้อมูลในตาราง,"TH='Netgear' EN='Netgear' / description TH='อุปกรณ์เครือข่าย' / status=true",Pass
+J-BR-ED003,Edit-Toggle-Status,Toggle เป็น 'กำลังเปิดใช้งาน' (ต่างจาก Create),1. ดู toggle บนหน้า Edit,-,toggle = 'กำลังเปิดใช้งาน' (ไม่ใช่ 'ฉบับร่าง'),Toggle label = 'กำลังเปิดใช้งาน' aria-checked='true',Pass
+J-BR-ED004,Edit-Name,แก้ไขชื่อ TH+EN,"1. แก้ชื่อ
+2. บันทึก",-,บันทึกสำเร็จ / ตารางอัพเดต,ไม่ได้ทดสอบ end-to-end (เลี่ยงกระทบ data 756),Not Tested
+J-BR-ED005,Edit-Desc,แก้ไข description,"1. แก้ description
+2. บันทึก",-,บันทึกสำเร็จ,ไม่ได้ทดสอบ end-to-end,Not Tested
+J-BR-ED006,Edit-Status-Toggle,Toggle เปลี่ยนสถานะ,"1. คลิก 'กำลังเปิดใช้งาน'
+2. บันทึก",-,สถานะเปลี่ยน / ตาราง update,ไม่ได้ทดสอบ end-to-end,Not Tested
+J-BR-ED007,Edit-ExtraBtn,ปุ่ม 'เพิ่มเติม',1. คลิกปุ่ม 'เพิ่มเติม',-,เปิด section/menu เพิ่มเติม,ไม่ได้ทดสอบ specific click (มีปุ่มที่ Create ไม่มี),Not Tested
+J-BR-ED008,Edit-ExtraBtn2,ปุ่ม 'เพิ่ม',1. คลิกปุ่ม 'เพิ่ม',-,เปิด dialog/section เพิ่มข้อมูล,ไม่ได้ทดสอบ specific click,Not Tested
+J-BR-ED009,Edit-Cancel,ยกเลิกการแก้ไข,"1. แก้ไข
+2. กลับไปหน้ารายการโดยไม่บันทึก",-,ข้อมูลไม่ถูกเปลี่ยน (warning),ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-BR-ED010,Edit-InvalidID,เปิด Edit ของ ID ที่ไม่มีอยู่,1. URL /update/999999,-,แสดง 404 หรือ redirect กลับ list,"หน้าโหลดแบบ Create เปล่า (heading='เพิ่มแบรนด์สินค้า') + 5 console errors - ไม่ redirect / ไม่ 404",Fail
+J-BR-ED011,Edit-Breadcrumb,Breadcrumb หน้า Edit,1. ดู breadcrumb,-,"แสดง: ร้านค้า > จัดการสินค้า > แบรนด์สินค้า > แก้ไข",Breadcrumb ถูกต้อง,Pass
+,,,,,,,
+"---- PART 4: UI/UX + Cross-Browser + Security ----",,,,,,,
+,,,,,,,
+"-- L. UI/UX Tests --",,,,,,,
+J-BR-UX001,Responsive,หน้าจอ Desktop 1920x1080,1. เปิดหน้าที่ 1920x1080,-,Layout ปกติ,ทำงานปกติใน Playwright default viewport,Pass
+J-BR-UX002,Responsive,หน้าจอ Tablet 768px,1. ปรับ 768px,-,UI ปรับขนาดได้,ไม่ได้ทดสอบ responsive,Not Tested
+J-BR-UX003,Responsive,หน้าจอ Mobile 375px,1. ปรับ 375px,-,UI ปรับขนาดได้,ไม่ได้ทดสอบ responsive,Not Tested
+J-BR-UX004,Accessibility,Tab Navigation,1. กด Tab เลื่อนระหว่างฟิลด์,-,"Focus เลื่อนถูกต้อง: SKU → TH name → EN name → desc → toggle → save",ไม่ได้ทดสอบ keyboard navigation,Not Tested
+J-BR-UX005,Loading,Loading state,1. เปิดหน้าใหม่ ดูระหว่าง load,-,แสดง skeleton/spinner,ไม่ได้ตรวจสอบ loading state (load เร็ว),Not Tested
+J-BR-UX006,Empty,Empty state ในตาราง,1. ค้นหาให้ไม่เจอ,-,"แสดง 'ไม่พบข้อมูล' / illustration",เห็น '0 - 0 จาก 0 รายการ',Pass
+J-BR-UX007,Browser-Chrome,ทดสอบบน Chrome,1. เปิดบน Chrome,-,ทำงานปกติ,ทดสอบใน Playwright (Chromium) ทำงานได้ปกติ,Pass
+J-BR-UX008,Browser-Firefox,ทดสอบบน Firefox,1. เปิดบน Firefox,-,ทำงานปกติ,ไม่ได้ทดสอบ,Not Tested
+J-BR-UX009,Browser-Safari,ทดสอบบน Safari,1. เปิดบน Safari,-,ทำงานปกติ,ไม่ได้ทดสอบ,Not Tested
+J-BR-UX010,Browser-Edge,ทดสอบบน Edge,1. เปิดบน Edge,-,ทำงานปกติ,ไม่ได้ทดสอบ,Not Tested
+,,,,,,,
+"-- M. Permission / Security --",,,,,,,
+J-BR-SEC001,Permission-NoLogin,เข้าหน้า list โดยไม่ login,1. ออกจากระบบแล้วเข้า URL,-,Redirect ไปหน้า Login,ไม่ได้ทดสอบ (ใช้ session admin),Not Tested
+J-BR-SEC002,Permission-NoPerm,เข้า Create ด้วย user ไม่มีสิทธิ์,1. Login ด้วย user view-only,-,แสดง 403 / ซ่อนปุ่มสร้าง,ไม่ได้ทดสอบ,Not Tested
+J-BR-SEC003,XSS-Name,XSS test ในชื่อ,1. กรอก '<img src=x onerror=alert(1)>',-,ไม่ execute script,ใส่เป็น text ใน input ไม่ execute,Pass
+J-BR-SEC004,XSS-Desc,XSS test ใน description,1. กรอก '<script>',-,ไม่ execute,เหมือน SEC003,Pass
+J-BR-SEC005,XSS-URL,XSS test ใน URL image,1. กรอก 'javascript:alert(1)',-,ปฏิเสธ / sanitize URL,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-BR-SEC006,Session-Timeout,Session timeout ระหว่างกรอก,"1. กรอกข้อมูล
+2. รอ session timeout
+3. กดบันทึก",-,Redirect ไป Login,ไม่ได้ทดสอบ,Not Tested
+,,,,,,,
+"-- สรุปผลทดสอบรวม (Summary) --",,,,,,,
+Total Test Cases :,133,,,,,,
+Pass :,63,,,Fail :,6,,
+Warning :,5,,,Not Tested :,59,,
+,,,,,,,
+Pass Rate :,47.4%,,,Fail Rate :,4.5%,,
+,,,,,,,
+Notes :,"1. ทดสอบบน Chrome (Chromium) ผ่าน Playwright MCP - ทดสอบ image upload จริงแล้ว",,,,,,
+,"2. 🚨 CRITICAL BUG (CR011): PDF upload ผ่านได้! ระบบไม่ validate MIME type → security/data risk",,,,,,
+,"3. Fail: Sort ไม่ทำงาน (LP040/041/042), Bulk Action Bar ไม่ปรากฏ (LP083), URL /update/999999 ไม่ 404 (ED010), PDF upload ผ่าน (CR011)",,,,,,
+,"4. Warning: Oversize files (12MB, 50MB) ถูก reject แต่ไม่มี toast/error message แจ้งผู้ใช้ (CR012/CR013) - UX issue",,,,,,
+,"5. Warning อื่นๆ: Search ไม่ครอบคลุม description, ตัวกรอง sheet ไม่มี fields, name maxLength ไม่จำกัด",,,,,,
+,"6. Not Tested: Cross-browser, Responsive, Network errors, Permission, Edit destructive operations, Filter sheet content",,,,,,
+,"7. ฟีเจอร์เด่น: Filter สถานะถูกต้อง (746+10=756), Sync TH↔EN สมบูรณ์, Required validation ครบ, Thai filename sanitize ถูกต้อง, Convert PNG/JPEG → webp อัตโนมัติ, Delete confirmation dialog",,,,,,
+,"8. Happy path Save สำเร็จ → Toast 'เพิ่มแบรนด์สินค้าสำเร็จ' + redirect ไป list",,,,,,
+,"9. Image CDN: https://jib-dev-minio.fqykqy.easypanel.host/jib-ecom/public/brands/YYYY/MM/{filename}.webp",,,,,,

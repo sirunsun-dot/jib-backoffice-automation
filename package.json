@@ -11,10 +11,22 @@
     "test": "npm run clean:report && npm run cy:run; npm run merge:report && npm run gen:html",
     "test:category": "npm run clean:report && cypress run --spec cypress/e2e/category.cy.js; npm run merge:report && npm run gen:html",
     "test:template": "npm run clean:report && cypress run --spec cypress/e2e/template-attributes.cy.js; npm run merge:report && npm run gen:html",
+    "screenshots:template": "cypress run --spec cypress/e2e/template-attributes-screenshots.cy.js --browser chrome --config viewportWidth=1920,viewportHeight=1080 && node scripts/copy-manual-screenshots.js template-attributes-screenshots.cy.js/template-attributes-manual template-attributes",
+    "screenshots:promotions": "cypress run --spec cypress/e2e/promotions-screenshots.cy.js --browser chrome --config viewportWidth=1920,viewportHeight=1080 && node scripts/copy-manual-screenshots.js promotions-screenshots.cy.js/promotions-manual promotions",
+    "manual:pdf:template": "node scripts/generate-manual-pdf.js เทมเพลตคุณสมบัติ-คู่มือผู้ใช้.md",
+    "manual:pdf:promotions": "node scripts/generate-manual-pdf.js โปรโมชั่น-คู่มือผู้ใช้.md",
+    "manual:template": "npm run screenshots:template && npm run manual:pdf:template",
+    "manual:promotions": "npm run screenshots:promotions && npm run manual:pdf:promotions",
+    "screenshots:free-gifts": "cypress run --spec cypress/e2e/free-gifts-screenshots.cy.js --browser chrome --config viewportWidth=1920,viewportHeight=1080 && node scripts/copy-manual-screenshots.js free-gifts-screenshots.cy.js/free-gifts-manual free-gifts",
+    "manual:pdf:free-gifts": "node scripts/generate-manual-pdf.js ของแถม-คู่มือผู้ใช้.md",
+    "manual:free-gifts": "npm run screenshots:free-gifts && npm run manual:pdf:free-gifts",
     "test:brand": "npm run clean:report && cypress run --spec cypress/e2e/brand.cy.js; npm run merge:report && npm run gen:html",
     "test:supplier": "npm run clean:report && cypress run --spec cypress/e2e/supplier.cy.js; npm run merge:report && npm run gen:html",
     "test:product": "npm run clean:report && cypress run --spec cypress/e2e/product.cy.js; npm run merge:report && npm run gen:html",
     "test:tag": "npm run clean:report && cypress run --spec cypress/e2e/tag.cy.js; npm run merge:report && npm run gen:html",
+    "test:promotions": "npm run clean:report && cypress run --spec cypress/e2e/promotions.cy.js; npm run merge:report && npm run gen:html",
+    "test:free-gifts": "npm run clean:report && cypress run --spec cypress/e2e/free-gifts.cy.js; npm run merge:report && npm run gen:html",
+    "test:coupons": "npm run clean:report && cypress run --spec cypress/e2e/coupons.cy.js; npm run merge:report && npm run gen:html",
     "open": "cypress open"
   },
   "keywords": [],
@@ -23,9 +35,11 @@
   "type": "commonjs",
   "devDependencies": {
     "cypress": "^15.11.0",
+    "marked": "^15.0.12",
     "mochawesome": "^7.1.4",
     "mochawesome-merge": "^5.1.1",
     "mochawesome-report-generator": "^6.3.2",
-    "playwright-webkit": "^1.60.0"
+    "playwright-webkit": "^1.60.0",
+    "puppeteer": "^24.43.1"
   }
 }

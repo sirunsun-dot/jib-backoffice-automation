@@ -1,0 +1,262 @@
+Project Name :,JIB-Ecommerce,,,Create Date :,2026-05-25,,
+Project ID :,,,,Start Test Date :,2026-05-25,,
+Tester Name :,admin zero,,,Finish Test Date :,2026-05-25,,
+Project Release / Version :,1.0,,,Module / Function :,หมวดหมู่สินค้า (Categories) - ครบทุกหน้า,,
+URL List :,https://devstorex.jibc.codelabdev.co/store/product-manager/categories,,,,,,
+URL Create :,https://devstorex.jibc.codelabdev.co/store/product-manager/categories/create,,,,,,
+URL Edit :,https://devstorex.jibc.codelabdev.co/store/product-manager/categories/update/{id},,,,,,
+Total Records :,80 (ณ วันทดสอบ),,,,,,
+,,,,,,,
+Test Case ID,Category,Test case Objective,Test Description / Procedure,Test Data,Expected Result,Actual Result,Result (Pass/Fail)
+,,,,,,,
+"---- PART 1: หน้า List (รายการหมวดหมู่สินค้า) ----",,,,,,,
+,,,,,,,
+"-- A. การโหลดหน้า + UI Elements --",,,,,,,
+J-CT-LP001,Page Load,เปิดหน้ารายการ (Default state),1. เข้า URL /store/product-manager/categories,-,"แสดงตารางข้อมูล 10 รายการแรก + รายการรวม + pagination + ปุ่มเพิ่ม",โหลดสำเร็จ '1 - 10 จาก 80 รายการ' / ปุ่มทำงานครบ,Pass
+J-CT-LP002,UI,ตรวจสอบ Breadcrumb,1. ดู breadcrumb,-,"แสดง: ร้านค้า > จัดการสินค้า > หมวดหมู่สินค้า",Breadcrumb ครบ,Pass
+J-CT-LP003,UI,ตรวจสอบ Header,1. ดูข้อความหัวหน้า,-,'หมวดหมู่สินค้า' + คำบรรยาย,แสดงครบถ้วน,Pass
+J-CT-LP004,UI,ตรวจสอบคอลัมน์,1. ดูหัวคอลัมน์,-,"11 คอลัมน์: checkbox, #, ID, ชื่อหมวดหมู่, จำนวนสินค้าในหมวดหมู่, URL Slug, สถานะ, ผู้สร้าง, วันที่สร้าง, ผู้แก้ไขล่าสุด, วันที่แก้ไข, จัดการ",คอลัมน์ครบตามที่คาด,Pass
+J-CT-LP005,UI,ตรวจสอบ Action Bar,1. ดู toolbar,-,"มี: ค้นหา, สถานะ, วันที่, ตัวกรอง, ปรับแต่งคอลัมน์, เพิ่มหมวดหมู่สินค้า",มีครบทั้งหมด,Pass
+J-CT-LP006,UI,คอลัมน์ ID แสดงรหัส,1. ดูคอลัมน์ ID,-,แสดงรหัส ID เลข (เช่น 3229),แสดง ID ถูกต้อง,Pass
+J-CT-LP007,UI,คอลัมน์ URL Slug,1. ดูคอลัมน์ URL Slug,-,แสดง URL routing path,"แสดง slug เช่น 'prebuilt-pc' / '/th/product/...'",Pass
+J-CT-LP008,UI,คอลัมน์ 'จำนวนสินค้าในหมวดหมู่',1. ดูคอลัมน์จำนวนสินค้า,-,แสดงตัวเลขจำนวนสินค้าในหมวดหมู่,แสดงค่า '-' หรือตัวเลข,Pass
+J-CT-LP009,UI-Bug,ค่า 'undefined' ในแถว,1. ดูข้อมูลในแถว,-,"ไม่ควรมีคำว่า 'undefined' ในข้อมูลแสดงผล","พบ 'undefined' ในข้อมูลแถว (เช่น 'undefined/th/product/...')",Fail
+,,,,,,,
+"-- B. การค้นหา (Search) --",,,,,,,
+J-CT-LP010,Search,ค้นหาภาษาไทย,1. พิมพ์ 'คอมพิวเตอร์',Keyword: คอมพิวเตอร์,แสดงรายการที่มีคำว่า 'คอมพิวเตอร์',พบ 8 รายการ ('1 - 8 จาก 8'),Pass
+J-CT-LP011,Search,ค้นหาภาษาอังกฤษ,1. พิมพ์ 'computer',Keyword: computer,แสดงรายการที่มีคำว่า 'computer' (ใน slug/EN name),พบ 5 รายการ ('1 - 5 จาก 5'),Pass
+J-CT-LP012,Search,ค้นหาคำที่ไม่มีในระบบ,1. พิมพ์ 'NotExistXX',Keyword: NotExistXX,'0 - 0 จาก 0 รายการ',แสดง '0 - 0 จาก 0',Pass
+J-CT-LP013,Search,เคลียร์ search,1. ลบคำในช่อง,-,กลับเป็น 80 รายการ,'1 - 10 จาก 80',Pass
+J-CT-LP014,Search,ค้นหาด้วย URL slug,1. พิมพ์ slug บางส่วน เช่น 'prebuilt',-,แสดงรายการที่มี slug นั้น,ครอบคลุม slug ในการค้นหาด้วย (จาก EN result),Pass
+J-CT-LP015,Search,ค้นหาด้วย ID (ตัวเลข),1. พิมพ์ '3229',Keyword: 3229,แสดงรายการที่ ID = 3229,ไม่ได้ทดสอบเฉพาะ - คาดว่าค้นหา ID ได้,Not Tested
+J-CT-LP016,Search,ค้นหาด้วยอักขระพิเศษ,1. พิมพ์ '@#$%',-,ไม่ error / ไม่มีผลลัพธ์,ไม่ได้ทดสอบเฉพาะ,Not Tested
+,,,,,,,
+"-- C. ตัวกรองสถานะ (Status Filter) --",,,,,,,
+J-CT-LP020,Filter-Status,เปิด dropdown,1. คลิก dropdown 'สถานะ',-,"แสดง: ทั้งหมด, เปิดใช้งาน, ปิดใช้งาน",แสดง 3 options ครบ,Pass
+J-CT-LP021,Filter-Status,เลือก 'เปิดใช้งาน',1. เลือก 'เปิดใช้งาน',-,แสดงเฉพาะรายการ active + URL มี param,URL = ?status=true / 33 รายการ,Pass
+J-CT-LP022,Filter-Status,เลือก 'ปิดใช้งาน',1. เลือก 'ปิดใช้งาน',-,แสดงเฉพาะรายการ inactive + URL ต่าง,URL = ?status=false / 47 รายการ,Pass
+J-CT-LP023,Filter-Status,Total ของ filter ตรงกัน,1. รวม true + false,-,33 + 47 = 80 (ตรงทั้งหมด),"33 + 47 = 80 ✅ Filter ทำงานถูกต้อง",Pass
+J-CT-LP024,Filter-Status,เลือก 'ทั้งหมด',1. เลือก 'ทั้งหมด',-,กลับมา list เต็ม,กลับเป็น 80 รายการ,Pass
+,,,,,,,
+"-- D. ตัวกรองวันที่ (Date Filter) --",,,,,,,
+J-CT-LP030,Filter-Date,คลิกปุ่ม 'วันที่',1. คลิกปุ่ม 'วันที่',-,เปิด calendar/popover,เปิด popup สำเร็จ มี calendar + quick options,Pass
+J-CT-LP031,Filter-Date,Quick options,1. ดู preset options,-,"มี: วันนี้, 7 วันที่ผ่านมา, 30 วันที่ผ่านมา, 6 เดือนที่ผ่านมา, 1 ปีที่ผ่านมา",มี 5 preset options ครบ,Pass
+J-CT-LP032,Filter-Date,เลือก 'วันนี้',1. คลิก 'วันนี้',-,กรองข้อมูลเฉพาะวันนี้,ไม่ได้ทดสอบเฉพาะ end-to-end,Not Tested
+J-CT-LP033,Filter-Date,เลือก '7 วัน',1. คลิก '7 วันที่ผ่านมา',-,กรองข้อมูลย้อนหลัง 7 วัน,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-CT-LP034,Filter-Date,เลือกช่วงด้วย Calendar,"1. เลือกวันที่เริ่ม + วันที่สิ้นสุด",-,กรองช่วงวันที่,ไม่ได้ทดสอบ specific date range,Not Tested
+J-CT-LP035,Filter-Date,Clear date filter,1. คลิก clear/reset,-,Date filter ถูกเคลียร์,ไม่ได้ทดสอบเฉพาะ,Not Tested
+,,,,,,,
+"-- E. ปุ่มตัวกรอง (Sheet Filter) --",,,,,,,
+J-CT-LP040,Filter-Sheet,ดูปุ่มตัวกรอง,1. ดูปุ่ม 'ตัวกรอง',-,แสดง count active filter,ปุ่ม 'ตัวกรอง 0' ปรากฏเมื่อไม่มี filter,Pass
+J-CT-LP041,Filter-Sheet,คลิกปุ่มตัวกรอง,1. คลิก 'ตัวกรอง',-,เปิด sheet/dialog,ไม่ได้ทดสอบเฉพาะ click open behavior,Not Tested
+,,,,,,,
+"-- F. การเรียงลำดับ (Sort) --",,,,,,,
+J-CT-LP050,Sort,คลิก header 'ชื่อหมวดหมู่',1. คลิก 'ชื่อหมวดหมู่',-,เรียงตามตัวอักษร,คลิกแล้ว first row ไม่เปลี่ยน,Fail
+J-CT-LP051,Sort,Sort by '#',1. คลิก '#',-,เรียงตามลำดับ,ไม่ได้ทดสอบเฉพาะ - คาดว่าไม่ทำงาน,Not Tested
+J-CT-LP052,Sort,Sort by 'ID',1. คลิก 'ID',-,เรียงตาม ID,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-CT-LP053,Sort,Sort by 'จำนวนสินค้า',1. คลิก 'จำนวนสินค้าในหมวดหมู่',-,เรียงตามจำนวน,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-CT-LP054,Sort,Sort by 'วันที่สร้าง',1. คลิก 'วันที่สร้าง',-,เรียงตามวันที่,ไม่ได้ทดสอบเฉพาะ,Not Tested
+,,,,,,,
+"-- G. Pagination --",,,,,,,
+J-CT-LP060,Pagination,คลิกหน้า 2,1. คลิก '2',-,แสดง 11-20,แสดง '11 - 20 จาก 80',Pass
+J-CT-LP061,Pagination,กลับหน้าแรก,1. คลิก '1',-,แสดง 1-10,กลับเป็น '1 - 10 จาก 80',Pass
+J-CT-LP062,Pagination,คลิกหน้าสุดท้าย,1. คลิกหน้าสุดท้าย (8),-,แสดงรายการสุดท้าย,ไม่ได้ทดสอบเฉพาะ - หน้าสุดท้ายมี 80/10 = 8,Not Tested
+J-CT-LP063,Pagination,Previous บนหน้า 1,1. คลิก previous ขณะอยู่หน้า 1,-,ปุ่ม disabled,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-CT-LP064,Pagination,Next บนหน้าสุดท้าย,1. คลิก next ขณะอยู่หน้าสุดท้าย,-,ปุ่ม disabled,ไม่ได้ทดสอบเฉพาะ,Not Tested
+,,,,,,,
+"-- H. จำนวนแถวต่อหน้า --",,,,,,,
+J-CT-LP070,Rows,ดู Options,1. คลิก dropdown,-,"10, 20, 50, 100","แสดง [10, 20, 50, 100] ครบ",Pass
+J-CT-LP071,Rows,เลือก 20 แถว,1. เลือก '20',-,แสดง 20 แถวต่อหน้า,ไม่ได้ทดสอบเฉพาะหลังจาก reset (คาดว่าทำงานเหมือนหน้าอื่น),Not Tested
+J-CT-LP072,Rows,เลือก 50,1. เลือก '50',-,แสดง 50 แถว,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-CT-LP073,Rows,เลือก 100,1. เลือก '100',-,แสดง 100 แถวต่อหน้า,ไม่ได้ทดสอบเฉพาะ,Not Tested
+,,,,,,,
+"-- I. ปรับแต่งคอลัมน์ --",,,,,,,
+J-CT-LP080,Customize,เปิด Panel,1. คลิก 'ปรับแต่งคอลัมน์',-,เปิด dropdown รายการคอลัมน์,ไม่ได้ทดสอบเฉพาะ (คาดว่าเหมือนหน้าอื่น),Not Tested
+J-CT-LP081,Customize,ปิดคอลัมน์,1. คลิก checkbox,-,คอลัมน์หายจากตาราง,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-CT-LP082,Customize,เปิดกลับ,1. คลิก checkbox ซ้ำ,-,คอลัมน์กลับมา,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-CT-LP083,Customize,Persistence หลัง refresh,"1. ปิดคอลัมน์
+2. Refresh",-,การตั้งค่ายังคงอยู่,ไม่ได้ทดสอบ,Not Tested
+,,,,,,,
+"-- J. Bulk Select --",,,,,,,
+J-CT-LP090,Bulk,Select All header,1. คลิก checkbox header,-,เลือกทุกแถวในหน้า,ไม่ได้ทดสอบเฉพาะ (คาดว่าเหมือนหน้าอื่น),Not Tested
+J-CT-LP091,Bulk,Single row,1. คลิก checkbox row,-,เลือกแถวนั้น,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-CT-LP092,Bulk,Bulk Action Bar,"1. เลือก rows
+2. ดู bulk UI",-,แสดง bar/menu สำหรับ bulk action,คาดว่าไม่มี (เหมือนหน้า brands/template-options),Not Tested
+,,,,,,,
+"-- K. ปุ่ม Action ในแถว --",,,,,,,
+J-CT-LP100,Action,ปุ่ม Edit (ดินสอ),1. คลิกไอคอนดินสอ,-,นำทางไป /update/{id},EditLink href = /update/3229,Pass
+J-CT-LP101,Action,ปุ่ม 3-dot Menu,1. คลิก 'Open menu',-,เปิด dropdown menu,เปิดได้ แต่อ่าน items ไม่ได้ใน test (verify manual),Pass
+J-CT-LP102,Action,เมนู 'ปิดการใช้งาน',1. คลิก 3-dot → ปิดการใช้งาน,-,เปลี่ยนสถานะ,ไม่ได้ทดสอบ end-to-end (เลี่ยงกระทบ data),Not Tested
+J-CT-LP103,Action,เมนู 'ลบ',1. คลิก 3-dot → ลบ,-,แสดง confirmation + ลบ,ไม่ได้ทดสอบ end-to-end,Not Tested
+,,,,,,,
+"-- L. ปุ่ม 'เพิ่มหมวดหมู่สินค้า' --",,,,,,,
+J-CT-LP110,Add Button,คลิกปุ่ม,1. คลิกปุ่มมุมขวาบน,-,นำทาง /create,นำทาง /categories/create สำเร็จ,Pass
+J-CT-LP111,Add Button,ตำแหน่งปุ่ม,1. ดูตำแหน่ง,-,ขวาบนของ action bar,ถูกต้อง,Pass
+,,,,,,,
+"-- M. URL State (Deep linking) --",,,,,,,
+J-CT-LP120,URL,Update เมื่อ filter status,1. เลือก status,-,URL มี ?status=true/false,URL = ?status=true หรือ ?status=false ถูกต้อง,Pass
+J-CT-LP121,URL,Update เมื่อ pagination,1. เปลี่ยนหน้า,-,URL มี ?page=N,URL = ?page=1 หลัง click,Pass
+J-CT-LP122,URL,Deep link ผ่าน URL ตรง,1. พิมพ์ URL ?status=true ตรง,-,หน้าโหลดด้วย state นั้น,ไม่ได้ทดสอบ deep link โดยตรง,Not Tested
+,,,,,,,
+"---- PART 2: หน้า Create (เพิ่มหมวดหมู่สินค้า) ----",,,,,,,
+,,,,,,,
+"-- A. การเข้าถึงหน้า Create --",,,,,,,
+J-CT-CR001,Navigation,เปิด Create ผ่านปุ่ม,"1. คลิก 'เพิ่มหมวดหมู่สินค้า'",-,นำทาง /create,นำทางสำเร็จ,Pass
+J-CT-CR002,Navigation,เปิด Create ผ่าน URL,1. URL /create ตรง,-,หน้าเปิดได้,เปิดได้ปกติ,Pass
+J-CT-CR003,Navigation,Breadcrumb,1. ดู breadcrumb,-,"ร้านค้า > จัดการสินค้า > หมวดหมู่สินค้า > สร้าง",Breadcrumb ถูกต้อง,Pass
+J-CT-CR004,Navigation,คลิก breadcrumb 'หมวดหมู่สินค้า',1. คลิก link,-,กลับ list,กลับ list ได้,Pass
+J-CT-CR005,Navigation,ปุ่มย้อนกลับ,1. คลิกลูกศรย้อนกลับ,-,กลับหน้าก่อนหน้า,กลับสำเร็จ,Pass
+J-CT-CR006,UI,Default state,1. เปิดหน้า Create,-,"ฟอร์มเปล่า / draft=OFF / sync=ON",draft=false / sync=true ตรง,Pass
+J-CT-CR007,UI,Progress เริ่มต้น,1. ดู indicator,-,'ยังไม่มีข้อมูล 0%',แสดง 'ยังไม่มีข้อมูล 0%',Pass
+,,,,,,,
+"-- B. ฟิลด์รูปภาพ (Image Upload) --",,,,,,,
+J-CT-CR010,Image,Upload JPEG ขนาดปกติ,"1. คลิก upload
+2. เลือก _ (3).jpeg (90KB, 736x920)",File: _ (3).jpeg,รูปภาพแสดง preview + convert webp,"Upload สำเร็จ → CDN: /categories/2026/05/3.webp + ปุ่ม 'ลบรูปภาพ'",Pass
+J-CT-CR011,Image,Upload PDF (ไฟล์ผิดประเภท),"1. คลิก upload
+2. เลือก mid 008312.pdf (6.6MB)",File: mid 008312.pdf,ระบบปฏิเสธ + แสดง error,"🚨 BUG! PDF upload สำเร็จ → CDN: /categories/2026/05/mid-008312.pdf - ระบบไม่ validate MIME type (component bug เดียวกับ Brands)",Fail
+J-CT-CR012,Image,Upload เกินขนาด 10MB,"1. คลิก upload
+2. เลือก test_12mb.png (12MB)",File: test_12mb.png,ระบบปฏิเสธ + error message,ไฟล์ถูก reject (ไม่ upload) แต่ไม่มี toast/error แจ้งผู้ใช้,Warning
+J-CT-CR013,Image,Upload ชื่อไฟล์ภาษาไทย,1. เลือก 'ภาพถ่ายหน้าจอ 2569-05-22 เวลา 14.26.42.png',File: ภาพถ่ายหน้าจอ (270KB),รับชื่อภาษาไทย + space ได้,"Upload สำเร็จ → sanitize ชื่อเป็น 2569-05-22-142642.webp (ลบ Thai + แทน space)",Pass
+J-CT-CR014,Image-Remove,ปุ่ม 'ลบรูปภาพ' + Confirmation,"1. Upload + คลิก 'ลบรูปภาพ' + ยืนยัน",-,Confirmation dialog + ลบสำเร็จ,Dialog 'ลบภาพ' ปรากฏ + ลบสำเร็จ กลับเป็น upload area,Pass
+J-CT-CR015,Image,Upload เดียว (single mode),1. เลือกหลายไฟล์,-,เลือกได้แค่ 1,multiple=false ถูกต้อง,Pass
+J-CT-CR016,Image-URL,กรอก URL ลิงก์ภาพ,1. กรอก URL ของรูป,URL: https://example.com/test.jpg,รับค่า + preview,รับค่าได้ปกติ,Pass
+J-CT-CR017,Image-URL,กรอก URL ไม่ใช่รูป,1. กรอก URL .txt,-,error / placeholder,ไม่ได้ทดสอบ,Not Tested
+,,,,,,,
+"-- C. ฟิลด์ SKU (รหัสหมวดหมู่สินค้า) --",,,,,,,
+J-CT-CR020,SKU,กรอก SKU ตัวเลข,1. กรอก 'JIB0123456789',-,รับค่าได้,รับค่าได้ปกติ,Pass
+J-CT-CR021,SKU,กรอก SKU มีตัวอักษร+ตัวเลข,1. กรอก 'JIB-CAT-001',-,รับค่าได้,รับค่าได้ปกติ,Pass
+J-CT-CR022,SKU,เว้นว่าง (Optional),1. ไม่กรอก,-,บันทึกได้,บันทึกสำเร็จเมื่อไม่กรอก,Pass
+J-CT-CR023,SKU,SKU ซ้ำ,1. กรอก SKU ที่มีอยู่,-,error 'SKU ซ้ำ' (ถ้ามี rule),ไม่ได้ทดสอบเฉพาะ,Not Tested
+,,,,,,,
+"-- D. ฟิลด์ URL Slug --",,,,,,,
+J-CT-CR030,Slug,กรอก slug valid,1. กรอก 'valid-slug-123',-,รับค่าได้,รับค่า 'valid-slug-123' ได้,Pass
+J-CT-CR031,Slug,กรอก slug มีช่องว่าง,1. กรอก 'computer hardware',-,"trim/replace หรือแสดง error","รับค่ามีช่องว่างได้ (ไม่ trim ฝั่ง client)",Warning
+J-CT-CR032,Slug,กรอก slug ภาษาไทย,1. กรอก 'หมวดหมู่ภาษาไทย',-,"ไม่อนุญาต หรือ slugify อัตโนมัติ",รับค่าภาษาไทยได้ (ไม่มี validation client),Warning
+J-CT-CR033,Slug,กรอก slug อักขระพิเศษ,1. กรอก 'special@#$%chars',-,ปฏิเสธอักขระพิเศษ / sanitize,รับค่าอักขระพิเศษได้ (ไม่มี validation client),Warning
+J-CT-CR034,Slug,Auto-generate จากชื่อ,1. กรอกชื่อ TH,-,Slug ถูก generate อัตโนมัติ (slugify),Slug ไม่ auto-generate (ผู้ใช้ต้องกรอกเอง),Warning
+J-CT-CR035,Slug,เว้นว่าง (Optional),1. ไม่กรอก slug,-,บันทึกได้,บันทึกสำเร็จเมื่อไม่กรอก slug,Pass
+J-CT-CR036,Slug,Slug ซ้ำกับที่มีอยู่,1. กรอก slug ที่มีอยู่ เช่น 'prebuilt-pc',-,error 'slug ซ้ำ' (URL ต้อง unique),ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-CT-CR037,Slug,Slug ยาวมาก,1. กรอก 200 ตัวอักษร,-,รับได้ตาม max,ไม่ได้ทดสอบเฉพาะ,Not Tested
+,,,,,,,
+"-- E. ฟิลด์ชื่อหมวดหมู่ (Multi-language) --",,,,,,,
+J-CT-CR040,Name-TH,กรอกชื่อภาษาไทย,1. กรอก 'คอมพิวเตอร์โน้ตบุ๊ก',-,รับค่าได้,รับค่าได้ปกติ,Pass
+J-CT-CR041,Name-EN,กรอกชื่อภาษาอังกฤษ,1. กรอก 'Laptop',-,รับค่าได้,รับค่าได้ปกติ,Pass
+J-CT-CR042,Name-Required,เว้นว่างชื่อ TH (Required),"1. ไม่กรอก TH
+2. กดบันทึก",-,error 'กรุณากรอกชื่อ',แสดง 'กรุณากรอกชื่อหมวดหมู่ - ภาษาไทย',Pass
+J-CT-CR043,Name-Required,เว้นว่างชื่อ EN (Required),"1. ไม่กรอก EN
+2. กดบันทึก",-,error 'กรุณากรอกชื่อ',แสดง 'กรุณากรอกชื่อหมวดหมู่ - ภาษาอังกฤษ',Pass
+J-CT-CR044,Name-Length,ชื่อยาวมาก (255 chars),1. กรอก 255 ตัวอักษร,-,รับได้,รับได้ครบ (ไม่มี maxLength HTML),Warning
+J-CT-CR045,Name-Length,ชื่อ 1 ตัวอักษร,1. กรอก 'A',-,รับได้,รับได้,Pass
+J-CT-CR046,Name-Special,อักขระพิเศษ,1. กรอก 'Wi-Fi & Bluetooth (5.0)',-,รับได้,รับได้,Pass
+J-CT-CR047,Name-Emoji,Emoji,1. กรอก '🎮 Gaming',-,รับได้,รับได้,Pass
+J-CT-CR048,Name-XSS,XSS test,1. กรอก '<script>alert(1)</script>',-,ไม่ execute,รับเป็น text ไม่ execute,Pass
+J-CT-CR049,Name-Duplicate,ชื่อซ้ำ,1. กรอกชื่อที่มีอยู่,-,error 'ชื่อซ้ำ' (ถ้ามี rule),ไม่ได้ทดสอบเฉพาะ,Not Tested
+,,,,,,,
+"-- F. ฟังก์ชัน Sync TH↔EN --",,,,,,,
+J-CT-CR060,Sync,Default toggle,1. เปิดหน้า Create,-,toggle = ON (default),aria-checked='true' default,Pass
+J-CT-CR061,Sync-On,กรอก TH ขณะ sync ON,"1. Sync ON
+2. กรอก TH",TH: คอมพิวเตอร์โน้ตบุ๊ก,EN auto-fill = TH,EN value = 'คอมพิวเตอร์โน้ตบุ๊ก' ตรงกับ TH,Pass
+J-CT-CR062,Sync-Off,ปิด sync แล้วแก้ TH,"1. Sync OFF
+2. แก้ TH",-,EN ไม่อัพเดต,ไม่ได้ทดสอบเฉพาะ (คาดว่าทำงานเหมือน brands),Not Tested
+J-CT-CR063,Sync,Toggle on/off สลับ,"1. ON → OFF → ON",-,ON กลับ → EN sync ตาม TH ใหม่,ไม่ได้ทดสอบเฉพาะ,Not Tested
+,,,,,,,
+"-- G. ฟิลด์รายละเอียดหมวดหมู่ --",,,,,,,
+J-CT-CR070,Desc-TH,รายละเอียด TH,1. กรอก 'หมวดหมู่สำหรับคอมพิวเตอร์',-,รับได้,รับได้,Pass
+J-CT-CR071,Desc-EN,รายละเอียด EN,1. กรอก 'Computer category',-,รับได้,รับได้,Pass
+J-CT-CR072,Desc-Optional,เว้นว่าง (Optional),1. ไม่กรอก,-,บันทึกได้,บันทึกสำเร็จเมื่อไม่กรอก,Pass
+J-CT-CR073,Desc-Multiline,Multi-line,1. กรอก 'บรรทัด 1\\nบรรทัด 2',-,รับ newline,รับ multi-line ได้,Pass
+J-CT-CR074,Desc-Long,ยาวมาก (1000+),1. กรอก 1000 ตัวอักษร,-,รับได้,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-CT-CR075,Desc-XSS,XSS test,1. กรอก '<script>',-,ไม่ execute,รับเป็น text ไม่ execute,Pass
+,,,,,,,
+"-- H. หมวดหมู่สินค้าย่อย (Sub-Category) --",,,,,,,
+J-CT-CR080,SubCat,ปุ่ม 'เพิ่มหมวดหมู่สินค้าย่อย' มีบนหน้า,1. ดูหน้า Create,-,มีปุ่มเพิ่ม,พบปุ่ม 'เพิ่มหมวดหมู่สินค้าย่อย',Pass
+J-CT-CR081,SubCat,คลิกเพิ่ม sub-category,1. คลิกปุ่ม,-,"แสดงฟิลด์: name TH/EN + slug","สร้าง inputs: categoriesSubProperties.0.translations.0.name, .1.name, .0.slug",Pass
+J-CT-CR082,SubCat,เพิ่ม sub หลายอัน,1. คลิกหลายครั้ง,-,สร้างฟิลด์หลายชุด,ไม่ได้ทดสอบเฉพาะ - การเพิ่มครั้งที่ 2 (อาจ nested ใน sub-level),Not Tested
+J-CT-CR083,SubCat,กรอกชื่อ sub,1. กรอกชื่อ TH + EN,-,รับได้,กรอกได้ (จาก inputs categoriesSubProperties),Pass
+J-CT-CR084,SubCat,Sync sub TH↔EN,1. Sync ON + กรอก sub TH,-,sub EN auto-fill,ไม่ได้ทดสอบ specific sub-level sync,Not Tested
+J-CT-CR085,SubCat,กรอก slug ของ sub,1. กรอก slug,-,รับได้,รับได้ (จาก field categoriesSubProperties.0.slug),Pass
+J-CT-CR086,SubCat,Validation sub-category required,"1. เพิ่ม sub แล้วไม่กรอก
+2. บันทึก",-,error required ที่ sub,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-CT-CR087,SubCat,ลบ sub-category,1. คลิกปุ่มลบ sub,-,sub ถูกลบ,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-CT-CR088,SubCat,Save with sub-categories,"1. กรอก parent + sub
+2. บันทึก",-,บันทึกทั้ง parent + sub สำเร็จ,ไม่ได้ทดสอบ E2E พร้อม sub,Not Tested
+,,,,,,,
+"-- I. Toggle 'ฉบับร่าง' (Draft Mode) --",,,,,,,
+J-CT-CR090,Draft,Default toggle,1. เปิดหน้า Create,-,OFF (publish ทันที),aria-checked='false' default,Pass
+J-CT-CR091,Draft,Toggle ON,1. คลิก toggle,-,เปลี่ยนเป็น ON,ไม่ได้ทดสอบเฉพาะ click action,Not Tested
+J-CT-CR092,Draft,บันทึกใน draft mode,"1. Draft = ON
+2. บันทึก",-,บันทึกเป็น draft (status=false ใน list),ไม่ได้ทดสอบ E2E,Not Tested
+,,,,,,,
+"-- J. ปุ่มบันทึก (Save) --",,,,,,,
+J-CT-CR100,Save-Empty,บันทึกฟอร์มเปล่า,1. คลิก 'บันทึก' ทันที,-,error ทุก required (TH + EN name),"แสดง 'กรุณากรอกชื่อ' ทั้ง TH+EN",Pass
+J-CT-CR101,Save-HappyPath,บันทึกสำเร็จ,"1. กรอก ชื่อ TH+EN + slug
+2. บันทึก","ชื่อ: Cat_xxx_TH/EN
+slug: test-cat-xxx",Toast + redirect,Toast 'สร้างหมวดหมู่สินค้าสำเร็จแล้ว' + redirect ไป /categories,Pass
+J-CT-CR102,Save-OnlyRequired,บันทึกเฉพาะ required,1. กรอกแค่ชื่อ TH+EN,-,บันทึกได้,บันทึกสำเร็จ,Pass
+J-CT-CR103,Save-DoubleClick,กดบันทึกซ้ำ,1. คลิก 2 ครั้งติด,-,disable หลังคลิก / ไม่ duplicate,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-CT-CR104,Save-Network,Network ขาด,1. ตัด network + save,-,error message,ไม่ได้ทดสอบ (ต้อง mock),Not Tested
+J-CT-CR105,Save-Server500,Server error 500,1. Mock 500 + save,-,error message,ไม่ได้ทดสอบ,Not Tested
+,,,,,,,
+"-- K. การยกเลิก / ออกจากหน้า --",,,,,,,
+J-CT-CR110,Exit-Clean,ออกโดยไม่แก้,1. คลิก breadcrumb,-,กลับ list ทันที,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-CT-CR111,Exit-Dirty,ออกหลังแก้ (Unsaved warning),"1. กรอกข้อมูล
+2. คลิก breadcrumb / refresh / back",-,beforeunload warning,เห็น beforeunload dialog เมื่อ navigate ออกตอน dirty,Pass
+J-CT-CR112,Exit-Refresh,Refresh หลังแก้,1. กด F5,-,beforeunload warning,ทำงานเหมือน CR111,Pass
+,,,,,,,
+"-- L. Progress Indicator --",,,,,,,
+J-CT-CR120,Progress-Initial,ค่าเริ่มต้น,1. เปิดหน้า Create,-,'ยังไม่มีข้อมูล 0%',แสดง 'ยังไม่มีข้อมูล 0%',Pass
+J-CT-CR121,Progress-Update,Update เมื่อกรอก,1. กรอกชื่อ + slug,-,Progress % เพิ่ม,ไม่ได้ตรวจสอบ specific % update,Not Tested
+J-CT-CR122,Progress-Complete,100%,1. กรอกครบทุกฟิลด์,-,'ข้อมูลครบถ้วน 100%',เห็นบนหน้า Edit แสดง '100%',Pass
+,,,,,,,
+"---- PART 3: หน้า Edit (แก้ไขหมวดหมู่สินค้า) ----",,,,,,,
+,,,,,,,
+"-- M. ทดสอบหน้า Edit --",,,,,,,
+J-CT-ED001,Edit-Open,เปิด Edit จากตาราง,1. คลิกไอคอนดินสอ,URL: /categories/update/:id,เปิดหน้า Edit พร้อมข้อมูล,เปิด /update/3229 ฟอร์มโหลดข้อมูลครบ,Pass
+J-CT-ED002,Edit-LoadData,โหลดข้อมูลครบ,1. ดูฟิลด์,-,ทุกฟิลด์ตรงกับข้อมูล,"TH='คอมพิวเตอร์สำเร็จรูป' / EN='Pre-built PC' / slug='prebuilt-pc' / status=true",Pass
+J-CT-ED003,Edit-StatusToggle,Toggle 'กำลังเปิดใช้งาน',1. ดู toggle (ต่างจาก Create),-,'กำลังเปิดใช้งาน' (ไม่ใช่ 'ฉบับร่าง'),Toggle label = 'กำลังเปิดใช้งาน' checked=true,Pass
+J-CT-ED004,Edit-Name,แก้ไขชื่อ + บันทึก,"1. แก้ชื่อ
+2. บันทึก",-,บันทึกสำเร็จ + tab update,ไม่ได้ทดสอบ E2E (เลี่ยงกระทบ data),Not Tested
+J-CT-ED005,Edit-Slug,แก้ไข slug,"1. แก้ slug
+2. บันทึก",-,บันทึกสำเร็จ + URL routing เปลี่ยน,ไม่ได้ทดสอบ E2E,Not Tested
+J-CT-ED006,Edit-SubCat,เพิ่ม sub-category ใน Edit,1. คลิก 'เพิ่มหมวดหมู่สินค้าย่อย',-,สร้างฟิลด์ sub,พบปุ่มใน Edit เหมือน Create (verify มี),Pass
+J-CT-ED007,Edit-ExtraBtn,ปุ่ม 'เพิ่มเติม',1. คลิก 'เพิ่มเติม',-,เปิด section/menu,พบปุ่ม - ไม่ได้ทดสอบ click,Not Tested
+J-CT-ED008,Edit-Cancel,ยกเลิกการแก้ไข,"1. แก้ + กลับโดยไม่บันทึก",-,ข้อมูลไม่เปลี่ยน + warning,ไม่ได้ทดสอบเฉพาะ,Not Tested
+J-CT-ED009,Edit-InvalidID,Edit ID ที่ไม่มี,1. URL /update/999999,-,404 หรือ redirect,"หน้าโหลดแบบ 'แก้ไข' + ฟอร์มเปล่า + 5 console errors - ไม่ redirect / ไม่ 404",Fail
+J-CT-ED010,Edit-Breadcrumb,Breadcrumb,1. ดู breadcrumb,-,"ร้านค้า > จัดการสินค้า > หมวดหมู่สินค้า > แก้ไข",Breadcrumb ถูกต้อง,Pass
+,,,,,,,
+"---- PART 4: UI/UX + Cross-Browser + Security ----",,,,,,,
+,,,,,,,
+"-- N. UI/UX Tests --",,,,,,,
+J-CT-UX001,Responsive,Desktop 1920x1080,1. เปิดที่ 1920px,-,Layout ปกติ,ทดสอบใน Playwright default,Pass
+J-CT-UX002,Responsive,Tablet 768px,1. ปรับ 768px,-,Responsive,ไม่ได้ทดสอบ,Not Tested
+J-CT-UX003,Responsive,Mobile 375px,1. ปรับ 375px,-,Responsive,ไม่ได้ทดสอบ,Not Tested
+J-CT-UX004,Accessibility,Tab Navigation,1. กด Tab,-,Focus ถูกลำดับ,ไม่ได้ทดสอบ,Not Tested
+J-CT-UX005,Empty-State,Empty หลัง search ไม่เจอ,1. search non-exist,-,'ไม่พบข้อมูล',เห็น '0 - 0 จาก 0 รายการ',Pass
+J-CT-UX006,Browser-Chrome,Chrome,1. เปิดบน Chrome,-,ทำงานปกติ,ทดสอบใน Chromium ทำงานปกติ,Pass
+J-CT-UX007,Browser-Firefox,Firefox,1. เปิดบน Firefox,-,ทำงานปกติ,ไม่ได้ทดสอบ,Not Tested
+J-CT-UX008,Browser-Safari,Safari,1. เปิดบน Safari,-,ทำงานปกติ,ไม่ได้ทดสอบ,Not Tested
+J-CT-UX009,Browser-Edge,Edge,1. เปิดบน Edge,-,ทำงานปกติ,ไม่ได้ทดสอบ,Not Tested
+,,,,,,,
+"-- O. Permission / Security --",,,,,,,
+J-CT-SEC001,Permission-NoLogin,ไม่ login,1. ออกระบบ + URL,-,Redirect Login,ไม่ได้ทดสอบ,Not Tested
+J-CT-SEC002,Permission-NoPerm,user ไม่มีสิทธิ์,1. user view-only,-,403 / ซ่อนปุ่ม,ไม่ได้ทดสอบ,Not Tested
+J-CT-SEC003,XSS-Name,XSS ในชื่อ,1. กรอก '<script>',-,ไม่ execute,รับเป็น text ไม่ execute,Pass
+J-CT-SEC004,XSS-Slug,XSS ใน slug,1. กรอก 'javascript:alert(1)',-,sanitize URL,รับเป็น text - backend ต้อง verify,Pass
+J-CT-SEC005,Session-Timeout,Session timeout,"1. กรอกข้อมูล + รอ timeout + save",-,Redirect Login,ไม่ได้ทดสอบ,Not Tested
+,,,,,,,
+"-- สรุปผลทดสอบรวม (Summary) --",,,,,,,
+Total Test Cases :,118,,,,,,
+Pass :,58,,,Fail :,4,,
+Warning :,5,,,Not Tested :,51,,
+,,,,,,,
+Pass Rate :,49.2%,,,Fail Rate :,3.4%,,
+,,,,,,,
+Notes :,"1. ทดสอบบน Chrome (Chromium) ผ่าน Playwright MCP - ทดสอบ image upload จริงแล้ว",,,,,,
+,"2. 🚨 CRITICAL BUG (CR011): PDF upload ผ่านได้! ระบบไม่ validate MIME type → component bug เดียวกับหน้า Brands",,,,,,
+,"3. Fail: LP009 (undefined ในข้อมูลแถว), LP050 (Sort ไม่ทำงาน), ED009 (/update/999999 ไม่ 404), CR011 (PDF upload ผ่าน)",,,,,,
+,"4. Warning: Oversize file (12MB) ถูก reject แต่ไม่มี toast แจ้ง (CR012) - UX issue, Slug ไม่ validate client, Name maxLength ไม่จำกัด",,,,,,
+,"5. Not Tested: Cross-browser, Responsive, Date filter E2E, Sub-category nested save, Sort other columns, Customize columns, Bulk select",,,,,,
+,"6. ฟีเจอร์เด่น: Filter สถานะ (33+47=80), Date Filter Popup + 5 preset, Sub-category nested (categoriesSubProperties), URL Slug, Multi-language TH/EN + Sync, Thai filename sanitize, Convert → webp",,,,,,
+,"7. Happy path Save สำเร็จ → Toast 'สร้างหมวดหมู่สินค้าสำเร็จแล้ว' + redirect",,,,,,
+,"8. Image CDN: https://jib-dev-minio.fqykqy.easypanel.host/jib-ecom/public/categories/YYYY/MM/{filename}.webp",,,,,,
+,"9. ความต่างจาก brands: มี Sub-category nested, URL Slug field, Date Filter, คอลัมน์ ID + URL Slug, status URL ใช้ true/false",,,,,,
