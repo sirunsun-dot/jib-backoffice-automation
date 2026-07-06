@@ -1,4 +1,4 @@
-Cypress.Commands.add('loginJIB', (email, password) => {
+Cypress.Commands.add('loginJIB', (email = 'sirun.sun@codelabdev.co', password = 'test123') => {
   cy.visit('https://devstorex.jibc.codelabdev.co/auth/sign-in')
   cy.get('input[name="email"]').type(email)
   cy.get('input[name="password"]').type(password)

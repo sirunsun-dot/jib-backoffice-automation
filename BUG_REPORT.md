@@ -2,7 +2,7 @@
 
 วันที่ทดสอบ: 2026-05-25
 ระบบ: https://devstorex.jibc.codelabdev.co
-บัญชีที่ใช้ทดสอบ: admin00@email.com
+บัญชีที่ใช้ทดสอบ: sirun.sun@codelabdev.co
 หมายเหตุ: Cypress binary ติด macOS Gatekeeper รันด้วย `npx cypress run` ไม่ได้ จึงรันผ่าน Playwright manual ตามสคริปต์เทสที่เขียนไว้
 
 ---
@@ -132,3 +132,47 @@
 1. **BUG #1** Promotions ต้องบังคับมีรายการอย่างน้อย 1 (เหมือน Coupons)
 2. **BUG #2** Free-Gifts ต้องโชว์ error/loading state ตอนกดบันทึก
 3. **BUG #3** Cleanup data ใน Promotions list ที่ชื่อว่างเปล่า
+
+---
+
+## โปรผ่อน 0% (Installment Prozero) — ทดสอบ 2026-07-02
+
+บัญชี: **Demo Login** (`เข้าสู่ระบบ Demo`)  
+สคริปต์: `scripts/run-installment-prozero-create-deep-tests.js`  
+ผล: Pass 31 / Fail 3 / Warning 2 (36 cases)
+
+### IPZ-DATE-001 — วันสิ้นสุดก่อนวันเริ่มยังกด「ใช้งาน」ได้ (High)
+- **หน้า:** `/store/installment/installment-prozero/create`
+- **ขั้นตอน:** เลือกวันสิ้นสุดก่อน แล้วเลือกวันเริ่ม → กด「ใช้งาน」
+- **คาดหวัง:** ปุ่มใช้งาน disabled หรือแสดง error
+- **เกิดขึ้น:** กดใช้งานได้ ไม่มี validation error
+
+### IPZ-PLAN-001 — บันทึกได้โดยไม่เลือกธนาคารในแผน (High)
+- **Test:** J-IPZ-CD036
+- **ขั้นตอน:** กรอกวันที่ + แผน (ไม่เลือกธนาคาร) + สินค้า → บันทึก
+- **คาดหวัง:** validation error
+- **เกิดขึ้น:** API 201 สร้างสำเร็จ
+
+### IPZ-UI-001 — Toggle ปิดสถานะไม่เปลี่ยน state (Medium)
+- **Test:** J-IPZ-CD050
+- **คาดหวัง:** `data-state=unchecked` เมื่อปิด
+- **เกิดขึ้น:** ยังเป็น `checked` (แต่ CD062 บันทึกได้ — ต้องตรวจว่า isActive จริงใน DB)
+
+### IPZ-UI-002 — Progress bar ค้าง 0% ทั้งที่กรอกครบ (Low)
+- **Test:** J-IPZ-CD060–064
+- **เกิดขึ้น:** บันทึกสำเร็จ (api=201) แต่แสดง「ยังไม่มีข้อมูล 0%」
+
+### IPZ-VAL-001 — มีวันที่+แผน แต่ไม่มีสินค้า บันทึกแล้วไม่ขึ้น error (Medium)
+- **Test:** J-IPZ-CD003
+- **คาดหวัง:** error เรื่องสินค้า
+- **เกิดขึ้น:** `errs=[]` ไม่ redirect
+
+### สิ่งที่ทำงานถูกต้อง ✅
+- Validation ฟอร์มว่าง (วันเริ่ม/สิ้นสุด/แผน)
+- Date picker ต้องกด「ใช้งาน」หลังเลือกช่วงวัน
+- ธนาคารครบ 4 รายการ (KBANK, KTC, KTC Proud, KCC)
+- หลายแผน / ลบแผน / งวดไม่ถูกต้อง (0, abc, ว่าง) ไม่ save
+- SKU ปลอม →「ไม่พบ」
+- กฎ 1:1 สินค้า — ไม่ให้เพิ่มซ้ำใน form
+- 409 INSTALLMENT_OVERLAP เมื่อ SKU+ธนาคารทับซ้อน (แสดง「ทับซ้อน」ใน UI)
+- E2E สร้างสำเร็จ 5 รูปแบบ (api=201)

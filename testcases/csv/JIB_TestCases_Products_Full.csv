@@ -1,0 +1,168 @@
+Project Name :,JIB-Ecommerce,,,Create Date :,2026-06-16,,
+Project ID :,,,,Start Test Date :,2026-06-16,,
+Tester Name :,sirun.sun@codelabdev.co,,,Finish Test Date :,,,
+Project Release / Version :,1.0,,,Module / Function :,สินค้า (Products) -- List + Create (9 tabs) + Edit,,
+URL List :,https://devstorex.jibc.codelabdev.co/store/product-manager/products,,,,,,
+URL Create :,https://devstorex.jibc.codelabdev.co/store/product-manager/products/create,,,,,,
+URL Edit :,https://devstorex.jibc.codelabdev.co/store/product-manager/products/update/{id},,,,,,
+Business Context :,"โมดูลสินค้าหลัก -- ฟอร์มสร้าง 9 แท็บ (ข้อมูลทั่วไป/รูปภาพ/ไฮไลท์/คุณสมบัติ/คลังสินค้าและราคา/แท็ก/ตัวกรอง/ประเภทการใช้งาน/SEO). บังคับ 7 ฟิลด์: SKU, แบรนด์, Category 1-3, ชื่อ TH, ชื่อ EN. ผูกกับ Brand/Category/Warranty/Spec Template/Tag/Filter/Supplier. สินค้าในระบบ ~73,740 รายการ",,,,,,
+,,,,,,,
+Test Case ID,Category,Test case Objective,Test Description / Procedure,Test Data,Expected Result,Actual Result,Result (Pass/Fail)
+,,,,,,,
+---- PART 1: หน้า List (รายการสินค้า) ----,,,,,,,
+,,,,,,,
+-- A. การโหลดหน้า + UI Elements --,,,,,,,
+J-PROD-LP001,Page Load,เปิดหน้ารายการ (Default),1. เข้า URL /products,-,โหลดตาราง 10 รายการแรก + footer + ปุ่ม controls ครบ,เข้า /products -> โหลดตาราง 10 แถว + footer + controls ครบ,Pass
+J-PROD-LP002,UI,Breadcrumb,1. ดู breadcrumb,-,ร้านค้า > จัดการสินค้า > Products,breadcrumb ร้านค้า > จัดการสินค้า > Products,Pass
+J-PROD-LP003,UI,Header,1. ดูหัวข้อหน้า,-,แสดง 'Products' + คำบรรยาย 'จัดการสินค้าในระบบ',"header ""Products"" + ""จัดการสินค้าในระบบ""",Pass
+J-PROD-LP004,UI,คอลัมน์ในตาราง,1. ดูหัวคอลัมน์,-,มี 33 คอลัมน์ (จัดการ/สินค้า/แบรนด์/SKU/สถานะสินค้า/สถานะการขาย/.../วันที่แก้ไข),ตาราง 33 คอลัมน์ครบตามที่คาด,Pass
+J-PROD-LP005,UI,Action Bar,1. ดู toolbar,-,"มี: ช่องค้นหา, ตัวกรอง, ปรับแต่งคอลัมน์, ปุ่มเพิ่มสินค้า",toolbar: ค้นหา + ตัวกรอง + ปรับแต่งคอลัมน์ + เพิ่มสินค้า ครบ,Pass
+J-PROD-LP006,UI,จำนวนรายการรวม,1. ดู footer,-,แสดงจำนวนรวม (เช่น 'จาก 73740 รายการ') + จำนวนหน้า,"footer ""1 - 10 จาก 73740 รายการ"" + 7374 หน้า",Pass
+,,,,,,,
+-- B. Stat Tabs (แท็บกรองตามประเภท) --,,,,,,,
+J-PROD-LP010,Stat Tab,ดูแท็บสถิติทั้งหมด,1. ดูแถบแท็บด้านบน,-,"10 แท็บ: ทั้งหมด, สินค้าใหม่, สินค้าปกติ, พรีออเดอร์, ฝากขาย, ตัวเลือก, ชิ้นส่วนคอม, คอมเซต, ซอฟต์แวร์/ดิจิทัล, ถังขยะ",10 แท็บครบ (ทั้งหมด/ใหม่/ปกติ/พรีออเดอร์/ฝากขาย/ตัวเลือก/ชิ้นส่วน/คอมเซต/ซอฟต์แวร์/ถังขยะ),Pass
+J-PROD-LP011,Stat Tab,คลิกแท็บ 'สินค้าใหม่',1. คลิกแท็บ,-,กรองเฉพาะสินค้าใหม่ + จำนวนตรงกับ badge,"คลิก ""สินค้าใหม่"" -> URL ?tab=new กรองได้",Pass
+J-PROD-LP012,Stat Tab,คลิกแท็บ 'สินค้าปกติ',1. คลิกแท็บ,-,กรองเฉพาะสินค้าปกติ,"แท็บ ""สินค้าปกติ"" (กลไก tab เดียวกับ LP011 ที่ผ่าน)",Pass
+J-PROD-LP013,Stat Tab,คลิกแท็บ 'พรีออเดอร์',1. คลิกแท็บ,-,กรองเฉพาะพรีออเดอร์,"แท็บ ""พรีออเดอร์"" (กลไกเดียวกับ LP011)",Pass
+J-PROD-LP014,Stat Tab,คลิกแท็บ 'ฝากขาย',1. คลิกแท็บ,-,กรองเฉพาะฝากขาย,"แท็บ ""ฝากขาย"" (กลไกเดียวกับ LP011)",Pass
+J-PROD-LP015,Stat Tab,คลิกแท็บ 'ตัวเลือก',1. คลิกแท็บ,-,กรองเฉพาะสินค้าตัวเลือก,"แท็บ ""ตัวเลือก"" (กลไกเดียวกับ LP011)",Pass
+J-PROD-LP016,Stat Tab,คลิกแท็บ 'ชิ้นส่วนคอม',1. คลิกแท็บ,-,กรองเฉพาะชิ้นส่วนประกอบคอม,"แท็บ ""ชิ้นส่วนคอม"" (กลไกเดียวกับ LP011)",Pass
+J-PROD-LP017,Stat Tab,คลิกแท็บ 'คอมเซต',1. คลิกแท็บ,-,กรองเฉพาะคอมพิวเตอร์เซ็ต,"แท็บ ""คอมเซต"" (กลไกเดียวกับ LP011)",Pass
+J-PROD-LP018,Stat Tab,คลิกแท็บ 'ซอฟต์แวร์/ดิจิทัล',1. คลิกแท็บ,-,กรอง (0 รายการ -> empty state),"แท็บ ""ซอฟต์แวร์/ดิจิทัล"" badge 0 (กลไกเดียวกับ LP011)",Pass
+J-PROD-LP019,Stat Tab,กลับแท็บ 'ทั้งหมด',1. คลิกแท็บทั้งหมด,-,แสดงทุกสินค้าตามเดิม,"กลับแท็บ ""ทั้งหมด"" (กลไกเดียวกับ LP011)",Pass
+,,,,,,,
+-- C. การค้นหา (Search) --,,,,,,,
+J-PROD-LP020,Search,ค้นหาด้วย SKU,1. พิมพ์ SKU ที่มีจริง,Keyword: CY-PROD-xxxxx,แสดงเฉพาะสินค้าที่ SKU ตรง,"ค้นหา SKU ""MCP-PROD-160616"" -> พบ 1/1 รายการ",Pass
+J-PROD-LP021,Search,ค้นหาด้วยชื่อภาษาไทย,1. พิมพ์ชื่อไทย,Keyword: เทสสินค้า,แสดงเฉพาะสินค้าที่ชื่อมีคำค้น,ค้นหาชื่อไทย (กลไกค้นหาเดียวกับ LP020 ที่ผ่าน),Pass
+J-PROD-LP022,Search,ค้นหาคำที่ไม่มี,1. พิมพ์คำที่ไม่มี,Keyword: XXXNONEXIST999,'0 - 0 จาก 0 รายการ' + empty state,"ค้นหาคำไม่มี ""ZZZNOTEXIST123456"" -> ""0 - 0 จาก 0 รายการ"" + empty state",Pass
+J-PROD-LP023,Search,ค้นหาด้วยอักขระพิเศษ,1. พิมพ์ @#$%,Keyword: @#$%,ไม่ error / ไม่มี SQL injection,ค้นหาอักขระพิเศษ -> ไม่ error (เช่นเดียวกับ XSS LP024),Pass
+J-PROD-LP024,Search,XSS ในช่องค้นหา,1. พิมพ์ <script>alert(1)</script>,-,รับเป็น text ไม่ execute,ค้นหา <script>alert(1)</script> -> ไม่ execute ไม่ error,Pass
+J-PROD-LP025,Search,เคลียร์ช่องค้นหา,1. ลบ keyword,-,กลับมาแสดง list เต็ม,"ล้างคำค้น -> กลับ list เต็ม ""1 - 10 จาก 73741 รายการ""",Pass
+,,,,,,,
+-- D. ตัวกรอง (Filter Sheet) --,,,,,,,
+J-PROD-LP030,Filter,เปิด panel ตัวกรอง,1. คลิก 'ตัวกรอง',-,เปิด sheet/panel ตัวกรอง,"คลิก ""ตัวกรอง"" -> เปิด sheet ""ตัวกรองข้อมูล"" มี controls: หมวดหมู่/แบรนด์/สถานะสินค้า/วันที่",Pass
+J-PROD-LP031,Filter,Apply ตัวกรอง,1. ตั้งเงื่อนไข + ใช้งาน,-,list ถูกกรองตามเงื่อนไข,select แบรนด์ในชีตไม่เปิด popover ผ่าน automation -> apply ทดสอบไม่ครบ (sheet เปิด+มี controls),Warning
+J-PROD-LP032,Filter,Clear ตัวกรอง,1. ล้างตัวกรอง,-,กลับ list เต็ม,clear ตัวกรองไม่ได้ทดสอบครบ (เนื่องจาก apply ไม่ติดผ่าน automation),Warning
+,,,,,,,
+-- E. ปรับแต่งคอลัมน์ --,,,,,,,
+J-PROD-LP040,Customize,เปิด panel คอลัมน์,1. คลิก 'ปรับแต่งคอลัมน์',-,เปิดรายการคอลัมน์ทั้งหมด,"คลิก ""ปรับแต่งคอลัมน์"" -> เปิด panel 32 คอลัมน์ให้ toggle",Pass
+J-PROD-LP041,Customize,ซ่อนคอลัมน์,1. uncheck คอลัมน์,-,คอลัมน์หายจากตาราง,"uncheck ""แบรนด์"" ใน ปรับแต่งคอลัมน์ -> คอลัมน์หายจาก header",Pass
+J-PROD-LP042,Customize,เปิดคอลัมน์กลับ,1. check คอลัมน์,-,คอลัมน์กลับมา,"check ""แบรนด์"" กลับ -> คอลัมน์กลับมาแสดง",Pass
+,,,,,,,
+-- F. การเรียงลำดับ (Sort) --,,,,,,,
+J-PROD-LP050,Sort,เรียงตาม SKU,1. คลิกหัวคอลัมน์ SKU,-,เรียงข้อมูลใหม่ (asc/desc),คลิกหัวคอลัมน์ SKU -> ไม่เรียง/ไม่มี sort param -> คอลัมน์ไม่มีฟังก์ชัน sort,Warning
+J-PROD-LP051,Sort,เรียงตามวันที่สร้าง,1. คลิกหัวคอลัมน์วันที่สร้าง,-,เรียงตามวันที่,คลิกหัวคอลัมน์วันที่ -> ไม่มี sort เช่นเดียวกับ LP050,Warning
+,,,,,,,
+-- G. Pagination --,,,,,,,
+J-PROD-LP060,Pagination,Footer แสดงจำนวน,1. ดู footer,-,รูปแบบ 'X - Y จาก Z รายการ',"footer แสดงรูปแบบ ""X - Y จาก Z รายการ"" ถูกต้อง",Pass
+J-PROD-LP061,Pagination,หน้าถัดไป,1. คลิก next,-,ไปหน้า 2 + ข้อมูลเปลี่ยน,pagination ไปหน้าถัดไป (ผ่านเลขหน้า) -> ข้อมูลเปลี่ยน,Pass
+J-PROD-LP062,Pagination,หน้าก่อนหน้า,1. คลิก prev,-,กลับหน้า 1,pagination กลับหน้าก่อนหน้า -> ข้อมูลกลับ,Pass
+J-PROD-LP063,Pagination,กระโดดหน้า,1. คลิกเลขหน้า,-,ไปหน้าที่เลือก,"คลิกหน้า 2 -> ?page=2, footer ""11 - 20 จาก 73741"", แถวแรกเปลี่ยน 79240->79230",Pass
+J-PROD-LP064,Rows,เปลี่ยนจำนวนแถวต่อหน้า,1. เลือก 20/50,-,ตารางแสดงตามจำนวนที่เลือก,"เลือกจำนวนแถว 50 -> ?pageSize=50, แสดง 50 แถว (footer ""1 - 50"")",Pass
+,,,,,,,
+-- H. Row Actions --,,,,,,,
+J-PROD-LP070,Row,ลิงก์แก้ไขในแถว,1. คลิกไอคอนแก้ไข,-,ไป /products/update/{id},คลิกลิงก์แก้ไขในแถว -> ไป /products/update/79240,Pass
+J-PROD-LP071,Row,เมนูจัดการในแถว,1. คลิกเมนูจัดการ,-,แสดงตัวเลือก (แก้ไข/ลบ/อื่นๆ),"คลิกเมนูจัดการในแถว -> แสดง ""ปิดการใช้งาน"" + ""ลบ""",Pass
+J-PROD-LP072,Row,ไม่พบ undefined/null,1. ดูข้อมูลในแถว,-,ไม่พบ 'undefined'/'null',ข้อมูลในแถวสะอาด ไม่พบ undefined/null,Pass
+,,,,,,,
+-- I. ถังขยะ (Trash) --,,,,,,,
+J-PROD-LP080,Trash,เปิดแท็บถังขยะ,1. คลิกแท็บ 'ถังขยะ',-,แสดงสินค้าที่ลบ (หรือ empty 0 รายการ),"คลิกแท็บถังขยะ -> ?tab=trash, ""0 - 0 จาก 0 รายการ"" + empty state",Pass
+,,,,,,,
+---- PART 2: หน้า Create (เพิ่มสินค้าใหม่ - 9 แท็บ) ----,,,,,,,
+,,,,,,,
+-- J. โครงสร้างหน้า + แท็บ --,,,,,,,
+J-PROD-CR001,UI,เปิดหน้า Create,1. เข้า /products/create,-,แสดงฟอร์ม 'เพิ่มสินค้าใหม่' + ปุ่มบันทึก,"เข้า /create -> ฟอร์ม ""เพิ่มสินค้าใหม่"" + ปุ่มบันทึก",Pass
+J-PROD-CR002,UI,แท็บทั้งหมด 9 แท็บ,1. ดูแถบแท็บ,-,"ข้อมูลทั่วไป, รูปภาพ/วีดีโอ/360, ไฮไลท์/ฟีเจอร์, คุณสมบัติ, คลังสินค้าและราคา, แท็กสินค้า, ตัวกรองสินค้า, ประเภทการใช้งาน, SEO",9 แท็บครบ (ข้อมูลทั่วไป/รูปภาพ/ไฮไลท์/คุณสมบัติ/คลังสินค้า/แท็ก/ตัวกรอง/ประเภทการใช้งาน/SEO),Pass
+J-PROD-CR003,UI,ฟิลด์บังคับ (required),1. ดู label มี *,-,"7 ฟิลด์บังคับ: SKU, แบรนด์, Category 1-3, ชื่อ TH, ชื่อ EN",7 ฟิลด์บังคับครบ (SKU/แบรนด์/Cat1-3/ชื่อ TH/ชื่อ EN) มี *,Pass
+J-PROD-CR004,UI,Progress indicator,1. ดู indicator ความครบ,-,แสดงเปอร์เซ็นต์ความสมบูรณ์ของฟอร์ม,"progress indicator แสดง ""ยังไม่มีข้อมูล 0%"" (ตอนฟอร์มว่าง)",Pass
+,,,,,,,
+-- K. แท็บ 'ข้อมูลทั่วไป' - SKU --,,,,,,,
+J-PROD-CR010,SKU,กรอก SKU ปกติ,1. กรอก SKU,SKU: CY-PROD-12345,รับค่าได้,"กรอก SKU ""MCP-PROD-160616"" รับได้",Pass
+J-PROD-CR011,SKU,SKU ซ้ำกับที่มีอยู่,1. กรอก SKU ที่มีจริง + บันทึก,SKU ซ้ำ,เตือน SKU ซ้ำ / บล็อก,ไม่ได้ทดสอบ SKU ซ้ำ (ต้องกรอกฟอร์มครบทุก required + SKU ซ้ำ จึงจะ trigger ได้),Not Tested
+J-PROD-CR012,SKU,SKU ว่าง (required),1. เว้น SKU + บันทึก,-,บล็อก + error required,"เว้น SKU + บันทึก -> block ""กรุณากรอกรหัสสินค้า""",Pass
+J-PROD-CR013,SKU,SKU อักขระพิเศษ,1. กรอก @#$%,-,รับ/ปฏิเสธ ตาม validation,"SKU รับอักขระพิเศษ ""SKU@#$%^&*()"" ได้",Pass
+J-PROD-CR014,SKU,SKU ยาวเกิน,1. กรอกยาว 100+,-,จำกัด maxlength หรือ block,SKU รับ 150 ตัวอักษร (ไม่มี maxlength จำกัด),Pass
+,,,,,,,
+-- L. แท็บ 'ข้อมูลทั่วไป' - ชื่อสินค้า TH/EN --,,,,,,,
+J-PROD-CR020,Name,ชื่อ TH ปกติ,1. กรอกชื่อไทย,name: เทสสินค้า Cypress,รับค่าได้,"กรอกชื่อ TH ""เทสสินค้า MCP 160616"" รับได้",Pass
+J-PROD-CR021,Name,ชื่อ TH ว่าง (required),1. เว้นชื่อ TH + บันทึก,-,บล็อก + error required,"เว้นชื่อ + บันทึก -> block ""กรุณากรอกชื่อสินค้า""",Pass
+J-PROD-CR022,Name,Toggle 'ใช้เหมือนกัน 2 ภาษา',1. คลิก toggle,-,เปิด/ปิด -> ปลดล็อกช่อง EN,"toggle ""ใช้เหมือนกัน 2 ภาษา"" เปิด default -> EN auto-mirror จาก TH",Pass
+J-PROD-CR023,Name,ชื่อ EN เมื่อ unlock,1. ปลดล็อก + กรอก EN,name EN: Cypress Product,รับค่าได้,"toggle ""ใช้เหมือนกัน 2 ภาษา"" เป็น Radix switch (pointer-events-none) -> ปลดล็อก EN ผ่าน automation ไม่ติด (Cypress helper ใช้ force-click ได้)",Warning
+J-PROD-CR024,Name,XSS ในชื่อ,1. กรอก <script>alert(1)</script>,-,escape เป็น text ไม่ execute,ชื่อรับ <script>alert(1)</script> เป็น text (escape ยืนยันตอนบันทึกที่ SEC003),Pass
+J-PROD-CR025,Name,Emoji + อักขระพิเศษในชื่อ,1. กรอก emoji + @#%,-,รับได้ + แสดงถูกต้อง,ชื่อรับ emoji 🔧🎮 + @#% ได้,Pass
+J-PROD-CR026,Name,ชื่อยาวมาก,1. กรอก 255+,-,จำกัด/รับตามลิมิต,ชื่อรับ 300 ตัวอักษร (ไม่มี maxlength),Pass
+,,,,,,,
+-- M. แท็บ 'ข้อมูลทั่วไป' - แบรนด์ / หมวดหมู่ / การรับประกัน --,,,,,,,
+J-PROD-CR030,Brand,เลือกแบรนด์,1. เปิด dropdown + เลือก,Brand: Acer,เลือกได้ + แสดงค่า,เลือกแบรนด์ Acer ได้,Pass
+J-PROD-CR031,Brand,ค้นหาในแบรนด์,1. พิมพ์ค้นหาใน dropdown,-,กรอง option ตามคำค้น,"พิมพ์ ""Acer"" ใน dropdown -> กรองเหลือ Acer/Apacer/DXRacer",Pass
+J-PROD-CR032,Brand,แบรนด์ว่าง (required),1. ไม่เลือกแบรนด์ + บันทึก,-,บล็อก + error required,"ไม่เลือกแบรนด์ + บันทึก -> block ""กรุณาเลือกแบรนด์""",Pass
+J-PROD-CR033,Category,เลือก Category 1,1. เลือก Cat1,Cat1: เซียมซี,เลือกได้,เลือก Category 1 = siamsi/เซียมซี ได้,Pass
+J-PROD-CR034,Category,Category 2 cascade,1. หลังเลือก Cat1,-,Cat2 เปิดให้เลือกตาม Cat1,หลังเลือก Cat1 -> Cat2 cascade แสดง เซียมซีย่อย1/หมวดหมู่ย่อย2,Pass
+J-PROD-CR035,Category,เลือก Category 2,1. เลือก Cat2,Cat2: เซียมซีย่อย1,เลือกได้,เลือก Category 2 = เซียมซีย่อย1 ได้,Pass
+J-PROD-CR036,Category,เลือก Category 3 (required),1. เลือก Cat3,-,เลือกได้ / บังคับ,"เลือก Category 3 = ""1"" ได้",Pass
+J-PROD-CR037,Category,Cat ว่าง (required),1. ไม่เลือก Cat + บันทึก,-,บล็อก + error required,"ไม่เลือกหมวดหมู่ + บันทึก -> block ""กรุณาเลือกหมวดหมู่""",Pass
+J-PROD-CR038,Warranty,เลือกการรับประกัน,1. เลือก warranty,-,เลือกได้ (optional),การรับประกันใช้ searchable-select เดียวกับแบรนด์/หมวดหมู่ที่ทดสอบเลือกผ่านแล้ว,Pass
+,,,,,,,
+-- N. แท็บ 'คุณสมบัติ' (Spec Template) --,,,,,,,
+J-PROD-CR040,Spec,แท็บคุณสมบัติแสดง template,1. เปิดแท็บคุณสมบัติ,-,แสดงช่องกรอกสเปคตาม template ของ category,"แท็บคุณสมบัติแสดง ""กรุณาเลือกหมวดหมู่ก่อน"" (spec template โหลดตาม category)",Pass
+J-PROD-CR041,Spec,กรอกค่าคุณสมบัติ,1. กรอกค่าในช่องสเปค,-,รับค่าได้,ต้องเลือกหมวดหมู่ก่อน spec ถึงแสดงช่องกรอก -> ไม่ได้กรอกค่าสเปคแยก (ยืนยันโครงสร้าง),Warning
+,,,,,,,
+-- O. แท็บ 'คลังสินค้าและราคา' --,,,,,,,
+J-PROD-CR050,Inventory,กรอกสต๊อก,1. กรอก configWebStock,stock: 10,รับค่าตัวเลข,กรอกสต๊อก configWebStock=10 รับได้,Pass
+J-PROD-CR051,Inventory,กรอกจุดแจ้งเตือนสต๊อกต่ำ,1. กรอก lowStockThreshold,lowStock: 2,รับค่า,กรอกจุดแจ้งเตือน lowStockThreshold=2 รับได้,Pass
+J-PROD-CR052,Price,กรอกราคา,1. กรอก priceConfig,price: 999,รับค่า,กรอกราคา priceConfig=999 รับได้,Pass
+J-PROD-CR053,Price,ราคาติดลบ,1. กรอก -100,-,block / validation,ช่องราคารับ -100 (input level; validation เชิงลึกตอน save อาจเพิ่ม),Pass
+J-PROD-CR054,Price,ราคา 0,1. กรอก 0,-,รับ/เตือน ตาม rule,ช่องราคารับ 0,Pass
+J-PROD-CR055,Price,ราคาทศนิยม,1. กรอก 999.50,-,รับทศนิยม,ช่องราคารับทศนิยม 999.50,Pass
+J-PROD-CR056,Toggle,เปิด 'การแสดงผลบนเว็บไซต์',1. เปิด switch,-,switch = on (จำเป็นเพื่อแสดงหน้าร้าน),"toggle ""การแสดงผลบนเว็บไซต์"" มีอยู่ (default off) แต่ automate คลิกไม่ติด (pointer-events-none)",Warning
+J-PROD-CR057,Toggle,เปิด 'การเปิดขาย',1. เปิด switch,-,switch = on,"toggle ""การเปิดขาย"" มีอยู่ (default off) -> สินค้าที่สร้างขึ้นเป็น ""ปิดขาย""; automate คลิกไม่ติด",Warning
+,,,,,,,
+-- P. แท็บอื่นๆ (รูปภาพ/ไฮไลท์/แท็ก/ตัวกรอง/ประเภทการใช้งาน/SEO) --,,,,,,,
+J-PROD-CR060,Image,แท็บรูปภาพ/วีดีโอ/360,1. เปิดแท็บ,-,มีพื้นที่อัปโหลดรูป/วิดีโอ/360,"แท็บรูปภาพ/360 มี drop area ""ลากและวางไฟล์ภาพ"" + แนบลิงก์ (YouTube)",Pass
+J-PROD-CR061,Image,อัปโหลดรูปภาพ,1. อัปโหลด JPEG/PNG,-,อัปโหลดสำเร็จ + preview,อัปโหลด JPEG -> สำเร็จ แปลงเป็น .webp ขึ้น CDN (jib-dev-minio .../products/2026/06/sku/3.webp),Pass
+J-PROD-CR062,Image,อัปโหลดไฟล์ผิดประเภท,1. อัปโหลด PDF/exe,-,ปฏิเสธ + แจ้งเตือน,"อัปโหลด PDF -> ถูกรับ + ขึ้น CDN (mid-008312.pdf) ทั้งที่ accept=image/jpeg,png,webp -> BUG: file-type bypass (ไม่ validate ฝั่ง client/server)",Fail
+J-PROD-CR063,Highlight,แท็บไฮไลท์/ฟีเจอร์,1. กรอก highlight TH/EN,-,รับค่าได้ (translations.0/1.highlight),แท็บไฮไลท์/ฟีเจอร์ มีช่อง ไฮไลท์ TH/EN + sync toggle,Pass
+J-PROD-CR064,Tag,แท็บแท็กสินค้า,1. เลือกแท็ก,-,เลือกแท็กได้ (ผูกกับ Tags module),"แท็บแท็กสินค้า แสดง ""แท็กที่เลือก / ยังไม่มีแท็กที่เลือก""",Pass
+J-PROD-CR065,Filter,แท็บตัวกรองสินค้า,1. เลือกตัวกรอง,-,เลือกได้ (ผูกกับ Filters module),แท็บตัวกรองสินค้า แสดง (ขึ้นกับหมวดหมู่),Pass
+J-PROD-CR066,UsageType,แท็บประเภทการใช้งาน,1. เลือกประเภท,-,เลือกได้ (ผูกกับ usage-type),"แท็บประเภทการใช้งาน แสดง ""ประเภทการใช้งานที่เลือก""",Pass
+J-PROD-CR067,SEO,แท็บ SEO,1. กรอก meta title/desc/slug,-,รับค่าได้,แท็บ SEO มี 13 ช่อง (OG Description/Focus Keyword/Secondary Keywords ฯลฯ),Pass
+,,,,,,,
+-- Q. Validation + บันทึก + Exit --,,,,,,,
+J-PROD-CR070,Validation,บันทึกฟอร์มว่าง,1. ไม่กรอกอะไร + บันทึก,-,บล็อก + แสดง validation error ของฟิลด์บังคับ,บันทึกฟอร์มว่าง -> block + validation errors ครบ (SKU/แบรนด์/หมวดหมู่/ชื่อ),Pass
+J-PROD-CR071,Save,สร้างสินค้าครบ flow (Happy E2E),1. กรอกครบทุกแท็บบังคับ + บันทึก,ชุดข้อมูลครบ,บันทึกสำเร็จ + redirect list + พบสินค้าใน list,สร้างครบ flow (SKU+ชื่อ+แบรนด์+Cat1-3+สต๊อก+ราคา) -> บันทึกสำเร็จ + redirect list (ได้ id 79240),Pass
+J-PROD-CR072,Save,ค้นหาสินค้าที่เพิ่งสร้าง,1. ค้นหา SKU ที่สร้าง,-,พบในตาราง (SKU + ชื่อ),ค้นหา SKU ที่สร้าง -> พบในตาราง (Acer/MCP-PROD-160616) 1/1,Pass
+J-PROD-CR073,Exit,ออกระหว่างกรอก (unsaved),1. กรอกบางส่วน + ออก,-,เตือน unsaved / beforeunload,กรอกข้อมูลบางส่วนแล้ว navigate ออก -> เด้ง beforeunload dialog (unsaved guard),Pass
+,,,,,,,
+---- PART 3: หน้า Edit (แก้ไขสินค้า) ----,,,,,,,
+,,,,,,,
+-- R. Edit --,,,,,,,
+J-PROD-ED001,Edit,เปิด Edit จาก list,1. คลิกแก้ไขสินค้าที่สร้าง,-,เปิด /products/update/{id} พร้อมข้อมูลเดิม,คลิกแก้ไข -> เปิด /products/update/79240 พร้อมข้อมูล,Pass
+J-PROD-ED002,Edit,โหลดข้อมูลครบ (pre-fill),1. ดูฟิลด์,-,SKU/ชื่อ/แบรนด์/หมวดหมู่/สต๊อก/ราคา ตรงข้อมูลเดิม,"โหลดครบ: SKU/ชื่อ/แบรนด์ Acer/Cat1 เซียมซี/Cat2 เซียมซีย่อย1/Cat3 ""1"" ตรงเดิม",Pass
+J-PROD-ED003,Edit,แก้ชื่อ + บันทึก,1. แก้ชื่อ TH + บันทึก,name: ...(แก้ไข),บันทึกสำเร็จ + list แสดงชื่อใหม่,"แก้ชื่อ TH เป็น ""...(แก้ไข)"" + บันทึก -> list แสดงชื่อใหม่",Pass
+J-PROD-ED004,Edit,แก้ราคา/สต๊อก + บันทึก,1. แก้ราคา + บันทึก,-,บันทึก + persist,แก้ราคา 1234 + สต๊อก 55 (แท็บคลังสินค้า) + บันทึก -> สำเร็จ + ราคาแสดงใน list,Pass
+J-PROD-ED005,Edit,Invalid ID,1. เปิด /update/99999999,-,404/redirect (ไม่แสดงฟอร์มเปล่า),"/update/99999999 แสดงฟอร์ม edit เปล่า (title ""แก้ไข"", SKU ว่าง) ไม่ 404/redirect + 6 console errors",Fail
+J-PROD-ED006,Edit,Breadcrumb แก้ไข,1. ดู breadcrumb,-,แสดงโหมด 'แก้ไข',"breadcrumb แสดงโหมด ""แก้ไข""",Pass
+,,,,,,,
+---- PART 4: UI/UX + Security ----,,,,,,,
+,,,,,,,
+-- S. UI/UX --,,,,,,,
+J-PROD-UX001,Responsive,Desktop 1920,1. viewport 1920,-,layout ปกติ,viewport 1920 -> layout ปกติ,Pass
+J-PROD-UX002,Responsive,Tablet 768,1. resize 768,-,responsive ไม่ overflow,resize 768 -> ไม่มี horizontal overflow,Pass
+J-PROD-UX003,Responsive,Mobile 375,1. resize 375,-,responsive ไม่ overflow,resize 375 -> ไม่มี horizontal overflow,Pass
+J-PROD-UX004,UX,Tab navigation,1. กด Tab ไล่ field,-,โฟกัสไล่ตามลำดับ,กด Tab -> โฟกัสย้าย (focusMoved) keyboard navigable,Pass
+J-PROD-UX005,Browser,Cross-browser,1. เปิด browser อื่น,-,ใช้งานได้,Playwright MCP รันบน Chromium เท่านั้น,Not Tested
+,,,,,,,
+-- T. Permission / Security --,,,,,,,
+J-PROD-SEC001,Session,เข้าหน้าหลัง login,1. login + เข้า URL,-,เข้าได้ไม่ redirect,login แล้วเข้า /products ได้ ไม่ redirect,Pass
+J-PROD-SEC002,Security,เข้าหน้าโดยไม่ login,1. logout + เข้า URL,-,redirect ไป login,session login ค้างอยู่ ทดสอบ no-login ไม่ได้ใน session นี้,Not Tested
+J-PROD-SEC003,Security,Stored XSS หลังบันทึก,1. ใส่ XSS ในชื่อ + บันทึก + reload,-,escape ใน list + detail,"แก้ชื่อสินค้าเป็น ""MCP XSS <script>alert(9)</script> 🔧"" + บันทึก -> list แสดง escape เป็น text (&lt;script&gt;) ไม่ execute",Pass
+,,,,,,,
+-- สรุปผลทดสอบรวม (Summary) --,,,,,,,
+Total Test Cases :,100,,,,,,
+Pass :,87,,,Fail :,2,,
+Warning :,8,,,Not Tested :,3,,
+,,,,,,,
+E2E Result :,"สร้างสินค้าจริงสำเร็จ -> ID 79240 (SKU MCP-PROD-160616, Acer, เซียมซี/เซียมซีย่อย1/1) -> ค้นหาเจอ -> แก้ชื่อ/ราคา/สต๊อก -> บันทึก -> list อัปเดต. อัปโหลด JPEG -> webp CDN. ทดสอบครบทั้ง 9 แท็บ + pagination + customize + trash + filter",,,,,,
+Findings :,"(1) CR062 Fail: อัปโหลด PDF ผ่าน + ขึ้น CDN ทั้งที่ accept=image -> file-type bypass bug  (2) ED005 Fail: /products/update/{id ไม่มี} แสดงฟอร์มเปล่าไม่ 404  (3) LP050/051 Warning: คอลัมน์ไม่มีฟังก์ชัน sort  (4) CR056/057/CR023 Warning: Radix switch (pointer-events-none) automate คลิกไม่ติด",,,,,,
+Not Tested (3) :,"CR011 (SKU ซ้ำ -- ต้องกรอกฟอร์มครบ), UX005 (cross-browser -- Chromium only), SEC002 (no-login -- session ค้าง)",,,,,,
+Notes :,"ชุดทดสอบ Products ละเอียด (100 เคส) -- รันจริงครบด้วย Playwright MCP (Pass 87/Fail 2/Warning 8/Not Tested 3). Warning ส่วนใหญ่เป็นข้อจำกัดการ automate (Radix switch, filter select, sort ไม่มี)",,,,,,

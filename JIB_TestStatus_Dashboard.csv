@@ -1,0 +1,290 @@
+Project Name :,JIB Backoffice Test Status Dashboard,,,อัปเดตล่าสุด :,2026-06-15,,
+Environment :,https://devstorex.jibc.codelabdev.co,,,Sign-in URL :,https://devstorex.jibc.codelabdev.co/auth/sign-in,,
+Tester :,sirun.sun@codelabdev.co,,,Password :,test123,,
+โฟลเดอร์ Test Cases :,testcases/csv/,,,ผลทดสอบ :,testcases/results/,,
+เอกสาร Business Flow :,docs/BUSINESS_FLOWS.md,,,,,,
+
+---- Business Context (จาก BA) ----,,,,,,,,,,,,
+ฟังก์ชัน,กลุ่ม,คำอธิบาย Business,,,,,,,,,,,
+
+หน้าหลัก,ทั่วไป,ยังไม่ได้ทำ — /main 404 คาดหวังได้
+จัดการลูกค้า (Customers),จัดการลูกค้า,ลูกค้าเข้ามาจาก Frontstore login — BO แก้ไข/ลบ/เปิด-ปิดเท่านั้น ไม่มี Create
+สินค้า (Products),จัดการสินค้า,"ดู docs/BUSINESS_FLOWS.md — ชื่อบังคับ, validation ครั้งแรกแล้วกดบันทึกซ้ำผ่านได้, เปิด toggle แสดงผล+ขาย"
+Commercial Products,จัดการสินค้า,เลือกสินค้าทั่วไปมาเป็นสินค้าองค์กร — ไม่มี create form แยก
+ร้านค้า / คลังสินค้า (Warehouses),จัดการสินค้า,ไม่ต้องเพิ่มร้านค้าจาก BO — ดู/จัดการที่มีอยู่เท่านั้น
+ใบเสนอราคา (Quotations),จัดการใบเสนอราคา,ใบเสนอราคามาจากลูกค้ากดขอที่ Frontstore — BO ดู/จัดการ ไม่สร้างใหม่
+
+---- สรุปตามกลุ่ม Sidebar ----,,,,,,,,,,,,
+กลุ่ม,จำนวนฟังก์ชัน,มี CSV,Pass Rate เฉลี่ย,Fail รวม,Not Tested รวม,,,,,,,,
+
+ทั่วไป,2,2,93.3%,1,0
+จัดการลูกค้า,1,1,91.7%,0,0
+จัดการสินค้า,18,18,84.3%,15,0
+จัดการออร์เดอร์,2,2,91.7%,0,0
+จัดการใบเสนอราคา,2,2,87.1%,0,0
+ตั้งค่า,3,3,79.6%,1,0
+จัดการโปรโมชั่น,4,4,85.7%,4,0
+จัดการสิทธิ์,3,3,71.3%,3,0
+
+รวมทั้งระบบ:,35 ฟังก์ชัน,35 CSV,1013 cases,Pass 850,Fail 24,Warning 139,Not Tested 0,Pass Rate 83.9%,,,,,
+
+---- Live Smoke Test ล่าสุด ----,,,,,,,,,,,,
+ตรวจเมื่อ :,2026-06-15T03:47:56.388Z,,,Pass :,8,Warning :,21,Fail :,6,,,
+ลำดับ,กลุ่ม,Sidebar,ฟังก์ชัน,URL,Live,List,Create,InvalidID,แถว,ปัญหา
+
+1,ทั่วไป,หน้าหลัก,หน้าหลัก,https://devstorex.jibc.codelabdev.co/main,Fail,Fail,-,-,-,List: หน้า 404 — URL อาจย้ายหรือถูกลบ
+2,ทั่วไป,-,เข้าสู่ระบบ (Login),https://devstorex.jibc.codelabdev.co/auth/sign-in,Pass,Pass,-,-,-,-
+3,จัดการลูกค้า,จัดการลูกค้า,จัดการลูกค้า (Customers),https://devstorex.jibc.codelabdev.co/customer-manager/customers,Fail,Warning,Fail,Warning,10,List: ไม่พบปุ่มเพิ่ม | Create: หน้า Create 404 | InvalidEdit: Invalid ID ฟอร์มว่าง
+4,จัดการสินค้า,Products,สินค้า (Products),https://devstorex.jibc.codelabdev.co/store/product-manager/products,Warning,Pass,Pass,Warning,20,InvalidEdit: Invalid ID ฟอร์มว่าง
+5,จัดการสินค้า,Marketplace Option,Marketplace Option,https://devstorex.jibc.codelabdev.co/store/product-manager/products-by-orders,Pass,Pass,-,-,10,-
+6,จัดการสินค้า,Commucial Products,Commercial Products,https://devstorex.jibc.codelabdev.co/store/product-manager/enterprise-products,Fail,Warning,Fail,Warning,10,List: ไม่พบปุ่มเพิ่ม | Create: หน้า Create 404 | InvalidEdit: Invalid ID ฟอร์มว่าง
+7,จัดการสินค้า,Comsets,Comsets,https://devstorex.jibc.codelabdev.co/store/product-manager/comsets,Warning,Pass,Pass,Warning,2,InvalidEdit: Invalid ID ฟอร์มว่าง
+8,จัดการสินค้า,Comset - Parts,Comset - Parts,https://devstorex.jibc.codelabdev.co/store/product-manager/spec-categories,Warning,Pass,Pass,Warning,10,InvalidEdit: Invalid ID ฟอร์มว่าง
+9,จัดการสินค้า,Spec Templates,เทมเพลตคุณสมบัติ (Spec Templates),https://devstorex.jibc.codelabdev.co/store/product-manager/template-attributes,Warning,Pass,Pass,Warning,10,InvalidEdit: Invalid ID ฟอร์มว่าง
+10,จัดการสินค้า,Mapping - Values,กลุ่มตัวเลือก Mapping (Mapping - Values),https://devstorex.jibc.codelabdev.co/store/product-manager/template-options,Warning,Pass,Pass,Warning,10,InvalidEdit: Invalid ID ฟอร์มว่าง
+11,จัดการสินค้า,Mapping - Conditions,เงื่อนไขความเข้ากันได้ (Mapping - Conditions),https://devstorex.jibc.codelabdev.co/store/product-manager/template-mapping-conditions,Warning,Pass,Pass,Warning,5,InvalidEdit: Invalid ID ฟอร์มว่าง
+12,จัดการสินค้า,Categories,หมวดหมู่ (Categories),https://devstorex.jibc.codelabdev.co/store/product-manager/categories,Warning,Pass,Pass,Warning,10,InvalidEdit: Invalid ID ฟอร์มว่าง
+13,จัดการสินค้า,Category - Commucial,Category - Commercial,https://devstorex.jibc.codelabdev.co/store/product-manager/enterprise-categories,Warning,Pass,Pass,Warning,1,InvalidEdit: Invalid ID ฟอร์มว่าง
+14,จัดการสินค้า,Brands,แบรนด์ (Brands),https://devstorex.jibc.codelabdev.co/store/product-manager/brands,Warning,Pass,Pass,Warning,10,InvalidEdit: Invalid ID ฟอร์มว่าง
+15,จัดการสินค้า,Suppliers,ผู้จัดจำหน่าย (Suppliers),https://devstorex.jibc.codelabdev.co/store/product-manager/suppliers,Warning,Pass,Pass,Warning,10,InvalidEdit: Invalid ID ฟอร์มว่าง
+16,จัดการสินค้า,Tags,แท็ก (Tags),https://devstorex.jibc.codelabdev.co/store/product-manager/tags,Warning,Pass,Pass,Warning,10,InvalidEdit: Invalid ID ฟอร์มว่าง
+17,จัดการสินค้า,ประเภทการใช้งาน - Comsets,ประเภทการใช้งาน - Comsets,https://devstorex.jibc.codelabdev.co/store/product-manager/usage-type,Warning,Pass,Pass,Warning,10,InvalidEdit: Invalid ID ฟอร์มว่าง
+18,จัดการสินค้า,Filters,ตัวกรองสินค้า (Filters),https://devstorex.jibc.codelabdev.co/store/product-manager/filters,Warning,Pass,Warning,Warning,10,Create: input น้อย (1) | InvalidEdit: Invalid ID ฟอร์มว่าง
+19,จัดการสินค้า,Warranties,Warranties,https://devstorex.jibc.codelabdev.co/store/product-manager/warranties,Warning,Pass,Pass,Warning,6,InvalidEdit: Invalid ID ฟอร์มว่าง
+20,จัดการสินค้า,Services,Services,https://devstorex.jibc.codelabdev.co/store/product-manager/additional-services,Warning,Pass,Pass,Warning,2,InvalidEdit: Invalid ID ฟอร์มว่าง
+21,จัดการสินค้า,ร้านค้า,ร้านค้า / คลังสินค้า (Warehouses),https://devstorex.jibc.codelabdev.co/store/product-manager/warehouses,Fail,Warning,Fail,Pass,10,List: ไม่พบปุ่มเพิ่ม | Create: หน้า Create 404
+22,จัดการออร์เดอร์,รายการคำสั่งซื้อ,รายการคำสั่งซื้อ (Orders),https://devstorex.jibc.codelabdev.co/store/order-manager/orders,Pass,Pass,-,-,10,-
+23,จัดการออร์เดอร์,รายการคำสั่งซื้อ By Order,รายการคำสั่งซื้อ By Order,https://devstorex.jibc.codelabdev.co/store/order-manager/orders-by-order,Pass,Pass,-,-,10,-
+24,จัดการใบเสนอราคา,ใบเสนอราคา,ใบเสนอราคา (Quotations),https://devstorex.jibc.codelabdev.co/store/quotation-manager/quotations,Fail,Pass,Fail,Pass,10,Create: input น้อย (0); ไม่พบปุ่มบันทึก; ไม่พบข้อความ เพิ่ม/สร้าง
+25,จัดการใบเสนอราคา,ตั้งค่าเงื่อนไขใบเสนอราคา,ตั้งค่าเงื่อนไขใบเสนอราคา,https://devstorex.jibc.codelabdev.co/store/quotation-manager/settings,Pass,Pass,-,-,0,-
+26,ตั้งค่า,การตั้งค่าการชำระเงิน,การตั้งค่าการชำระเงิน,https://devstorex.jibc.codelabdev.co/store/settings/payment-settings,Pass,Pass,-,-,3,-
+27,ตั้งค่า,วิธีการจัดส่ง,วิธีการจัดส่ง (Shipping Methods),https://devstorex.jibc.codelabdev.co/store/settings/shipping-methods,Warning,Pass,Pass,Warning,4,InvalidEdit: Invalid ID ฟอร์มว่าง
+28,ตั้งค่า,ค่าการตั้งค่าระบบ,ค่าการตั้งค่าระบบ,https://devstorex.jibc.codelabdev.co/store/settings/system-configs,Pass,Pass,-,-,5,-
+29,จัดการโปรโมชั่น,โปรโมชัน,โปรโมชั่น (Promotions),https://devstorex.jibc.codelabdev.co/store/promotion-manager/promotions,Warning,Pass,Pass,Warning,3,InvalidEdit: Invalid ID ฟอร์มว่าง
+30,จัดการโปรโมชั่น,ของแถม,ของแถม (Free Gifts),https://devstorex.jibc.codelabdev.co/store/promotion-manager/free-gifts,Warning,Pass,Pass,Warning,1,InvalidEdit: Invalid ID ฟอร์มว่าง
+31,จัดการโปรโมชั่น,สินค้าของแถม,สินค้าของแถม (Freebie Products),https://devstorex.jibc.codelabdev.co/store/promotion-manager/freebie-products,Warning,Pass,Pass,Warning,10,InvalidEdit: Invalid ID ฟอร์มว่าง
+32,จัดการโปรโมชั่น,คูปอง,คูปอง (Coupons),https://devstorex.jibc.codelabdev.co/store/promotion-manager/coupons,Warning,Pass,Pass,Warning,2,InvalidEdit: Invalid ID ฟอร์มว่าง
+33,จัดการสิทธิ์,(ไม่ใน sidebar),จัดการสิทธิ์ (Permissions),https://devstorex.jibc.codelabdev.co/permission-manager/permissions,Fail,Pass,Fail,Warning,4,Create: input น้อย (1); ไม่พบปุ่มบันทึก | InvalidEdit: Invalid ID ฟอร์มว่าง
+34,จัดการสิทธิ์,(ไม่ใน sidebar),Access Matrix,https://devstorex.jibc.codelabdev.co/permission-manager/access-matrix,Pass,Pass,-,-,10,-
+35,จัดการสิทธิ์,(ไม่ใน sidebar),ผู้ใช้งาน (Users),https://devstorex.jibc.codelabdev.co/permission-manager/users,Warning,Pass,Pass,Warning,7,InvalidEdit: Invalid ID ฟอร์มว่าง
+
+---- รายละเอียดทุกฟังก์ชัน (Module Detail) ----,,,,,,,,,,,,
+ลำดับ,กลุ่ม Sidebar,ชื่อ Sidebar,ฟังก์ชัน,URL,ไฟล์ CSV,Runner,Total,Pass,Fail,Warning,Not Tested,Pass Rate %,สถานะ,Live Smoke,Cypress,หมายเหตุ
+
+1,ทั่วไป,หน้าหลัก,หน้าหลัก,https://devstorex.jibc.codelabdev.co/main,testcases/csv/JIB_TestCases_Main_Full.csv,generic module-runner,24,24,0,0,0,100.0%,ทดสอบผ่านแล้ว,Fail,-,ยังไม่ได้ทำ — /main 404 คาดหวังได้
+2,ทั่วไป,-,เข้าสู่ระบบ (Login),https://devstorex.jibc.codelabdev.co/auth/sign-in,testcases/csv/JIB_TestCases_Login_Full.csv,generic module-runner,6,4,1,1,0,66.7%,มีบัค (1 Fail),Pass,login.cy.js,-
+3,จัดการลูกค้า,จัดการลูกค้า,จัดการลูกค้า (Customers),https://devstorex.jibc.codelabdev.co/customer-manager/customers,testcases/csv/JIB_TestCases_Customers_Full.csv,generic module-runner,24,22,0,2,0,91.7%,ทดสอบผ่านแล้ว,Fail,-,ลูกค้าเข้ามาจาก Frontstore login — BO แก้ไข/ลบ/เปิด-ปิดเท่านั้น ไม่มี Create
+4,จัดการสินค้า,Products,สินค้า (Products),https://devstorex.jibc.codelabdev.co/store/product-manager/products,testcases/csv/JIB_TestCases_Products_Full.csv,run-products-tests.js,35,29,1,5,0,82.9%,มีบัค (1 Fail),Warning,product.cy.js,"ดู docs/BUSINESS_FLOWS.md — ชื่อบังคับ, validation ครั้งแรกแล้วกดบันทึกซ้ำผ่านได้, เปิด toggle แสดงผล+ขาย"
+5,จัดการสินค้า,Marketplace Option,Marketplace Option,https://devstorex.jibc.codelabdev.co/store/product-manager/products-by-orders,testcases/csv/JIB_TestCases_MarketplaceOption_Full.csv,generic module-runner,24,24,0,0,0,100.0%,ทดสอบผ่านแล้ว,Pass,-,-
+6,จัดการสินค้า,Commucial Products,Commercial Products,https://devstorex.jibc.codelabdev.co/store/product-manager/enterprise-products,testcases/csv/JIB_TestCases_CommercialProducts_Full.csv,generic module-runner,24,22,0,2,0,91.7%,ทดสอบผ่านแล้ว,Fail,-,เลือกสินค้าทั่วไปมาเป็นสินค้าองค์กร — ไม่มี create form แยก
+7,จัดการสินค้า,Comsets,Comsets,https://devstorex.jibc.codelabdev.co/store/product-manager/comsets,testcases/csv/JIB_TestCases_Comsets_Full.csv,generic module-runner,35,31,1,3,0,88.6%,มีบัค (1 Fail),Warning,-,-
+8,จัดการสินค้า,Comset - Parts,Comset - Parts,https://devstorex.jibc.codelabdev.co/store/product-manager/spec-categories,testcases/csv/JIB_TestCases_ComsetParts_Full.csv,generic module-runner,35,29,1,5,0,82.9%,มีบัค (1 Fail),Warning,-,-
+9,จัดการสินค้า,Spec Templates,เทมเพลตคุณสมบัติ (Spec Templates),https://devstorex.jibc.codelabdev.co/store/product-manager/template-attributes,testcases/csv/JIB_TestCases_TemplateAttributes_Full.csv,generic module-runner,35,29,1,5,0,82.9%,มีบัค (1 Fail),Warning,template-attributes.cy.js,-
+10,จัดการสินค้า,Mapping - Values,กลุ่มตัวเลือก Mapping (Mapping - Values),https://devstorex.jibc.codelabdev.co/store/product-manager/template-options,testcases/csv/JIB_TestCases_TemplateOptions_Full.csv,generic module-runner,35,29,1,5,0,82.9%,มีบัค (1 Fail),Warning,-,-
+11,จัดการสินค้า,Mapping - Conditions,เงื่อนไขความเข้ากันได้ (Mapping - Conditions),https://devstorex.jibc.codelabdev.co/store/product-manager/template-mapping-conditions,testcases/csv/JIB_TestCases_MappingConditions_Full.csv,generic module-runner,35,29,1,5,0,82.9%,มีบัค (1 Fail),Warning,-,-
+12,จัดการสินค้า,Categories,หมวดหมู่ (Categories),https://devstorex.jibc.codelabdev.co/store/product-manager/categories,testcases/csv/JIB_TestCases_Categories_Full.csv,generic module-runner,35,29,1,5,0,82.9%,มีบัค (1 Fail),Warning,category.cy.js,-
+13,จัดการสินค้า,Category - Commucial,Category - Commercial,https://devstorex.jibc.codelabdev.co/store/product-manager/enterprise-categories,testcases/csv/JIB_TestCases_CommercialCategories_Full.csv,generic module-runner,35,29,1,5,0,82.9%,มีบัค (1 Fail),Warning,-,-
+14,จัดการสินค้า,Brands,แบรนด์ (Brands),https://devstorex.jibc.codelabdev.co/store/product-manager/brands,testcases/csv/JIB_TestCases_Brands_Full.csv,generic module-runner,35,29,1,5,0,82.9%,มีบัค (1 Fail),Warning,brand.cy.js,-
+15,จัดการสินค้า,Suppliers,ผู้จัดจำหน่าย (Suppliers),https://devstorex.jibc.codelabdev.co/store/product-manager/suppliers,testcases/csv/JIB_TestCases_Suppliers_Full.csv,generic module-runner,35,29,1,5,0,82.9%,มีบัค (1 Fail),Warning,supplier.cy.js,-
+16,จัดการสินค้า,Tags,แท็ก (Tags),https://devstorex.jibc.codelabdev.co/store/product-manager/tags,testcases/csv/JIB_TestCases_Tags_Full.csv,run-tags-tests.js,35,29,1,5,0,82.9%,มีบัค (1 Fail),Warning,tag.cy.js,-
+17,จัดการสินค้า,ประเภทการใช้งาน - Comsets,ประเภทการใช้งาน - Comsets,https://devstorex.jibc.codelabdev.co/store/product-manager/usage-type,testcases/csv/JIB_TestCases_UsageType_Full.csv,generic module-runner,35,29,1,5,0,82.9%,มีบัค (1 Fail),Warning,-,-
+18,จัดการสินค้า,Filters,ตัวกรองสินค้า (Filters),https://devstorex.jibc.codelabdev.co/store/product-manager/filters,testcases/csv/JIB_TestCases_Filters_Full.csv,run-filters-tests.js,35,28,1,6,0,80.0%,มีบัค (1 Fail),Warning,-,-
+19,จัดการสินค้า,Warranties,Warranties,https://devstorex.jibc.codelabdev.co/store/product-manager/warranties,testcases/csv/JIB_TestCases_Warranties_Full.csv,generic module-runner,35,29,1,5,0,82.9%,มีบัค (1 Fail),Warning,-,-
+20,จัดการสินค้า,Services,Services,https://devstorex.jibc.codelabdev.co/store/product-manager/additional-services,testcases/csv/JIB_TestCases_Services_Full.csv,generic module-runner,35,29,1,5,0,82.9%,มีบัค (1 Fail),Warning,-,-
+21,จัดการสินค้า,ร้านค้า,ร้านค้า / คลังสินค้า (Warehouses),https://devstorex.jibc.codelabdev.co/store/product-manager/warehouses,testcases/csv/JIB_TestCases_Warehouses_Full.csv,generic module-runner,24,21,0,3,0,87.5%,ทดสอบผ่านแล้ว,Fail,-,ไม่ต้องเพิ่มร้านค้าจาก BO — ดู/จัดการที่มีอยู่เท่านั้น
+22,จัดการออร์เดอร์,รายการคำสั่งซื้อ,รายการคำสั่งซื้อ (Orders),https://devstorex.jibc.codelabdev.co/store/order-manager/orders,testcases/csv/JIB_TestCases_Orders_Full.csv,generic module-runner,24,22,0,2,0,91.7%,ทดสอบผ่านแล้ว,Pass,-,-
+23,จัดการออร์เดอร์,รายการคำสั่งซื้อ By Order,รายการคำสั่งซื้อ By Order,https://devstorex.jibc.codelabdev.co/store/order-manager/orders-by-order,testcases/csv/JIB_TestCases_OrdersByOrder_Full.csv,generic module-runner,24,22,0,2,0,91.7%,ทดสอบผ่านแล้ว,Pass,-,-
+24,จัดการใบเสนอราคา,ใบเสนอราคา,ใบเสนอราคา (Quotations),https://devstorex.jibc.codelabdev.co/store/quotation-manager/quotations,testcases/csv/JIB_TestCases_Quotations_Full.csv,generic module-runner,24,21,0,3,0,87.5%,ทดสอบผ่านแล้ว,Fail,-,ใบเสนอราคามาจากลูกค้ากดขอที่ Frontstore — BO ดู/จัดการ ไม่สร้างใหม่
+25,จัดการใบเสนอราคา,ตั้งค่าเงื่อนไขใบเสนอราคา,ตั้งค่าเงื่อนไขใบเสนอราคา,https://devstorex.jibc.codelabdev.co/store/quotation-manager/settings,testcases/csv/JIB_TestCases_QuotationSettings_Full.csv,generic module-runner,7,6,0,1,0,85.7%,ทดสอบผ่านแล้ว,Pass,-,-
+26,ตั้งค่า,การตั้งค่าการชำระเงิน,การตั้งค่าการชำระเงิน,https://devstorex.jibc.codelabdev.co/store/settings/payment-settings,testcases/csv/JIB_TestCases_PaymentSettings_Full.csv,generic module-runner,7,5,0,2,0,71.4%,ทดสอบบางส่วน,Pass,-,-
+27,ตั้งค่า,วิธีการจัดส่ง,วิธีการจัดส่ง (Shipping Methods),https://devstorex.jibc.codelabdev.co/store/settings/shipping-methods,testcases/csv/JIB_TestCases_ShippingMethods_Full.csv,run-shipping-tests.js,35,29,1,5,0,82.9%,มีบัค (1 Fail),Warning,-,URL ย้ายไป /store/settings/
+28,ตั้งค่า,ค่าการตั้งค่าระบบ,ค่าการตั้งค่าระบบ,https://devstorex.jibc.codelabdev.co/store/settings/system-configs,testcases/csv/JIB_TestCases_SystemConfigs_Full.csv,generic module-runner,7,5,0,2,0,71.4%,ทดสอบบางส่วน,Pass,-,-
+29,จัดการโปรโมชั่น,โปรโมชัน,โปรโมชั่น (Promotions),https://devstorex.jibc.codelabdev.co/store/promotion-manager/promotions,testcases/csv/JIB_TestCases_Promotions_Full.csv,run-promotions-tests.js,35,31,1,3,0,88.6%,มีบัค (1 Fail),Warning,promotions.cy.js,BUG_REPORT.md
+30,จัดการโปรโมชั่น,ของแถม,ของแถม (Free Gifts),https://devstorex.jibc.codelabdev.co/store/promotion-manager/free-gifts,testcases/csv/JIB_TestCases_FreeGifts_Full.csv,run-freegifts-tests.js,35,29,1,5,0,82.9%,มีบัค (1 Fail),Warning,free-gifts.cy.js,BUG_REPORT.md
+31,จัดการโปรโมชั่น,สินค้าของแถม,สินค้าของแถม (Freebie Products),https://devstorex.jibc.codelabdev.co/store/promotion-manager/freebie-products,testcases/csv/JIB_TestCases_FreebieProducts_Full.csv,run-freebie-tests.js,35,31,1,3,0,88.6%,มีบัค (1 Fail),Warning,-,-
+32,จัดการโปรโมชั่น,คูปอง,คูปอง (Coupons),https://devstorex.jibc.codelabdev.co/store/promotion-manager/coupons,testcases/csv/JIB_TestCases_Coupons_Full.csv,run-coupons-tests.js,35,29,1,5,0,82.9%,มีบัค (1 Fail),Warning,coupons.cy.js,BUG_REPORT_ITEM_FLOWS.md
+33,จัดการสิทธิ์,(ไม่ใน sidebar),จัดการสิทธิ์ (Permissions),https://devstorex.jibc.codelabdev.co/permission-manager/permissions,testcases/csv/JIB_TestCases_Permissions_Full.csv,generic module-runner,35,27,2,6,0,77.1%,มีบัค (2 Fail),Fail,-,-
+34,จัดการสิทธิ์,(ไม่ใน sidebar),Access Matrix,https://devstorex.jibc.codelabdev.co/permission-manager/access-matrix,testcases/csv/JIB_TestCases_AccessMatrix_Full.csv,generic module-runner,24,12,0,12,0,50.0%,ทดสอบบางส่วน,Pass,-,-
+35,จัดการสิทธิ์,(ไม่ใน sidebar),ผู้ใช้งาน (Users),https://devstorex.jibc.codelabdev.co/permission-manager/users,testcases/csv/JIB_TestCases_Users_Full.csv,generic module-runner,35,28,1,6,0,80.0%,มีบัค (1 Fail),Warning,-,-
+
+---- รายการ Fail ทั้งหมด (บัค) ----,,,,,,,,,,,,
+Test Case ID,ฟังก์ชัน,กลุ่ม,Category,Objective,Actual Result,URL
+
+J-LOGIN-LG001,เข้าสู่ระบบ (Login),ทั่วไป,Login,เปิดหน้า Sign-in,ไม่พบฟอร์ม,https://devstorex.jibc.codelabdev.co/auth/sign-in
+J-PROD-ED001,สินค้า (Products),จัดการสินค้า,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/product-manager/products
+J-COMSET-ED001,Comsets,จัดการสินค้า,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/product-manager/comsets
+J-COMPT-ED001,Comset - Parts,จัดการสินค้า,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/product-manager/spec-categories
+J-TA-ED001,เทมเพลตคุณสมบัติ (Spec Templates),จัดการสินค้า,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/product-manager/template-attributes
+J-TO-ED001,กลุ่มตัวเลือก Mapping (Mapping - Values),จัดการสินค้า,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/product-manager/template-options
+J-MC-ED001,เงื่อนไขความเข้ากันได้ (Mapping - Conditions),จัดการสินค้า,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/product-manager/template-mapping-conditions
+J-CAT-ED001,หมวดหมู่ (Categories),จัดการสินค้า,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/product-manager/categories
+J-ENTC-ED001,Category - Commercial,จัดการสินค้า,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/product-manager/enterprise-categories
+J-BR-ED001,แบรนด์ (Brands),จัดการสินค้า,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/product-manager/brands
+J-SUP-ED001,ผู้จัดจำหน่าย (Suppliers),จัดการสินค้า,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/product-manager/suppliers
+J-TAG-ED001,แท็ก (Tags),จัดการสินค้า,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/product-manager/tags
+J-USG-ED001,ประเภทการใช้งาน - Comsets,จัดการสินค้า,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/product-manager/usage-type
+J-FLT-ED001,ตัวกรองสินค้า (Filters),จัดการสินค้า,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/product-manager/filters
+J-WAR-ED001,Warranties,จัดการสินค้า,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/product-manager/warranties
+J-SVC-ED001,Services,จัดการสินค้า,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/product-manager/additional-services
+J-SHIP-ED001,วิธีการจัดส่ง (Shipping Methods),ตั้งค่า,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/settings/shipping-methods
+J-PRM-ED001,โปรโมชั่น (Promotions),จัดการโปรโมชั่น,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/promotion-manager/promotions
+J-FG-ED001,ของแถม (Free Gifts),จัดการโปรโมชั่น,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/promotion-manager/free-gifts
+J-FB-ED001,สินค้าของแถม (Freebie Products),จัดการโปรโมชั่น,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/promotion-manager/freebie-products
+J-CPN-ED001,คูปอง (Coupons),จัดการโปรโมชั่น,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/store/promotion-manager/coupons
+J-PM-P-CR003,จัดการสิทธิ์ (Permissions),จัดการสิทธิ์,UI,ปุ่มบันทึก,ไม่มีบันทึก,https://devstorex.jibc.codelabdev.co/permission-manager/permissions
+J-PM-P-ED001,จัดการสิทธิ์ (Permissions),จัดการสิทธิ์,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/permission-manager/permissions
+J-PM-U-ED001,ผู้ใช้งาน (Users),จัดการสิทธิ์,Edit,Invalid ID,empty form bug,https://devstorex.jibc.codelabdev.co/permission-manager/users
+
+---- รายการ Warning ทั้งหมด ----,,,,,,,,,,,,
+Test Case ID,ฟังก์ชัน,Category,Objective,Actual Result
+
+J-LOGIN-LG006,เข้าสู่ระบบ (Login),UI,แสดง branding JIB,ไม่พบ
+J-CUST-LP020,จัดการลูกค้า (Customers),Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-CUST-LP022,จัดการลูกค้า (Customers),Filter,Apply filter,skip
+J-PROD-LP040,สินค้า (Products),Pagination,Footer แสดงจำนวน,no footer
+J-PROD-LP050,สินค้า (Products),Row,ปุ่ม Edit (ถ้ามี),ไม่มี edit
+J-PROD-CR008,สินค้า (Products),Save,บันทึกข้อมูลครบ,no E2E save
+J-PROD-ED002,สินค้า (Products),Edit,เปิด Edit record จริง,edit real record — skip
+J-PROD-ED003,สินค้า (Products),Edit,บันทึกการแก้ไข,save edit — skip
+J-ENTP-LP020,Commercial Products,Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-ENTP-LP022,Commercial Products,Filter,Apply filter,skip
+J-COMSET-CR008,Comsets,Save,บันทึกข้อมูลครบ,no E2E save
+J-COMSET-ED002,Comsets,Edit,เปิด Edit record จริง,edit real record — skip
+J-COMSET-ED003,Comsets,Edit,บันทึกการแก้ไข,save edit — skip
+J-COMPT-LP020,Comset - Parts,Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-COMPT-LP022,Comset - Parts,Filter,Apply filter,skip
+J-COMPT-CR008,Comset - Parts,Save,บันทึกข้อมูลครบ,no E2E save
+J-COMPT-ED002,Comset - Parts,Edit,เปิด Edit record จริง,edit real record — skip
+J-COMPT-ED003,Comset - Parts,Edit,บันทึกการแก้ไข,save edit — skip
+J-TA-LP020,เทมเพลตคุณสมบัติ (Spec Templates),Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-TA-LP022,เทมเพลตคุณสมบัติ (Spec Templates),Filter,Apply filter,skip
+J-TA-CR008,เทมเพลตคุณสมบัติ (Spec Templates),Save,บันทึกข้อมูลครบ,no E2E save
+J-TA-ED002,เทมเพลตคุณสมบัติ (Spec Templates),Edit,เปิด Edit record จริง,edit real record — skip
+J-TA-ED003,เทมเพลตคุณสมบัติ (Spec Templates),Edit,บันทึกการแก้ไข,save edit — skip
+J-TO-LP020,กลุ่มตัวเลือก Mapping (Mapping - Values),Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-TO-LP022,กลุ่มตัวเลือก Mapping (Mapping - Values),Filter,Apply filter,skip
+J-TO-CR008,กลุ่มตัวเลือก Mapping (Mapping - Values),Save,บันทึกข้อมูลครบ,no E2E save
+J-TO-ED002,กลุ่มตัวเลือก Mapping (Mapping - Values),Edit,เปิด Edit record จริง,edit real record — skip
+J-TO-ED003,กลุ่มตัวเลือก Mapping (Mapping - Values),Edit,บันทึกการแก้ไข,save edit — skip
+J-MC-LP020,เงื่อนไขความเข้ากันได้ (Mapping - Conditions),Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-MC-LP022,เงื่อนไขความเข้ากันได้ (Mapping - Conditions),Filter,Apply filter,skip
+J-MC-CR008,เงื่อนไขความเข้ากันได้ (Mapping - Conditions),Save,บันทึกข้อมูลครบ,no E2E save
+J-MC-ED002,เงื่อนไขความเข้ากันได้ (Mapping - Conditions),Edit,เปิด Edit record จริง,edit real record — skip
+J-MC-ED003,เงื่อนไขความเข้ากันได้ (Mapping - Conditions),Edit,บันทึกการแก้ไข,save edit — skip
+J-CAT-LP020,หมวดหมู่ (Categories),Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-CAT-LP022,หมวดหมู่ (Categories),Filter,Apply filter,skip
+J-CAT-CR008,หมวดหมู่ (Categories),Save,บันทึกข้อมูลครบ,no E2E save
+J-CAT-ED002,หมวดหมู่ (Categories),Edit,เปิด Edit record จริง,edit real record — skip
+J-CAT-ED003,หมวดหมู่ (Categories),Edit,บันทึกการแก้ไข,save edit — skip
+J-ENTC-LP020,Category - Commercial,Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-ENTC-LP022,Category - Commercial,Filter,Apply filter,skip
+J-ENTC-CR008,Category - Commercial,Save,บันทึกข้อมูลครบ,no E2E save
+J-ENTC-ED002,Category - Commercial,Edit,เปิด Edit record จริง,edit real record — skip
+J-ENTC-ED003,Category - Commercial,Edit,บันทึกการแก้ไข,save edit — skip
+J-BR-LP020,แบรนด์ (Brands),Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-BR-LP022,แบรนด์ (Brands),Filter,Apply filter,skip
+J-BR-CR008,แบรนด์ (Brands),Save,บันทึกข้อมูลครบ,no E2E save
+J-BR-ED002,แบรนด์ (Brands),Edit,เปิด Edit record จริง,edit real record — skip
+J-BR-ED003,แบรนด์ (Brands),Edit,บันทึกการแก้ไข,save edit — skip
+J-SUP-LP020,ผู้จัดจำหน่าย (Suppliers),Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-SUP-LP022,ผู้จัดจำหน่าย (Suppliers),Filter,Apply filter,skip
+J-SUP-CR008,ผู้จัดจำหน่าย (Suppliers),Save,บันทึกข้อมูลครบ,no E2E save
+J-SUP-ED002,ผู้จัดจำหน่าย (Suppliers),Edit,เปิด Edit record จริง,edit real record — skip
+J-SUP-ED003,ผู้จัดจำหน่าย (Suppliers),Edit,บันทึกการแก้ไข,save edit — skip
+J-TAG-LP020,แท็ก (Tags),Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-TAG-LP022,แท็ก (Tags),Filter,Apply filter,skip
+J-TAG-CR008,แท็ก (Tags),Save,บันทึกข้อมูลครบ,no E2E save
+J-TAG-ED002,แท็ก (Tags),Edit,เปิด Edit record จริง,edit real record — skip
+J-TAG-ED003,แท็ก (Tags),Edit,บันทึกการแก้ไข,save edit — skip
+J-USG-LP020,ประเภทการใช้งาน - Comsets,Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-USG-LP022,ประเภทการใช้งาน - Comsets,Filter,Apply filter,skip
+J-USG-CR008,ประเภทการใช้งาน - Comsets,Save,บันทึกข้อมูลครบ,no E2E save
+J-USG-ED002,ประเภทการใช้งาน - Comsets,Edit,เปิด Edit record จริง,edit real record — skip
+J-USG-ED003,ประเภทการใช้งาน - Comsets,Edit,บันทึกการแก้ไข,save edit — skip
+J-FLT-CR004,ตัวกรองสินค้า (Filters),Validation,บันทึกฟอร์มว่าง,no visible error
+J-FLT-CR005,ตัวกรองสินค้า (Filters),Validation,กรอกชื่อ TH,no name input
+J-FLT-CR006,ตัวกรองสินค้า (Filters),Validation,XSS ในชื่อ,no name input
+J-FLT-CR008,ตัวกรองสินค้า (Filters),Save,บันทึกข้อมูลครบ,no E2E save
+J-FLT-ED002,ตัวกรองสินค้า (Filters),Edit,เปิด Edit record จริง,edit real record — skip
+J-FLT-ED003,ตัวกรองสินค้า (Filters),Edit,บันทึกการแก้ไข,save edit — skip
+J-WAR-LP020,Warranties,Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-WAR-LP022,Warranties,Filter,Apply filter,skip
+J-WAR-CR008,Warranties,Save,บันทึกข้อมูลครบ,no E2E save
+J-WAR-ED002,Warranties,Edit,เปิด Edit record จริง,edit real record — skip
+J-WAR-ED003,Warranties,Edit,บันทึกการแก้ไข,save edit — skip
+J-SVC-LP020,Services,Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-SVC-LP022,Services,Filter,Apply filter,skip
+J-SVC-CR008,Services,Save,บันทึกข้อมูลครบ,no E2E save
+J-SVC-ED002,Services,Edit,เปิด Edit record จริง,edit real record — skip
+J-SVC-ED003,Services,Edit,บันทึกการแก้ไข,save edit — skip
+J-WH-LP020,ร้านค้า / คลังสินค้า (Warehouses),Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-WH-LP022,ร้านค้า / คลังสินค้า (Warehouses),Filter,Apply filter,skip
+J-WH-LP050,ร้านค้า / คลังสินค้า (Warehouses),Row,ปุ่ม Edit (ถ้ามี),ไม่มี edit
+J-ORD-LP020,รายการคำสั่งซื้อ (Orders),Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-ORD-LP022,รายการคำสั่งซื้อ (Orders),Filter,Apply filter,skip
+J-ORDBO-LP020,รายการคำสั่งซื้อ By Order,Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-ORDBO-LP022,รายการคำสั่งซื้อ By Order,Filter,Apply filter,skip
+J-QUO-LP020,ใบเสนอราคา (Quotations),Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-QUO-LP022,ใบเสนอราคา (Quotations),Filter,Apply filter,skip
+J-QUO-LP050,ใบเสนอราคา (Quotations),Row,ปุ่ม Edit (ถ้ามี),ไม่มี edit
+J-QUOS-ST004,ตั้งค่าเงื่อนไขใบเสนอราคา,Save,บันทึกการตั้งค่า,ไม่ได้ทดสอบ save E2E (เลี่ยงกระทบ config)
+J-PAY-ST003,การตั้งค่าการชำระเงิน,UI,ปุ่มบันทึก (ถ้ามี),ไม่พบปุ่มบันทึก
+J-PAY-ST004,การตั้งค่าการชำระเงิน,Save,บันทึกการตั้งค่า,ไม่ได้ทดสอบ save E2E (เลี่ยงกระทบ config)
+J-SHIP-LP020,วิธีการจัดส่ง (Shipping Methods),Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-SHIP-LP022,วิธีการจัดส่ง (Shipping Methods),Filter,Apply filter,skip
+J-SHIP-CR008,วิธีการจัดส่ง (Shipping Methods),Save,บันทึกข้อมูลครบ,no E2E save
+J-SHIP-ED002,วิธีการจัดส่ง (Shipping Methods),Edit,เปิด Edit record จริง,edit real record — skip
+J-SHIP-ED003,วิธีการจัดส่ง (Shipping Methods),Edit,บันทึกการแก้ไข,save edit — skip
+J-SYSC-ST003,ค่าการตั้งค่าระบบ,UI,ปุ่มบันทึก (ถ้ามี),ไม่พบปุ่มบันทึก
+J-SYSC-ST004,ค่าการตั้งค่าระบบ,Save,บันทึกการตั้งค่า,ไม่ได้ทดสอบ save E2E (เลี่ยงกระทบ config)
+J-PRM-CR008,โปรโมชั่น (Promotions),Save,บันทึกข้อมูลครบ,no E2E save
+J-PRM-ED002,โปรโมชั่น (Promotions),Edit,เปิด Edit record จริง,edit real record — skip
+J-PRM-ED003,โปรโมชั่น (Promotions),Edit,บันทึกการแก้ไข,save edit — skip
+J-FG-LP020,ของแถม (Free Gifts),Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-FG-LP022,ของแถม (Free Gifts),Filter,Apply filter,skip
+J-FG-CR008,ของแถม (Free Gifts),Save,บันทึกข้อมูลครบ,no E2E save
+J-FG-ED002,ของแถม (Free Gifts),Edit,เปิด Edit record จริง,edit real record — skip
+J-FG-ED003,ของแถม (Free Gifts),Edit,บันทึกการแก้ไข,save edit — skip
+J-FB-CR008,สินค้าของแถม (Freebie Products),Save,บันทึกข้อมูลครบ,no E2E save
+J-FB-ED002,สินค้าของแถม (Freebie Products),Edit,เปิด Edit record จริง,edit real record — skip
+J-FB-ED003,สินค้าของแถม (Freebie Products),Edit,บันทึกการแก้ไข,save edit — skip
+J-CPN-LP020,คูปอง (Coupons),Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-CPN-LP022,คูปอง (Coupons),Filter,Apply filter,skip
+J-CPN-CR008,คูปอง (Coupons),Save,บันทึกข้อมูลครบ,no E2E save
+J-CPN-ED002,คูปอง (Coupons),Edit,เปิด Edit record จริง,edit real record — skip
+J-CPN-ED003,คูปอง (Coupons),Edit,บันทึกการแก้ไข,save edit — skip
+J-PM-P-LP020,จัดการสิทธิ์ (Permissions),Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-PM-P-LP022,จัดการสิทธิ์ (Permissions),Filter,Apply filter,skip
+J-PM-P-CR004,จัดการสิทธิ์ (Permissions),Validation,บันทึกฟอร์มว่าง,skip
+J-PM-P-CR008,จัดการสิทธิ์ (Permissions),Save,บันทึกข้อมูลครบ,no E2E save
+J-PM-P-ED002,จัดการสิทธิ์ (Permissions),Edit,เปิด Edit record จริง,edit real record — skip
+J-PM-P-ED003,จัดการสิทธิ์ (Permissions),Edit,บันทึกการแก้ไข,save edit — skip
+J-PM-A-LP002,Access Matrix,UI,ตรวจสอบ Heading,ไม่พบ heading
+J-PM-A-LP010,Access Matrix,Search,ค้นหาภาษาไทย,ไม่มีช่องค้นหา
+J-PM-A-LP011,Access Matrix,Search,ค้นหา keyword ไม่มี,ไม่มีช่องค้นหา
+J-PM-A-LP012,Access Matrix,Search,XSS ใน search,ไม่มีช่องค้นหา
+J-PM-A-LP013,Access Matrix,Search,เคลียร์ search,ไม่มีช่องค้นหา
+J-PM-A-LP020,Access Matrix,Filter,เปิดตัวกรอง,ไม่พบปุ่มตัวกรอง
+J-PM-A-LP022,Access Matrix,Filter,Apply filter,ข้าม
+J-PM-A-LP030,Access Matrix,Customize,เปิด menu,ไม่พบปุ่ม
+J-PM-A-LP031,Access Matrix,Customize,ซ่อน/เปิดคอลัมน์,ข้าม
+J-PM-A-LP040,Access Matrix,Pagination,Footer แสดงจำนวน,ไม่พบ footer format
+J-PM-A-LP042,Access Matrix,Pagination,เปลี่ยนหน้า,อยู่หน้าเดียว/disabled
+J-PM-A-LP050,Access Matrix,Row,ปุ่ม Edit (ถ้ามี),ไม่พบ edit ในแถวแรก
+J-PM-U-LP020,ผู้ใช้งาน (Users),Filter,เปิดตัวกรอง,ไม่มีตัวกรอง
+J-PM-U-LP022,ผู้ใช้งาน (Users),Filter,Apply filter,skip
+J-PM-U-LP050,ผู้ใช้งาน (Users),Row,ปุ่ม Edit (ถ้ามี),ไม่มี edit
+J-PM-U-CR008,ผู้ใช้งาน (Users),Save,บันทึกข้อมูลครบ,no E2E save
+J-PM-U-ED002,ผู้ใช้งาน (Users),Edit,เปิด Edit record จริง,edit real record — skip
+J-PM-U-ED003,ผู้ใช้งาน (Users),Edit,บันทึกการแก้ไข,save edit — skip
+
+---- รายการ Not Tested (ต้องทำต่อ) ----,,,,,,,,,,,,
+ฟังก์ชัน,จำนวน,ไฟล์ CSV,URL
+
+
+---- คำสั่งที่ใช้ ----,,,,,,,,,,,,
+organize:,node scripts/organize-test-files.js,,,,,,,,,,,,
+run all tests:,node scripts/run-all-module-tests.js,,,,,,,,,,,,
+build all csv:,node scripts/build-all-module-csvs.js,,,,,,,,,,,,
+dashboard:,npm run dashboard,,,,,,,,,,,,
+full pipeline:,npm run test:all,,,,,,,,,,,,

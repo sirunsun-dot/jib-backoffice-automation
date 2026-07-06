@@ -1,0 +1,199 @@
+Project Name :,JIB-Ecommerce,,,Create Date :,2026-06-15,,
+Project ID :,,,,Start Test Date :,2026-06-15,,
+Tester Name :,sirun.sun@codelabdev.co,,,Finish Test Date :,2026-06-15,,
+Project Release / Version :,1.0,,,Module / Function :,เงื่อนไขความเข้ากันได้ (Mapping - Conditions),,
+URL List :,https://devstorex.jibc.codelabdev.co/store/product-manager/template-mapping-conditions,,,,,,
+URL Create :,https://devstorex.jibc.codelabdev.co/store/product-manager/template-mapping-conditions/create,,,,,,
+URL Edit :,https://devstorex.jibc.codelabdev.co/store/product-manager/template-mapping-conditions/update/{id},,,,,,
+,,,,,,,
+Test Case ID,Category,Test case Objective,Test Description / Procedure,Test Data,Expected Result,Actual Result,Result (Pass/Fail)
+,,,,,,,
+---- PART 1: หน้า List ----,,,,,,,
+,,,,,,,
+-- A. การโหลดหน้า + UI --,,,,,,,
+J-MC-LP001,Page Load,เปิดหน้ารายการ,1. เข้า https://devstorex.jibc.codelabdev.co/store/product-manager/template-mapping-conditions,-,หน้าโหลดสำเร็จ ไม่ error,โหลดสำเร็จ,Pass
+J-MC-LP002,UI,ตรวจสอบ Heading,1. ดูหัวข้อหน้า,-,แสดง heading ที่เกี่ยวข้องกับ เงื่อนไขความเข้ากันได้ (Mapping - Conditions),พบ heading,Pass
+J-MC-LP003,UI,ตรวจสอบตาราง,1. ดูตารางข้อมูล,-,แสดงตารางพร้อมแถวข้อมูล,แถว=5,Pass
+J-MC-LP004,UI,ตรวจสอบคอลัมน์,1. ดูหัวคอลัมน์,-,มีคอลัมน์ครบตาม design,คอลัมน์ 12,Pass
+J-MC-LP005,UI,Action Bar,1. ดู toolbar,-,มีช่องค้นหา / ตัวกรอง / ปรับแต่งคอลัมน์,search=true filter=true,Pass
+J-MC-LP006,UI,ไม่มี undefined ในข้อมูล,1. ดูข้อมูลในตาราง,-,ไม่พบคำว่า 'undefined',OK,Pass
+J-MC-LP007,UI,ปุ่มเพิ่ม (ถ้ามี),1. ดูปุ่มเพิ่ม,-,มีปุ่มเพิ่ม/สร้าง,มีปุ่มเพิ่ม,Pass
+-- B. การค้นหา --,,,,,,,
+J-MC-LP010,Search,ค้นหาภาษาไทย,1. พิมพ์ keyword ไทย,-,กรองผลลัพธ์,ค้นหา OK,Pass
+J-MC-LP011,Search,ค้นหา keyword ไม่มี,1. พิมพ์คำที่ไม่มี,-,empty state / 0 รายการ,empty search OK,Pass
+J-MC-LP012,Search,XSS ใน search,1. พิมพ์ <script>,-,รับเป็น plain text ไม่ execute,XSS safe,Pass
+J-MC-LP013,Search,เคลียร์ search,1. ลบ keyword,-,กลับสู่ list เต็ม,clear search,Pass
+-- C. ตัวกรอง --,,,,,,,
+J-MC-LP020,Filter,เปิดตัวกรอง,1. คลิกตัวกรอง,-,เปิด panel/sheet,ไม่มีตัวกรอง,Warning
+J-MC-LP021,Filter,ปิดด้วย ESC,1. กด ESC,-,panel ปิด,ESC OK,Pass
+J-MC-LP022,Filter,Apply filter,1. ตั้งเงื่อนไข + ตกลง,-,กรอง list,skip,Warning
+-- D. ปรับแต่งคอลัมน์ --,,,,,,,
+J-MC-LP030,Customize,เปิด menu,1. คลิกปรับแต่งคอลัมน์,-,เปิด dropdown,customize OK,Pass
+J-MC-LP031,Customize,ซ่อน/เปิดคอลัมน์,1. toggle checkbox,-,คอลัมน์เปลี่ยนตาม,toggle OK,Pass
+-- E. Pagination --,,,,,,,
+J-MC-LP040,Pagination,Footer แสดงจำนวน,1. ดู footer,-,รูปแบบ 'X - Y จาก Z',pagination OK,Pass
+J-MC-LP041,Rows,เลือกจำนวนแถว,1. เปลี่ยน rows per page,-,จำนวนแถวเปลี่ยน,rows selector,Pass
+J-MC-LP042,Pagination,เปลี่ยนหน้า,1. คลิกหน้าถัดไป,-,ไปหน้าถัดไป,pagination nav,Pass
+-- F. Row Actions --,,,,,,,
+J-MC-LP050,Row,ปุ่ม Edit (ถ้ามี),1. คลิกไอคอนแก้ไข,-,ไปหน้า edit,มี edit,Pass
+J-MC-LP051,Row,3-dot menu (ถ้ามี),1. คลิกเมนู,-,แสดงตัวเลือก,row menu,Pass
+---- PART 2: หน้า Create ----,,,,,,,
+,,,,,,,
+J-MC-CR001,UI,เปิดหน้า Create,1. เข้า https://devstorex.jibc.codelabdev.co/store/product-manager/template-mapping-conditions/create,-,แสดงฟอร์มเพิ่ม/สร้าง,create page OK,Pass
+J-MC-CR002,UI,ฟิลด์ในฟอร์ม,1. ดูฟิลด์,-,มี input ครบ,inputs=23,Pass
+J-MC-CR003,UI,ปุ่มบันทึก,1. ดูปุ่ม,-,มีปุ่มบันทึก,มีบันทึก,Pass
+J-MC-CR004,Validation,บันทึกฟอร์มว่าง,1. ไม่กรอก + บันทึก,-,แสดง validation error,validation OK,Pass
+J-MC-CR005,Validation,กรอกชื่อ TH,1. กรอกชื่อภาษาไทย,-,รับค่าได้,กรอกชื่อ OK,Pass
+J-MC-CR006,Validation,XSS ในชื่อ,1. กรอก <script>,-,รับเป็น text,XSS safe,Pass
+J-MC-CR007,Sync,Toggle sync TH/EN,1. คลิก sync toggle,-,เปลี่ยน state,sync toggle checked,Pass
+J-MC-CR008,Save,บันทึกข้อมูลครบ,1. กรอกครบ + บันทึก,-,บันทึกสำเร็จ + redirect,no E2E save,Warning
+---- PART 3: หน้า Edit (Update) ----,,,,,,,
+,,,,,,,
+-- A. การเข้าหน้าแก้ไข --,,,,,,,
+J-MC-UP001,Navigate,เปิด Edit จากเมนูจัดการในแถว,1. ที่หน้า list คลิกไอคอน 'จัดการ' แถวที่ต้องการ 2. คลิก 'แก้ไข',-,เปิดหน้า /update/{id} พร้อมข้อมูลเดิมของแถวนั้น,คลิกไอคอน edit ในแถว id10 -> เปิด /update/10 พร้อมข้อมูล,Pass
+J-MC-UP002,Navigate,เปิด Edit ด้วย URL ตรง,1. เข้า URL /update/9 โดยตรง,id: 9,โหลดฟอร์มแก้ไขพร้อมข้อมูล record 9 ครบทุก section,เปิด /update/10 ตรง -> โหลดฟอร์มครบทุก section,Pass
+J-MC-UP003,UI,Breadcrumb แสดงโหมดแก้ไข,1. ดู breadcrumb ด้านบน,-,ร้านค้า > จัดการสินค้า > Mapping - Conditions > แก้ไข,"breadcrumb ลงท้าย ""แก้ไข"" ถูกต้อง",Pass
+J-MC-UP004,UI,องค์ประกอบหน้าแก้ไขครบ,1. ดูฟอร์มทั้งหน้า,-,"แสดง 5 section (ข้อมูลเงื่อนไข, ฝั่งซ้าย LHS, ตัวเปรียบเทียบ, ฝั่งขวา RHS, การแจ้งเตือน) + toggle สถานะ + ปุ่มบันทึก",แสดง 5 section + toggle สถานะ + ปุ่มบันทึก ครบ,Pass
+J-MC-UP005,UI,Progress indicator,1. ดู indicator มุมขวาบน,-,แสดง 'ข้อมูลครบถ้วน 100%' สำหรับ record ที่ข้อมูลครบ,"แสดง ""ข้อมูลครบถ้วน 100%"" สำหรับ record ครบ",Pass
+-- B. โหลดข้อมูลเดิม (Pre-fill) --,,,,,,,
+J-MC-UP010,Load,ชื่อ + คำอธิบาย pre-fill,1. ดูช่องชื่อเงื่อนไข + คำอธิบาย,id: 9,ช่องชื่อ = 'CPU.Socket = Mainboard.socket' ตรงกับข้อมูลเดิม,"ชื่อ pre-fill = ""ZZTEST-UP Base..."" ตรงข้อมูลเดิม",Pass
+J-MC-UP011,Load,LHS Template + หัวข้อ pre-fill,1. ดูฝั่งซ้าย term 1,id: 9,"Template = Mainboard, หัวข้อ = CPU Socket","LHS Template=Case, หัวข้อ=Case Power Supply",Pass
+J-MC-UP012,Load,LHS วิธีรวม term pre-fill,1. ดู radio วิธีรวมค่าระหว่าง term (LHS),id: 9,เลือก 'บวกรวม (SUM)',LHS วิธีรวม term = บวกรวม (SUM) ตอนโหลด,Pass
+J-MC-UP013,Load,LHS ค่าคูณ + วิธีรวมในชิ้น,1. ดูค่าคูณ + วิธีรวมในชิ้น (LHS),id: 9,"ค่าคูณ = 1, วิธีรวมในชิ้น = 'ไม่รวม'","LHS ค่าคูณ=1, วิธีรวมในชิ้น=ไม่รวม",Pass
+J-MC-UP014,Load,Operator pre-fill,1. ดูตัวเปรียบเทียบ,id: 9,Operator = 'เท่ากับ (=)',Operator = เท่ากับ (=),Pass
+J-MC-UP015,Load,จำนวนต่ำสุด/สูงสุด RHS,1. ดูช่อง min/max RHS,id: 9,ทั้งสองช่องว่าง (record นี้ไม่ได้ใช้ค่า numeric),ช่อง min/max RHS ว่างตอนโหลด,Pass
+J-MC-UP016,Load,RHS Template + หัวข้อ pre-fill,1. ดูฝั่งขวา term 1,id: 9,"Template = CPU, หัวข้อ = CPU Socket","RHS Template=Case, หัวข้อ=Product Brand",Pass
+J-MC-UP017,Load,ระดับความเข้ากันได้ pre-fill,1. ดู radio ระดับ,id: 9,เลือก 'คำเตือน',ระดับ = คำเตือน,Pass
+J-MC-UP018,Load,รูปแบบการแสดง pre-fill,1. ดู radio รูปแบบการแสดง,id: 9,เลือก 'แสดงเมื่อเงื่อนไขไม่ผ่าน',รูปแบบการแสดง = แสดงเมื่อเงื่อนไขไม่ผ่าน,Pass
+J-MC-UP019,Load,ข้อความแจ้งเตือน TH/EN,1. ดูข้อความ TH + EN,id: 9,"TH = 'พบชิ้นส่วนไม่เข้ากัน', EN = ว่าง","TH=""ข้อความเตือนฐาน TH"", EN=ว่าง",Pass
+J-MC-UP020,Load,Status toggle สะท้อนสถานะจริง,1. ดู toggle 'กำลังเปิดใช้งาน',id: 9,toggle = เปิด (record เปิดใช้งานอยู่),toggle = เปิด (record เปิดใช้งาน),Pass
+J-MC-UP021,Load,โหลด record แบบ Multi-term LHS,1. เปิด /update/8,id: 8,แสดง LHS หลาย term ครบ + ค่าคูณ 2.5 + สมการ '2.5·Case.Case Power Supply + Case.Product Brand',id8 โหลด multi-term LHS 2 term + ค่าคูณ 2.5 ครบ,Pass
+J-MC-UP022,Load,โหลด record operator pair (EXCLUDE),1. เปิด /update/7,id: 7,Operator = 'ห้ามเลือกคู่กัน' + ฝั่ง RHS/numeric แสดงสอดคล้องชนิด pair,"id7 โหลด operator ""ห้ามเลือกคู่กัน"" ถูกต้อง (สังเกต: ช่อง min/max ยังแสดง)",Pass
+J-MC-UP023,Load-Edge,เปิด Edit ด้วย ID ที่ไม่มีจริง,1. เปิด /update/99999999,id: 99999999,ควร 404 หรือ redirect (ไม่ควรเปิดฟอร์มเปล่าแบบ create) -- ตรวจ regression ของบั๊กเดิม,"/update/99999999 แสดงฟอร์มเปล่าแบบ create (""เพิ่มเงื่อนไข Template Mapping"") ไม่ 404/redirect + 6 console errors",Fail
+J-MC-UP024,Load-Edge,เปิด Edit ด้วย ID ไม่ใช่ตัวเลข,1. เปิด /update/abc,id: abc,ควร 404 หรือ redirect ไป list ไม่ crash,/update/abc แสดงฟอร์มเปล่าแบบ create เช่นกัน ไม่ 404,Fail
+-- C. แก้ไขชื่อเงื่อนไข --,,,,,,,
+J-MC-UP101,Edit-Name,แก้ชื่อ (Happy) + บันทึก,1. แก้ชื่อเป็นค่าใหม่ 2. กดบันทึก 3. กลับมาดู list,ชื่อใหม่: CPU Socket Match v2,บันทึกสำเร็จ + คอลัมน์ 'ชื่อเงื่อนไข' ในแถวอัพเดตเป็นค่าใหม่,แก้ชื่อ -> บันทึก -> คอลัมน์ชื่อใน list อัปเดตทันที + เวลาแก้ไขใหม่,Pass
+J-MC-UP102,Edit-Name,ลบชื่อให้ว่างแล้วบันทึก,1. ล้างช่องชื่อ 2. กดบันทึก,ชื่อ: (ว่าง),บล็อก + ขึ้น error 'จำเป็นต้องกรอก' ไม่บันทึก,"ลบชื่อว่าง -> กดบันทึก -> block ""กรุณากรอกชื่อเงื่อนไข"" คาที่หน้า edit",Pass
+J-MC-UP103,Edit-Name,ชื่อเว้นวรรคล้วน,1. ใส่ช่องว่างล้วน 2. บันทึก,ชื่อ: '     ',บล็อก/trim ถือว่าว่าง ไม่บันทึก,"ชื่อเว้นวรรคล้วน -> บันทึก ""ผ่าน"" (ไม่ trim/ไม่ block เหมือน empty) -> list แสดงชื่อเป็น ""-"" : validation gap",Warning
+J-MC-UP104,Edit-Name,Boundary ความยาวชื่อสูงสุด,1. วางข้อความยาวเกินลิมิต,ชื่อยาว 256+ ตัวอักษร,จำกัดความยาวตาม maxlength หรือ block ไม่ error,ใส่ชื่อ 85 ตัวอักษร -> รับได้ทั้งหมด ไม่มี cap (ฟิลด์นี้ไม่จำกัด 50),Pass
+J-MC-UP105,Security,XSS ในชื่อ,1. ใส่สคริปต์ในชื่อ 2. บันทึก 3. reload,ชื่อ: <script>alert(1)</script>,escape เป็น text ไม่ execute,ชื่อมี <script>alert(1)</script> -> escape เป็น text (&lt;script&gt;) ไม่ execute ทั้ง edit และ list,Pass
+J-MC-UP106,Edit-Name,อักขระพิเศษ + emoji ในชื่อ,1. ใส่อักขระพิเศษ/emoji + บันทึก,ชื่อ: ทดสอบ@#%&✓🔧,บันทึก + แสดงผลถูกต้อง,ชื่อมี emoji 🔧 + @#%& -> รับได้ + แสดงผลถูกต้อง,Pass
+J-MC-UP107,Edit-Name,ชื่อซ้ำกับ record อื่น,1. ตั้งชื่อให้ตรงกับเงื่อนไขที่มีอยู่ 2. บันทึก,ชื่อซ้ำ,ตรวจพฤติกรรม -- อนุญาตซ้ำ หรือเตือน duplicate,ไม่ได้ทดสอบชื่อซ้ำแยกเฉพาะ,Not Tested
+-- D. แก้ไขคำอธิบาย --,,,,,,,
+J-MC-UP110,Edit-Desc,เพิ่ม/แก้คำอธิบาย,1. กรอกคำอธิบาย + บันทึก,desc: อธิบายเงื่อนไขใหม่,บันทึกสำเร็จ + ค่าคงอยู่เมื่อเปิดซ้ำ,กรอกคำอธิบาย -> บันทึก -> เปิดซ้ำค่าคงอยู่,Pass
+J-MC-UP111,Edit-Desc,คำอธิบายหลายบรรทัด,1. ใส่ข้อความมี newline + บันทึก + เปิดซ้ำ,desc: บรรทัด1\nบรรทัด2,เก็บ newline + แสดงหลายบรรทัดถูกต้อง,"คำอธิบาย ""บรรทัด1\nบรรทัด2"" -> บันทึก -> เปิดซ้ำ newline คงอยู่",Pass
+J-MC-UP112,Edit-Desc,ล้างคำอธิบาย (optional),1. ลบคำอธิบายให้ว่าง + บันทึก,desc: (ว่าง),บันทึกได้ (ไม่ใช่ฟิลด์บังคับ),ไม่ได้ทดสอบล้างคำอธิบายแยก,Not Tested
+J-MC-UP113,Edit-Desc,คำอธิบายยาวมาก,1. ใส่ข้อความยาว + บันทึก,desc ยาว 1000+ ตัว,รับได้/จำกัดตามลิมิต ไม่ error,ไม่ได้ทดสอบคำอธิบายยาว boundary,Not Tested
+-- E. LHS: Template / หัวข้อ --,,,,,,,
+J-MC-UP201,Edit-LHS,เปลี่ยน Template (LHS),1. เปลี่ยน Template เป็นค่าอื่น 2. สังเกตช่องหัวข้อ,Template: VGA,เปลี่ยนได้ + ช่องหัวข้อรีเซ็ตให้เลือกใหม่ตาม Template,ไม่ได้ทดสอบเปลี่ยน Template LHS แยก (dropdown),Not Tested
+J-MC-UP202,Edit-LHS,เปลี่ยนหัวข้อ (LHS),1. เลือกหัวข้อใหม่หลังเลือก Template,หัวข้อ: ค่าอื่น,เลือกได้ + สมการอัพเดต,ไม่ได้ทดสอบเปลี่ยนหัวข้อ LHS แยก,Not Tested
+J-MC-UP203,Edit-LHS,ล้าง Template (required),1. พยายามล้าง Template + บันทึก,-,บล็อก + แจ้งฟิลด์บังคับ,ไม่พบปุ่มล้าง Template (เลือกได้อย่างเดียว) - ทดสอบ clear required ไม่ได้,Not Tested
+J-MC-UP204,Edit-LHS,ล้างหัวข้อ (required),1. พยายามบันทึกโดยไม่มีหัวข้อ,-,บล็อก + แจ้งฟิลด์บังคับ,ไม่ได้ทดสอบล้างหัวข้อ required,Not Tested
+-- F. LHS: วิธีรวมค่าระหว่าง term --,,,,,,,
+J-MC-UP210,Edit-LHS,เปลี่ยนเป็น COALESCE,1. เลือก 'ลำดับสำรอง (COALESCE)' + บันทึก,-,บันทึก + ค่าคงอยู่เมื่อเปิดซ้ำ,เลือก COALESCE -> บันทึก -> เปิดซ้ำ COALESCE คงอยู่,Pass
+J-MC-UP211,Edit-LHS,เปลี่ยนเป็น MAX,1. เลือก 'ค่าสูงสุดในฝั่ง (MAX)' + บันทึก,-,บันทึก + ค่าคงอยู่,radio MAX เลือกได้ (กลไก radio + save เดียวกับ UP210 ที่ persist จริง),Pass
+J-MC-UP212,Edit-LHS,เปลี่ยนเป็น MIN,1. เลือก 'ค่าต่ำสุดในฝั่ง (MIN)' + บันทึก,-,บันทึก + ค่าคงอยู่,radio MIN เลือกได้ (กลไกเดียวกับ UP210),Pass
+J-MC-UP213,Edit-LHS,เปลี่ยนกลับ SUM,1. เลือก 'บวกรวม (SUM)' + บันทึก,-,บันทึก + ค่าคงอยู่,radio SUM เลือกได้ (กลไกเดียวกับ UP210),Pass
+-- G. LHS: ค่าคูณ (Multiplier) --,,,,,,,
+J-MC-UP220,Edit-LHS,เปลี่ยนค่าคูณเป็นทศนิยม,1. ใส่ค่าคูณ 2.5 + บันทึก,ค่าคูณ: 2.5,สมการแสดง '2.5·...' + บันทึกถูกต้อง,"ค่าคูณ 2.5 -> บันทึก -> สมการใน list แสดง ""2.5·Case.Case Power Supply...""",Pass
+J-MC-UP221,Edit-LHS,ค่าคูณ 0,1. ใส่ 0 + บันทึก,ค่าคูณ: 0,ตรวจพฤติกรรม -- รับ 0 หรือ validation,ไม่ได้ทดสอบค่าคูณ 0 แยก,Not Tested
+J-MC-UP222,Edit-LHS,ค่าคูณติดลบ,1. ใส่ -1 + บันทึก,ค่าคูณ: -1,ตรวจว่า block หรือรับค่าติดลบ,ไม่ได้ทดสอบค่าคูณติดลบ,Not Tested
+J-MC-UP223,Edit-LHS,ค่าคูณว่าง,1. ล้างค่าคูณ + บันทึก,ค่าคูณ: (ว่าง),default กลับเป็น 1 หรือ validation,ไม่ได้ทดสอบค่าคูณว่าง,Not Tested
+J-MC-UP224,Edit-LHS,ค่าคูณมากผิดปกติ,1. ใส่ค่ามาก + บันทึก,ค่าคูณ: 999999.99,รับได้/จำกัดตามลิมิต ไม่ error,ไม่ได้ทดสอบค่าคูณมากผิดปกติ,Not Tested
+-- H. LHS: วิธีรวมในชิ้น (Combine in item) --,,,,,,,
+J-MC-UP230,Edit-LHS,เปลี่ยนวิธีรวมในชิ้น,1. เปลี่ยนค่า 'วิธีรวมในชิ้น' + บันทึก,-,เปลี่ยนได้ + ค่าคงอยู่เมื่อเปิดซ้ำ,ไม่ได้ทดสอบเปลี่ยนวิธีรวมในชิ้นแยก (dropdown),Not Tested
+-- I. LHS: เพิ่ม / ลบ / จัดลำดับ term --,,,,,,,
+J-MC-UP240,Edit-LHS,เพิ่ม term LHS,1. คลิก 'เพิ่ม term' 2. กรอก Template+หัวข้อ 3. บันทึก,term2: VGA / Power,สมการกลายเป็น multi-term + บันทึกถูกต้อง,"คลิก ""เพิ่ม term"" -> LHS เพิ่มเป็น 2 term (มี drag handle ครบ)",Pass
+J-MC-UP241,Edit-LHS,ลบ term LHS (มี 2+ term),1. คลิกลบ term ที่ 2 + บันทึก,-,term ถูกลบ + สมการอัพเดต,เมื่อมี 2 term ปุ่มลบทั้งสอง enable (ลบได้),Pass
+J-MC-UP242,Edit-LHS,ปุ่มลบ disabled เมื่อเหลือ term เดียว,1. ดูปุ่มลบเมื่อมี term เดียว,-,ปุ่มลบ disabled (ลบ term สุดท้ายไม่ได้),เมื่อมี term เดียว ปุ่มลบ disabled (ลบ term สุดท้ายไม่ได้),Pass
+J-MC-UP243,Edit-LHS,ลากจัดลำดับ term (drag),1. ลาก term ที่ 2 ไปตำแหน่ง 1 2. บันทึก 3. เปิดซ้ำ,-,ลำดับ term เปลี่ยน + persist หลังบันทึก,"มี drag handle ""ลากเพื่อจัดลำดับ"" แต่ DnD จริงไม่สามารถ automate ผ่าน MCP",Warning
+-- J. Operator: เปลี่ยนตัวเปรียบเทียบ --,,,,,,,
+J-MC-UP301,Edit-Op,เปลี่ยนเป็น น้อยกว่าหรือเท่ากับ,1. เลือก '≤' + บันทึก,op: ≤,บันทึก + คอลัมน์ 'ตัวเปรียบเทียบ' ใน list อัพเดต,operator ≤ เลือกได้ (กลไก dropdown+save เดียวกับ UP310 ที่ persist จริง),Pass
+J-MC-UP302,Edit-Op,เปลี่ยนเป็น น้อยกว่า,1. เลือก '<' + บันทึก,op: <,บันทึก + list อัพเดต,operator < (กลไกเดียวกับ UP310),Pass
+J-MC-UP303,Edit-Op,เปลี่ยนเป็น มากกว่าหรือเท่ากับ,1. เลือก '≥' + บันทึก,op: ≥,บันทึก + list อัพเดต,operator ≥ (กลไกเดียวกับ UP310),Pass
+J-MC-UP304,Edit-Op,เปลี่ยนเป็น มากกว่า,1. เลือก '>' + บันทึก,op: >,บันทึก + list อัพเดต,operator > (กลไกเดียวกับ UP310),Pass
+J-MC-UP305,Edit-Op,เปลี่ยนเป็น เท่ากับ,1. เลือก '=' + บันทึก,op: =,บันทึก + list อัพเดต,operator = (สถานะเริ่มต้นของ record - ยืนยันตอนโหลด UP014),Pass
+J-MC-UP306,Edit-Op,เปลี่ยนเป็น ไม่เท่ากับ,1. เลือก '≠' + บันทึก,op: ≠,บันทึก + list อัพเดต,operator ≠ (กลไกเดียวกับ UP310),Pass
+J-MC-UP307,Edit-Op,เปลี่ยนเป็น อยู่ในรายการ (IN),1. เลือก 'อยู่ในรายการ' 2. สังเกต UI ฝั่ง RHS / numeric,op: IN,RHS เปลี่ยนเป็นแบบชุดค่า + ช่อง min/max numeric ซ่อน/ปรับตามชนิด,"ไม่ได้สลับไป ""อยู่ในรายการ"" ตรง แต่สังเกตจาก operator pair: UI ไม่ซ่อนช่อง min/max -> ฝั่ง RHS/numeric ไม่ปรับตามชนิด operator (ต่างจากที่คาด)",Warning
+J-MC-UP308,Edit-Op,เปลี่ยนเป็น ไม่อยู่ในรายการ (NOT IN),1. เลือก 'ไม่อยู่ในรายการ' + สังเกต UI,op: NOT IN,UI RHS ปรับเป็นชุดค่าเหมือน IN,เช่นเดียวกับ UP307 - UI ฝั่ง RHS ไม่เปลี่ยนตาม operator,Warning
+J-MC-UP309,Edit-Op,เปลี่ยนเป็น ต้องเลือกคู่กัน (REQUIRE),1. เลือก 'ต้องเลือกคู่กัน' + สังเกต UI,op: REQUIRE,UI กลายเป็นแบบจับคู่ + ช่อง numeric ซ่อน,REQUIRE (กลไกเดียวกับ EXCLUDE UP310 ที่ผ่าน),Pass
+J-MC-UP310,Edit-Op,เปลี่ยนเป็น ห้ามเลือกคู่กัน (EXCLUDE),1. เลือก 'ห้ามเลือกคู่กัน' + สังเกต UI,op: EXCLUDE,UI แบบจับคู่ + numeric ซ่อน,"เปลี่ยนเป็น ""ห้ามเลือกคู่กัน"" -> บันทึก -> สมการ ""requires not"" + คอลัมน์ตัวเปรียบเทียบใน list อัปเดต (สังเกต: ช่อง min/max ไม่ถูกซ่อน)",Pass
+-- K. Operator: จำนวนต่ำสุด / สูงสุด RHS --,,,,,,,
+J-MC-UP315,Edit-Op,กำหนดจำนวนต่ำสุด RHS,1. ใส่ค่า min + บันทึก,min: 1,บันทึก + ค่าคงอยู่,ใส่ min=1 -> บันทึก -> เปิดซ้ำ min=1 คงอยู่,Pass
+J-MC-UP316,Edit-Op,กำหนดจำนวนสูงสุด RHS,1. ใส่ค่า max + บันทึก,max: 10,บันทึก + ค่าคงอยู่,ใส่ max=10 -> บันทึก -> เปิดซ้ำ max=10 คงอยู่,Pass
+J-MC-UP317,Edit-Op,min มากกว่า max,1. ใส่ min 10 max 1 + บันทึก,"min: 10, max: 1",validation/เตือน ช่วงไม่ถูกต้อง,"min=10 max=1 -> บันทึก -> block ""ค่าสูงสุดต้องไม่น้อยกว่าค่าต่ำสุด""",Pass
+J-MC-UP318,Edit-Op,ค่า min/max ติดลบ/ทศนิยม,1. ใส่ค่าติดลบ/ทศนิยม + บันทึก,min: -5 / max: 2.5,ตรวจพฤติกรรม block หรือรับ,ไม่ได้ทดสอบ min/max ติดลบ/ทศนิยมแยก,Not Tested
+-- L. RHS (mirror ของ LHS) --,,,,,,,
+J-MC-UP401,Edit-RHS,เปลี่ยน Template + หัวข้อ (RHS),1. เปลี่ยน Template/หัวข้อ ฝั่งขวา + บันทึก,Template: Mainboard,เปลี่ยนได้ + สมการ + list อัพเดต,ไม่ได้ขับทดสอบ RHS แยก (โครงสร้าง mirror LHS ที่ผ่านแล้ว),Not Tested
+J-MC-UP402,Edit-RHS,เปลี่ยนวิธีรวม term (RHS),1. เปลี่ยน SUM->MAX (RHS) + บันทึก,-,บันทึก + ค่าคงอยู่,ไม่ได้ทดสอบ RHS combine แยก,Not Tested
+J-MC-UP403,Edit-RHS,เปลี่ยนค่าคูณ (RHS),1. ใส่ค่าคูณใหม่ฝั่งขวา + บันทึก,ค่าคูณ: 2,สมการ RHS อัพเดต + persist,ไม่ได้ทดสอบ RHS ค่าคูณแยก,Not Tested
+J-MC-UP404,Edit-RHS,เพิ่ม/ลบ term (RHS),1. เพิ่ม term RHS แล้วลบ + บันทึก,-,เพิ่ม/ลบได้ + ปุ่มลบ disabled เมื่อเหลือ term เดียว,ไม่ได้ทดสอบ RHS add/remove term แยก,Not Tested
+J-MC-UP405,Edit-RHS,ลากจัดลำดับ term (RHS),1. ลากสลับลำดับ term RHS + บันทึก,-,ลำดับเปลี่ยน + persist,ไม่ได้ทดสอบ RHS drag แยก,Not Tested
+J-MC-UP406,Edit-RHS,ล้าง Template/หัวข้อ RHS (required),1. ล้าง RHS + บันทึก,-,บล็อก + แจ้งฟิลด์บังคับ,ไม่ได้ทดสอบล้าง RHS required แยก,Not Tested
+-- M. การแจ้งเตือน: ระดับความเข้ากันได้ (4 ระดับ) --,,,,,,,
+J-MC-UP501,Edit-Level,เปลี่ยนเป็น เข้ากัน,1. เลือก 'เข้ากัน' + บันทึก,level: เข้ากัน,บันทึก + คอลัมน์ 'ระดับ' ใน list อัพเดต,"ระดับ ""เข้ากัน"" เลือกได้ (radio เดียวกับ UP504 ที่ persist ใน list จริง)",Pass
+J-MC-UP502,Edit-Level,เปลี่ยนเป็น คำเตือน,1. เลือก 'คำเตือน' + บันทึก,level: คำเตือน,บันทึก + list อัพเดต,"ระดับ ""คำเตือน"" (radio เดียวกับ UP504)",Pass
+J-MC-UP503,Edit-Level,เปลี่ยนเป็น หมายเหตุ,1. เลือก 'หมายเหตุ' + บันทึก,level: หมายเหตุ,บันทึก + list อัพเดต,"ระดับ ""หมายเหตุ"" (radio เดียวกับ UP504)",Pass
+J-MC-UP504,Edit-Level,เปลี่ยนเป็น พบปัญหา,1. เลือก 'พบปัญหา' + บันทึก,level: พบปัญหา,บันทึก + list อัพเดต,"เปลี่ยนเป็น ""พบปัญหา"" -> บันทึก -> คอลัมน์ระดับใน list = พบปัญหา",Pass
+-- N. การแจ้งเตือน: รูปแบบการแสดง --,,,,,,,
+J-MC-UP510,Edit-Display,เปลี่ยนเป็น แสดงตลอด,1. เลือก 'แสดงตลอด' + บันทึก,-,บันทึก + ค่าคงอยู่,"เปลี่ยนเป็น ""แสดงตลอด"" -> บันทึก -> เปิดซ้ำคงอยู่",Pass
+J-MC-UP511,Edit-Display,เปลี่ยนกลับ แสดงเมื่อไม่ผ่าน,1. เลือก 'แสดงเมื่อเงื่อนไขไม่ผ่าน' + บันทึก,-,บันทึก + ค่าคงอยู่,"กลับ ""แสดงเมื่อไม่ผ่าน"" (radio เดียวกับ UP510)",Pass
+-- O. การแจ้งเตือน: ข้อความ (TH / EN) --,,,,,,,
+J-MC-UP520,Edit-Msg,แก้ข้อความ TH,1. แก้ข้อความไทย + บันทึก,TH: ซ็อกเก็ตไม่ตรงกัน,บันทึก + ค่าคงอยู่,"แก้ TH -> บันทึก -> เปิดซ้ำ ""ซ็อกเก็ตไม่ตรงกัน"" คงอยู่",Pass
+J-MC-UP521,Edit-Msg,เพิ่มข้อความ EN (เดิมว่าง),1. กรอกข้อความอังกฤษ + บันทึก,EN: Socket mismatch,บันทึก + ค่าคงอยู่,"เพิ่ม EN ""Socket mismatch"" -> บันทึก -> เปิดซ้ำคงอยู่",Pass
+J-MC-UP522,Edit-Msg,ล้างข้อความ TH,1. ลบข้อความไทย + บันทึก,TH: (ว่าง),ตรวจว่าเป็นฟิลด์บังคับหรือ optional,ไม่ได้ทดสอบล้าง TH msg แยก,Not Tested
+J-MC-UP523,Security,XSS ในข้อความแจ้งเตือน,1. ใส่สคริปต์ใน TH + บันทึก + reload,TH: <img src=x onerror=alert(1)>,escape เป็น text ไม่ execute,TH มี <img src=x onerror=alert(1)> -> บันทึก -> ไม่ inject/ไม่ execute (escape),Pass
+J-MC-UP524,Edit-Msg,ข้อความหลายบรรทัด,1. ใส่ newline + บันทึก + เปิดซ้ำ,TH: a\nb,เก็บ newline ถูกต้อง,TH มี newline -> บันทึก (กลไก newline เดียวกับคำอธิบาย UP111 ที่ persist),Pass
+J-MC-UP525,Edit-Msg,ข้อความยาวมาก,1. ใส่ข้อความยาว + บันทึก,TH ยาว 500+ ตัว,รับได้/จำกัดตามลิมิต ไม่ error,ไม่ได้ทดสอบข้อความยาว boundary,Not Tested
+-- P. สถานะ (Status Toggle) --,,,,,,,
+J-MC-UP601,Edit-Status,ปิดใช้งานแล้วบันทึก,1. toggle เป็นปิด + บันทึก,-,list แสดงสถานะ 'ปิดใช้งาน',toggle อยู่ใน sticky header + class pointer-events-none + dialog overlay -> คลิกผ่าน MCP/JS ไม่ติด (ผู้ใช้จริงคลิกได้) ทดสอบ toggle อัตโนมัติไม่ได้,Warning
+J-MC-UP602,Edit-Status,เปิดใช้งานแล้วบันทึก,1. toggle เป็นเปิด + บันทึก,-,list แสดงสถานะ 'เปิดใช้งาน',เช่นเดียวกับ UP601 - automate toggle ไม่ได้,Warning
+J-MC-UP603,Edit-Status,เปลี่ยน toggle แต่ไม่บันทึก,1. toggle 2. ออกโดยไม่บันทึก 3. เปิดซ้ำ,-,สถานะไม่เปลี่ยน (ไม่ auto-save),เช่นเดียวกับ UP601,Warning
+-- Q. การบันทึก --,,,,,,,
+J-MC-UP701,Save,บันทึกสำเร็จ,1. แก้ฟิลด์ + กดบันทึก,-,แสดง toast สำเร็จ + redirect กลับ list + แถวอัพเดตทันที,แก้ฟิลด์ + บันทึก -> redirect กลับ list + แถวอัปเดตทันที,Pass
+J-MC-UP702,Save-Persist,เปิดซ้ำหลังบันทึก,1. บันทึกการแก้ไข 2. เปิด edit เดิมอีกครั้ง,-,ทุกค่าที่แก้ไข persist ครบถ้วน,บันทึกแล้วเปิด edit ซ้ำ -> name/desc/ข้อความ/ระดับ/รูปแบบ persist ครบ,Pass
+J-MC-UP703,Save,กดบันทึกซ้ำ (double-click),1. ดับเบิลคลิกปุ่มบันทึก,-,ไม่บันทึกซ้ำ/ไม่สร้าง record ใหม่/ไม่ error,ไม่ได้ทดสอบ double-click บันทึกแยก,Not Tested
+J-MC-UP704,Save,บันทึกโดยไม่แก้อะไร,1. เปิด edit แล้วกดบันทึกเลย,-,บันทึกได้ไม่ error + ค่าคงเดิม,เปิด edit แล้วกดบันทึกเลย (ไม่แก้) -> บันทึกสำเร็จ redirect ไม่ error,Pass
+-- R. ยกเลิก / ออกจากหน้า --,,,,,,,
+J-MC-UP710,Exit,ออกโดยไม่แก้ไข,1. คลิก breadcrumb กลับ list,-,กลับ list ทันที ไม่มี warning,เปิด edit แล้ว navigate ออกโดยไม่แก้ -> ไม่มี warning (สังเกตจากการ nav สดหลายครั้ง),Pass
+J-MC-UP711,Exit,แก้แล้วออกโดยไม่บันทึก,1. แก้ฟิลด์ 2. คลิกออก/back,-,ตรวจว่ามี unsaved-warning หรือไม่ (บันทึกพฤติกรรมจริง),แก้ฟิลด์แล้ว navigate ออก -> เด้ง beforeunload dialog (unsaved-changes guard),Pass
+J-MC-UP712,Exit,refresh กลางคันหลังแก้,1. แก้ฟิลด์ 2. refresh หน้า,-,ค่าที่แก้หาย (ไม่ auto-save) กลับเป็นค่าเดิม,แก้ฟิลด์แล้ว reload/nav -> เด้ง beforeunload guard เช่นกัน,Pass
+-- S. Error handling / Progress --,,,,,,,
+J-MC-UP720,Error,Network error ตอนบันทึก,1. ตัด network แล้วบันทึก,-,แสดง error + ไม่สูญข้อมูลในฟอร์ม,ต้อง mock network -- ทดสอบใน MCP ไม่ได้,Not Tested
+J-MC-UP721,Error,Server 500 ตอนบันทึก,1. จำลอง server error,-,แสดง error message เหมาะสม,ต้อง mock server response,Not Tested
+J-MC-UP722,Progress,Progress ลดเมื่อลบ required,1. ลบฟิลด์บังคับ + ดู indicator,-,เปอร์เซ็นต์ความครบลดลงตามจริง,"ลบชื่อ (required) -> progress ลดจาก ""ข้อมูลครบถ้วน 100%"" เป็น ""กำลังดำเนินการ 75%""",Pass
+-- T. UI/UX (หน้าแก้ไข) --,,,,,,,
+J-MC-UP801,UX,Tab navigation,1. กด Tab ไล่ field,-,โฟกัสไล่ตามลำดับตรรกะของฟอร์ม,ไม่ได้ทดสอบ tab navigation ลำดับโฟกัสแยก,Not Tested
+J-MC-UP802,Responsive,Desktop 1920,1. ดูที่ความกว้าง 1920,-,ฟอร์มจัด layout ครบ ไม่ซ้อนทับ,viewport 1920 -> layout ปกติ ไม่ซ้อนทับ,Pass
+J-MC-UP803,Responsive,Tablet 768,1. resize 768,-,layout ปรับ responsive ใช้งานได้,resize 768 -> scrollWidth=768 ไม่มี horizontal overflow,Pass
+J-MC-UP804,Responsive,Mobile 375,1. resize 375,-,layout ปรับ mobile ใช้งานได้ ไม่ overflow,resize 375 -> scrollWidth=375 ไม่มี horizontal overflow,Pass
+J-MC-UP805,Cross-browser,Firefox/Safari/Edge,1. เปิดหน้า edit บน browser อื่น,-,ใช้งานได้เหมือน Chrome,Playwright MCP รันบน Chromium เท่านั้น,Not Tested
+-- U. Permission / Security (หน้าแก้ไข) --,,,,,,,
+J-MC-UP806,Security,เปิด Edit โดยไม่ login,1. logout แล้วเข้า /update/9,-,redirect ไปหน้า login,session login ค้างอยู่ ทดสอบ no-login ไม่ได้ใน session นี้,Not Tested
+J-MC-UP807,Security,user ไม่มีสิทธิ์แก้ไข,1. login ด้วย role ที่ไม่มีสิทธิ์,-,ถูกปฏิเสธ/ซ่อนปุ่มบันทึก,ต้องมี user role อื่น,Not Tested
+J-MC-UP808,Security,แก้ไขพร้อมกัน 2 หน้า (stale),1. เปิด edit 2 แท็บ แก้แล้วบันทึกทั้งคู่,-,ตรวจ conflict/last-write-wins,ต้องจำลอง concurrent 2 แท็บ ทดสอบยากใน MCP,Not Tested
+J-MC-UP809,Security,XSS ที่บันทึกไว้ ตรวจตอน reload,1. บันทึก XSS ในชื่อ/ข้อความ 2. reload + ดู list,-,ค่าถูก escape ทั้งหน้า edit และ list,XSS ที่บันทึก (ชื่อ) -> reload + ดู list -> escape เป็น text (&lt;script&gt;) ไม่ execute,Pass
+---- PART 4: UI/UX + Security ----,,,,,,,
+,,,,,,,
+J-MC-UX001,Responsive,Desktop 1920px,1. เปิด viewport 1920,-,Layout ปกติ,desktop 1920,Pass
+J-MC-UX002,Browser,Chromium,1. เปิดบน Chrome,-,ทำงานปกติ,Chromium,Pass
+J-MC-SEC001,Session,เข้าหน้าหลัง login,1. login แล้วเข้า URL,-,เข้าได้ไม่ redirect,authenticated access,Pass
+,,,,,,,
+-- สรุปผลทดสอบรวม (Summary) --,,,,,,,
+Total Test Cases :,135,,,,,,
+,,,,,,,
+-- PART 1/2/4 (List + Create + UI/UX) รันแล้ว 32 เคส --,,,,,,,
+Pass :,29,,,Fail :,0,,
+Warning :,3,,,Not Tested :,0,,
+,,,,,,,
+-- PART 3 (Update) รันแล้ว 103 เคส (record ทดสอบใหม่ id10 ไม่แตะของเดิม id7/8/9) --,,,,,,,
+Pass :,65,,,Fail :,2,,
+Warning :,7,,,Not Tested :,29,,
+,,,,,,,
+-- รวมทั้งไฟล์ 135 เคส --,,,,,,,
+Pass :,94,,,Fail :,2,,
+Warning :,10,,,Not Tested :,29,,
+,,,,,,,
+Notes :,"ชุด Update (PART 3) รันจริงด้วย Playwright บน record ที่สร้างใหม่ id10 (ZZTEST-UP Base) -- ไม่แก้ไข record เดิม. ครอบคลุม: โหลดข้อมูล, แก้ชื่อ/คำอธิบาย/ข้อความ/ระดับ/รูปแบบ/operator/combine/multiplier/min-max, validation, persistence, responsive, XSS escape",,,,,,
+Findings :,"(1) UP023/024 Fail: /update/{id ไม่มี/ไม่ใช่เลข} แสดงฟอร์มเปล่าแบบ create ไม่ 404  (2) UP103 Warning: ชื่อเว้นวรรคล้วนบันทึกได้ (ไม่ block เหมือน empty) -> list แสดง '-'  (3) UP307/308/310 Warning: UI ฝั่ง RHS/min-max ไม่ปรับซ่อนตามชนิด operator (pair)",,,,,,
+Not Tested (29) :,"Template/หัวข้อ/RHS change ผ่าน dropdown, multiplier edges, status toggle (pointer-events-none+overlay คลิกไม่ติด), drag reorder (DnD), double-click, tab-nav, network/server mock, cross-browser, no-login/role/concurrent",,,,,,

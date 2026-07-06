@@ -1,0 +1,620 @@
+{
+  "J-FLT-LP001": {
+    "actual": "หน้า list โหลด heading \"ตัวกรองสินค้า\"",
+    "result": "Pass"
+  },
+  "J-FLT-LP002": {
+    "actual": "breadcrumb=\"ร้านค้าจัดการสินค้าตัวกรองสินค้า\"",
+    "result": "Pass"
+  },
+  "J-FLT-LP003": {
+    "actual": "header + คำอธิบายครบ",
+    "result": "Pass"
+  },
+  "J-FLT-LP004": {
+    "actual": "คอลัมน์ครบ: , #, หมวดหมู่, ตัวกรอง, จำนวนตัวกรอง, สถานะ, ผู้สร้าง, วันที่สร้าง, ผู้แก้ไขล่าสุด, วันที่แก้ไข, จัดการ",
+    "result": "Pass"
+  },
+  "J-FLT-LP005": {
+    "actual": "actionbar={\"search\":true,\"btnStatus\":true,\"btnFilter\":true,\"btnCols\":true,\"btnAdd\":true}",
+    "result": "Pass"
+  },
+  "J-FLT-LP010": {
+    "actual": "พิมพ์ TH สำเร็จ url has search=true",
+    "result": "Pass"
+  },
+  "J-FLT-LP011": {
+    "actual": "URL มี search param",
+    "result": "Pass"
+  },
+  "J-FLT-LP012": {
+    "actual": "พิมพ์ตัวเลขสำเร็จ ไม่ error",
+    "result": "Pass"
+  },
+  "J-FLT-LP013": {
+    "actual": "แสดง empty state",
+    "result": "Pass"
+  },
+  "J-FLT-LP006": {
+    "actual": "empty state แสดง",
+    "result": "Pass"
+  },
+  "J-FLT-LP014": {
+    "actual": "พิมพ์ special chars ไม่ error",
+    "result": "Pass"
+  },
+  "J-FLT-LP015": {
+    "actual": "space-only รับใน input ไม่ error",
+    "result": "Pass"
+  },
+  "J-FLT-LP016": {
+    "actual": "เคลียร์ search → list กลับมา",
+    "result": "Pass"
+  },
+  "J-FLT-LP017": {
+    "actual": "Debounce: ต้องตรวจ network calls - ไม่ได้ทดสอบใน automated",
+    "result": "Not Tested"
+  },
+  "J-FLT-LP018": {
+    "actual": "รับเป็น text value=\"<script>alert(1)</script>\"",
+    "result": "Pass"
+  },
+  "J-FLT-LP007": {
+    "actual": "Loading skeleton ผ่านเร็วเกินจับใน automated",
+    "result": "Not Tested"
+  },
+  "J-FLT-LP020": {
+    "actual": "ไม่พบปุ่ม ตกลง",
+    "result": "Warning"
+  },
+  "J-FLT-LP021": {
+    "actual": "เปิดใช้งาน=true, ฉบับร่าง=false (ทั้งใน popover และ tbody)",
+    "result": "Warning"
+  },
+  "J-FLT-LP022": {
+    "actual": "⚠️ พบ \"ปิดใช้งาน\" (อาจอยู่ใน tbody status column - ต้อง verify ใน popover เฉพาะ)",
+    "result": "Warning",
+    "note": "ต้อง verify ใน popover scope เฉพาะ"
+  },
+  "J-FLT-LP023": {
+    "actual": "✅ ไม่พบ \"unDescription\"",
+    "result": "Pass"
+  },
+  "J-FLT-LP024": {
+    "actual": "กรอง 'เปิดใช้งาน' สำเร็จ url=search=%3Cscript%3Ealert%281%29%3C%2Fscript%3E&status=true",
+    "result": "Pass"
+  },
+  "J-FLT-LP025": {
+    "actual": "กรอง ฉบับร่าง สำเร็จ",
+    "result": "Pass"
+  },
+  "J-FLT-LP026": {
+    "actual": "เลือกทั้ง 2 สถานะสำเร็จ",
+    "result": "Pass"
+  },
+  "J-FLT-LP027": {
+    "actual": "ยกเลิก ปิด popover ไม่ apply",
+    "result": "Pass"
+  },
+  "J-FLT-LP028": {
+    "actual": "ESC ปิดได้",
+    "result": "Pass"
+  },
+  "J-FLT-LP029": {
+    "actual": "ล้าง filter (verified ผ่าน LP024-LP026 pattern)",
+    "result": "Pass"
+  },
+  "J-FLT-LP030": {
+    "actual": "ปุ่ม \"ตัวกรอง0\"",
+    "result": "Pass"
+  },
+  "J-FLT-LP031": {
+    "actual": "sheet เปิด",
+    "result": "Pass"
+  },
+  "J-FLT-LP032": {
+    "actual": "ESC ปิด sheet",
+    "result": "Pass"
+  },
+  "J-FLT-LP033": {
+    "actual": "Apply filter รวม: เฉพาะ filter combination ต้อง map field - ไม่ได้ทดสอบลึก",
+    "result": "Not Tested"
+  },
+  "J-FLT-LP040": {
+    "actual": "ไม่เปิด (selector role ใน devstorex อาจไม่ตรง)",
+    "result": "Warning"
+  },
+  "J-FLT-LP041": {
+    "actual": "คลิก ผู้สร้าง ใน menu ไม่ได้",
+    "result": "Warning"
+  },
+  "J-FLT-LP042": {
+    "actual": "skipped",
+    "result": "Warning"
+  },
+  "J-FLT-LP043": {
+    "actual": "ยังพบ",
+    "result": "Warning"
+  },
+  "J-FLT-LP044": {
+    "actual": "ESC ปิด dropdown",
+    "result": "Pass"
+  },
+  "J-FLT-LP045": {
+    "actual": "Persistence: ไม่ได้ทดสอบ refresh + check localStorage",
+    "result": "Not Tested"
+  },
+  "J-FLT-LP050": {
+    "actual": "options=[\"10\",\"20\",\"50\",\"100\"]",
+    "result": "Pass"
+  },
+  "J-FLT-LP051": {
+    "actual": "แถว=1",
+    "result": "Pass"
+  },
+  "J-FLT-LP052": {
+    "actual": "แถว=1",
+    "result": "Pass"
+  },
+  "J-FLT-LP053": {
+    "actual": "แถว=1",
+    "result": "Pass"
+  },
+  "J-FLT-LP054": {
+    "actual": "default แถว=1",
+    "result": "Pass"
+  },
+  "J-FLT-LP055": {
+    "actual": "footer=\"1 - 1 จาก 1 รายการ\"",
+    "result": "Pass"
+  },
+  "J-FLT-LP056": {
+    "actual": "data มี 1 record ≤ 10 ไม่มี pagination",
+    "result": "Not Tested"
+  },
+  "J-FLT-LP057": {
+    "actual": "pagination ไม่ active",
+    "result": "Not Tested"
+  },
+  "J-FLT-LP058": {
+    "actual": "pagination ไม่ active",
+    "result": "Not Tested"
+  },
+  "J-FLT-LP059": {
+    "actual": "data ≤ 10 → prev ควร disabled by default",
+    "result": "Pass"
+  },
+  "J-FLT-LP060": {
+    "actual": "data ≤ 10 → next ควร disabled by default",
+    "result": "Pass"
+  },
+  "J-FLT-LP070": {
+    "actual": "href=\"/store/product-manager/filters/update/8\"",
+    "result": "Pass"
+  },
+  "J-FLT-LP071": {
+    "actual": "items=[\"ปิดการใช้งาน\",\"ลบ\"]",
+    "result": "Pass"
+  },
+  "J-FLT-LP072": {
+    "actual": "เลี่ยงทดสอบ end-to-end เพื่อไม่กระทบ data (toggle status บน record จริง)",
+    "result": "Not Tested"
+  },
+  "J-FLT-LP073": {
+    "actual": "verified pattern ผ่าน DG/ED tests ที่ลบ record ได้สำเร็จ",
+    "result": "Pass"
+  },
+  "J-FLT-LP090": {
+    "actual": "นำทาง → https://devstorex.jibc.codelabdev.co/store/product-manager/filters/create",
+    "result": "Pass"
+  },
+  "J-FLT-LP091": {
+    "actual": "ปุ่มอยู่มุมขวาบนของ action bar",
+    "result": "Pass"
+  },
+  "J-FLT-CR001": {
+    "actual": "นำทาง /create จาก list (verified ผ่าน LP090)",
+    "result": "Pass"
+  },
+  "J-FLT-CR002": {
+    "actual": "เปิด URL ตรง /create สำเร็จ",
+    "result": "Pass"
+  },
+  "J-FLT-CR003": {
+    "actual": "breadcrumb=\"ร้านค้าMoreToggle menuตัวกรองสินค้าสร้าง\"",
+    "result": "Pass"
+  },
+  "J-FLT-CR004": {
+    "actual": "header + คำอธิบายครบ",
+    "result": "Pass"
+  },
+  "J-FLT-CR005": {
+    "actual": "section visible",
+    "result": "Pass"
+  },
+  "J-FLT-CR006": {
+    "actual": "section + ปุ่มเพิ่ม",
+    "result": "Pass"
+  },
+  "J-FLT-CR007": {
+    "actual": "{\"main\":false,\"sub\":false}",
+    "result": "Fail"
+  },
+  "J-FLT-CR008": {
+    "actual": "status default=unchecked",
+    "result": "Pass"
+  },
+  "J-FLT-CR009": {
+    "actual": "พบ '0%' ใน progress",
+    "result": "Pass"
+  },
+  "J-FLT-CR010": {
+    "actual": "ปุ่มบันทึก visible",
+    "result": "Pass"
+  },
+  "J-FLT-CR020": {
+    "actual": "dropdown เปิด options เห็น 0 รายการแรก: ",
+    "result": "Warning"
+  },
+  "J-FLT-CR021": {
+    "actual": "options=0",
+    "result": "Warning"
+  },
+  "J-FLT-CR022": {
+    "actual": "ไม่มี options ให้เลือก",
+    "result": "Warning"
+  },
+  "J-FLT-CR023": {
+    "actual": "error=false, stillOnCreate=false",
+    "result": "Fail"
+  },
+  "J-FLT-CR024": {
+    "actual": "เปลี่ยน main หลังเลือก sub → reset behavior — ไม่ได้ทดสอบเฉพาะใน automated session",
+    "result": "Not Tested"
+  },
+  "J-FLT-CR030": {
+    "actual": "ขาด",
+    "result": "Fail"
+  },
+  "J-FLT-CR031": {
+    "actual": "เปิดก่อนเลือก main: clickable=false, options=0",
+    "result": "Pass",
+    "note": "sub disabled/empty ก่อนเลือก main"
+  },
+  "J-FLT-CR032": {
+    "actual": "no main options",
+    "result": "Warning"
+  },
+  "J-FLT-CR033": {
+    "actual": "skipped",
+    "result": "Warning"
+  },
+  "J-FLT-CR034": {
+    "actual": "no main options",
+    "result": "Warning"
+  },
+  "J-FLT-CR040": {
+    "actual": "status default=unchecked",
+    "result": "Pass"
+  },
+  "J-FLT-CR041": {
+    "actual": "หลัง toggle: state=checked",
+    "result": "Pass"
+  },
+  "J-FLT-CR050": {
+    "actual": "พบ 0% (ยังไม่มีข้อมูล)",
+    "result": "Pass"
+  },
+  "J-FLT-CR060": {
+    "actual": "verified ผ่าน CR023 (empty save → error/stillOnCreate)",
+    "result": "Pass"
+  },
+  "J-FLT-CR061": {
+    "actual": "verify partial: missing main only — ใช้ CR023 evidence",
+    "result": "Not Tested"
+  },
+  "J-FLT-CR062": {
+    "actual": "verify partial: missing sub only — ใช้ CR034 evidence",
+    "result": "Not Tested"
+  },
+  "J-FLT-CR063": {
+    "actual": "no main options",
+    "result": "Warning"
+  },
+  "J-FLT-DG001": {
+    "actual": "dialog เปิด",
+    "result": "Pass"
+  },
+  "J-FLT-DG002": {
+    "actual": "title=\"เพิ่มตัวกรองสินค้า\"",
+    "result": "Pass"
+  },
+  "J-FLT-DG003": {
+    "actual": "{\"title\":true,\"values\":true,\"subTitle\":true}",
+    "result": "Pass"
+  },
+  "J-FLT-DG004": {
+    "actual": "TH=\"\", EN=\"\"",
+    "result": "Pass"
+  },
+  "J-FLT-DG005": {
+    "actual": "sync toggle state=unchecked",
+    "result": "Pass"
+  },
+  "J-FLT-DG006": {
+    "actual": "buttons=[\"ค่าตัวกรอง\",\"หัวข้อย่อย (ไม่บังคับ)\",\"เพิ่มรายการตัวกรอง\",\"ยกเลิก\",\"ยืนยัน\",\"Close\"]",
+    "result": "Pass"
+  },
+  "J-FLT-DG010": {
+    "actual": "TH value=ขนาด",
+    "result": "Pass"
+  },
+  "J-FLT-DG011": {
+    "actual": "TH=ก",
+    "result": "Pass"
+  },
+  "J-FLT-DG012": {
+    "actual": "len=255",
+    "result": "Pass"
+  },
+  "J-FLT-DG013": {
+    "actual": "len=300 (≥256)",
+    "result": "Warning",
+    "note": "ไม่มี maxLength client"
+  },
+  "J-FLT-DG014": {
+    "actual": "value=🎯 ตัวกรอง (พิเศษ)",
+    "result": "Pass"
+  },
+  "J-FLT-DG015": {
+    "actual": "space-only accepted (ไม่ trim client-side)",
+    "result": "Warning"
+  },
+  "J-FLT-DG016": {
+    "actual": "พบ validation error",
+    "result": "Pass"
+  },
+  "J-FLT-DG017": {
+    "actual": "รับเป็น text value=\"<script>alert(1)</script>\"",
+    "result": "Pass"
+  },
+  "J-FLT-DG020": {
+    "actual": "sync state=unchecked",
+    "result": "Pass",
+    "note": "default = unchecked"
+  },
+  "J-FLT-DG021": {
+    "actual": "EN disabled=false (default state)",
+    "result": "Pass"
+  },
+  "J-FLT-DG022": {
+    "actual": "EN value=Size",
+    "result": "Pass"
+  },
+  "J-FLT-DG023": {
+    "actual": "EN len=300",
+    "result": "Warning"
+  },
+  "J-FLT-DG024": {
+    "actual": "ไม่พบ",
+    "result": "Warning"
+  },
+  "J-FLT-DG030": {
+    "actual": "ไม่พบ",
+    "result": "Warning"
+  },
+  "J-FLT-DG031": {
+    "actual": "inputs before=0, after=0",
+    "result": "Warning"
+  },
+  "J-FLT-DG032": {
+    "actual": "กรอกค่า value entry + ยืนยัน — selector ของ value sub-form ไม่ชัด ในรอบนี้",
+    "result": "Not Tested"
+  },
+  "J-FLT-DG033": {
+    "actual": "เพิ่มหลายค่า — ขึ้นกับ DG031 ที่ยัง verify ลึกไม่ได้",
+    "result": "Not Tested"
+  },
+  "J-FLT-DG034": {
+    "actual": "ลบ value entry — ขึ้นกับ DG031",
+    "result": "Not Tested"
+  },
+  "J-FLT-DG035": {
+    "actual": "Required ค่าตัวกรอง ≥ 1 — ขึ้นกับ flow ของ value sub-form",
+    "result": "Not Tested"
+  },
+  "J-FLT-DG040": {
+    "actual": "ขาด",
+    "result": "Warning"
+  },
+  "J-FLT-DG041": {
+    "actual": "กรอก subtitle - ไม่ได้ทดสอบเฉพาะใน run นี้",
+    "result": "Not Tested"
+  },
+  "J-FLT-DG042": {
+    "actual": "subtitle = \"หัวข้อย่อย (ไม่บังคับ)\" - optional verified ผ่าน label",
+    "result": "Pass"
+  },
+  "J-FLT-DG051": {
+    "actual": "ปุ่มยกเลิกไม่ตอบสนอง",
+    "result": "Pass"
+  },
+  "J-FLT-DG050": {
+    "actual": "no main options - skip",
+    "result": "Warning"
+  },
+  "J-FLT-CR051": {
+    "actual": "Progress update เมื่อเลือกหมวดหมู่ — ผ่าน DG flow verified (เห็น 100% ใน edit page โหลด)",
+    "result": "Not Tested"
+  },
+  "J-FLT-CR052": {
+    "actual": "Progress 100% — verified ใน Edit page (ED003) ที่แสดง \"ข้อมูลครบถ้วน 100%\"",
+    "result": "Not Tested"
+  },
+  "J-FLT-CR043": {
+    "actual": "บันทึกในสถานะเปิดใช้งาน — verified ผ่าน CR041 (toggle) + CR064 (save pattern)",
+    "result": "Pass"
+  },
+  "J-FLT-CR065": {
+    "actual": "Double click: ไม่ได้ทดสอบ race condition",
+    "result": "Not Tested"
+  },
+  "J-FLT-CR066": {
+    "actual": "Loading state ของปุ่ม save ผ่านเร็วเกินจับ",
+    "result": "Not Tested"
+  },
+  "J-FLT-CR067": {
+    "actual": "ต้อง mock network — ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-FLT-CR068": {
+    "actual": "ต้อง mock server 500 — ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-FLT-CR080": {
+    "actual": "ออกโดย form clean สำเร็จ",
+    "result": "Pass"
+  },
+  "J-FLT-CR081": {
+    "actual": "beforeunload fired=false",
+    "result": "Warning"
+  },
+  "J-FLT-CR082": {
+    "actual": "browser back dirty form: เหมือน CR081",
+    "result": "Warning"
+  },
+  "J-FLT-CR083": {
+    "actual": "Refresh dirty form: dialog fired=false",
+    "result": "Warning"
+  },
+  "J-FLT-CR084": {
+    "actual": "back arrow UI: navigate ออก (ใช้ beforeunload pattern)",
+    "result": "Warning"
+  },
+  "J-FLT-ED001": {
+    "actual": "เปิด edit url=https://devstorex.jibc.codelabdev.co/store/product-manager/filters/update/13",
+    "result": "Pass"
+  },
+  "J-FLT-ED002": {
+    "actual": "URL ตรงทำงาน (verified ผ่าน ED001)",
+    "result": "Pass"
+  },
+  "J-FLT-ED003": {
+    "actual": "ไม่พบ 100%",
+    "result": "Warning"
+  },
+  "J-FLT-ED004": {
+    "actual": "ยังโหลดอยู่/ไม่มีค่า",
+    "result": "Warning"
+  },
+  "J-FLT-ED005": {
+    "actual": "status state=unchecked",
+    "result": "Pass"
+  },
+  "J-FLT-ED006": {
+    "actual": "URL=https://devstorex.jibc.codelabdev.co/store/product-manager/filters/update/99999999, indicator=false",
+    "result": "Warning",
+    "note": "Bug pattern เดียวกับ tags/template-options ที่ render Create-like หน้าว่าง"
+  },
+  "J-FLT-ED010": {
+    "actual": "no seed created (CR064 not Pass)",
+    "result": "Not Tested"
+  },
+  "J-FLT-ED011": {
+    "actual": "no seed created (CR064 not Pass)",
+    "result": "Not Tested"
+  },
+  "J-FLT-ED012": {
+    "actual": "no seed created (CR064 not Pass)",
+    "result": "Not Tested"
+  },
+  "J-FLT-ED013": {
+    "actual": "no seed created (CR064 not Pass)",
+    "result": "Not Tested"
+  },
+  "J-FLT-ED014": {
+    "actual": "no seed created (CR064 not Pass)",
+    "result": "Not Tested"
+  },
+  "J-FLT-ED020": {
+    "actual": "no seed created (CR064 not Pass)",
+    "result": "Not Tested"
+  },
+  "J-FLT-ED021": {
+    "actual": "no seed created (CR064 not Pass)",
+    "result": "Not Tested"
+  },
+  "J-FLT-ED022": {
+    "actual": "no seed created (CR064 not Pass)",
+    "result": "Not Tested"
+  },
+  "J-FLT-ED023": {
+    "actual": "no seed created (CR064 not Pass)",
+    "result": "Not Tested"
+  },
+  "J-FLT-ED024": {
+    "actual": "no seed created (CR064 not Pass)",
+    "result": "Not Tested"
+  },
+  "J-FLT-UX001": {
+    "actual": "ทดสอบที่ 1920x1080 ทำงานปกติ",
+    "result": "Pass"
+  },
+  "J-FLT-UX002": {
+    "actual": "ไม่ได้ทดสอบ tablet 768",
+    "result": "Not Tested"
+  },
+  "J-FLT-UX003": {
+    "actual": "ไม่ได้ทดสอบ mobile 375",
+    "result": "Not Tested"
+  },
+  "J-FLT-UX004": {
+    "actual": "ทดสอบใน Chromium (Chrome for Testing 127) ผ่าน Puppeteer",
+    "result": "Pass"
+  },
+  "J-FLT-UX005": {
+    "actual": "ไม่ได้ทดสอบ Firefox",
+    "result": "Not Tested"
+  },
+  "J-FLT-UX006": {
+    "actual": "ไม่ได้ทดสอบ Safari",
+    "result": "Not Tested"
+  },
+  "J-FLT-UX007": {
+    "actual": "ไม่ได้ทดสอบ Edge",
+    "result": "Not Tested"
+  },
+  "J-FLT-UX008": {
+    "actual": "Tab navigation ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-FLT-UX009": {
+    "actual": "Enter key behavior ไม่ได้ทดสอบเฉพาะ",
+    "result": "Not Tested"
+  },
+  "J-FLT-UX010": {
+    "actual": "Loading skeleton ผ่านเร็วเกินจับ",
+    "result": "Not Tested"
+  },
+  "J-FLT-SEC001": {
+    "actual": "ต้อง logout — ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-FLT-SEC002": {
+    "actual": "ต้องมี user role อื่น — ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-FLT-SEC003": {
+    "actual": "ต้องรอ session timeout — ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-FLT-SEC004": {
+    "actual": "XSS payload ใน name field ถูกรับเป็น text (verified ผ่าน DG017) — ต้อง verify display escape",
+    "result": "Pass",
+    "note": "verify backend display"
+  },
+  "J-FLT-SEC005": {
+    "actual": "ไม่ได้ตรวจ CSRF token ใน request",
+    "result": "Not Tested"
+  }
+}

@@ -1,14 +1,21 @@
-const BASE = 'https://backoffice.jibc.codelabdev.co'
+const BASE = 'https://devstorex.jibc.codelabdev.co'
 const LIST_URL = `${BASE}/store/product-manager/products`
 const CREATE_URL = `${LIST_URL}/create`
 
-// หมายเหตุ: หน้า "สินค้า" ซับซ้อนที่สุดในระบบ — มีความเชื่อมโยงกับ brand, category, supplier, tag, filter
-// Test ส่วนใหญ่เน้น UI/Validation ไม่ได้สร้าง product จริงเพื่อเลี่ยงปัญหา data integrity
+const {
+  buildProductData,
+  pickSearchableSelect,
+  fillProductCreateForm,
+  openProductCreate,
+  clickProductSave,
+} = require('../support/product-helpers')
+
+// หมายเหตุ: หน้า "สินค้า" ซับซ้อนที่สุดในระบบ — E2E create ครบ flow ดู product-e2e-create.cy.js
 describe('จัดการสินค้า (Product)', () => {
 
   beforeEach(() => {
     cy.session('jib-admin', () => {
-      cy.loginJIB('admin00@email.com', 'password123')
+      cy.loginJIB('sirun.sun@codelabdev.co', 'test123')
     })
     cy.visit(LIST_URL, {
       onBeforeLoad(win) {
@@ -23,57 +30,15 @@ describe('จัดการสินค้า (Product)', () => {
 
   // ---------- helpers ----------
 
-  const openCreate = () => {
-    // ปุ่ม "เพิ่มสินค้า" เป็น <a> ครอบ <button> — ใช้ visit ตรงๆ เพื่อหลีกเลี่ยง click ที่ผิด element
-    cy.visit(`${LIST_URL}/create`)
-    cy.url().should('include', '/products/create', { timeout: 10000 })
-    cy.contains('เพิ่มสินค้าใหม่', { timeout: 15000 }).should('be.visible')
-  }
+  const openCreate = openProductCreate
 
   const rand = () => Math.floor(10000 + Math.random() * 90000)
 
-  // เลือก option ใน Radix select trigger
-  const pickSelect = (triggerText, optionText) => {
-    cy.contains('button[data-slot="select-trigger"]', triggerText).click()
-    cy.contains('[role="option"]', optionText).click()
-  }
+  const pickSelect = pickSearchableSelect
 
-  // กรอก required fields ทั้งหมดในหน้า create (11 fields แยก 2 tabs)
-  const fillCreateRequired = (data) => {
-    // --- Tab "ข้อมูลทั่วไป" — 7 required ---
-    cy.contains('button', 'ข้อมูลทั่วไป').click()
-    cy.get('input[name="sku"]').type(data.sku)
-    cy.get('input[name="translations.0.name"]').type(data.thaiName)
-    cy.get('input[name="translations.1.name"]').type(data.enName)
-    pickSelect('เลือกแบรนด์สินค้า', data.brand)
-    pickSelect('เลือกหมวดหมู่หลัก', data.cat1)
-    pickSelect('เลือกหมวดหมู่รอง', data.cat2)
-    pickSelect('เลือกหมวดหมู่สินค้า', data.cat3)
+  const fillCreateRequired = fillProductCreateForm
 
-    // --- Tab "คลังสินค้าและราคา" — 4 required ---
-    // หมายเหตุ: webStock readonly (sync จาก iTech) ข้าม
-    // ที่เหลือ default = 0 แต่ API reject ค่า 0 ต้อง fill non-zero
-    cy.contains('button', 'คลังสินค้าและราคา').click()
-    cy.get('input[name="configWebStock"]').clear().type(String(data.stock))
-    cy.get('input[name="lowStockThreshold"]').clear().type(String(data.lowStock))
-    cy.get('input[name="priceConfig"]').clear().type(String(data.price))
-  }
-
-  const buildProductData = () => {
-    const n = rand()
-    return {
-      sku: `TEST-PROD-${n}`,
-      thaiName: `เทสสินค้าอัตโนมัติ ${n}`,
-      enName: `Test Automation Product ${n}`,
-      brand: 'Acer',
-      cat1: 'DEMO',
-      cat2: 'DEMO 2',
-      cat3: 'DEMO 3',
-      stock: 10,
-      lowStock: 2,
-      price: 999,
-    }
-  }
+  const buildProductDataLocal = buildProductData
 
   // เปิด edit page ของ row แรกในตาราง (รอ table load)
   const openFirstEdit = () => {
@@ -83,7 +48,7 @@ describe('จัดการสินค้า (Product)', () => {
     cy.contains('แก้ไข', { timeout: 15000 }).should('be.visible')
   }
 
-  const clickSave = () => cy.get('button[type="submit"]').contains('บันทึก').click()
+  const clickSave = clickProductSave
 
   const closeSheet = () => {
     cy.get('body').type('{esc}')
@@ -359,25 +324,24 @@ describe('จัดการสินค้า (Product)', () => {
     beforeEach(() => openCreate())
 
     it('หมวดหมู่รอง disabled จนกว่าจะเลือกหมวดหมู่หลัก', () => {
-      cy.contains('button[data-slot="select-trigger"]', 'เลือกหมวดหมู่รอง')
+      cy.contains('button[data-slot="searchable-select-trigger"]', 'Category 2')
         .should('be.disabled')
     })
 
     it('หมวดหมู่สินค้า disabled จนกว่าจะเลือกหมวดหมู่รอง', () => {
-      cy.contains('button[data-slot="select-trigger"]', 'เลือกหมวดหมู่สินค้า')
+      cy.contains('button[data-slot="searchable-select-trigger"]', 'Category 3')
         .should('be.disabled')
     })
 
     it('เลือกหมวดหมู่หลัก → หมวดหมู่รอง enable', () => {
-      cy.contains('button[data-slot="select-trigger"]', 'เลือกหมวดหมู่หลัก').click()
-      cy.get('[role="option"]').first().click()
-      cy.contains('button[data-slot="select-trigger"]', 'เลือกหมวดหมู่รอง')
+      pickSelect('Category 1', 'เซียมซี')
+      cy.contains('button[data-slot="searchable-select-trigger"]', 'Category 2')
         .should('not.be.disabled')
     })
 
     it('แบรนด์ dropdown มีตัวเลือก', () => {
-      cy.contains('button[data-slot="select-trigger"]', 'เลือกแบรนด์สินค้า').click()
-      cy.get('[role="option"]').its('length').should('be.gte', 1)
+      cy.contains('button[data-slot="searchable-select-trigger"]', 'แบรนด์').click()
+      cy.get('[data-slot="popover-content"] span.truncate').its('length').should('be.gte', 1)
       cy.get('body').type('{esc}')
     })
   })
@@ -507,7 +471,7 @@ describe('จัดการสินค้า (Product)', () => {
   describe('CRUD — สร้าง/แก้/ลบสินค้าจริง', () => {
 
     it('สร้างสินค้าด้วย required fields ครบ 11 (2 tabs) → สำเร็จ', () => {
-      const data = buildProductData()
+      const data = buildProductDataLocal()
       openCreate()
       fillCreateRequired(data)
       clickSave()
@@ -521,17 +485,17 @@ describe('จัดการสินค้า (Product)', () => {
 
     // จับ Bug A: กรอกแค่ tab "ข้อมูลทั่วไป" (ไม่ไป tab คลังสินค้า) → API 400 silent
     it('[Bug A] กรอกแค่ tab ข้อมูลทั่วไป (ไม่กรอก stock/price) → API 400 silent', () => {
-      const data = buildProductData()
+      const data = buildProductDataLocal()
       openCreate()
       // กรอกแค่ tab แรก (7 fields) — ข้าม tab คลังสินค้าและราคา (4 fields)
       cy.contains('button', 'ข้อมูลทั่วไป').click()
       cy.get('input[name="sku"]').type(data.sku)
       cy.get('input[name="translations.0.name"]').type(data.thaiName)
       cy.get('input[name="translations.1.name"]').type(data.enName)
-      pickSelect('เลือกแบรนด์สินค้า', data.brand)
-      pickSelect('เลือกหมวดหมู่หลัก', data.cat1)
-      pickSelect('เลือกหมวดหมู่รอง', data.cat2)
-      pickSelect('เลือกหมวดหมู่สินค้า', data.cat3)
+      pickSelect('แบรนด์', data.brand)
+      pickSelect('Category 1', data.cat1)
+      pickSelect('Category 2', data.cat2)
+      pickSelect('Category 3', data.cat3)
       clickSave()
       // ระบบไม่ redirect (silent fail) → ยังอยู่ /create
       cy.wait(3000)
@@ -623,10 +587,9 @@ describe('จัดการสินค้า (Product)', () => {
   describe('Bug verification', () => {
     it('Bug C: ตัวแรกใน Brand dropdown โชว์ "|"', () => {
       openCreate()
-      cy.contains('button[data-slot="select-trigger"]', 'เลือกแบรนด์สินค้า').click()
+      cy.contains('button[data-slot="searchable-select-trigger"]', 'แบรนด์').click()
       // option แรกจะมี text เป็น "|" — bug placeholder/separator
-      cy.get('[role="option"]').first().invoke('text').then((t) => {
-        // ถ้าหายไป test จะ fail (= dev แก้แล้ว)
+      cy.get('[data-slot="popover-content"] span.truncate').first().invoke('text').then((t) => {
         expect(t.trim()).to.eq('|')
       })
       cy.get('body').type('{esc}')

@@ -1,0 +1,67 @@
+Project Name :,JIB-Ecommerce,,,Create Date :,2026-06-15,,
+Project ID :,,,,Start Test Date :,2026-06-15,,
+Tester Name :,sirun.sun@codelabdev.co,,,Finish Test Date :,2026-06-15,,
+Project Release / Version :,1.0,,,Module / Function :,Comsets,,
+URL List :,https://devstorex.jibc.codelabdev.co/store/product-manager/comsets,,,,,,
+URL Create :,https://devstorex.jibc.codelabdev.co/store/product-manager/comsets/create,,,,,,
+,,,,,,,
+Test Case ID,Category,Test case Objective,Test Description / Procedure,Test Data,Expected Result,Actual Result,Result (Pass/Fail)
+,,,,,,,
+---- PART 1: หน้า List ----,,,,,,,
+,,,,,,,
+-- A. การโหลดหน้า + UI --,,,,,,,
+J-COMSET-LP001,Page Load,เปิดหน้ารายการ,1. เข้า https://devstorex.jibc.codelabdev.co/store/product-manager/comsets,-,หน้าโหลดสำเร็จ ไม่ error,โหลดสำเร็จ,Pass
+J-COMSET-LP002,UI,ตรวจสอบ Heading,1. ดูหัวข้อหน้า,-,แสดง heading ที่เกี่ยวข้องกับ Comsets,พบ heading,Pass
+J-COMSET-LP003,UI,ตรวจสอบตาราง,1. ดูตารางข้อมูล,-,แสดงตารางพร้อมแถวข้อมูล,แถว=2,Pass
+J-COMSET-LP004,UI,ตรวจสอบคอลัมน์,1. ดูหัวคอลัมน์,-,มีคอลัมน์ครบตาม design,คอลัมน์ 30,Pass
+J-COMSET-LP005,UI,Action Bar,1. ดู toolbar,-,มีช่องค้นหา / ตัวกรอง / ปรับแต่งคอลัมน์,search=true filter=true,Pass
+J-COMSET-LP006,UI,ไม่มี undefined ในข้อมูล,1. ดูข้อมูลในตาราง,-,ไม่พบคำว่า 'undefined',OK,Pass
+J-COMSET-LP007,UI,ปุ่มเพิ่ม (ถ้ามี),1. ดูปุ่มเพิ่ม,-,มีปุ่มเพิ่ม/สร้าง,มีปุ่มเพิ่ม,Pass
+-- B. การค้นหา --,,,,,,,
+J-COMSET-LP010,Search,ค้นหาภาษาไทย,1. พิมพ์ keyword ไทย,-,กรองผลลัพธ์,ค้นหา OK,Pass
+J-COMSET-LP011,Search,ค้นหา keyword ไม่มี,1. พิมพ์คำที่ไม่มี,-,empty state / 0 รายการ,empty search OK,Pass
+J-COMSET-LP012,Search,XSS ใน search,1. พิมพ์ <script>,-,รับเป็น plain text ไม่ execute,XSS safe,Pass
+J-COMSET-LP013,Search,เคลียร์ search,1. ลบ keyword,-,กลับสู่ list เต็ม,clear search,Pass
+-- C. ตัวกรอง --,,,,,,,
+J-COMSET-LP020,Filter,เปิดตัวกรอง,1. คลิกตัวกรอง,-,เปิด panel/sheet,เปิดตัวกรอง,Pass
+J-COMSET-LP021,Filter,ปิดด้วย ESC,1. กด ESC,-,panel ปิด,ESC OK,Pass
+J-COMSET-LP022,Filter,Apply filter,1. ตั้งเงื่อนไข + ตกลง,-,กรอง list,filter OK,Pass
+-- D. ปรับแต่งคอลัมน์ --,,,,,,,
+J-COMSET-LP030,Customize,เปิด menu,1. คลิกปรับแต่งคอลัมน์,-,เปิด dropdown,customize OK,Pass
+J-COMSET-LP031,Customize,ซ่อน/เปิดคอลัมน์,1. toggle checkbox,-,คอลัมน์เปลี่ยนตาม,toggle OK,Pass
+-- E. Pagination --,,,,,,,
+J-COMSET-LP040,Pagination,Footer แสดงจำนวน,1. ดู footer,-,รูปแบบ 'X - Y จาก Z',pagination OK,Pass
+J-COMSET-LP041,Rows,เลือกจำนวนแถว,1. เปลี่ยน rows per page,-,จำนวนแถวเปลี่ยน,rows selector,Pass
+J-COMSET-LP042,Pagination,เปลี่ยนหน้า,1. คลิกหน้าถัดไป,-,ไปหน้าถัดไป,pagination nav,Pass
+-- F. Row Actions --,,,,,,,
+J-COMSET-LP050,Row,ปุ่ม Edit (ถ้ามี),1. คลิกไอคอนแก้ไข,-,ไปหน้า edit,มี edit,Pass
+J-COMSET-LP051,Row,3-dot menu (ถ้ามี),1. คลิกเมนู,-,แสดงตัวเลือก,row menu,Pass
+---- PART 2: หน้า Create ----,,,,,,,
+,,,,,,,
+J-COMSET-CR001,UI,เปิดหน้า Create,1. เข้า https://devstorex.jibc.codelabdev.co/store/product-manager/comsets/create,-,แสดงฟอร์มเพิ่ม/สร้าง,create page OK,Pass
+J-COMSET-CR002,UI,ฟิลด์ในฟอร์ม,1. ดูฟิลด์,-,มี input ครบ,inputs=17,Pass
+J-COMSET-CR003,UI,ปุ่มบันทึก,1. ดูปุ่ม,-,มีปุ่มบันทึก,มีบันทึก,Pass
+J-COMSET-CR004,Validation,บันทึกฟอร์มว่าง,1. ไม่กรอก + บันทึก,-,แสดง validation error,validation OK,Pass
+J-COMSET-CR005,Validation,กรอกชื่อ TH,1. กรอกชื่อภาษาไทย,-,รับค่าได้,กรอกชื่อ OK,Pass
+J-COMSET-CR006,Validation,XSS ในชื่อ,1. กรอก <script>,-,รับเป็น text,XSS safe,Pass
+J-COMSET-CR007,Sync,Toggle sync TH/EN,1. คลิก sync toggle,-,เปลี่ยน state,sync toggle checked,Pass
+J-COMSET-CR008,Save,บันทึกข้อมูลครบ,1. กรอกครบ + บันทึก,-,บันทึกสำเร็จ + redirect,no E2E save,Warning
+---- PART 3: หน้า Edit ----,,,,,,,
+,,,,,,,
+J-COMSET-ED001,Edit,Invalid ID,1. เปิด /update/99999999,-,404 หรือ redirect (ไม่แสดงฟอร์มเปล่า),empty form bug,Fail
+J-COMSET-ED002,Edit,เปิด Edit record จริง,1. คลิกแก้ไขจาก list,-,โหลดข้อมูลเดิม,edit real record — skip,Warning
+J-COMSET-ED003,Edit,บันทึกการแก้ไข,1. แก้ชื่อ + บันทึก,-,อัพเดตสำเร็จ,save edit — skip,Warning
+---- PART 4: UI/UX + Security ----,,,,,,,
+,,,,,,,
+J-COMSET-UX001,Responsive,Desktop 1920px,1. เปิด viewport 1920,-,Layout ปกติ,desktop 1920,Pass
+J-COMSET-UX002,Browser,Chromium,1. เปิดบน Chrome,-,ทำงานปกติ,Chromium,Pass
+J-COMSET-SEC001,Session,เข้าหน้าหลัง login,1. login แล้วเข้า URL,-,เข้าได้ไม่ redirect,authenticated access,Pass
+,,,,,,,
+-- สรุปผลทดสอบรวม (Summary) --,,,,,,,
+Total Test Cases :,35,,,,,,
+Pass :,31,,,Fail :,1,,
+Warning :,3,,,Not Tested :,0,,
+,,,,,,,
+Pass Rate :,88.6%,,,Fail Rate :,2.9%,,
+,,,,,,,
+Notes :,Automated via Puppeteer — จัดการสินค้า / Comsets,,,,,,

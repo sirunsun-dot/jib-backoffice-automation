@@ -1,0 +1,227 @@
+{
+  "J-FG-LP001": {
+    "actual": "หน้า list โหลด heading \"ของแถม\"",
+    "result": "Pass"
+  },
+  "J-FG-LP002": {
+    "actual": "bc=\"ร้านค้าจัดการโปรโมชั่นของแถม\"",
+    "result": "Pass"
+  },
+  "J-FG-LP003": {
+    "actual": "header ครบ",
+    "result": "Pass"
+  },
+  "J-FG-LP004": {
+    "actual": "คอลัมน์ครบ",
+    "result": "Pass"
+  },
+  "J-FG-LP005": {
+    "actual": "actionbar={\"search\":true,\"btnStatus\":true,\"btnSort\":true,\"btnDate\":true,\"btnFilter\":true,\"btnCols\":true,\"btnAdd\":true}",
+    "result": "Pass"
+  },
+  "J-FG-LP010": {
+    "actual": "search url=true",
+    "result": "Pass"
+  },
+  "J-FG-LP011": {
+    "actual": "empty state",
+    "result": "Pass"
+  },
+  "J-FG-LP012": {
+    "actual": "XSS รับเป็น text",
+    "result": "Pass"
+  },
+  "J-FG-LP013": {
+    "actual": "เคลียร์",
+    "result": "Pass"
+  },
+  "J-FG-LP020": {
+    "actual": "popover/menu เปิด",
+    "result": "Pass"
+  },
+  "J-FG-LP021": {
+    "actual": "เรียงลำดับ options=4",
+    "result": "Pass"
+  },
+  "J-FG-LP022": {
+    "actual": "date filter button คลิกได้",
+    "result": "Pass"
+  },
+  "J-FG-LP023": {
+    "actual": "sheet เปิด",
+    "result": "Pass"
+  },
+  "J-FG-LP024": {
+    "actual": "ESC ปิด",
+    "result": "Pass"
+  },
+  "J-FG-LP030": {
+    "actual": "menu เปิด",
+    "result": "Pass"
+  },
+  "J-FG-LP031": {
+    "actual": "ยังพบ",
+    "result": "Warning"
+  },
+  "J-FG-LP032": {
+    "actual": "กลับมา",
+    "result": "Pass"
+  },
+  "J-FG-LP040": {
+    "actual": "options=[\"10\",\"20\",\"50\",\"100\"]",
+    "result": "Pass"
+  },
+  "J-FG-LP041": {
+    "actual": "แถว=3",
+    "result": "Pass"
+  },
+  "J-FG-LP042": {
+    "actual": "default=3",
+    "result": "Pass"
+  },
+  "J-FG-LP043": {
+    "actual": "footer=\"1 - 3 จาก 3 รายการ\"",
+    "result": "Pass"
+  },
+  "J-FG-LP050": {
+    "actual": "href=\"/store/promotion-manager/free-gifts/update/10\"",
+    "result": "Pass"
+  },
+  "J-FG-LP051": {
+    "actual": "inline switches=3",
+    "result": "Pass"
+  },
+  "J-FG-LP052": {
+    "actual": "items=[\"ลบ\"]",
+    "result": "Pass"
+  },
+  "J-FG-LP060": {
+    "actual": "url=https://devstorex.jibc.codelabdev.co/store/promotion-manager/free-gifts/create",
+    "result": "Pass"
+  },
+  "J-FG-CR001": {
+    "actual": "header",
+    "result": "Pass"
+  },
+  "J-FG-CR002": {
+    "actual": "TH=true, EN=true, desc=true",
+    "result": "Pass"
+  },
+  "J-FG-CR003": {
+    "actual": "sync default=checked",
+    "result": "Pass"
+  },
+  "J-FG-CR004": {
+    "actual": "status default=checked",
+    "result": "Pass"
+  },
+  "J-FG-CR005": {
+    "actual": "date range visible",
+    "result": "Pass"
+  },
+  "J-FG-CR006": {
+    "actual": "image upload visible",
+    "result": "Pass"
+  },
+  "J-FG-CR007": {
+    "actual": "ขาด",
+    "result": "Warning"
+  },
+  "J-FG-CR008": {
+    "actual": "sub-table + button visible",
+    "result": "Pass"
+  },
+  "J-FG-CR010": {
+    "actual": "TH=แคมเปญทดสอบ",
+    "result": "Pass"
+  },
+  "J-FG-CR011": {
+    "actual": "len=255",
+    "result": "Pass"
+  },
+  "J-FG-CR012": {
+    "actual": "len=300",
+    "result": "Warning"
+  },
+  "J-FG-CR013": {
+    "actual": "XSS รับเป็น text",
+    "result": "Pass"
+  },
+  "J-FG-CR014": {
+    "actual": "error/stillOn=true",
+    "result": "Pass"
+  },
+  "J-FG-CR015": {
+    "actual": "EN disabled=false",
+    "result": "Pass"
+  },
+  "J-FG-CR016": {
+    "actual": "desc=รายละเอียดทดสอบ",
+    "result": "Pass"
+  },
+  "J-FG-CR017": {
+    "actual": "Waiting for selector `input[name=\"remark\"]` failed",
+    "result": "Warning"
+  },
+  "J-FG-CRUD001": {
+    "actual": "ไม่ redirect (ต้องการฟิลด์เพิ่ม) url=https://devstorex.jibc.codelabdev.co/store/promotion-manager/free-gifts/create",
+    "result": "Warning"
+  },
+  "J-FG-CRUD002": {
+    "actual": "CRUD001 not Pass",
+    "result": "Not Tested"
+  },
+  "J-FG-CRUD010": {
+    "actual": "CRUD001 not Pass",
+    "result": "Not Tested"
+  },
+  "J-FG-CRUD011": {
+    "actual": "CRUD001 not Pass",
+    "result": "Not Tested"
+  },
+  "J-FG-CRUD020": {
+    "actual": "CRUD001 not Pass",
+    "result": "Not Tested"
+  },
+  "J-FG-CRUD021": {
+    "actual": "CRUD001 not Pass",
+    "result": "Not Tested"
+  },
+  "J-FG-CRUD022": {
+    "actual": "CRUD001 not Pass",
+    "result": "Not Tested"
+  },
+  "J-FG-ED001": {
+    "actual": "URL=https://devstorex.jibc.codelabdev.co/store/promotion-manager/free-gifts/update/99999999, indicator=false",
+    "result": "Fail",
+    "note": "Bug pattern"
+  },
+  "J-FG-UX001": {
+    "actual": "ทดสอบ 1920",
+    "result": "Pass"
+  },
+  "J-FG-UX002": {
+    "actual": "tablet/mobile ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-FG-UX003": {
+    "actual": "Chrome 127 Puppeteer",
+    "result": "Pass"
+  },
+  "J-FG-UX004": {
+    "actual": "Firefox/Safari/Edge ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-FG-SEC001": {
+    "actual": "logout ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-FG-SEC002": {
+    "actual": "XSS verified ผ่าน CR013",
+    "result": "Pass"
+  },
+  "J-FG-SEC003": {
+    "actual": "CSRF ไม่ได้ตรวจ",
+    "result": "Not Tested"
+  }
+}

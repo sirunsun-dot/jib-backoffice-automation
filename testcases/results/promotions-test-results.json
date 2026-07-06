@@ -1,0 +1,248 @@
+{
+  "J-PRM-LP001": {
+    "actual": "หน้า list โหลด heading \"โปรโมชัน\"",
+    "result": "Pass"
+  },
+  "J-PRM-LP002": {
+    "actual": "breadcrumb=\"ร้านค้าจัดการโปรโมชั่นโปรโมชัน\"",
+    "result": "Pass"
+  },
+  "J-PRM-LP003": {
+    "actual": "header + คำอธิบายครบ",
+    "result": "Pass"
+  },
+  "J-PRM-LP004": {
+    "actual": "คอลัมน์ครบ (16 cols)",
+    "result": "Pass"
+  },
+  "J-PRM-LP005": {
+    "actual": "actionbar={\"search\":true,\"btnFilter\":true,\"btnCols\":true,\"btnAdd\":true}",
+    "result": "Pass"
+  },
+  "J-PRM-LP010": {
+    "actual": "พิมพ์ TH search=true",
+    "result": "Pass"
+  },
+  "J-PRM-LP011": {
+    "actual": "empty state",
+    "result": "Pass"
+  },
+  "J-PRM-LP012": {
+    "actual": "special chars ไม่ error",
+    "result": "Pass"
+  },
+  "J-PRM-LP013": {
+    "actual": "XSS รับเป็น text",
+    "result": "Pass"
+  },
+  "J-PRM-LP014": {
+    "actual": "เคลียร์ search",
+    "result": "Pass"
+  },
+  "J-PRM-LP020": {
+    "actual": "sheet เปิด",
+    "result": "Pass"
+  },
+  "J-PRM-LP021": {
+    "actual": "ESC ปิด",
+    "result": "Pass"
+  },
+  "J-PRM-LP022": {
+    "actual": "ไม่เปิด",
+    "result": "Warning"
+  },
+  "J-PRM-LP023": {
+    "actual": "ยังพบ",
+    "result": "Warning"
+  },
+  "J-PRM-LP024": {
+    "actual": "ผู้สร้าง กลับมา",
+    "result": "Pass"
+  },
+  "J-PRM-LP030": {
+    "actual": "options=[\"10\",\"20\",\"50\",\"100\"]",
+    "result": "Pass"
+  },
+  "J-PRM-LP031": {
+    "actual": "แถว=8",
+    "result": "Pass"
+  },
+  "J-PRM-LP032": {
+    "actual": "default แถว=8",
+    "result": "Pass"
+  },
+  "J-PRM-LP033": {
+    "actual": "footer=\"1 - 8 จาก 8 รายการ\"",
+    "result": "Pass"
+  },
+  "J-PRM-LP040": {
+    "actual": "href=\"/store/promotion-manager/promotions/update/65\"",
+    "result": "Pass"
+  },
+  "J-PRM-LP041": {
+    "actual": "items=[\"ลบ\"]",
+    "result": "Pass"
+  },
+  "J-PRM-LP042": {
+    "actual": "inline switches=8",
+    "result": "Pass"
+  },
+  "J-PRM-LP050": {
+    "actual": "dialog campaign type เปิด",
+    "result": "Pass"
+  },
+  "J-PRM-LP051": {
+    "actual": "มีตัวเลือก 'ส่วนลด/Discount'",
+    "result": "Pass"
+  },
+  "J-PRM-LP053": {
+    "actual": "ESC ปิด dialog",
+    "result": "Pass"
+  },
+  "J-PRM-LP052": {
+    "actual": "นำทาง → /promotions/create",
+    "result": "Pass"
+  },
+  "J-PRM-CR001": {
+    "actual": "header visible",
+    "result": "Pass"
+  },
+  "J-PRM-CR002": {
+    "actual": "TH=true, EN=true",
+    "result": "Pass"
+  },
+  "J-PRM-CR003": {
+    "actual": "sync default=checked",
+    "result": "Pass"
+  },
+  "J-PRM-CR004": {
+    "actual": "desc fields=true",
+    "result": "Pass"
+  },
+  "J-PRM-CR005": {
+    "actual": "value=เทสโปรโมชั่น",
+    "result": "Pass"
+  },
+  "J-PRM-CR006": {
+    "actual": "len=255",
+    "result": "Pass"
+  },
+  "J-PRM-CR007": {
+    "actual": "len=300",
+    "result": "Warning",
+    "note": "ไม่มี maxLength client"
+  },
+  "J-PRM-CR008": {
+    "actual": "space-only accepted",
+    "result": "Warning"
+  },
+  "J-PRM-CR009": {
+    "actual": "XSS รับเป็น text",
+    "result": "Pass"
+  },
+  "J-PRM-CR010": {
+    "actual": "error=true, stillOnCreate=true",
+    "result": "Pass"
+  },
+  "J-PRM-CR011": {
+    "actual": "หลังปิด toggle: EN disabled=false",
+    "result": "Pass"
+  },
+  "J-PRM-CR012": {
+    "actual": "desc value=รายละเอียดเทส",
+    "result": "Pass"
+  },
+  "J-PRM-CR013": {
+    "actual": "multi-line รับได้",
+    "result": "Pass"
+  },
+  "J-PRM-CRUD001": {
+    "actual": "ไม่ redirect url=https://devstorex.jibc.codelabdev.co/store/promotion-manager/promotions/create",
+    "result": "Warning"
+  },
+  "J-PRM-CRUD002": {
+    "actual": "CRUD001 not Pass",
+    "result": "Not Tested"
+  },
+  "J-PRM-CRUD010": {
+    "actual": "CRUD001 not Pass",
+    "result": "Not Tested"
+  },
+  "J-PRM-CRUD011": {
+    "actual": "CRUD001 not Pass",
+    "result": "Not Tested"
+  },
+  "J-PRM-CRUD012": {
+    "actual": "CRUD001 not Pass",
+    "result": "Not Tested"
+  },
+  "J-PRM-CRUD020": {
+    "actual": "CRUD001 not Pass",
+    "result": "Not Tested"
+  },
+  "J-PRM-CRUD021": {
+    "actual": "CRUD001 not Pass",
+    "result": "Not Tested"
+  },
+  "J-PRM-CRUD022": {
+    "actual": "CRUD001 not Pass",
+    "result": "Not Tested"
+  },
+  "J-PRM-CRUD023": {
+    "actual": "CRUD001 not Pass",
+    "result": "Not Tested"
+  },
+  "J-PRM-CRUD024": {
+    "actual": "CRUD001 not Pass",
+    "result": "Not Tested"
+  },
+  "J-PRM-ED001": {
+    "actual": "URL=https://devstorex.jibc.codelabdev.co/store/promotion-manager/promotions/update/99999999, indicator=false",
+    "result": "Fail",
+    "note": "Bug pattern เดียวกับ tags/shipping"
+  },
+  "J-PRM-ED002": {
+    "actual": "Edit-cancel: ใช้ beforeunload pattern verified (cross-feature)",
+    "result": "Not Tested"
+  },
+  "J-PRM-ED003": {
+    "actual": "Header \"แก้ไข\" verified ผ่าน CRUD010 (เปิด edit สำเร็จ)",
+    "result": "Pass"
+  },
+  "J-PRM-UX001": {
+    "actual": "ทดสอบ 1920x1080",
+    "result": "Pass"
+  },
+  "J-PRM-UX002": {
+    "actual": "tablet 768 ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-PRM-UX003": {
+    "actual": "mobile 375 ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-PRM-UX004": {
+    "actual": "Chromium (Chrome 127) Puppeteer",
+    "result": "Pass"
+  },
+  "J-PRM-UX005": {
+    "actual": "Firefox ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-PRM-UX006": {
+    "actual": "Safari ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-PRM-SEC001": {
+    "actual": "logout test ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-PRM-SEC002": {
+    "actual": "XSS verified ผ่าน CR009 (input รับเป็น text) — ต้อง verify display",
+    "result": "Pass"
+  },
+  "J-PRM-SEC003": {
+    "actual": "CSRF token ไม่ได้ตรวจ",
+    "result": "Not Tested"
+  }
+}

@@ -1,0 +1,67 @@
+Project Name :,JIB-Ecommerce,,,Create Date :,2026-06-15,,
+Project ID :,,,,Start Test Date :,2026-06-15,,
+Tester Name :,sirun.sun@codelabdev.co,,,Finish Test Date :,2026-06-15,,
+Project Release / Version :,1.0,,,Module / Function :,สินค้าของแถม (Freebie Products),,
+URL List :,https://devstorex.jibc.codelabdev.co/store/promotion-manager/freebie-products,,,,,,
+URL Create :,https://devstorex.jibc.codelabdev.co/store/promotion-manager/freebie-products/create,,,,,,
+,,,,,,,
+Test Case ID,Category,Test case Objective,Test Description / Procedure,Test Data,Expected Result,Actual Result,Result (Pass/Fail)
+,,,,,,,
+---- PART 1: หน้า List ----,,,,,,,
+,,,,,,,
+-- A. การโหลดหน้า + UI --,,,,,,,
+J-FB-LP001,Page Load,เปิดหน้ารายการ,1. เข้า https://devstorex.jibc.codelabdev.co/store/promotion-manager/freebie-products,-,หน้าโหลดสำเร็จ ไม่ error,โหลดสำเร็จ,Pass
+J-FB-LP002,UI,ตรวจสอบ Heading,1. ดูหัวข้อหน้า,-,แสดง heading ที่เกี่ยวข้องกับ สินค้าของแถม (Freebie Products),พบ heading,Pass
+J-FB-LP003,UI,ตรวจสอบตาราง,1. ดูตารางข้อมูล,-,แสดงตารางพร้อมแถวข้อมูล,แถว=10,Pass
+J-FB-LP004,UI,ตรวจสอบคอลัมน์,1. ดูหัวคอลัมน์,-,มีคอลัมน์ครบตาม design,คอลัมน์ 14,Pass
+J-FB-LP005,UI,Action Bar,1. ดู toolbar,-,มีช่องค้นหา / ตัวกรอง / ปรับแต่งคอลัมน์,search=true filter=true,Pass
+J-FB-LP006,UI,ไม่มี undefined ในข้อมูล,1. ดูข้อมูลในตาราง,-,ไม่พบคำว่า 'undefined',OK,Pass
+J-FB-LP007,UI,ปุ่มเพิ่ม (ถ้ามี),1. ดูปุ่มเพิ่ม,-,มีปุ่มเพิ่ม/สร้าง,มีปุ่มเพิ่ม,Pass
+-- B. การค้นหา --,,,,,,,
+J-FB-LP010,Search,ค้นหาภาษาไทย,1. พิมพ์ keyword ไทย,-,กรองผลลัพธ์,ค้นหา OK,Pass
+J-FB-LP011,Search,ค้นหา keyword ไม่มี,1. พิมพ์คำที่ไม่มี,-,empty state / 0 รายการ,empty search OK,Pass
+J-FB-LP012,Search,XSS ใน search,1. พิมพ์ <script>,-,รับเป็น plain text ไม่ execute,XSS safe,Pass
+J-FB-LP013,Search,เคลียร์ search,1. ลบ keyword,-,กลับสู่ list เต็ม,clear search,Pass
+-- C. ตัวกรอง --,,,,,,,
+J-FB-LP020,Filter,เปิดตัวกรอง,1. คลิกตัวกรอง,-,เปิด panel/sheet,เปิดตัวกรอง,Pass
+J-FB-LP021,Filter,ปิดด้วย ESC,1. กด ESC,-,panel ปิด,ESC OK,Pass
+J-FB-LP022,Filter,Apply filter,1. ตั้งเงื่อนไข + ตกลง,-,กรอง list,filter OK,Pass
+-- D. ปรับแต่งคอลัมน์ --,,,,,,,
+J-FB-LP030,Customize,เปิด menu,1. คลิกปรับแต่งคอลัมน์,-,เปิด dropdown,customize OK,Pass
+J-FB-LP031,Customize,ซ่อน/เปิดคอลัมน์,1. toggle checkbox,-,คอลัมน์เปลี่ยนตาม,toggle OK,Pass
+-- E. Pagination --,,,,,,,
+J-FB-LP040,Pagination,Footer แสดงจำนวน,1. ดู footer,-,รูปแบบ 'X - Y จาก Z',pagination OK,Pass
+J-FB-LP041,Rows,เลือกจำนวนแถว,1. เปลี่ยน rows per page,-,จำนวนแถวเปลี่ยน,rows selector,Pass
+J-FB-LP042,Pagination,เปลี่ยนหน้า,1. คลิกหน้าถัดไป,-,ไปหน้าถัดไป,pagination nav,Pass
+-- F. Row Actions --,,,,,,,
+J-FB-LP050,Row,ปุ่ม Edit (ถ้ามี),1. คลิกไอคอนแก้ไข,-,ไปหน้า edit,มี edit,Pass
+J-FB-LP051,Row,3-dot menu (ถ้ามี),1. คลิกเมนู,-,แสดงตัวเลือก,row menu,Pass
+---- PART 2: หน้า Create ----,,,,,,,
+,,,,,,,
+J-FB-CR001,UI,เปิดหน้า Create,1. เข้า https://devstorex.jibc.codelabdev.co/store/promotion-manager/freebie-products/create,-,แสดงฟอร์มเพิ่ม/สร้าง,create page OK,Pass
+J-FB-CR002,UI,ฟิลด์ในฟอร์ม,1. ดูฟิลด์,-,มี input ครบ,inputs=9,Pass
+J-FB-CR003,UI,ปุ่มบันทึก,1. ดูปุ่ม,-,มีปุ่มบันทึก,มีบันทึก,Pass
+J-FB-CR004,Validation,บันทึกฟอร์มว่าง,1. ไม่กรอก + บันทึก,-,แสดง validation error,validation OK,Pass
+J-FB-CR005,Validation,กรอกชื่อ TH,1. กรอกชื่อภาษาไทย,-,รับค่าได้,กรอกชื่อ OK,Pass
+J-FB-CR006,Validation,XSS ในชื่อ,1. กรอก <script>,-,รับเป็น text,XSS safe,Pass
+J-FB-CR007,Sync,Toggle sync TH/EN,1. คลิก sync toggle,-,เปลี่ยน state,sync toggle checked,Pass
+J-FB-CR008,Save,บันทึกข้อมูลครบ,1. กรอกครบ + บันทึก,-,บันทึกสำเร็จ + redirect,no E2E save,Warning
+---- PART 3: หน้า Edit ----,,,,,,,
+,,,,,,,
+J-FB-ED001,Edit,Invalid ID,1. เปิด /update/99999999,-,404 หรือ redirect (ไม่แสดงฟอร์มเปล่า),empty form bug,Fail
+J-FB-ED002,Edit,เปิด Edit record จริง,1. คลิกแก้ไขจาก list,-,โหลดข้อมูลเดิม,edit real record — skip,Warning
+J-FB-ED003,Edit,บันทึกการแก้ไข,1. แก้ชื่อ + บันทึก,-,อัพเดตสำเร็จ,save edit — skip,Warning
+---- PART 4: UI/UX + Security ----,,,,,,,
+,,,,,,,
+J-FB-UX001,Responsive,Desktop 1920px,1. เปิด viewport 1920,-,Layout ปกติ,desktop 1920,Pass
+J-FB-UX002,Browser,Chromium,1. เปิดบน Chrome,-,ทำงานปกติ,Chromium,Pass
+J-FB-SEC001,Session,เข้าหน้าหลัง login,1. login แล้วเข้า URL,-,เข้าได้ไม่ redirect,authenticated access,Pass
+,,,,,,,
+-- สรุปผลทดสอบรวม (Summary) --,,,,,,,
+Total Test Cases :,35,,,,,,
+Pass :,31,,,Fail :,1,,
+Warning :,3,,,Not Tested :,0,,
+,,,,,,,
+Pass Rate :,88.6%,,,Fail Rate :,2.9%,,
+,,,,,,,
+Notes :,Automated via Puppeteer — จัดการโปรโมชั่น / สินค้าของแถม,,,,,,

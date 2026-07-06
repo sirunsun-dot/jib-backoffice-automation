@@ -1,0 +1,142 @@
+{
+  "J-COMPT-LP001": {
+    "actual": "โหลดสำเร็จ",
+    "result": "Pass"
+  },
+  "J-COMPT-LP002": {
+    "actual": "พบ heading",
+    "result": "Pass"
+  },
+  "J-COMPT-LP003": {
+    "actual": "แถว=10",
+    "result": "Pass"
+  },
+  "J-COMPT-LP004": {
+    "actual": "คอลัมน์ 13",
+    "result": "Pass"
+  },
+  "J-COMPT-LP005": {
+    "actual": "search=true filter=true",
+    "result": "Pass"
+  },
+  "J-COMPT-LP006": {
+    "actual": "OK",
+    "result": "Pass"
+  },
+  "J-COMPT-LP007": {
+    "actual": "มีปุ่มเพิ่ม",
+    "result": "Pass"
+  },
+  "J-COMPT-LP010": {
+    "actual": "ค้นหา OK",
+    "result": "Pass"
+  },
+  "J-COMPT-LP011": {
+    "actual": "empty search OK",
+    "result": "Pass"
+  },
+  "J-COMPT-LP012": {
+    "actual": "XSS safe",
+    "result": "Pass"
+  },
+  "J-COMPT-LP013": {
+    "actual": "clear search",
+    "result": "Pass"
+  },
+  "J-COMPT-LP020": {
+    "actual": "ไม่มีตัวกรอง",
+    "result": "Warning"
+  },
+  "J-COMPT-LP021": {
+    "actual": "ESC OK",
+    "result": "Pass"
+  },
+  "J-COMPT-LP022": {
+    "actual": "skip",
+    "result": "Warning"
+  },
+  "J-COMPT-LP030": {
+    "actual": "customize OK",
+    "result": "Pass"
+  },
+  "J-COMPT-LP031": {
+    "actual": "toggle OK",
+    "result": "Pass"
+  },
+  "J-COMPT-LP040": {
+    "actual": "pagination OK",
+    "result": "Pass"
+  },
+  "J-COMPT-LP041": {
+    "actual": "rows selector",
+    "result": "Pass"
+  },
+  "J-COMPT-LP042": {
+    "actual": "pagination nav",
+    "result": "Pass"
+  },
+  "J-COMPT-LP050": {
+    "actual": "มี edit",
+    "result": "Pass"
+  },
+  "J-COMPT-LP051": {
+    "actual": "row menu",
+    "result": "Pass"
+  },
+  "J-COMPT-CR001": {
+    "actual": "create page OK",
+    "result": "Pass"
+  },
+  "J-COMPT-CR002": {
+    "actual": "inputs=10",
+    "result": "Pass"
+  },
+  "J-COMPT-CR003": {
+    "actual": "มีบันทึก",
+    "result": "Pass"
+  },
+  "J-COMPT-CR004": {
+    "actual": "validation OK",
+    "result": "Pass"
+  },
+  "J-COMPT-CR005": {
+    "actual": "กรอกชื่อ OK",
+    "result": "Pass"
+  },
+  "J-COMPT-CR006": {
+    "actual": "XSS safe",
+    "result": "Pass"
+  },
+  "J-COMPT-CR007": {
+    "actual": "sync toggle checked",
+    "result": "Pass"
+  },
+  "J-COMPT-CR008": {
+    "actual": "no E2E save",
+    "result": "Warning"
+  },
+  "J-COMPT-ED001": {
+    "actual": "empty form bug",
+    "result": "Fail"
+  },
+  "J-COMPT-ED002": {
+    "actual": "edit real record — skip",
+    "result": "Warning"
+  },
+  "J-COMPT-ED003": {
+    "actual": "save edit — skip",
+    "result": "Warning"
+  },
+  "J-COMPT-UX001": {
+    "actual": "desktop 1920",
+    "result": "Pass"
+  },
+  "J-COMPT-UX002": {
+    "actual": "Chromium",
+    "result": "Pass"
+  },
+  "J-COMPT-SEC001": {
+    "actual": "authenticated access",
+    "result": "Pass"
+  }
+}

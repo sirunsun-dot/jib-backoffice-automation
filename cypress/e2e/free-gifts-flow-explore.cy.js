@@ -5,7 +5,7 @@ const n = () => Date.now()
 describe('Explore free-gifts create flow', () => {
   before(() => {
     cy.session('jib-explore-fg', () => {
-      cy.loginJIB('admin00@email.com', 'password123')
+      cy.loginJIB('sirun.sun@codelabdev.co', 'test123')
     })
   })
 

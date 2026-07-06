@@ -1,0 +1,142 @@
+{
+  "J-CAT-LP001": {
+    "actual": "โหลดสำเร็จ",
+    "result": "Pass"
+  },
+  "J-CAT-LP002": {
+    "actual": "พบ heading",
+    "result": "Pass"
+  },
+  "J-CAT-LP003": {
+    "actual": "แถว=10",
+    "result": "Pass"
+  },
+  "J-CAT-LP004": {
+    "actual": "คอลัมน์ 11",
+    "result": "Pass"
+  },
+  "J-CAT-LP005": {
+    "actual": "search=true filter=true",
+    "result": "Pass"
+  },
+  "J-CAT-LP006": {
+    "actual": "OK",
+    "result": "Pass"
+  },
+  "J-CAT-LP007": {
+    "actual": "มีปุ่มเพิ่ม",
+    "result": "Pass"
+  },
+  "J-CAT-LP010": {
+    "actual": "ค้นหา OK",
+    "result": "Pass"
+  },
+  "J-CAT-LP011": {
+    "actual": "empty search OK",
+    "result": "Pass"
+  },
+  "J-CAT-LP012": {
+    "actual": "XSS safe",
+    "result": "Pass"
+  },
+  "J-CAT-LP013": {
+    "actual": "clear search",
+    "result": "Pass"
+  },
+  "J-CAT-LP020": {
+    "actual": "ไม่มีตัวกรอง",
+    "result": "Warning"
+  },
+  "J-CAT-LP021": {
+    "actual": "ESC OK",
+    "result": "Pass"
+  },
+  "J-CAT-LP022": {
+    "actual": "skip",
+    "result": "Warning"
+  },
+  "J-CAT-LP030": {
+    "actual": "customize OK",
+    "result": "Pass"
+  },
+  "J-CAT-LP031": {
+    "actual": "toggle OK",
+    "result": "Pass"
+  },
+  "J-CAT-LP040": {
+    "actual": "pagination OK",
+    "result": "Pass"
+  },
+  "J-CAT-LP041": {
+    "actual": "rows selector",
+    "result": "Pass"
+  },
+  "J-CAT-LP042": {
+    "actual": "pagination nav",
+    "result": "Pass"
+  },
+  "J-CAT-LP050": {
+    "actual": "มี edit",
+    "result": "Pass"
+  },
+  "J-CAT-LP051": {
+    "actual": "row menu",
+    "result": "Pass"
+  },
+  "J-CAT-CR001": {
+    "actual": "create page OK",
+    "result": "Pass"
+  },
+  "J-CAT-CR002": {
+    "actual": "inputs=10",
+    "result": "Pass"
+  },
+  "J-CAT-CR003": {
+    "actual": "มีบันทึก",
+    "result": "Pass"
+  },
+  "J-CAT-CR004": {
+    "actual": "validation OK",
+    "result": "Pass"
+  },
+  "J-CAT-CR005": {
+    "actual": "กรอกชื่อ OK",
+    "result": "Pass"
+  },
+  "J-CAT-CR006": {
+    "actual": "XSS safe",
+    "result": "Pass"
+  },
+  "J-CAT-CR007": {
+    "actual": "sync toggle checked",
+    "result": "Pass"
+  },
+  "J-CAT-CR008": {
+    "actual": "no E2E save",
+    "result": "Warning"
+  },
+  "J-CAT-ED001": {
+    "actual": "empty form bug",
+    "result": "Fail"
+  },
+  "J-CAT-ED002": {
+    "actual": "edit real record — skip",
+    "result": "Warning"
+  },
+  "J-CAT-ED003": {
+    "actual": "save edit — skip",
+    "result": "Warning"
+  },
+  "J-CAT-UX001": {
+    "actual": "desktop 1920",
+    "result": "Pass"
+  },
+  "J-CAT-UX002": {
+    "actual": "Chromium",
+    "result": "Pass"
+  },
+  "J-CAT-SEC001": {
+    "actual": "authenticated access",
+    "result": "Pass"
+  }
+}

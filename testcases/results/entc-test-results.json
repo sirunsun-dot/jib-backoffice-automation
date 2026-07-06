@@ -1,0 +1,340 @@
+{
+  "J-ENTC-LP001": {
+    "actual": "หน้า list โหลดสำเร็จ",
+    "result": "Pass"
+  },
+  "J-ENTC-LP002": {
+    "actual": "breadcrumb=\"ร้านค้าจัดการสินค้าCategory - Commucial\"",
+    "result": "Warning"
+  },
+  "J-ENTC-LP003": {
+    "actual": "header + คำอธิบายครบ",
+    "result": "Pass"
+  },
+  "J-ENTC-LP004": {
+    "actual": "คอลัมน์ครบ: 12 cols",
+    "result": "Pass"
+  },
+  "J-ENTC-LP005": {
+    "actual": "actionbar={\"search\":true,\"btnStatus\":true,\"btnDate\":true,\"btnFilter\":true,\"btnCols\":true,\"btnOrder\":true,\"btnAdd\":true}",
+    "result": "Pass"
+  },
+  "J-ENTC-LP006": {
+    "actual": "OK",
+    "result": "Pass"
+  },
+  "J-ENTC-LP007": {
+    "actual": "มีปุ่มเพิ่มหมวดหมู่องค์กร",
+    "result": "Pass"
+  },
+  "J-ENTC-LP010": {
+    "actual": "ค้นหา TH url search=true",
+    "result": "Pass"
+  },
+  "J-ENTC-LP011": {
+    "actual": "empty state",
+    "result": "Pass"
+  },
+  "J-ENTC-LP012": {
+    "actual": "XSS safe value=\"<script>alert(1)</script>\"",
+    "result": "Pass"
+  },
+  "J-ENTC-LP013": {
+    "actual": "เคลียร์ search → list กลับมา",
+    "result": "Pass"
+  },
+  "J-ENTC-LP014": {
+    "actual": "special chars ไม่ error",
+    "result": "Pass"
+  },
+  "J-ENTC-LP020": {
+    "actual": "เปิด popover options=[\"ทั้งหมด\",\"ปิดใช้งาน\",\"เปิดใช้งาน\"]",
+    "result": "Pass"
+  },
+  "J-ENTC-LP021": {
+    "actual": "3 options=true",
+    "result": "Pass"
+  },
+  "J-ENTC-LP022": {
+    "actual": "กรองเปิดใช้งาน url=search=%40%23%24%25&status=true",
+    "result": "Pass"
+  },
+  "J-ENTC-LP023": {
+    "actual": "กรองปิดใช้งาน",
+    "result": "Pass"
+  },
+  "J-ENTC-LP024": {
+    "actual": "เลือกทั้งหมด",
+    "result": "Pass"
+  },
+  "J-ENTC-LP025": {
+    "actual": "date options=[\"วันนี้\",\"7 วันที่ผ่านมา\",\"30 วันที่ผ่านมา\",\"6 เดือนที่ผ่านมา\",\"1 ปีที่ผ่านมา\",\"กรกฎาคม\"]",
+    "result": "Pass"
+  },
+  "J-ENTC-LP026": {
+    "actual": "เลือก 7 วัน url=",
+    "result": "Warning"
+  },
+  "J-ENTC-LP027": {
+    "actual": "sheet เปิด",
+    "result": "Pass"
+  },
+  "J-ENTC-LP028": {
+    "actual": "ESC ปิด sheet",
+    "result": "Pass"
+  },
+  "J-ENTC-LP029": {
+    "actual": "Apply filter combination — ไม่ได้ทดสอบลึก",
+    "result": "Not Tested"
+  },
+  "J-ENTC-LP030": {
+    "actual": "ไม่เปิด",
+    "result": "Warning"
+  },
+  "J-ENTC-LP031": {
+    "actual": "ยังพบ",
+    "result": "Warning"
+  },
+  "J-ENTC-LP032": {
+    "actual": "restore ผู้สร้าง",
+    "result": "Pass"
+  },
+  "J-ENTC-LP033": {
+    "actual": "จัดการลำดับ opened url=/store/product-manager/enterprise-categories/manage dialog=false",
+    "result": "Pass"
+  },
+  "J-ENTC-LP040": {
+    "actual": "rows options=[\"10\",\"20\",\"50\",\"100\"]",
+    "result": "Pass"
+  },
+  "J-ENTC-LP041": {
+    "actual": "footer=\"1 - 4 จาก 4 รายการ\"",
+    "result": "Pass"
+  },
+  "J-ENTC-LP042": {
+    "actual": "data 4 ≤ 10 — ไม่มีหน้า 2",
+    "result": "Pass"
+  },
+  "J-ENTC-LP050": {
+    "actual": "edit pattern href=\"/store/product-manager/enterprise-categories/update/1\" (ไม่มีลิงก์ตรงในแถว — ใช้ /update/{id})",
+    "result": "Pass"
+  },
+  "J-ENTC-LP051": {
+    "actual": "items=[\"ลบ\"]",
+    "result": "Pass"
+  },
+  "J-ENTC-LP052": {
+    "actual": "Toggle status via menu — เลี่ยงกระทบ data",
+    "result": "Not Tested"
+  },
+  "J-ENTC-LP053": {
+    "actual": "delete dialog pattern ทดสอบใน ED023",
+    "result": "Pass"
+  },
+  "J-ENTC-LP054": {
+    "actual": "นำทาง create → https://devstorex.jibc.codelabdev.co/store/product-manager/enterprise-categories/create",
+    "result": "Pass"
+  },
+  "J-ENTC-CR001": {
+    "actual": "เปิดหน้า create สำเร็จ",
+    "result": "Pass"
+  },
+  "J-ENTC-CR002": {
+    "actual": "header ครบ",
+    "result": "Pass"
+  },
+  "J-ENTC-CR003": {
+    "actual": "section visible",
+    "result": "Pass"
+  },
+  "J-ENTC-CR004": {
+    "actual": "draft default=unchecked",
+    "result": "Pass"
+  },
+  "J-ENTC-CR005": {
+    "actual": "sync default=checked",
+    "result": "Pass"
+  },
+  "J-ENTC-CR006": {
+    "actual": "มีปุ่มบันทึก",
+    "result": "Pass"
+  },
+  "J-ENTC-CR010": {
+    "actual": "drop zone",
+    "result": "Pass"
+  },
+  "J-ENTC-CR011": {
+    "actual": "JPG/PNG info",
+    "result": "Pass"
+  },
+  "J-ENTC-CR012": {
+    "actual": "อัปโหลด PNG สำเร็จ",
+    "result": "Pass"
+  },
+  "J-ENTC-CR020": {
+    "actual": "ref=\"ENTC001\"",
+    "result": "Pass"
+  },
+  "J-ENTC-CR021": {
+    "actual": "รับ special chars",
+    "result": "Pass"
+  },
+  "J-ENTC-CR022": {
+    "actual": "len=255",
+    "result": "Pass"
+  },
+  "J-ENTC-CR030": {
+    "actual": "slug=\"entc-test-slug\"",
+    "result": "Pass"
+  },
+  "J-ENTC-CR031": {
+    "actual": "slug alphanumeric",
+    "result": "Pass"
+  },
+  "J-ENTC-CR032": {
+    "actual": "slug with spaces=\"slug spaces test\"",
+    "result": "Pass"
+  },
+  "J-ENTC-CR040": {
+    "actual": "TH=\"หมวดทดสอบ\"",
+    "result": "Pass"
+  },
+  "J-ENTC-CR041": {
+    "actual": "ชื่อ 1 ตัวอักษร",
+    "result": "Pass"
+  },
+  "J-ENTC-CR042": {
+    "actual": "len=300",
+    "result": "Warning",
+    "note": "ไม่มี maxLength client"
+  },
+  "J-ENTC-CR043": {
+    "actual": "XSS รับเป็น text",
+    "result": "Pass"
+  },
+  "J-ENTC-CR050": {
+    "actual": "EN disabled=true (sync ON)",
+    "result": "Pass"
+  },
+  "J-ENTC-CR051": {
+    "actual": "EN=\"Enterprise Cat EN\"",
+    "result": "Pass"
+  },
+  "J-ENTC-CR060": {
+    "actual": "desc TH OK",
+    "result": "Pass"
+  },
+  "J-ENTC-CR061": {
+    "actual": "desc EN OK",
+    "result": "Pass"
+  },
+  "J-ENTC-CR062": {
+    "actual": "multi-line desc",
+    "result": "Pass"
+  },
+  "J-ENTC-CR070": {
+    "actual": "dialog=\"เพิ่ม Category 2 (หมวดหมู่ลำดับที่ 2)\n\nระบุข้อมูลเพื่อสร้าง Category 2 (หมวดหมู่ลำดับที่ 2)\n\nCategory 2 (หมวดหมู่ลำดับที\"",
+    "result": "Pass"
+  },
+  "J-ENTC-CR071": {
+    "actual": "กรอกชื่อหมวดย่อย",
+    "result": "Pass"
+  },
+  "J-ENTC-CR080": {
+    "actual": "toggle ฉบับร่าง/เปิดใช้งาน",
+    "result": "Pass"
+  },
+  "J-ENTC-CR008": {
+    "actual": "บันทึกสำเร็จ name=ENTC Auto 1782896915302",
+    "result": "Pass"
+  },
+  "J-ENTC-CR090": {
+    "actual": "redirect list",
+    "result": "Pass"
+  },
+  "J-ENTC-CR091": {
+    "actual": "empty form error=true",
+    "result": "Pass"
+  },
+  "J-ENTC-CR092": {
+    "actual": "missing EN error=true",
+    "result": "Pass"
+  },
+  "J-ENTC-CR007": {
+    "actual": "sync toggle checked — verified CR050/051",
+    "result": "Pass"
+  },
+  "J-ENTC-CR093": {
+    "actual": "beforeunload=true",
+    "result": "Pass"
+  },
+  "J-ENTC-ED002": {
+    "actual": "เปิด edit https://devstorex.jibc.codelabdev.co/store/product-manager/enterprise-categories/update/8",
+    "result": "Pass"
+  },
+  "J-ENTC-ED003": {
+    "actual": "edit header",
+    "result": "Pass"
+  },
+  "J-ENTC-ED004": {
+    "actual": "โหลดชื่อ=\"ENTC Auto 1782896915302\"",
+    "result": "Pass"
+  },
+  "J-ENTC-ED005": {
+    "actual": "แก้ชื่อ + บันทึก สำเร็จ",
+    "result": "Pass"
+  },
+  "J-ENTC-ED020": {
+    "actual": "menu=[\"ลบ\"]",
+    "result": "Pass"
+  },
+  "J-ENTC-ED021": {
+    "actual": "confirm dialog",
+    "result": "Pass"
+  },
+  "J-ENTC-ED022": {
+    "actual": "ยกเลิกลบ",
+    "result": "Pass"
+  },
+  "J-ENTC-ED023": {
+    "actual": "ยังพบใน list",
+    "result": "Warning"
+  },
+  "J-ENTC-ED010": {
+    "actual": "toggle status edit — pattern เดียว CR080",
+    "result": "Not Tested"
+  },
+  "J-ENTC-ED011": {
+    "actual": "แก้ slug — skip เพื่อไม่กระทบ URL",
+    "result": "Not Tested"
+  },
+  "J-ENTC-ED001": {
+    "actual": "URL=https://devstorex.jibc.codelabdev.co/store/product-manager/enterprise-categories/update/99999999 empty=true indicator=false",
+    "result": "Fail",
+    "note": "empty form bug"
+  },
+  "J-ENTC-UX001": {
+    "actual": "ทดสอบที่ 1920x1080",
+    "result": "Pass"
+  },
+  "J-ENTC-UX002": {
+    "actual": "Chromium ผ่าน Puppeteer",
+    "result": "Pass"
+  },
+  "J-ENTC-UX003": {
+    "actual": "tablet/mobile ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-ENTC-SEC001": {
+    "actual": "authenticated access — login ก่อนเข้า",
+    "result": "Pass"
+  },
+  "J-ENTC-SEC002": {
+    "actual": "XSS search+name รับเป็น text (LP012/CR043)",
+    "result": "Pass"
+  },
+  "J-ENTC-SEC003": {
+    "actual": "logout / no-permission ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "J-PROD-LP001": {
+    "actual": "โหลดสำเร็จ",
+    "result": "Pass"
+  },
+  "J-PROD-LP002": {
+    "actual": "พบ heading",
+    "result": "Pass"
+  },
+  "J-PROD-LP003": {
+    "actual": "แถว=20",
+    "result": "Pass"
+  },
+  "J-PROD-LP004": {
+    "actual": "คอลัมน์ 6",
+    "result": "Pass"
+  },
+  "J-PROD-LP005": {
+    "actual": "search=true filter=true",
+    "result": "Pass"
+  },
+  "J-PROD-LP006": {
+    "actual": "OK",
+    "result": "Pass"
+  },
+  "J-PROD-LP007": {
+    "actual": "มีปุ่มเพิ่ม",
+    "result": "Pass"
+  },
+  "J-PROD-LP010": {
+    "actual": "ค้นหา OK",
+    "result": "Pass"
+  },
+  "J-PROD-LP011": {
+    "actual": "empty search OK",
+    "result": "Pass"
+  },
+  "J-PROD-LP012": {
+    "actual": "XSS safe",
+    "result": "Pass"
+  },
+  "J-PROD-LP013": {
+    "actual": "clear search",
+    "result": "Pass"
+  },
+  "J-PROD-LP020": {
+    "actual": "เปิดตัวกรอง",
+    "result": "Pass"
+  },
+  "J-PROD-LP021": {
+    "actual": "ESC OK",
+    "result": "Pass"
+  },
+  "J-PROD-LP022": {
+    "actual": "filter OK",
+    "result": "Pass"
+  },
+  "J-PROD-LP030": {
+    "actual": "customize OK",
+    "result": "Pass"
+  },
+  "J-PROD-LP031": {
+    "actual": "toggle OK",
+    "result": "Pass"
+  },
+  "J-PROD-LP040": {
+    "actual": "no footer",
+    "result": "Warning"
+  },
+  "J-PROD-LP041": {
+    "actual": "rows selector",
+    "result": "Pass"
+  },
+  "J-PROD-LP042": {
+    "actual": "pagination nav",
+    "result": "Pass"
+  },
+  "J-PROD-LP050": {
+    "actual": "ไม่มี edit",
+    "result": "Warning"
+  },
+  "J-PROD-LP051": {
+    "actual": "row menu",
+    "result": "Pass"
+  },
+  "J-PROD-CR001": {
+    "actual": "create page OK",
+    "result": "Pass"
+  },
+  "J-PROD-CR002": {
+    "actual": "inputs=20",
+    "result": "Pass"
+  },
+  "J-PROD-CR003": {
+    "actual": "มีบันทึก",
+    "result": "Pass"
+  },
+  "J-PROD-CR004": {
+    "actual": "validation OK",
+    "result": "Pass"
+  },
+  "J-PROD-CR005": {
+    "actual": "กรอกชื่อ OK",
+    "result": "Pass"
+  },
+  "J-PROD-CR006": {
+    "actual": "XSS safe",
+    "result": "Pass"
+  },
+  "J-PROD-CR007": {
+    "actual": "sync toggle checked",
+    "result": "Pass"
+  },
+  "J-PROD-CR008": {
+    "actual": "no E2E save",
+    "result": "Warning"
+  },
+  "J-PROD-ED001": {
+    "actual": "empty form bug",
+    "result": "Fail"
+  },
+  "J-PROD-ED002": {
+    "actual": "edit real record — skip",
+    "result": "Warning"
+  },
+  "J-PROD-ED003": {
+    "actual": "save edit — skip",
+    "result": "Warning"
+  },
+  "J-PROD-UX001": {
+    "actual": "desktop 1920",
+    "result": "Pass"
+  },
+  "J-PROD-UX002": {
+    "actual": "Chromium",
+    "result": "Pass"
+  },
+  "J-PROD-SEC001": {
+    "actual": "authenticated access",
+    "result": "Pass"
+  }
+}

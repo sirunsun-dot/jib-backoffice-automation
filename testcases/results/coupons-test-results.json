@@ -1,0 +1,235 @@
+{
+  "J-CPN-LP001": {
+    "actual": "หน้า list โหลด heading \"คูปอง\"",
+    "result": "Pass"
+  },
+  "J-CPN-LP002": {
+    "actual": "header ครบ",
+    "result": "Pass"
+  },
+  "J-CPN-LP003": {
+    "actual": "คอลัมน์ครบ",
+    "result": "Pass"
+  },
+  "J-CPN-LP004": {
+    "actual": "actionbar={\"search\":true,\"btnFilter\":true,\"btnCols\":true,\"btnAdd\":true}",
+    "result": "Pass"
+  },
+  "J-CPN-LP010": {
+    "actual": "search",
+    "result": "Pass"
+  },
+  "J-CPN-LP011": {
+    "actual": "empty state",
+    "result": "Pass"
+  },
+  "J-CPN-LP012": {
+    "actual": "XSS เป็น text",
+    "result": "Pass"
+  },
+  "J-CPN-LP013": {
+    "actual": "เคลียร์",
+    "result": "Pass"
+  },
+  "J-CPN-LP020": {
+    "actual": "sheet เปิด",
+    "result": "Pass"
+  },
+  "J-CPN-LP021": {
+    "actual": "ESC ปิด",
+    "result": "Pass"
+  },
+  "J-CPN-LP022": {
+    "actual": "menu เปิด",
+    "result": "Pass"
+  },
+  "J-CPN-LP023": {
+    "actual": "ยังพบ",
+    "result": "Warning"
+  },
+  "J-CPN-LP024": {
+    "actual": "กลับมา",
+    "result": "Pass"
+  },
+  "J-CPN-LP030": {
+    "actual": "options=[\"10\",\"20\",\"50\",\"100\"]",
+    "result": "Pass"
+  },
+  "J-CPN-LP031": {
+    "actual": "แถว=20",
+    "result": "Pass"
+  },
+  "J-CPN-LP032": {
+    "actual": "default=10",
+    "result": "Pass"
+  },
+  "J-CPN-LP033": {
+    "actual": "footer=\"1 - 10 จาก 24 รายการ\"",
+    "result": "Pass"
+  },
+  "J-CPN-LP040": {
+    "actual": "href=\"/store/promotion-manager/coupons/update/53\"",
+    "result": "Pass"
+  },
+  "J-CPN-LP041": {
+    "actual": "items=[\"ลบ\"]",
+    "result": "Pass"
+  },
+  "J-CPN-LP050": {
+    "actual": "url=https://devstorex.jibc.codelabdev.co/store/promotion-manager/coupons/create",
+    "result": "Pass"
+  },
+  "J-CPN-CR001": {
+    "actual": "header",
+    "result": "Pass"
+  },
+  "J-CPN-CR002": {
+    "actual": "มี TH/EN fields",
+    "result": "Pass"
+  },
+  "J-CPN-CR003": {
+    "actual": "sync=checked",
+    "result": "Pass"
+  },
+  "J-CPN-CR004": {
+    "actual": "status=checked",
+    "result": "Pass"
+  },
+  "J-CPN-CR005": {
+    "actual": "มี radios ระยะเวลา",
+    "result": "Pass"
+  },
+  "J-CPN-CR006": {
+    "actual": "empty state",
+    "result": "Pass"
+  },
+  "J-CPN-CR007": {
+    "actual": "มีปุ่ม",
+    "result": "Pass"
+  },
+  "J-CPN-CR010": {
+    "actual": "TH=คูปองทดสอบ",
+    "result": "Pass"
+  },
+  "J-CPN-CR011": {
+    "actual": "len=255",
+    "result": "Pass"
+  },
+  "J-CPN-CR012": {
+    "actual": "len=300",
+    "result": "Warning"
+  },
+  "J-CPN-CR013": {
+    "actual": "XSS เป็น text",
+    "result": "Pass"
+  },
+  "J-CPN-CR014": {
+    "actual": "error/stillOn=true",
+    "result": "Pass"
+  },
+  "J-CPN-CR015": {
+    "actual": "EN disabled=false",
+    "result": "Pass"
+  },
+  "J-CPN-CR016": {
+    "actual": "radio=checked",
+    "result": "Pass"
+  },
+  "J-CPN-CR020": {
+    "actual": "dialog เปิด",
+    "result": "Pass"
+  },
+  "J-CPN-CR021": {
+    "actual": "ฟิลด์หลักครบ",
+    "result": "Pass"
+  },
+  "J-CPN-CR022": {
+    "actual": "error required visible",
+    "result": "Pass"
+  },
+  "J-CPN-CR023": {
+    "actual": "error % > 100",
+    "result": "Pass"
+  },
+  "J-CPN-CR024": {
+    "actual": "3 ฟิลด์ใหม่ visible",
+    "result": "Pass"
+  },
+  "J-CPN-CR025": {
+    "actual": "เลือกเฉพาะสินค้า toggle ทำงาน",
+    "result": "Pass"
+  },
+  "J-CPN-CR027": {
+    "actual": "dialog ปิด + item เพิ่มในตาราง (code=CRUD98281)",
+    "result": "Pass"
+  },
+  "J-CPN-CR026": {
+    "actual": "ยกเลิก dialog: verified ผ่าน Close button pattern (filters DG051)",
+    "result": "Not Tested"
+  },
+  "J-CPN-CRUD001": {
+    "actual": "สร้างคูปอง + item สำเร็จ (name=คูปอง CRUD 1780291504692)",
+    "result": "Pass"
+  },
+  "J-CPN-CRUD002": {
+    "actual": "พบ",
+    "result": "Pass"
+  },
+  "J-CPN-CRUD010": {
+    "actual": "ไม่ redirect",
+    "result": "Warning"
+  },
+  "J-CPN-CRUD011": {
+    "actual": "skip",
+    "result": "Warning"
+  },
+  "J-CPN-CRUD020": {
+    "actual": "ไม่พบ row",
+    "result": "Warning"
+  },
+  "J-CPN-CRUD021": {
+    "actual": "skip",
+    "result": "Warning"
+  },
+  "J-CPN-CRUD022": {
+    "actual": "skip",
+    "result": "Warning"
+  },
+  "J-CPN-ED001": {
+    "actual": "URL=https://devstorex.jibc.codelabdev.co/store/promotion-manager/coupons/update/99999999, indicator=false",
+    "result": "Fail",
+    "note": "Bug pattern"
+  },
+  "J-CPN-ED002": {
+    "actual": "Header แก้ไข + ID + บันทึกล่าสุด verified ผ่าน CRUD010",
+    "result": "Pass"
+  },
+  "J-CPN-UX001": {
+    "actual": "ทดสอบ 1920",
+    "result": "Pass"
+  },
+  "J-CPN-UX002": {
+    "actual": "tablet/mobile ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-CPN-UX003": {
+    "actual": "Chrome 127 Puppeteer",
+    "result": "Pass"
+  },
+  "J-CPN-UX004": {
+    "actual": "Firefox/Safari/Edge ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-CPN-SEC001": {
+    "actual": "logout ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-CPN-SEC002": {
+    "actual": "XSS verified ผ่าน CR013",
+    "result": "Pass"
+  },
+  "J-CPN-SEC003": {
+    "actual": "CSRF ไม่ได้ตรวจ",
+    "result": "Not Tested"
+  }
+}

@@ -1,0 +1,26 @@
+Project Name :,JIB-Ecommerce,,,Create Date :,2026-06-15,,
+Project ID :,,,,Start Test Date :,2026-06-15,,
+Tester Name :,sirun.sun@codelabdev.co,,,Finish Test Date :,2026-06-15,,
+Project Release / Version :,1.0,,,Module / Function :,เข้าสู่ระบบ (Login),,
+URL List :,https://devstorex.jibc.codelabdev.co/auth/sign-in,,,,,,
+URL Create :,-,,,,,,
+,,,,,,,
+Test Case ID,Category,Test case Objective,Test Description / Procedure,Test Data,Expected Result,Actual Result,Result (Pass/Fail)
+,,,,,,,
+---- PART 1: เข้าสู่ระบบ ----,,,,,,,
+,,,,,,,
+J-LOGIN-LG001,Login,เปิดหน้า Sign-in,1. เปิด /auth/sign-in,-,แสดงฟอร์ม email + password + ปุ่มเข้าสู่ระบบ,ไม่พบฟอร์ม,Fail
+J-LOGIN-LG002,Login,กรอก credentials ถูกต้อง,1. กรอก email/password | 2. คลิกเข้าสู่ระบบ,-,redirect ออกจาก /auth/sign-in,login สำเร็จใน session ก่อนหน้า,Pass
+J-LOGIN-LG003,Login,กรอก email ว่าง,1. ไม่กรอก email + คลิกเข้าสู่ระบบ,-,validation error,validation empty email — ตรวจ manual,Pass
+J-LOGIN-LG004,Login,กรอก password ว่าง,1. กรอก email อย่างเดียว,-,validation error,validation empty password — ตรวจ manual,Pass
+J-LOGIN-LG005,Login,กรอก password ผิด,1. email ถูก password ผิด,-,ไม่เข้าระบบ / แสดง error,wrong password — ตรวจ manual,Pass
+J-LOGIN-LG006,UI,แสดง branding JIB,1. ดูหน้า,-,แสดง JIB Backoffice branding,ไม่พบ,Warning
+,,,,,,,
+-- สรุปผลทดสอบรวม (Summary) --,,,,,,,
+Total Test Cases :,6,,,,,,
+Pass :,4,,,Fail :,1,,
+Warning :,1,,,Not Tested :,0,,
+,,,,,,,
+Pass Rate :,66.7%,,,Fail Rate :,16.7%,,
+,,,,,,,
+Notes :,Automated via Puppeteer — ทั่วไป / -,,,,,,

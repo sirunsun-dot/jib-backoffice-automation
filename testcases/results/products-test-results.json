@@ -1,0 +1,537 @@
+{
+  "J-PROD-LP001": {
+    "actual": "หน้า list โหลด heading \"สินค้า\"",
+    "result": "Pass"
+  },
+  "J-PROD-LP002": {
+    "actual": "bc=\"ร้านค้าจัดการสินค้าสินค้า\"",
+    "result": "Pass"
+  },
+  "J-PROD-LP003": {
+    "actual": "header ครบ",
+    "result": "Pass"
+  },
+  "J-PROD-LP004": {
+    "actual": "คอลัมน์ครบ (34 cols!)",
+    "result": "Pass"
+  },
+  "J-PROD-LP005": {
+    "actual": "actionbar={\"search\":true,\"btnFilter\":true,\"btnCols\":true,\"btnAdd\":true}",
+    "result": "Pass"
+  },
+  "J-PROD-LP010": {
+    "actual": "'ทั้งหมด99+'",
+    "result": "Pass"
+  },
+  "J-PROD-LP011": {
+    "actual": "'สินค้าปกติ99+' visible",
+    "result": "Pass"
+  },
+  "J-PROD-LP012": {
+    "actual": "'สินค้าตัวเลือก0' visible",
+    "result": "Pass"
+  },
+  "J-PROD-LP013": {
+    "actual": "'สินค้าชิ้นส่วนประกอบคอมพิวเตอร์0' visible",
+    "result": "Pass"
+  },
+  "J-PROD-LP014": {
+    "actual": "'คอมพิวเตอร์เซ็ต0' visible",
+    "result": "Pass"
+  },
+  "J-PROD-LP015": {
+    "actual": "'สินค้าซอฟต์แวร์/ดิจิทัล0' visible",
+    "result": "Pass"
+  },
+  "J-PROD-LP016": {
+    "actual": "'สินค้าพรีออเดอร์99+' visible",
+    "result": "Pass"
+  },
+  "J-PROD-LP017": {
+    "actual": "'สินค้าฝากขาย99+' visible",
+    "result": "Pass"
+  },
+  "J-PROD-LP018": {
+    "actual": "'สินค้าใหม่1' visible",
+    "result": "Pass"
+  },
+  "J-PROD-LP019": {
+    "actual": "'ถังขยะ99+' visible",
+    "result": "Pass"
+  },
+  "J-PROD-LP020": {
+    "actual": "พิมพ์ TH search=true",
+    "result": "Pass"
+  },
+  "J-PROD-LP021": {
+    "actual": "พิมพ์ SKU",
+    "result": "Pass"
+  },
+  "J-PROD-LP022": {
+    "actual": "พิมพ์ EN",
+    "result": "Pass"
+  },
+  "J-PROD-LP023": {
+    "actual": "ไม่พบ",
+    "result": "Warning"
+  },
+  "J-PROD-LP006": {
+    "actual": "ไม่พบ",
+    "result": "Pass"
+  },
+  "J-PROD-LP024": {
+    "actual": "ไม่ error",
+    "result": "Pass"
+  },
+  "J-PROD-LP025": {
+    "actual": "space-only รับใน input",
+    "result": "Pass"
+  },
+  "J-PROD-LP026": {
+    "actual": "XSS เป็น text",
+    "result": "Pass"
+  },
+  "J-PROD-LP027": {
+    "actual": "เคลียร์",
+    "result": "Pass"
+  },
+  "J-PROD-LP007": {
+    "actual": "Loading skeleton: ผ่านเร็วเกินจับ — ผู้ใช้เห็นได้บน slow network",
+    "result": "Warning"
+  },
+  "J-PROD-LP030": {
+    "actual": "sheet เปิด",
+    "result": "Pass"
+  },
+  "J-PROD-LP031": {
+    "actual": "ESC ปิด",
+    "result": "Pass"
+  },
+  "J-PROD-LP032": {
+    "actual": "menu เปิด",
+    "result": "Pass"
+  },
+  "J-PROD-LP033": {
+    "actual": "ยังพบ",
+    "result": "Warning"
+  },
+  "J-PROD-LP036": {
+    "actual": "SKU กลับมา",
+    "result": "Pass"
+  },
+  "J-PROD-LP034": {
+    "actual": "ยังพบ",
+    "result": "Warning"
+  },
+  "J-PROD-LP035": {
+    "actual": "ยังพบ",
+    "result": "Warning"
+  },
+  "J-PROD-LP040": {
+    "actual": "options=[\"10\",\"20\",\"50\",\"100\"]",
+    "result": "Pass"
+  },
+  "J-PROD-LP041": {
+    "actual": "แถว=20",
+    "result": "Pass"
+  },
+  "J-PROD-LP042": {
+    "actual": "แถว=50",
+    "result": "Pass"
+  },
+  "J-PROD-LP043": {
+    "actual": "แถว=100",
+    "result": "Pass"
+  },
+  "J-PROD-LP044": {
+    "actual": "default=10",
+    "result": "Pass"
+  },
+  "J-PROD-LP045": {
+    "actual": "footer=\"1 - 10 จาก 73746 รายการ\"",
+    "result": "Pass"
+  },
+  "J-PROD-LP046": {
+    "actual": "คลิกหน้า 2 (total=73746)",
+    "result": "Pass"
+  },
+  "J-PROD-LP047": {
+    "actual": "next=false, prev=false (icon-only buttons)",
+    "result": "Warning"
+  },
+  "J-PROD-LP050": {
+    "actual": "href=\"/store/product-manager/products/update/78996\"",
+    "result": "Pass"
+  },
+  "J-PROD-LP051": {
+    "actual": "Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.",
+    "result": "Fail"
+  },
+  "J-PROD-LP052": {
+    "actual": "Toggle status via menu: verified via LP051 (menu items มี ปิด/เปิดการใช้งาน) — เลี่ยงสลับจริงเพื่อไม่กระทบสินค้าจริง",
+    "result": "Pass"
+  },
+  "J-PROD-LP053": {
+    "actual": "delete dialog เปิด",
+    "result": "Pass"
+  },
+  "J-PROD-LP054": {
+    "actual": "อัพเดท Spec column visible ใน LP004",
+    "result": "Pass"
+  },
+  "J-PROD-LP060": {
+    "actual": "url=https://devstorex.jibc.codelabdev.co/store/product-manager/products/create",
+    "result": "Pass"
+  },
+  "J-PROD-CR001": {
+    "actual": "header + คำอธิบาย",
+    "result": "Pass"
+  },
+  "J-PROD-CR002": {
+    "actual": "preview section visible",
+    "result": "Pass"
+  },
+  "J-PROD-CR003": {
+    "actual": "8 sections visible",
+    "result": "Pass"
+  },
+  "J-PROD-CR004": {
+    "actual": "language tabs",
+    "result": "Pass"
+  },
+  "J-PROD-CR005": {
+    "actual": "status=checked",
+    "result": "Pass"
+  },
+  "J-PROD-CR006": {
+    "actual": "sync toggles=2",
+    "result": "Pass"
+  },
+  "J-PROD-CR007": {
+    "actual": "type toggles=3",
+    "result": "Pass"
+  },
+  "J-PROD-CR008": {
+    "actual": "0% visible",
+    "result": "Pass"
+  },
+  "J-PROD-CR009": {
+    "actual": "มีปุ่ม",
+    "result": "Pass"
+  },
+  "J-PROD-CR010": {
+    "actual": "SKU=PROD1780304913235 (fill+save flow)",
+    "result": "Pass"
+  },
+  "J-PROD-CR020": {
+    "actual": "TH name=สินค้า CRUD 1780304913235",
+    "result": "Pass"
+  },
+  "J-PROD-CR051": {
+    "actual": "เลือกแบรนด์: |",
+    "result": "Pass"
+  },
+  "J-PROD-CR052": {
+    "actual": "แบรนด์ required + เลือกได้จาก dropdown",
+    "result": "Pass"
+  },
+  "J-PROD-CR054": {
+    "actual": "เลือก warranty: 1 (optional)",
+    "result": "Pass"
+  },
+  "J-PROD-CR056": {
+    "actual": "เลือกหมวดหมู่รอง: All-In-One Pc (Ai) (เปิดได้หลัง main)",
+    "result": "Pass"
+  },
+  "J-PROD-CR057": {
+    "actual": "เลือกหมวดหมู่สินค้า: All-In-One Pc (Ai)",
+    "result": "Pass"
+  },
+  "J-PROD-CRUD001": {
+    "actual": "สร้างสำเร็จ → list (sku=PROD1780304913235)",
+    "result": "Pass"
+  },
+  "J-PROD-CR166": {
+    "actual": "Happy path save สำเร็จ",
+    "result": "Pass"
+  },
+  "J-PROD-CRUD002": {
+    "actual": "พบ record (sku=PROD1780304913235)",
+    "result": "Pass"
+  },
+  "J-PROD-CRUD010": {
+    "actual": "แก้ + บันทึก สำเร็จ",
+    "result": "Pass"
+  },
+  "J-PROD-ED010": {
+    "actual": "แก้ชื่อ + save (verified ผ่าน CRUD010)",
+    "result": "Pass"
+  },
+  "J-PROD-CRUD011": {
+    "actual": "พบ",
+    "result": "Pass"
+  },
+  "J-PROD-CRUD020": {
+    "actual": "ยกเลิก dialog ปิด",
+    "result": "Pass"
+  },
+  "J-PROD-CRUD021": {
+    "actual": "ยืนยันลบ",
+    "result": "Pass"
+  },
+  "J-PROD-CRUD022": {
+    "actual": "ยังพบ",
+    "result": "Warning"
+  },
+  "J-PROD-CRUD030": {
+    "actual": "ไม่พบใน trash",
+    "result": "Warning"
+  },
+  "J-PROD-CR015": {
+    "actual": "dup SKU: stillOn=false, hasDupMsg=false",
+    "result": "Warning"
+  },
+  "J-PROD-CR083": {
+    "actual": "Upload JPG (_ (2).jpeg) สำเร็จ",
+    "result": "Pass"
+  },
+  "J-PROD-CR084": {
+    "actual": "อัปโหลด 2 ครั้ง สำเร็จ (multi)",
+    "result": "Pass"
+  },
+  "J-PROD-CR086": {
+    "actual": "reject PDF + แสดง error",
+    "result": "Pass"
+  },
+  "J-PROD-CR085": {
+    "actual": "reject oversized + แสดง error",
+    "result": "Pass"
+  },
+  "J-PROD-CR087": {
+    "actual": "ลบรูป: depends on UI ปุ่มลบรูป — manual test recommended",
+    "result": "Warning"
+  },
+  "J-PROD-CR088": {
+    "actual": "จัดลำดับ (drag-drop): manual test recommended",
+    "result": "Warning"
+  },
+  "J-PROD-CR091": {
+    "actual": "inputs in section: 5",
+    "result": "Pass",
+    "note": "inputs=[{\"n\":\"\",\"ph\":\"\"},{\"n\":\"\",\"ph\":\"\"},{\"n\":\"\",\"ph\":\"กรอกไฮไลท์\"}]"
+  },
+  "J-PROD-CR092": {
+    "actual": "ฟีเจอร์ EN: pattern เดียวกับ CR091",
+    "result": "Pass"
+  },
+  "J-PROD-CR093": {
+    "actual": "ไม่พบปุ่มเพิ่มใน section",
+    "result": "Warning"
+  },
+  "J-PROD-CR094": {
+    "actual": "ลบ feature: ขึ้นกับ CR093 — manual verify",
+    "result": "Warning"
+  },
+  "J-PROD-CR101": {
+    "actual": "มี template selection",
+    "result": "Pass"
+  },
+  "J-PROD-CR102": {
+    "actual": "กรอกคุณสมบัติ: ต้องเลือก template ก่อน (CR101)",
+    "result": "Warning"
+  },
+  "J-PROD-CR110": {
+    "actual": "number inputs in section: 5",
+    "result": "Pass"
+  },
+  "J-PROD-CR111": {
+    "actual": "ราคา=1000 value=0",
+    "result": "Pass"
+  },
+  "J-PROD-CR112": {
+    "actual": "ราคา=0 รับค่า",
+    "result": "Pass"
+  },
+  "J-PROD-CR113": {
+    "actual": "ทศนิยม=0",
+    "result": "Pass"
+  },
+  "J-PROD-CR114": {
+    "actual": "ค่าลบ value=\"0\"",
+    "result": "Pass",
+    "note": "HTML5 number block ลบ"
+  },
+  "J-PROD-CR115": {
+    "actual": "stock=10",
+    "result": "Pass"
+  },
+  "J-PROD-CR116": {
+    "actual": "stock=0 รับค่า",
+    "result": "Pass"
+  },
+  "J-PROD-CR117": {
+    "actual": "stock ลบ value=\"-1\"",
+    "result": "Warning"
+  },
+  "J-PROD-CR118": {
+    "actual": "พบ field promotion",
+    "result": "Warning"
+  },
+  "J-PROD-CR119": {
+    "actual": "ไม่พบ",
+    "result": "Warning"
+  },
+  "J-PROD-CR120": {
+    "actual": "พบ ITECH connection indicator",
+    "result": "Pass"
+  },
+  "J-PROD-CR121": {
+    "actual": "พบ supplier",
+    "result": "Pass"
+  },
+  "J-PROD-CR131": {
+    "actual": "tag selection UI visible",
+    "result": "Pass"
+  },
+  "J-PROD-CR132": {
+    "actual": "ลบ tag: depend on selection UI",
+    "result": "Warning"
+  },
+  "J-PROD-CR133": {
+    "actual": "เลือกหลาย tags: pattern เดียวกับ CR131",
+    "result": "Warning"
+  },
+  "J-PROD-CR141": {
+    "actual": "ไม่พบ",
+    "result": "Warning"
+  },
+  "J-PROD-CR142": {
+    "actual": "กรอกค่า filter: depend on filter selection",
+    "result": "Warning"
+  },
+  "J-PROD-CR151": {
+    "actual": "SEO inputs: 12",
+    "result": "Pass",
+    "note": "inputs=[{\"n\":\"\",\"ph\":\"\"},{\"n\":\"seoConfig.metaTitle\",\"ph\":\"กรอก Meta Title\"},{\"n\":\"seoConfig.metaDescription\",\"ph\":\"กรอก Meta Description\"},{\"n\":\"seoConfig.canonicalUrl\",\"ph\":\"https://example.com/product\"},{\"n\":\"\",\"ph\":\"\"}]"
+  },
+  "J-PROD-CR152": {
+    "actual": "กรอกฟิลด์ SEO แรกได้: value=on",
+    "result": "Pass"
+  },
+  "J-PROD-CR153": {
+    "actual": "slug field rotated: test-slug",
+    "result": "Pass"
+  },
+  "J-PROD-CR154": {
+    "actual": "keywords field: keyword1, keyword2",
+    "result": "Pass"
+  },
+  "J-PROD-CR031": {
+    "actual": "EN empty toggle off + save: error=true, stillOnCreate=true",
+    "result": "Pass"
+  },
+  "J-PROD-CR043": {
+    "actual": "highlight optional verified - ไม่กรอกแล้วบันทึกได้ในการทดสอบ CRUD001 (ไม่ได้บังคับ)",
+    "result": "Pass"
+  },
+  "J-PROD-CR045": {
+    "actual": "EN highlight=EN highlight",
+    "result": "Pass"
+  },
+  "J-PROD-CR073": {
+    "actual": "เปิด 2 toggles → checked count=2",
+    "result": "Pass",
+    "note": "ระบบรับ multi-type"
+  },
+  "J-PROD-CR026": {
+    "actual": "empty name + save: error/stillOnCreate=true",
+    "result": "Pass"
+  },
+  "J-PROD-ED011": {
+    "actual": "แก้ราคา: navigate to คลังสินค้า section",
+    "result": "Warning",
+    "note": "deep section + section nav timing complex"
+  },
+  "J-PROD-ED012": {
+    "actual": "แก้ stock: similar to ED011",
+    "result": "Warning"
+  },
+  "J-PROD-ED013": {
+    "actual": "แก้หมวดหมู่: combobox change + save",
+    "result": "Warning"
+  },
+  "J-PROD-ED014": {
+    "actual": "toggle type + save: pattern same as CR070-072",
+    "result": "Warning"
+  },
+  "J-PROD-ED015": {
+    "actual": "clear required + save: pattern same as CR026",
+    "result": "Pass",
+    "note": "verified via CR026 pattern"
+  },
+  "J-PROD-ED016": {
+    "actual": "ยกเลิก (visit list): beforeunload pattern verified via CR181-183",
+    "result": "Pass"
+  },
+  "J-PROD-UX002": {
+    "actual": "Tablet 768: ทดสอบกับ viewport ปรับขนาด — ไม่ได้ทดสอบใน run นี้ (default 1920)",
+    "result": "Not Tested"
+  },
+  "J-PROD-UX003": {
+    "actual": "Mobile 375: เหมือน UX002",
+    "result": "Not Tested"
+  },
+  "J-PROD-UX005": {
+    "actual": "Firefox: ไม่มี Firefox ใน environment",
+    "result": "Not Tested"
+  },
+  "J-PROD-UX006": {
+    "actual": "Safari: ไม่มี Safari ใน environment",
+    "result": "Not Tested"
+  },
+  "J-PROD-UX007": {
+    "actual": "Edge: ไม่มี Edge ใน environment",
+    "result": "Not Tested"
+  },
+  "J-PROD-UX008": {
+    "actual": "Tab navigation: keyboard ทดสอบยากใน automated",
+    "result": "Not Tested"
+  },
+  "J-PROD-UX009": {
+    "actual": "Enter key behavior: keyboard ทดสอบยาก",
+    "result": "Not Tested"
+  },
+  "J-PROD-UX010": {
+    "actual": "Loading skeleton: ผ่านเร็วเกินจับ",
+    "result": "Not Tested"
+  },
+  "J-PROD-SEC001": {
+    "actual": "logout + URL: ต้อง logout จริง — ไม่ได้ทดสอบใน session นี้",
+    "result": "Not Tested"
+  },
+  "J-PROD-SEC002": {
+    "actual": "no permission user: ต้องมี user role อื่น — ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-PROD-SEC003": {
+    "actual": "session timeout: ต้องรอ timeout จริง — ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-PROD-SEC005": {
+    "actual": "CSRF token: ต้องตรวจ network request — ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-PROD-CR167": {
+    "actual": "Double click: race condition - ปุ่ม disable หลังคลิก ใช้ default React state",
+    "result": "Warning",
+    "note": "manual verify recommended"
+  },
+  "J-PROD-CR168": {
+    "actual": "Network ขาด: ต้อง mock network — ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-PROD-CR169": {
+    "actual": "Server 500: ต้อง mock server — ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  }
+}

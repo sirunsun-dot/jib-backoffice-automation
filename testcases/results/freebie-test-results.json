@@ -1,0 +1,260 @@
+{
+  "J-FBP-LP001": {
+    "actual": "หน้า list โหลด heading \"สินค้าของแถม\"",
+    "result": "Pass"
+  },
+  "J-FBP-LP002": {
+    "actual": "breadcrumb=\"ร้านค้าจัดการโปรโมชั่นสินค้าของแถม\"",
+    "result": "Pass"
+  },
+  "J-FBP-LP003": {
+    "actual": "header + คำอธิบาย",
+    "result": "Pass"
+  },
+  "J-FBP-LP004": {
+    "actual": "คอลัมน์ครบ (14)",
+    "result": "Pass"
+  },
+  "J-FBP-LP005": {
+    "actual": "actionbar={\"search\":true,\"tabAll\":true,\"tabTrash\":true,\"btnFilter\":true,\"btnCols\":true,\"btnAdd\":true}",
+    "result": "Pass"
+  },
+  "J-FBP-LP006": {
+    "actual": "\"ทั้งหมด41\"",
+    "result": "Pass"
+  },
+  "J-FBP-LP007": {
+    "actual": "\"ถังขยะ1\"",
+    "result": "Pass"
+  },
+  "J-FBP-LP010": {
+    "actual": "พิมพ์ TH search=true",
+    "result": "Pass"
+  },
+  "J-FBP-LP011": {
+    "actual": "ค้นหา SKU/keyword",
+    "result": "Pass"
+  },
+  "J-FBP-LP012": {
+    "actual": "empty state",
+    "result": "Pass"
+  },
+  "J-FBP-LP013": {
+    "actual": "XSS รับเป็น text",
+    "result": "Pass"
+  },
+  "J-FBP-LP014": {
+    "actual": "เคลียร์ search",
+    "result": "Pass"
+  },
+  "J-FBP-LP020": {
+    "actual": "Tab ถังขยะ เลือกสำเร็จ url=tab=trash",
+    "result": "Pass"
+  },
+  "J-FBP-LP021": {
+    "actual": "Tab ทั้งหมด เลือกสำเร็จ",
+    "result": "Pass"
+  },
+  "J-FBP-LP030": {
+    "actual": "sheet เปิด",
+    "result": "Pass"
+  },
+  "J-FBP-LP031": {
+    "actual": "ESC ปิด",
+    "result": "Pass"
+  },
+  "J-FBP-LP032": {
+    "actual": "menu เปิด",
+    "result": "Pass"
+  },
+  "J-FBP-LP033": {
+    "actual": "ยังพบ",
+    "result": "Warning"
+  },
+  "J-FBP-LP034": {
+    "actual": "SKU กลับมา",
+    "result": "Pass"
+  },
+  "J-FBP-LP040": {
+    "actual": "options=[\"10\",\"20\",\"50\",\"100\"]",
+    "result": "Pass"
+  },
+  "J-FBP-LP041": {
+    "actual": "แถว=20",
+    "result": "Pass"
+  },
+  "J-FBP-LP042": {
+    "actual": "default แถว=10",
+    "result": "Pass"
+  },
+  "J-FBP-LP043": {
+    "actual": "footer=\"1 - 10 จาก 41 รายการ\"",
+    "result": "Pass"
+  },
+  "J-FBP-LP050": {
+    "actual": "href=\"/store/promotion-manager/freebie-products/update/75901\"",
+    "result": "Pass"
+  },
+  "J-FBP-LP051": {
+    "actual": "items=[\"ปิดการใช้งาน\",\"ลบ\"]",
+    "result": "Pass"
+  },
+  "J-FBP-LP060": {
+    "actual": "url=https://devstorex.jibc.codelabdev.co/store/promotion-manager/freebie-products/create",
+    "result": "Pass"
+  },
+  "J-FBP-CR001": {
+    "actual": "header",
+    "result": "Pass"
+  },
+  "J-FBP-CR002": {
+    "actual": "visible",
+    "result": "Pass"
+  },
+  "J-FBP-CR003": {
+    "actual": "visible",
+    "result": "Pass"
+  },
+  "J-FBP-CR004": {
+    "actual": "visible",
+    "result": "Pass"
+  },
+  "J-FBP-CR005": {
+    "actual": "status default=checked",
+    "result": "Pass"
+  },
+  "J-FBP-CR006": {
+    "actual": "sync toggles=2",
+    "result": "Pass",
+    "note": "2 toggles for name + highlight"
+  },
+  "J-FBP-CR007": {
+    "actual": "พบ 0%",
+    "result": "Pass"
+  },
+  "J-FBP-CR008": {
+    "actual": "มีปุ่มบันทึก",
+    "result": "Pass"
+  },
+  "J-FBP-CR010": {
+    "actual": "SKU=JIB-TEST-001",
+    "result": "Pass"
+  },
+  "J-FBP-CR011": {
+    "actual": "SKU special=JIB-001/!@#",
+    "result": "Pass"
+  },
+  "J-FBP-CR012": {
+    "actual": "TH=สินค้าทดสอบ",
+    "result": "Pass"
+  },
+  "J-FBP-CR013": {
+    "actual": "len=255",
+    "result": "Pass"
+  },
+  "J-FBP-CR014": {
+    "actual": "len=300",
+    "result": "Warning"
+  },
+  "J-FBP-CR015": {
+    "actual": "XSS รับเป็น text",
+    "result": "Pass"
+  },
+  "J-FBP-CR016": {
+    "actual": "EN disabled (sync ON)=true",
+    "result": "Pass"
+  },
+  "J-FBP-CR017": {
+    "actual": "หลังปิด sync: EN disabled=false",
+    "result": "Pass"
+  },
+  "J-FBP-CR018": {
+    "actual": "field not interactable: Waiting for selector `input[name=\"translations.0.highlight\"]` failed",
+    "result": "Warning"
+  },
+  "J-FBP-CR019": {
+    "actual": "2nd sync toggle (highlight) verified ผ่าน CR006 count=2",
+    "result": "Pass"
+  },
+  "J-FBP-CR030": {
+    "actual": "เลือกแบรนด์สินค้า dropdown options=50",
+    "result": "Pass"
+  },
+  "J-FBP-CR031": {
+    "actual": "เลือกการรับประกัน dropdown options=4",
+    "result": "Pass"
+  },
+  "J-FBP-CR032": {
+    "actual": "เลือกหมวดหมู่หลัก dropdown options=81",
+    "result": "Pass"
+  },
+  "J-FBP-CR033": {
+    "actual": "เลือกหมวดหมู่รอง dropdown options=0",
+    "result": "Warning"
+  },
+  "J-FBP-CR034": {
+    "actual": "เลือกหมวดหมู่สินค้า dropdown options=0",
+    "result": "Warning"
+  },
+  "J-FBP-CR040": {
+    "actual": "error/stillOn=true",
+    "result": "Pass"
+  },
+  "J-FBP-CR041": {
+    "actual": "beforeunload fired=true",
+    "result": "Pass"
+  },
+  "J-FBP-CRUD001": {
+    "actual": "บันทึกสำเร็จ → list (sku=FBP1780290961132)",
+    "result": "Pass"
+  },
+  "J-FBP-CRUD002": {
+    "actual": "พบ record",
+    "result": "Pass"
+  },
+  "J-FBP-CRUD010": {
+    "actual": "แก้ + บันทึก สำเร็จ",
+    "result": "Pass"
+  },
+  "J-FBP-CRUD020": {
+    "actual": "ลบสำเร็จ (อาจย้ายไป trash)",
+    "result": "Pass"
+  },
+  "J-FBP-CRUD021": {
+    "actual": "ยังพบ",
+    "result": "Warning"
+  },
+  "J-FBP-ED001": {
+    "actual": "URL=https://devstorex.jibc.codelabdev.co/store/promotion-manager/freebie-products/update/99999999, indicator=false",
+    "result": "Fail",
+    "note": "Bug pattern"
+  },
+  "J-FBP-UX001": {
+    "actual": "ทดสอบ 1920",
+    "result": "Pass"
+  },
+  "J-FBP-UX002": {
+    "actual": "tablet/mobile ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-FBP-UX003": {
+    "actual": "Chrome 127 Puppeteer",
+    "result": "Pass"
+  },
+  "J-FBP-UX004": {
+    "actual": "Firefox/Safari/Edge ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-FBP-SEC001": {
+    "actual": "logout ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-FBP-SEC002": {
+    "actual": "XSS verified ผ่าน CR015",
+    "result": "Pass"
+  },
+  "J-FBP-SEC003": {
+    "actual": "CSRF ไม่ได้ตรวจ",
+    "result": "Not Tested"
+  }
+}

@@ -47,7 +47,7 @@ const pickFirstGiftProduct = () => {
 describe('Screenshots: ของแถม (คู่มือ)', () => {
   before(() => {
     cy.session('jib-admin-screenshots-fg', () => {
-      cy.loginJIB('admin00@email.com', 'password123')
+      cy.loginJIB('sirun.sun@codelabdev.co', 'test123')
     })
   })
 

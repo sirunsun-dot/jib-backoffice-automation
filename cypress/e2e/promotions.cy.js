@@ -5,7 +5,7 @@ describe('จัดการโปรโมชั่น (Promotions)', () => {
 
   beforeEach(() => {
     cy.session('jib-admin', () => {
-      cy.loginJIB('admin00@email.com', 'password123')
+      cy.loginJIB('sirun.sun@codelabdev.co', 'test123')
     })
     cy.visit(LIST_URL)
     cy.contains('p', 'รายการโปรโมชันทั้งหมดในระบบ', { timeout: 15000 }).should('be.visible')

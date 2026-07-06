@@ -1,0 +1,264 @@
+{
+  "discoveredAt": "2026-06-15T03:39:34.830Z",
+  "sidebarTextLines": [
+    "ร้านค้า",
+    "จัดการสินค้า",
+    "Products"
+  ],
+  "total": 32,
+  "items": [
+    {
+      "text": "จัดการลูกค้า",
+      "href": "/customer-manager/customers",
+      "full": "https://devstorex.jibc.codelabdev.co/customer-manager/customers",
+      "inSidebar": true
+    },
+    {
+      "text": "หน้าหลัก",
+      "href": "/main",
+      "full": "https://devstorex.jibc.codelabdev.co/main",
+      "inSidebar": true
+    },
+    {
+      "text": "รายการคำสั่งซื้อ",
+      "href": "/store/order-manager/orders",
+      "full": "https://devstorex.jibc.codelabdev.co/store/order-manager/orders",
+      "inSidebar": true
+    },
+    {
+      "text": "รายการคำสั่งซื้อ By Order",
+      "href": "/store/order-manager/orders-by-order",
+      "full": "https://devstorex.jibc.codelabdev.co/store/order-manager/orders-by-order",
+      "inSidebar": true
+    },
+    {
+      "text": "Services",
+      "href": "/store/product-manager/additional-services",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/additional-services",
+      "inSidebar": true
+    },
+    {
+      "text": "Brands",
+      "href": "/store/product-manager/brands",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/brands",
+      "inSidebar": true
+    },
+    {
+      "text": "Categories",
+      "href": "/store/product-manager/categories",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/categories",
+      "inSidebar": true
+    },
+    {
+      "text": "Comsets",
+      "href": "/store/product-manager/comsets",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/comsets",
+      "inSidebar": true
+    },
+    {
+      "text": "Category - Commucial",
+      "href": "/store/product-manager/enterprise-categories",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/enterprise-categories",
+      "inSidebar": true
+    },
+    {
+      "text": "Commucial Products",
+      "href": "/store/product-manager/enterprise-products",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/enterprise-products",
+      "inSidebar": true
+    },
+    {
+      "text": "Filters",
+      "href": "/store/product-manager/filters",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/filters",
+      "inSidebar": true
+    },
+    {
+      "text": "Products",
+      "href": "/store/product-manager/products",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/products",
+      "inSidebar": true
+    },
+    {
+      "text": "Marketplace Option",
+      "href": "/store/product-manager/products-by-orders",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/products-by-orders",
+      "inSidebar": true
+    },
+    {
+      "text": "เพิ่มสินค้า",
+      "href": "/store/product-manager/products/create",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/products/create",
+      "inSidebar": true
+    },
+    {
+      "text": "Comset - Parts",
+      "href": "/store/product-manager/spec-categories",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/spec-categories",
+      "inSidebar": true
+    },
+    {
+      "text": "Suppliers",
+      "href": "/store/product-manager/suppliers",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/suppliers",
+      "inSidebar": true
+    },
+    {
+      "text": "Tags",
+      "href": "/store/product-manager/tags",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/tags",
+      "inSidebar": true
+    },
+    {
+      "text": "Spec Templates",
+      "href": "/store/product-manager/template-attributes",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/template-attributes",
+      "inSidebar": true
+    },
+    {
+      "text": "Mapping - Conditions",
+      "href": "/store/product-manager/template-mapping-conditions",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/template-mapping-conditions",
+      "inSidebar": true
+    },
+    {
+      "text": "Mapping - Values",
+      "href": "/store/product-manager/template-options",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/template-options",
+      "inSidebar": true
+    },
+    {
+      "text": "ประเภทการใช้งาน - Comsets",
+      "href": "/store/product-manager/usage-type",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/usage-type",
+      "inSidebar": true
+    },
+    {
+      "text": "ร้านค้า",
+      "href": "/store/product-manager/warehouses",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/warehouses",
+      "inSidebar": true
+    },
+    {
+      "text": "Warranties",
+      "href": "/store/product-manager/warranties",
+      "full": "https://devstorex.jibc.codelabdev.co/store/product-manager/warranties",
+      "inSidebar": true
+    },
+    {
+      "text": "คูปอง",
+      "href": "/store/promotion-manager/coupons",
+      "full": "https://devstorex.jibc.codelabdev.co/store/promotion-manager/coupons",
+      "inSidebar": true
+    },
+    {
+      "text": "ของแถม",
+      "href": "/store/promotion-manager/free-gifts",
+      "full": "https://devstorex.jibc.codelabdev.co/store/promotion-manager/free-gifts",
+      "inSidebar": true
+    },
+    {
+      "text": "สินค้าของแถม",
+      "href": "/store/promotion-manager/freebie-products",
+      "full": "https://devstorex.jibc.codelabdev.co/store/promotion-manager/freebie-products",
+      "inSidebar": true
+    },
+    {
+      "text": "โปรโมชัน",
+      "href": "/store/promotion-manager/promotions",
+      "full": "https://devstorex.jibc.codelabdev.co/store/promotion-manager/promotions",
+      "inSidebar": true
+    },
+    {
+      "text": "ใบเสนอราคา",
+      "href": "/store/quotation-manager/quotations",
+      "full": "https://devstorex.jibc.codelabdev.co/store/quotation-manager/quotations",
+      "inSidebar": true
+    },
+    {
+      "text": "ตั้งค่าเงื่อนไขใบเสนอราคา",
+      "href": "/store/quotation-manager/settings",
+      "full": "https://devstorex.jibc.codelabdev.co/store/quotation-manager/settings",
+      "inSidebar": true
+    },
+    {
+      "text": "การตั้งค่าการชำระเงิน",
+      "href": "/store/settings/payment-settings",
+      "full": "https://devstorex.jibc.codelabdev.co/store/settings/payment-settings",
+      "inSidebar": true
+    },
+    {
+      "text": "วิธีการจัดส่ง",
+      "href": "/store/settings/shipping-methods",
+      "full": "https://devstorex.jibc.codelabdev.co/store/settings/shipping-methods",
+      "inSidebar": true
+    },
+    {
+      "text": "ค่าการตั้งค่าระบบ",
+      "href": "/store/settings/system-configs",
+      "full": "https://devstorex.jibc.codelabdev.co/store/settings/system-configs",
+      "inSidebar": true
+    }
+  ],
+  "structure": {
+    "tree": {
+      "tag": "nav",
+      "text": "",
+      "href": null,
+      "role": null,
+      "children": [
+        {
+          "tag": "ol",
+          "text": "",
+          "href": null,
+          "role": null,
+          "children": [
+            {
+              "tag": "li",
+              "text": "",
+              "href": null,
+              "role": null,
+              "children": [
+                {
+                  "tag": "a",
+                  "text": "ร้านค้า",
+                  "href": "#",
+                  "role": null
+                }
+              ]
+            },
+            {
+              "tag": "li",
+              "text": "",
+              "href": null,
+              "role": null,
+              "children": [
+                {
+                  "tag": "a",
+                  "text": "จัดการสินค้า",
+                  "href": "#",
+                  "role": null
+                }
+              ]
+            },
+            {
+              "tag": "li",
+              "text": "",
+              "href": null,
+              "role": null,
+              "children": [
+                {
+                  "tag": "span",
+                  "text": "Products",
+                  "href": null,
+                  "role": "link"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "innerText": "ร้านค้า\nจัดการสินค้า\nProducts"
+  }
+}

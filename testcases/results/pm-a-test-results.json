@@ -1,0 +1,98 @@
+{
+  "J-PM-A-LP001": {
+    "actual": "โหลดสำเร็จ url=https://devstorex.jibc.codelabdev.co/permission-manager/access-matrix",
+    "result": "Pass"
+  },
+  "J-PM-A-LP002": {
+    "actual": "ไม่พบ heading",
+    "result": "Warning"
+  },
+  "J-PM-A-LP003": {
+    "actual": "แถวในตาราง=10",
+    "result": "Pass"
+  },
+  "J-PM-A-LP004": {
+    "actual": "คอลัมน์: ตำแหน่ง, qa-test-group, root, test, test-1",
+    "result": "Pass"
+  },
+  "J-PM-A-LP005": {
+    "actual": "search=false filter=false cols=false",
+    "result": "Pass"
+  },
+  "J-PM-A-LP006": {
+    "actual": "ไม่พบ undefined",
+    "result": "Pass"
+  },
+  "J-PM-A-LP007": {
+    "actual": "ไม่มี create URL",
+    "result": "Pass"
+  },
+  "J-PM-A-LP010": {
+    "actual": "ไม่มีช่องค้นหา",
+    "result": "Warning"
+  },
+  "J-PM-A-LP011": {
+    "actual": "ไม่มีช่องค้นหา",
+    "result": "Warning"
+  },
+  "J-PM-A-LP012": {
+    "actual": "ไม่มีช่องค้นหา",
+    "result": "Warning"
+  },
+  "J-PM-A-LP013": {
+    "actual": "ไม่มีช่องค้นหา",
+    "result": "Warning"
+  },
+  "J-PM-A-LP020": {
+    "actual": "ไม่พบปุ่มตัวกรอง",
+    "result": "Warning"
+  },
+  "J-PM-A-LP021": {
+    "actual": "กด ESC",
+    "result": "Pass"
+  },
+  "J-PM-A-LP022": {
+    "actual": "ข้าม",
+    "result": "Warning"
+  },
+  "J-PM-A-LP030": {
+    "actual": "ไม่พบปุ่ม",
+    "result": "Warning"
+  },
+  "J-PM-A-LP031": {
+    "actual": "ข้าม",
+    "result": "Warning"
+  },
+  "J-PM-A-LP040": {
+    "actual": "ไม่พบ footer format",
+    "result": "Warning"
+  },
+  "J-PM-A-LP041": {
+    "actual": "rows selector มีอยู่",
+    "result": "Pass"
+  },
+  "J-PM-A-LP042": {
+    "actual": "อยู่หน้าเดียว/disabled",
+    "result": "Warning"
+  },
+  "J-PM-A-LP050": {
+    "actual": "ไม่พบ edit ในแถวแรก",
+    "result": "Warning"
+  },
+  "J-PM-A-LP051": {
+    "actual": "มี action menu",
+    "result": "Pass"
+  },
+  "J-PM-A-UX001": {
+    "actual": "viewport 1920x1080",
+    "result": "Pass"
+  },
+  "J-PM-A-UX002": {
+    "actual": "Chromium Puppeteer",
+    "result": "Pass"
+  },
+  "J-PM-A-SEC001": {
+    "actual": "เข้าได้หลัง login",
+    "result": "Pass"
+  }
+}

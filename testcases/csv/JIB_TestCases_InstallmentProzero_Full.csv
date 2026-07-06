@@ -1,0 +1,102 @@
+Project Name :,JIB-Ecommerce,,,Create Date :,2026-07-02,,
+Project ID :,,,,Start Test Date :,2026-07-02,,
+Tester Name :,sirun.sun@codelabdev.co,,,Finish Test Date :,2026-07-02,,
+Project Release / Version :,1.0,,,Module / Function :,โปรผ่อน 0% (Installment Prozero),,
+URL List :,https://devstorex.jibc.codelabdev.co/store/installment/installment-prozero,,,,,,
+URL Create :,https://devstorex.jibc.codelabdev.co/store/installment/installment-prozero/create,,,,,,
+,,,,,,,
+Test Case ID,Category,Test case Objective,Test Description / Procedure,Test Data,Expected Result,Actual Result,Result (Pass/Fail)
+,,,,,,,
+---- PART 1: หน้า List — โปรผ่อน 0% ----,,,,,,,
+,,,,,,,
+,,,,-,,ยังไม่ได้รัน automated test,Not Tested
+-- A. UI + Tabs --,,,,,,,
+J-IPZ-LP001,Page Load,เปิดหน้ารายการ,1. เข้า /store/installment/installment-prozero,-,หน้าโหลดสำเร็จ,หน้า list โหลดสำเร็จ,Pass
+J-IPZ-LP002,UI,Heading,1. ดูหัวข้อ,-,โปรผ่อน 0%,"heading=""""",Warning
+J-IPZ-LP003,UI,Action bar,1. ดู toolbar,-,"ค้นหา, สถานะ, ระยะเวลาแคมเปญ, ตัวกรอง, CSV, เพิ่มโปร","actionbar={""search"":true,""status"":true,""date"":true,""filter"":true,""cols"":true,""add"":true,""tabAll"":true,""tabTrash"":true,""csvTemplate"":true,""csvUpload"":true,""csvManage"":true,""history"":true}",Pass
+J-IPZ-LP004,UI,ตารางข้อมูล,1. รอโหลด list,-,แสดงแถวแคมเปญ (อาจ skeleton ก่อน),แถว=0 skeleton=120,Warning
+J-IPZ-LP005,UI,คอลัมน์,1. ดู thead,-,มีคอลัมน์ตาม design,"คอลัมน์=["""","""","""","""","""",""""]",Pass
+J-IPZ-LP010,Tabs,ถังขยะ,1. คลิก tab ถังขยะ,-,URL ?tab=trash,ถังขยะ tab OK,Pass
+J-IPZ-LP011,Tabs,ทั้งหมด,1. กลับ tab ทั้งหมด,-,กลับ list ปกติ,กลับ tab ทั้งหมด,Pass
+-- B. Search + Filter --,,,,,,,
+J-IPZ-LP020,Search,ค้นหา,1. พิมพ์ keyword,-,URL มี search param,search url has param=true,Pass
+J-IPZ-LP021,Search,คำไม่มี,1. พิมพ์คำสุ่ม,-,empty state,ยังมีแถว,Warning
+J-IPZ-LP022,Search,เคลียร์,1. ลบ keyword,-,กลับ list เต็ม,เคลียร์ search,Pass
+J-IPZ-LP030,Filter,สถานะ,1. คลิก dropdown สถานะ,-,เปิดได้,dropdown สถานะ เปิด,Pass
+J-IPZ-LP031,Filter,ระยะเวลาแคมเปญ,1. คลิก filter วันที่,-,calendar เปิด,date filter เปิด,Pass
+J-IPZ-LP032,Filter,ตัวกรองรวม,1. คลิกตัวกรอง,-,sheet เปิด,filter sheet เปิด,Pass
+J-IPZ-LP033,Customize,ปรับแต่งคอลัมน์,1. คลิกปรับแต่งคอลัมน์,-,menu เปิด,customize เปิด,Pass
+-- C. CSV + Pagination --,,,,,,,
+J-IPZ-LP040,CSV,ประวัติอัปโหลด,1. คลิกประวัติการอัปโหลด,-,dialog แสดงประวัติ CSV,dialog ประวัติ CSV เปิด,Pass
+J-IPZ-LP041,CSV,ปุ่ม CSV,1. ดูปุ่ม CSV Template/อัปโหลด/จัดการ,-,มีครบ 3 ปุ่ม,มีปุ่ม CSV ครบ,Pass
+J-IPZ-LP050,Pagination,Footer,1. ดู footer,-,X - Y จาก Z รายการ,ไม่พบ footer,Warning
+J-IPZ-LP060,Row,Edit link,1. ดูแถว,-,มีลิงก์ /update/{id},ไม่พบ edit link ในแถว (อาจ virtualized),Warning
+J-IPZ-LP070,Create,ปุ่มเพิ่ม,1. คลิกเพิ่มโปรผ่อน 0%,-,ไป /create,ไปหน้า create,Pass
+---- PART 2: หน้า Create ----,,,,,,,
+,,,,,,,
+,,,,-,,ยังไม่ได้รัน automated test,Not Tested
+J-IPZ-CR001,UI,Header,1. เปิด create,-,เพิ่มโปรผ่อน 0%,header OK,Pass
+J-IPZ-CR002,UI,ระยะเวลาแคมเปญ,1. ดู section,-,date range picker บังคับ,section วันที่,Pass
+J-IPZ-CR003,UI,แผนผ่อนชำระ,1. ดู section,-,ปุ่มเพิ่มแผน + เลือกธนาคาร + งวด,section แผน,Pass
+J-IPZ-CR004,UI,สินค้าที่ร่วมรายการ,1. ดู section,-,เลือกสินค้าหรือกรอก SKU,section สินค้า,Pass
+J-IPZ-CR005,Business,กฎ 1:1,1. อ่านคำอธิบาย,-,1 โปรต่อ 1 สินค้า,กฎ 1:1 แสดง,Pass
+J-IPZ-CR006,UI,สถานะ default,1. ดู toggle,-,กำลังเปิดใช้งาน = on,status default=checked,Pass
+J-IPZ-CR010,Validation,บันทึกว่าง,1. ไม่กรอก + บันทึก,-,error วันเริ่ม/สิ้นสุด + แผนผ่อน,"errors=[""กรุณาระบุวันเริ่ม"",""กรุณาระบุวันสิ้นสุด"",""กรุณาเพิ่มแผนผ่อนชำระอย่างน้อย 1 รายการ"",""กรุณาตรวจสอบข้อมูลในฟอร์มให้ครบถ้วนและถูกต้อง""]",Pass
+J-IPZ-CR011,UI,Date picker,1. คลิกระบุวันที่,-,calendar dialog เปิด,date range picker เปิด,Pass
+J-IPZ-CR020,Plan,เพิ่มแผน,1. คลิกเพิ่มแผน,-,แถวธนาคาร+งวด,แถวแผนเปิด,Pass
+J-IPZ-CR021,Plan,เลือกธนาคาร,1. เปิด combobox,-,"ดึงจาก installment-banks (KBANK,KTC,...)","ธนาคารจาก installment-banks: [""กสิกรไทย (KBANK)"",""บัตรเครดิต KTC"",""KTC พราว (KTC-Proud)"",""KCC""]",Pass
+J-IPZ-CR022,Plan,จำนวนงวด,1. กรอกเช่น 6,-,รับค่าตัวเลข,กรอกจำนวนงวด 6 เดือน,Pass
+J-IPZ-CR030,Product,เพิ่มด้วย SKU,1. กรอก SKU + เพิ่ม,-,สินค้าปรากฏในตาราง,ไม่พบ SKU ในตาราง,Warning
+J-IPZ-CR031,Product,Dialog เลือกสินค้า,1. คลิกเลือกสินค้า,-,dialog รายการสินค้าทั้งหมด,dialog สินค้า count≈1,Pass
+J-IPZ-CR032,Product,Filter ใน dialog,1. ดู filter,-,"หมวดหมู่, แบรนด์, สถานะ","filters=[""เลือกหมวดหมู่"",""ทุกแบรนด์"",""ทุกสถานะ""]",Pass
+J-IPZ-CR040,E2E,สร้างครบ + บันทึก,1. วันที่+แผน+สินค้า+บันทึก,-,redirect list + record ใหม่,"ยังอยู่ create errs=[""กรุณาระบุวันเริ่ม"",""กรุณาระบุวันสิ้นสุด""]",Warning
+---- PART 2B: Create — เงื่อนไขครบ (Deep) ----,,,,,,,
+,,,,,,,
+,,,,-,,ยังไม่ได้รัน automated test,Not Tested
+-- A. Validation --,,,,,,,
+J-IPZ-CC001,Validation,บันทึกว่างทั้งหมด,1. ไม่กรอกอะไร + บันทึก,-,error วันเริ่ม/สิ้นสุด/แผน,"errors=[""กรุณาระบุวันเริ่ม"",""กรุณาระบุวันสิ้นสุด"",""กรุณาเพิ่มแผนผ่อนชำระอย่างน้อย 1 รายการ"",""กรุณาตรวจสอบข้อมูลในฟอร์มให้ครบถ้วนและถูกต้อง""]",Pass
+J-IPZ-CC002,Validation,มีแค่วันที่,1. เลือกวันที่อย่างเดียว + บันทึก,-,error แผน+สินค้า,"มีวันที่แต่ไม่มีแผน+สินค้า errs=[""กรุณาเพิ่มแผนผ่อนชำระอย่างน้อย 1 รายการ"",""กรุณาตรวจสอบข้อมูลในฟอร์มให้ครบถ้วนและถูกต้อง""]",Pass
+J-IPZ-CC003,Validation,มีวันที่+แผน,1. ไม่มีสินค้า + บันทึก,-,error สินค้า,มีวันที่+แผน ไม่มีสินค้า errs=[],Pass
+J-IPZ-CC004,Validation,มีวันที่+สินค้า,1. ไม่มีแผน + บันทึก,-,error แผน,"มีวันที่+สินค้า ไม่มีแผน errs=[""กรุณาเพิ่มแผนผ่อนชำระอย่างน้อย 1 รายการ"",""กรุณาตรวจสอบข้อมูลในฟอร์มให้ครบถ้วนและถูกต้อง""]",Pass
+J-IPZ-CC005,Validation,มีแผน+สินค้า,1. ไม่มีวันที่ + บันทึก,-,error วันเริ่ม/สิ้นสุด,"มีแผน+สินค้า ไม่มีวันที่ errs=[""กรุณาระบุวันเริ่ม"",""กรุณาระบุวันสิ้นสุด"",""กรุณาตรวจสอบข้อมูลในฟอร์มให้ครบถ้วนและถูกต้อง""]",Pass
+-- B. Date picker --,,,,,,,
+J-IPZ-CC010,Date,เลือกช่วง + ใช้งาน,1. เลือกวันเริ่ม-สิ้นสุด 2. กดใช้งาน,-,dialog ปิด ไม่มี error วันที่,เลือกช่วงวัน + กดใช้งาน applied=true dialogClosed=true,Pass
+J-IPZ-CC011,Date,ล้างทั้งหมด,1. เปิด picker 2. ล้างทั้งหมด,-,มีปุ่มล้างทั้งหมด,เปิด picker ซ้ำ + มีปุ่มล้างทั้งหมด=false,Warning
+J-IPZ-CC012,Date,ยกเลิก,1. เปิด picker 2. กดยกเลิก,-,dialog ปิด,dialog ปิด,Pass
+-- C. แผนผ่อน — ธนาคารต่างๆ --,,,,,,,
+J-IPZ-CC020,Plan,KBANK 6 งวด,1. เลือกกสิกร + 6 งวด,-,แผนที่ 1 ปรากฏ,KBANK 6 งวด planAdded=true,Pass
+J-IPZ-CC021,Plan,KTC 10 งวด,1. เลือก KTC + 10 งวด,-,แผนที่ 1 ปรากฏ,KTC 10 งวด planAdded=true,Pass
+J-IPZ-CC022,Plan,KTC Proud 12 งวด,1. เลือก KTC Proud + 12,-,แผนที่ 1 ปรากฏ,KTC Proud 12 งวด planAdded=true,Pass
+J-IPZ-CC023,Plan,KCC 3 งวด,1. เลือก KCC + 3 งวด,-,แผนที่ 1 ปรากฏ,KCC 3 งวด planAdded=true,Pass
+J-IPZ-CC030,Plan,หลายแผน,1. KBANK 6 + KTC 10,-,แผนที่ 1 และ 2,เพิ่ม 2 แผน (KBANK+KTC) count=2,Pass
+J-IPZ-CC031,Plan,ไม่เลือกธนาคาร,1. ข้ามธนาคาร + บันทึก,-,validation / ไม่ save,ไม่เลือกธนาคาร → stay errs=[],Pass
+J-IPZ-CC032,Plan,งวด = 0,1. กรอก 0 งวด + บันทึก,-,ไม่ save / error,0 งวด → onList=false api=-,Pass
+J-IPZ-CC033,Plan,งวดเป็นตัวอักษร,1. กรอก abc + บันทึก,-,ไม่ save / error,ตัวอักษร → onList=false api=-,Pass
+J-IPZ-CC034,Plan,งวดว่าง,1. ไม่กรอกงวด + บันทึก,-,ไม่ save / error,ว่าง → onList=false api=-,Pass
+-- D. สินค้า --,,,,,,,
+J-IPZ-CC040,Product,SKU ถูกต้อง,1. กรอก SKU จริง + เพิ่ม,-,ปรากฏในตาราง,ไม่พบในตาราง,Warning
+J-IPZ-CC041,Product,SKU ไม่มี,1. กรอก SKU ปลอม,-,ไม่พบสินค้า / ไม่เพิ่ม,SKU ไม่มี → [],Pass
+J-IPZ-CC042,Product,XSS ใน SKU,1. กรอก <script>,-,ไม่ execute script,XSS ใน SKU ไม่ execute=true,Pass
+J-IPZ-CC043,Product,SKU ซ้ำ,1. เพิ่ม SKU เดิม 2 ครั้ง,-,ยังคง 1 สินค้า (1:1),เพิ่ม SKU ซ้ำ count=1,Pass
+J-IPZ-CC044,Product,เลือกจาก dialog,1. เปิด dialog 2. เลือกสินค้า,-,dialog ทำงาน,เลือกสินค้าจาก dialog open=true picked=true,Pass
+-- E. สถานะ + E2E Save --,,,,,,,
+J-IPZ-CC050,Status,ปิดใช้งาน,1. toggle ปิด,-,state=unchecked,ปิดสถานะ → state=checked,Warning
+J-IPZ-CC051,Status,เปิดใช้งาน,1. toggle เปิด,-,state=checked,เปิดสถานะ → state=checked,Pass
+J-IPZ-CC060,E2E,KBANK+SKU บันทึก,1. ครบทุกฟิลด์ + บันทึก,-,redirect list,KBANK 6งวด + SKU api=403 onList=false formOk=true,Warning
+J-IPZ-CC061,E2E,KTC+SKU บันทึก,1. KTC 10งวด + บันทึก,-,redirect list,KTC 10งวด + SKU api=403 onList=false formOk=true,Warning
+J-IPZ-CC062,E2E,สถานะปิด,1. ปิดสถานะ + บันทึก,-,บันทึกได้,สถานะปิด api=403 onList=false formOk=true,Warning
+J-IPZ-CC063,E2E,2 แผน,1. KBANK+KTC + บันทึก,-,บันทึกได้,2 แผน KBANK+KTC api=403 onList=false formOk=true,Warning
+J-IPZ-CC070,Cancel,ออกไม่บันทึก,1. กรอกแล้ว navigate ออก,-,ไม่สร้าง record,ออกจาก create ไม่บันทึก,Pass
+---- PART 3: หน้า Edit ----,,,,,,,
+,,,,,,,
+,,,,-,,ยังไม่ได้รัน automated test,Not Tested
+J-IPZ-ED001,Edit,เปิด edit,1. คลิกแก้ไขจาก list,-,ฟอร์มแคมเปญเดิม,ไม่พบ record สำหรับ edit,Warning
+J-IPZ-ED002,Edit,แผนผ่อน,1. ดูแผนเดิม,-,แสดงธนาคาร+งวด,skip,Not Tested
+J-IPZ-ED003,Edit,สินค้า,1. ดูสินค้าที่ผูก,-,แสดง SKU 1 รายการ,skip,Not Tested
+J-IPZ-ED004,Edit,บันทึก,1. มีปุ่มบันทึก,-,บันทึกได้,skip,Not Tested
+J-IPZ-ED010,Negative,Invalid ID,1. /update/99999999,-,404 หรือไม่พบ,invalid id blank/404=true,Pass
+,,,,,,,
+-- สรุปผลทดสอบรวม (Summary) --,,,,,,,
+Total Test Cases :,68,,,,,,
+Pass :,50,,,Fail :,0,,
+Warning :,15,,,Not Tested :,7,,

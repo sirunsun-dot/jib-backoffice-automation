@@ -1,0 +1,142 @@
+{
+  "J-FLT-LP001": {
+    "actual": "โหลดสำเร็จ",
+    "result": "Pass"
+  },
+  "J-FLT-LP002": {
+    "actual": "พบ heading",
+    "result": "Pass"
+  },
+  "J-FLT-LP003": {
+    "actual": "แถว=10",
+    "result": "Pass"
+  },
+  "J-FLT-LP004": {
+    "actual": "คอลัมน์ 12",
+    "result": "Pass"
+  },
+  "J-FLT-LP005": {
+    "actual": "search=true filter=true",
+    "result": "Pass"
+  },
+  "J-FLT-LP006": {
+    "actual": "OK",
+    "result": "Pass"
+  },
+  "J-FLT-LP007": {
+    "actual": "มีปุ่มเพิ่ม",
+    "result": "Pass"
+  },
+  "J-FLT-LP010": {
+    "actual": "ค้นหา OK",
+    "result": "Pass"
+  },
+  "J-FLT-LP011": {
+    "actual": "empty search OK",
+    "result": "Pass"
+  },
+  "J-FLT-LP012": {
+    "actual": "XSS safe",
+    "result": "Pass"
+  },
+  "J-FLT-LP013": {
+    "actual": "clear search",
+    "result": "Pass"
+  },
+  "J-FLT-LP020": {
+    "actual": "เปิดตัวกรอง",
+    "result": "Pass"
+  },
+  "J-FLT-LP021": {
+    "actual": "ESC OK",
+    "result": "Pass"
+  },
+  "J-FLT-LP022": {
+    "actual": "filter OK",
+    "result": "Pass"
+  },
+  "J-FLT-LP030": {
+    "actual": "customize OK",
+    "result": "Pass"
+  },
+  "J-FLT-LP031": {
+    "actual": "toggle OK",
+    "result": "Pass"
+  },
+  "J-FLT-LP040": {
+    "actual": "pagination OK",
+    "result": "Pass"
+  },
+  "J-FLT-LP041": {
+    "actual": "rows selector",
+    "result": "Pass"
+  },
+  "J-FLT-LP042": {
+    "actual": "pagination nav",
+    "result": "Pass"
+  },
+  "J-FLT-LP050": {
+    "actual": "มี edit",
+    "result": "Pass"
+  },
+  "J-FLT-LP051": {
+    "actual": "row menu",
+    "result": "Pass"
+  },
+  "J-FLT-CR001": {
+    "actual": "create page OK",
+    "result": "Pass"
+  },
+  "J-FLT-CR002": {
+    "actual": "inputs=1",
+    "result": "Pass"
+  },
+  "J-FLT-CR003": {
+    "actual": "มีบันทึก",
+    "result": "Pass"
+  },
+  "J-FLT-CR004": {
+    "actual": "no visible error",
+    "result": "Warning"
+  },
+  "J-FLT-CR005": {
+    "actual": "no name input",
+    "result": "Warning"
+  },
+  "J-FLT-CR006": {
+    "actual": "no name input",
+    "result": "Warning"
+  },
+  "J-FLT-CR007": {
+    "actual": "sync toggle checked",
+    "result": "Pass"
+  },
+  "J-FLT-CR008": {
+    "actual": "no E2E save",
+    "result": "Warning"
+  },
+  "J-FLT-ED001": {
+    "actual": "empty form bug",
+    "result": "Fail"
+  },
+  "J-FLT-ED002": {
+    "actual": "edit real record — skip",
+    "result": "Warning"
+  },
+  "J-FLT-ED003": {
+    "actual": "save edit — skip",
+    "result": "Warning"
+  },
+  "J-FLT-UX001": {
+    "actual": "desktop 1920",
+    "result": "Pass"
+  },
+  "J-FLT-UX002": {
+    "actual": "Chromium",
+    "result": "Pass"
+  },
+  "J-FLT-SEC001": {
+    "actual": "authenticated access",
+    "result": "Pass"
+  }
+}

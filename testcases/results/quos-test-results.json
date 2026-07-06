@@ -1,0 +1,30 @@
+{
+  "J-QUOS-ST001": {
+    "actual": "หน้าโหลดสำเร็จ",
+    "result": "Pass"
+  },
+  "J-QUOS-ST002": {
+    "actual": "inputs=6 rows=0",
+    "result": "Pass"
+  },
+  "J-QUOS-ST003": {
+    "actual": "มีปุ่มบันทึก",
+    "result": "Pass"
+  },
+  "J-QUOS-ST004": {
+    "actual": "ไม่ได้ทดสอบ save E2E (เลี่ยงกระทบ config)",
+    "result": "Warning"
+  },
+  "J-QUOS-UX001": {
+    "actual": "viewport 1920x1080",
+    "result": "Pass"
+  },
+  "J-QUOS-UX002": {
+    "actual": "Chromium Puppeteer",
+    "result": "Pass"
+  },
+  "J-QUOS-SEC001": {
+    "actual": "เข้าได้หลัง login",
+    "result": "Pass"
+  }
+}

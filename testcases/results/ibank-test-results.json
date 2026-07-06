@@ -1,0 +1,117 @@
+{
+  "J-IBK-LP001": {
+    "actual": "หน้า list โหลดสำเร็จ",
+    "result": "Pass"
+  },
+  "J-IBK-LP002": {
+    "actual": "heading=\"\"",
+    "result": "Warning"
+  },
+  "J-IBK-LP003": {
+    "actual": "คอลัมน์ครบ (7)",
+    "result": "Pass"
+  },
+  "J-IBK-LP004": {
+    "actual": "แถว=4",
+    "result": "Pass"
+  },
+  "J-IBK-LP005": {
+    "actual": "actionbar={\"search\":true,\"filter\":true,\"cols\":true,\"add\":false}",
+    "result": "Pass"
+  },
+  "J-IBK-LP006": {
+    "actual": "ไม่มีปุ่มเพิ่ม — master data ล่วงหน้า",
+    "result": "Pass"
+  },
+  "J-IBK-LP007": {
+    "actual": "records=[\"1 kcc 1.5% เปิด ศส ศิรัณย์ สุนันทศิลป์ 2026-07-02 14:21:07\",\"2 ktc_proud 0% เปิด AZ admin zero 2026-07-01 11:49:24\",\"3 ktc 0% เปิด AZ admin zero 2026-07-01 11:49:20\",\"4 kbank 1.25% เปิด ศส ศิรัณย์ สุนันทศิลป์ 2026-07-02 14:11:49\"]",
+    "result": "Pass"
+  },
+  "J-IBK-LP010": {
+    "actual": "ค้นหา kbank พบ",
+    "result": "Pass"
+  },
+  "J-IBK-LP011": {
+    "actual": "empty search OK",
+    "result": "Pass"
+  },
+  "J-IBK-LP012": {
+    "actual": "เคลียร์ search",
+    "result": "Pass"
+  },
+  "J-IBK-LP020": {
+    "actual": "sheet เปิด",
+    "result": "Pass"
+  },
+  "J-IBK-LP021": {
+    "actual": "ESC ปิด",
+    "result": "Pass"
+  },
+  "J-IBK-LP030": {
+    "actual": "menu เปิด",
+    "result": "Pass"
+  },
+  "J-IBK-LP031": {
+    "actual": "ปิด menu",
+    "result": "Pass"
+  },
+  "J-IBK-LP040": {
+    "actual": "footer=\"1 - 4 จาก 4\"",
+    "result": "Pass"
+  },
+  "J-IBK-LP050": {
+    "actual": "edit href=\"/store/installment/installment-banks/update/4\"",
+    "result": "Pass"
+  },
+  "J-IBK-LP060": {
+    "actual": "create URL → 404/redirect",
+    "result": "Pass",
+    "note": "ธนาคารเป็น master data — ไม่มี create"
+  },
+  "J-IBK-ED001": {
+    "actual": "เปิด edit id=4",
+    "result": "Pass"
+  },
+  "J-IBK-ED002": {
+    "actual": "code=\"kcc\" (readonly)",
+    "result": "Pass"
+  },
+  "J-IBK-ED003": {
+    "actual": "TH=true EN=true rate=true",
+    "result": "Pass"
+  },
+  "J-IBK-ED004": {
+    "actual": "sync TH/EN default=checked",
+    "result": "Pass"
+  },
+  "J-IBK-ED005": {
+    "actual": "status switch=checked",
+    "result": "Pass"
+  },
+  "J-IBK-ED006": {
+    "actual": "มีส่วนอัปโหลดโลโก้",
+    "result": "Pass"
+  },
+  "J-IBK-ED010": {
+    "actual": "บันทึกผ่าน/ไม่มี error",
+    "result": "Warning"
+  },
+  "J-IBK-ED020": {
+    "actual": "Waiting for selector `input[placeholder=\"0\"]` failed",
+    "result": "Fail"
+  },
+  "J-IBK-ED021": {
+    "actual": "skip",
+    "result": "Warning"
+  },
+  "J-IBK-ED030": {
+    "actual": "invalid id indicator=true url=https://devstorex.jibc.codelabdev.co/store/installment/installment-banks/update/99999999",
+    "result": "Pass",
+    "note": "Bug pattern: empty form แทน 404"
+  },
+  "J-IBK-ED031": {
+    "actual": "id→code mapping: 1=kbank, 2=ktc, 3=ktc_proud, 4=kcc",
+    "result": "Pass",
+    "note": "ลำดับใน list ไม่ตรงกับ id"
+  }
+}

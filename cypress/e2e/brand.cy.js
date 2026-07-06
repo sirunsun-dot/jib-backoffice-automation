@@ -1,4 +1,4 @@
-const BASE = 'https://backoffice.jibc.codelabdev.co'
+const BASE = 'https://devstorex.jibc.codelabdev.co'
 const LIST_URL = `${BASE}/store/product-manager/brands`
 const CREATE_URL = `${LIST_URL}/create`
 
@@ -6,7 +6,7 @@ describe('จัดการแบรนด์สินค้า', () => {
 
   beforeEach(() => {
     cy.session('jib-admin', () => {
-      cy.loginJIB('admin00@email.com', 'password123')
+      cy.loginJIB('sirun.sun@codelabdev.co', 'test123')
     })
     cy.visit(LIST_URL)
     cy.contains('p', 'แบรนด์สินค้า').should('be.visible')

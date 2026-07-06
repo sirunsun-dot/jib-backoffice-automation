@@ -1,0 +1,142 @@
+{
+  "J-FB-LP001": {
+    "actual": "โหลดสำเร็จ",
+    "result": "Pass"
+  },
+  "J-FB-LP002": {
+    "actual": "พบ heading",
+    "result": "Pass"
+  },
+  "J-FB-LP003": {
+    "actual": "แถว=10",
+    "result": "Pass"
+  },
+  "J-FB-LP004": {
+    "actual": "คอลัมน์ 14",
+    "result": "Pass"
+  },
+  "J-FB-LP005": {
+    "actual": "search=true filter=true",
+    "result": "Pass"
+  },
+  "J-FB-LP006": {
+    "actual": "OK",
+    "result": "Pass"
+  },
+  "J-FB-LP007": {
+    "actual": "มีปุ่มเพิ่ม",
+    "result": "Pass"
+  },
+  "J-FB-LP010": {
+    "actual": "ค้นหา OK",
+    "result": "Pass"
+  },
+  "J-FB-LP011": {
+    "actual": "empty search OK",
+    "result": "Pass"
+  },
+  "J-FB-LP012": {
+    "actual": "XSS safe",
+    "result": "Pass"
+  },
+  "J-FB-LP013": {
+    "actual": "clear search",
+    "result": "Pass"
+  },
+  "J-FB-LP020": {
+    "actual": "เปิดตัวกรอง",
+    "result": "Pass"
+  },
+  "J-FB-LP021": {
+    "actual": "ESC OK",
+    "result": "Pass"
+  },
+  "J-FB-LP022": {
+    "actual": "filter OK",
+    "result": "Pass"
+  },
+  "J-FB-LP030": {
+    "actual": "customize OK",
+    "result": "Pass"
+  },
+  "J-FB-LP031": {
+    "actual": "toggle OK",
+    "result": "Pass"
+  },
+  "J-FB-LP040": {
+    "actual": "pagination OK",
+    "result": "Pass"
+  },
+  "J-FB-LP041": {
+    "actual": "rows selector",
+    "result": "Pass"
+  },
+  "J-FB-LP042": {
+    "actual": "pagination nav",
+    "result": "Pass"
+  },
+  "J-FB-LP050": {
+    "actual": "มี edit",
+    "result": "Pass"
+  },
+  "J-FB-LP051": {
+    "actual": "row menu",
+    "result": "Pass"
+  },
+  "J-FB-CR001": {
+    "actual": "create page OK",
+    "result": "Pass"
+  },
+  "J-FB-CR002": {
+    "actual": "inputs=9",
+    "result": "Pass"
+  },
+  "J-FB-CR003": {
+    "actual": "มีบันทึก",
+    "result": "Pass"
+  },
+  "J-FB-CR004": {
+    "actual": "validation OK",
+    "result": "Pass"
+  },
+  "J-FB-CR005": {
+    "actual": "กรอกชื่อ OK",
+    "result": "Pass"
+  },
+  "J-FB-CR006": {
+    "actual": "XSS safe",
+    "result": "Pass"
+  },
+  "J-FB-CR007": {
+    "actual": "sync toggle checked",
+    "result": "Pass"
+  },
+  "J-FB-CR008": {
+    "actual": "no E2E save",
+    "result": "Warning"
+  },
+  "J-FB-ED001": {
+    "actual": "empty form bug",
+    "result": "Fail"
+  },
+  "J-FB-ED002": {
+    "actual": "edit real record — skip",
+    "result": "Warning"
+  },
+  "J-FB-ED003": {
+    "actual": "save edit — skip",
+    "result": "Warning"
+  },
+  "J-FB-UX001": {
+    "actual": "desktop 1920",
+    "result": "Pass"
+  },
+  "J-FB-UX002": {
+    "actual": "Chromium",
+    "result": "Pass"
+  },
+  "J-FB-SEC001": {
+    "actual": "authenticated access",
+    "result": "Pass"
+  }
+}

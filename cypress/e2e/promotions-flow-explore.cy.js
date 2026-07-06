@@ -17,7 +17,7 @@ const openCreateDiscount = () => {
 describe('Explore promotion item wizard step 3', () => {
   before(() => {
     cy.session('jib-explore-promo', () => {
-      cy.loginJIB('admin00@email.com', 'password123')
+      cy.loginJIB('sirun.sun@codelabdev.co', 'test123')
     })
   })
 

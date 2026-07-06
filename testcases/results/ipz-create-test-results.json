@@ -1,0 +1,119 @@
+{
+  "J-IPZ-CC001": {
+    "actual": "errors=[\"กรุณาระบุวันเริ่ม\",\"กรุณาระบุวันสิ้นสุด\",\"กรุณาเพิ่มแผนผ่อนชำระอย่างน้อย 1 รายการ\",\"กรุณาตรวจสอบข้อมูลในฟอร์มให้ครบถ้วนและถูกต้อง\"]",
+    "result": "Pass"
+  },
+  "J-IPZ-CC002": {
+    "actual": "มีวันที่แต่ไม่มีแผน+สินค้า errs=[\"กรุณาเพิ่มแผนผ่อนชำระอย่างน้อย 1 รายการ\",\"กรุณาตรวจสอบข้อมูลในฟอร์มให้ครบถ้วนและถูกต้อง\"]",
+    "result": "Pass"
+  },
+  "J-IPZ-CC003": {
+    "actual": "มีวันที่+แผน ไม่มีสินค้า errs=[]",
+    "result": "Warning"
+  },
+  "J-IPZ-CC004": {
+    "actual": "มีวันที่+สินค้า ไม่มีแผน errs=[\"กรุณาเพิ่มแผนผ่อนชำระอย่างน้อย 1 รายการ\",\"กรุณาตรวจสอบข้อมูลในฟอร์มให้ครบถ้วนและถูกต้อง\"]",
+    "result": "Pass"
+  },
+  "J-IPZ-CC005": {
+    "actual": "มีแผน+สินค้า ไม่มีวันที่ errs=[\"กรุณาระบุวันเริ่ม\",\"กรุณาระบุวันสิ้นสุด\",\"กรุณาตรวจสอบข้อมูลในฟอร์มให้ครบถ้วนและถูกต้อง\"]",
+    "result": "Pass"
+  },
+  "J-IPZ-CC010": {
+    "actual": "เลือกช่วงวัน + กดใช้งาน applied=true dialogClosed=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CC011": {
+    "actual": "เปิด picker ซ้ำ + มีปุ่มล้างทั้งหมด=false",
+    "result": "Warning"
+  },
+  "J-IPZ-CC012": {
+    "actual": "dialog ปิด",
+    "result": "Pass"
+  },
+  "J-IPZ-CC020": {
+    "actual": "KBANK 6 งวด planAdded=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CC021": {
+    "actual": "KTC 10 งวด planAdded=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CC022": {
+    "actual": "KTC Proud 12 งวด planAdded=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CC023": {
+    "actual": "KCC 3 งวด planAdded=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CC030": {
+    "actual": "เพิ่ม 2 แผน (KBANK+KTC) count=2",
+    "result": "Pass"
+  },
+  "J-IPZ-CC031": {
+    "actual": "ไม่เลือกธนาคาร → stay errs=[]",
+    "result": "Pass"
+  },
+  "J-IPZ-CC032": {
+    "actual": "0 งวด → onList=false api=-",
+    "result": "Pass"
+  },
+  "J-IPZ-CC033": {
+    "actual": "ตัวอักษร → onList=false api=-",
+    "result": "Pass"
+  },
+  "J-IPZ-CC034": {
+    "actual": "ว่าง → onList=false api=-",
+    "result": "Pass"
+  },
+  "J-IPZ-CC040": {
+    "actual": "SKU 1114000102 ในตาราง",
+    "result": "Pass"
+  },
+  "J-IPZ-CC041": {
+    "actual": "SKU ไม่มี → [\"ไม่พบ\"]",
+    "result": "Pass"
+  },
+  "J-IPZ-CC042": {
+    "actual": "XSS ใน SKU ไม่ execute=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CC043": {
+    "actual": "เพิ่ม SKU ซ้ำ count=1",
+    "result": "Pass",
+    "note": "กฎ 1 โปรต่อ 1 สินค้า"
+  },
+  "J-IPZ-CC044": {
+    "actual": "เลือกสินค้าจาก dialog open=true picked=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CC050": {
+    "actual": "ปิดสถานะ → state=checked",
+    "result": "Warning"
+  },
+  "J-IPZ-CC051": {
+    "actual": "เปิดสถานะ → state=checked",
+    "result": "Pass"
+  },
+  "J-IPZ-CC060": {
+    "actual": "KBANK 6งวด + SKU api=409 onList=false formOk=true",
+    "result": "Warning"
+  },
+  "J-IPZ-CC061": {
+    "actual": "KTC 10งวด + SKU api=201 onList=true formOk=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CC062": {
+    "actual": "สถานะปิด api=409 onList=false formOk=true",
+    "result": "Warning"
+  },
+  "J-IPZ-CC063": {
+    "actual": "2 แผน KBANK+KTC api=409 onList=false formOk=true",
+    "result": "Warning"
+  },
+  "J-IPZ-CC070": {
+    "actual": "ออกจาก create ไม่บันทึก",
+    "result": "Pass"
+  }
+}

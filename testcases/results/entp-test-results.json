@@ -1,0 +1,98 @@
+{
+  "J-ENTP-LP001": {
+    "actual": "โหลดสำเร็จ",
+    "result": "Pass"
+  },
+  "J-ENTP-LP002": {
+    "actual": "พบ heading",
+    "result": "Pass"
+  },
+  "J-ENTP-LP003": {
+    "actual": "แถว=10",
+    "result": "Pass"
+  },
+  "J-ENTP-LP004": {
+    "actual": "คอลัมน์ 8",
+    "result": "Pass"
+  },
+  "J-ENTP-LP005": {
+    "actual": "search=true filter=true",
+    "result": "Pass"
+  },
+  "J-ENTP-LP006": {
+    "actual": "OK",
+    "result": "Pass"
+  },
+  "J-ENTP-LP007": {
+    "actual": "N/A",
+    "result": "Pass"
+  },
+  "J-ENTP-LP010": {
+    "actual": "ค้นหา OK",
+    "result": "Pass"
+  },
+  "J-ENTP-LP011": {
+    "actual": "empty search OK",
+    "result": "Pass"
+  },
+  "J-ENTP-LP012": {
+    "actual": "XSS safe",
+    "result": "Pass"
+  },
+  "J-ENTP-LP013": {
+    "actual": "clear search",
+    "result": "Pass"
+  },
+  "J-ENTP-LP020": {
+    "actual": "ไม่มีตัวกรอง",
+    "result": "Warning"
+  },
+  "J-ENTP-LP021": {
+    "actual": "ESC OK",
+    "result": "Pass"
+  },
+  "J-ENTP-LP022": {
+    "actual": "skip",
+    "result": "Warning"
+  },
+  "J-ENTP-LP030": {
+    "actual": "customize OK",
+    "result": "Pass"
+  },
+  "J-ENTP-LP031": {
+    "actual": "toggle OK",
+    "result": "Pass"
+  },
+  "J-ENTP-LP040": {
+    "actual": "pagination OK",
+    "result": "Pass"
+  },
+  "J-ENTP-LP041": {
+    "actual": "rows selector",
+    "result": "Pass"
+  },
+  "J-ENTP-LP042": {
+    "actual": "pagination nav",
+    "result": "Pass"
+  },
+  "J-ENTP-LP050": {
+    "actual": "มี edit",
+    "result": "Pass"
+  },
+  "J-ENTP-LP051": {
+    "actual": "row menu",
+    "result": "Pass"
+  },
+  "J-ENTP-UX001": {
+    "actual": "desktop 1920",
+    "result": "Pass"
+  },
+  "J-ENTP-UX002": {
+    "actual": "Chromium",
+    "result": "Pass"
+  },
+  "J-ENTP-SEC001": {
+    "actual": "authenticated access",
+    "result": "Pass"
+  }
+}

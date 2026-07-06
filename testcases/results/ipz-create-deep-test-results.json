@@ -1,0 +1,147 @@
+{
+  "J-IPZ-CD001": {
+    "actual": "ว่างทั้งหมด errs=[\"กรุณาระบุวันเริ่ม\",\"กรุณาระบุวันสิ้นสุด\",\"กรุณาเพิ่มแผนผ่อนชำระอย่างน้อย 1 รายการ\",\"กรุณาตรวจสอบข้อมูลในฟอร์มให้ครบถ้วนและถูกต้อง\"]",
+    "result": "Pass"
+  },
+  "J-IPZ-CD002": {
+    "actual": "errs=[\"กรุณาเพิ่มแผนผ่อนชำระอย่างน้อย 1 รายการ\",\"กรุณาตรวจสอบข้อมูลในฟอร์มให้ครบถ้วนและถูกต้อง\"]",
+    "result": "Pass"
+  },
+  "J-IPZ-CD003": {
+    "actual": "errs=[]",
+    "result": "Warning"
+  },
+  "J-IPZ-CD004": {
+    "actual": "errs=[\"กรุณาเพิ่มแผนผ่อนชำระอย่างน้อย 1 รายการ\",\"กรุณาตรวจสอบข้อมูลในฟอร์มให้ครบถ้วนและถูกต้อง\"]",
+    "result": "Pass"
+  },
+  "J-IPZ-CD005": {
+    "actual": "errs=[\"กรุณาระบุวันเริ่ม\",\"กรุณาระบุวันสิ้นสุด\",\"กรุณาตรวจสอบข้อมูลในฟอร์มให้ครบถ้วนและถูกต้อง\"]",
+    "result": "Pass"
+  },
+  "J-IPZ-CD010": {
+    "actual": "เลือกวัน + ใช้งาน ปิด dialog",
+    "result": "Pass"
+  },
+  "J-IPZ-CD011": {
+    "actual": "ล้างทั้งหมด หลังเลือกวัน=false",
+    "result": "Warning"
+  },
+  "J-IPZ-CD012": {
+    "actual": "วันสิ้นสุดก่อนวันเริ่ม applyDisabled=false errs=[]",
+    "result": "Fail"
+  },
+  "J-IPZ-CD013": {
+    "actual": "time defaults=[\"00:00\",\"23:59\"]",
+    "result": "Pass"
+  },
+  "J-IPZ-CD020": {
+    "actual": "KBANK|กสิกร 6งวด plan=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CD021": {
+    "actual": "KTC 10งวด plan=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CD022": {
+    "actual": "Proud|PROUD 12งวด plan=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CD023": {
+    "actual": "KCC 3งวด plan=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CD030": {
+    "actual": "2 แผนต่างธนาคาร count=2",
+    "result": "Pass"
+  },
+  "J-IPZ-CD031": {
+    "actual": "ธนาคารซ้ำ 2 แผน count=2",
+    "result": "Pass",
+    "note": "ต้องดูตอน save ว่า 409 หรือไม่"
+  },
+  "J-IPZ-CD032": {
+    "actual": "ลบแผน ok=true still=false",
+    "result": "Pass"
+  },
+  "J-IPZ-CD033": {
+    "actual": "0งวด api=- onList=false",
+    "result": "Pass"
+  },
+  "J-IPZ-CD034": {
+    "actual": "ตัวอักษร api=- onList=false",
+    "result": "Pass"
+  },
+  "J-IPZ-CD035": {
+    "actual": "ว่าง api=- onList=false",
+    "result": "Pass"
+  },
+  "J-IPZ-CD036": {
+    "actual": "ไม่เลือกธนาคาร api=201",
+    "result": "Fail"
+  },
+  "J-IPZ-CD040": {
+    "actual": "SKU 1047000009 added=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CD041": {
+    "actual": "SKU ปลอม msg=[\"ไม่พบ\"]",
+    "result": "Pass"
+  },
+  "J-IPZ-CD042": {
+    "actual": "dialog row1 sku=1046000490",
+    "result": "Pass"
+  },
+  "J-IPZ-CD043": {
+    "actual": "เพิ่ม SKU ซ้ำใน form count=1",
+    "result": "Pass"
+  },
+  "J-IPZ-CD044": {
+    "actual": "สินค้า 2 รายการใน form (ผิดกฎ 1:1) count=1",
+    "result": "Pass"
+  },
+  "J-IPZ-CD050": {
+    "actual": "ปิดสถานะ state=checked",
+    "result": "Fail"
+  },
+  "J-IPZ-CD051": {
+    "actual": "เปิดสถานะ state=checked",
+    "result": "Pass"
+  },
+  "J-IPZ-CD060": {
+    "actual": "KBANK 6งวด เปิด sku=1047000042 api=201 progress=0% onList=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CD061": {
+    "actual": "KTC 10งวด sku=1047000032 api=201 progress=0% onList=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CD062": {
+    "actual": "KCC 3งวด ปิดสถานะ sku=dialog api=201 progress=0% onList=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CD063": {
+    "actual": "2แผน KBANK+KTC sku=dialog api=201 progress=0% onList=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CD064": {
+    "actual": "KTC Proud dialog sku=dialog api=201 progress=0% onList=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CD070": {
+    "actual": "SKU+ธนาคารทับซ้อน api=409 overlap=true",
+    "result": "Pass"
+  },
+  "J-IPZ-CD071": {
+    "actual": "UI msgs=[\"ทับซ้อน\",\"ทับซ้อน\"]",
+    "result": "Pass"
+  },
+  "J-IPZ-CD080": {
+    "actual": "ออกไม่บันทึก OK",
+    "result": "Pass"
+  },
+  "J-IPZ-CD090": {
+    "actual": "list 1 - 10 จาก 15 rows=10",
+    "result": "Pass"
+  }
+}

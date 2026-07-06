@@ -1,0 +1,160 @@
+{
+  "J-IPZ-LP001": {
+    "actual": "หน้า list โหลดสำเร็จ",
+    "result": "Pass"
+  },
+  "J-IPZ-LP002": {
+    "actual": "heading=\"\"",
+    "result": "Warning"
+  },
+  "J-IPZ-LP003": {
+    "actual": "actionbar={\"search\":true,\"status\":true,\"date\":true,\"filter\":true,\"cols\":true,\"add\":true,\"tabAll\":true,\"tabTrash\":true,\"csvTemplate\":true,\"csvUpload\":true,\"csvManage\":true,\"history\":true}",
+    "result": "Pass"
+  },
+  "J-IPZ-LP004": {
+    "actual": "แถว=0 skeleton=120",
+    "result": "Warning"
+  },
+  "J-IPZ-LP005": {
+    "actual": "คอลัมน์=[\"\",\"\",\"\",\"\",\"\",\"\"]",
+    "result": "Pass"
+  },
+  "J-IPZ-LP010": {
+    "actual": "ถังขยะ tab OK",
+    "result": "Pass"
+  },
+  "J-IPZ-LP011": {
+    "actual": "กลับ tab ทั้งหมด",
+    "result": "Pass"
+  },
+  "J-IPZ-LP020": {
+    "actual": "search url has param=true",
+    "result": "Pass"
+  },
+  "J-IPZ-LP021": {
+    "actual": "ยังมีแถว",
+    "result": "Warning"
+  },
+  "J-IPZ-LP022": {
+    "actual": "เคลียร์ search",
+    "result": "Pass"
+  },
+  "J-IPZ-LP030": {
+    "actual": "dropdown สถานะ เปิด",
+    "result": "Pass"
+  },
+  "J-IPZ-LP031": {
+    "actual": "date filter เปิด",
+    "result": "Pass"
+  },
+  "J-IPZ-LP032": {
+    "actual": "filter sheet เปิด",
+    "result": "Pass"
+  },
+  "J-IPZ-LP033": {
+    "actual": "customize เปิด",
+    "result": "Pass"
+  },
+  "J-IPZ-LP040": {
+    "actual": "dialog ประวัติ CSV เปิด",
+    "result": "Pass"
+  },
+  "J-IPZ-LP041": {
+    "actual": "มีปุ่ม CSV ครบ",
+    "result": "Pass"
+  },
+  "J-IPZ-LP050": {
+    "actual": "ไม่พบ footer",
+    "result": "Warning"
+  },
+  "J-IPZ-LP060": {
+    "actual": "ไม่พบ edit link ในแถว (อาจ virtualized)",
+    "result": "Warning"
+  },
+  "J-IPZ-LP070": {
+    "actual": "ไปหน้า create",
+    "result": "Pass"
+  },
+  "J-IPZ-CR001": {
+    "actual": "header OK",
+    "result": "Pass"
+  },
+  "J-IPZ-CR002": {
+    "actual": "section วันที่",
+    "result": "Pass"
+  },
+  "J-IPZ-CR003": {
+    "actual": "section แผน",
+    "result": "Pass"
+  },
+  "J-IPZ-CR004": {
+    "actual": "section สินค้า",
+    "result": "Pass"
+  },
+  "J-IPZ-CR005": {
+    "actual": "กฎ 1:1 แสดง",
+    "result": "Pass"
+  },
+  "J-IPZ-CR006": {
+    "actual": "status default=checked",
+    "result": "Pass"
+  },
+  "J-IPZ-CR010": {
+    "actual": "errors=[\"กรุณาระบุวันเริ่ม\",\"กรุณาระบุวันสิ้นสุด\",\"กรุณาเพิ่มแผนผ่อนชำระอย่างน้อย 1 รายการ\",\"กรุณาตรวจสอบข้อมูลในฟอร์มให้ครบถ้วนและถูกต้อง\"]",
+    "result": "Pass"
+  },
+  "J-IPZ-CR011": {
+    "actual": "date range picker เปิด",
+    "result": "Pass"
+  },
+  "J-IPZ-CR020": {
+    "actual": "แถวแผนเปิด",
+    "result": "Pass"
+  },
+  "J-IPZ-CR021": {
+    "actual": "ธนาคารจาก installment-banks: [\"กสิกรไทย (KBANK)\",\"บัตรเครดิต KTC\",\"KTC พราว (KTC-Proud)\",\"KCC\"]",
+    "result": "Pass"
+  },
+  "J-IPZ-CR022": {
+    "actual": "กรอกจำนวนงวด 6 เดือน",
+    "result": "Pass"
+  },
+  "J-IPZ-CR030": {
+    "actual": "ไม่พบ SKU ในตาราง",
+    "result": "Warning"
+  },
+  "J-IPZ-CR031": {
+    "actual": "dialog สินค้า count≈1",
+    "result": "Pass"
+  },
+  "J-IPZ-CR032": {
+    "actual": "filters=[\"เลือกหมวดหมู่\",\"ทุกแบรนด์\",\"ทุกสถานะ\"]",
+    "result": "Pass"
+  },
+  "J-IPZ-CR040": {
+    "actual": "ยังอยู่ create errs=[\"กรุณาระบุวันเริ่ม\",\"กรุณาระบุวันสิ้นสุด\"]",
+    "result": "Warning",
+    "note": "Date range picker ไม่ persist ใน Puppeteer — ต้องทดสอบ manual/Cypress"
+  },
+  "J-IPZ-ED001": {
+    "actual": "ไม่พบ record สำหรับ edit",
+    "result": "Warning"
+  },
+  "J-IPZ-ED002": {
+    "actual": "skip",
+    "result": "Not Tested"
+  },
+  "J-IPZ-ED003": {
+    "actual": "skip",
+    "result": "Not Tested"
+  },
+  "J-IPZ-ED004": {
+    "actual": "skip",
+    "result": "Not Tested"
+  },
+  "J-IPZ-ED010": {
+    "actual": "invalid id blank/404=true",
+    "result": "Pass",
+    "note": "Bug pattern: หน้าว่างแทน 404"
+  }
+}

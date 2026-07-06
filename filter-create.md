@@ -1,0 +1,394 @@
+- generic:
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - list:
+                - listitem:
+                  - button:
+                    - img
+            - separator
+            - generic:
+              - generic:
+                - generic:
+                  - list:
+                    - listitem:
+                      - link:
+                        - /url: /main
+                        - img
+                    - listitem:
+                      - link:
+                        - /url: /store/product-manager/warehouses
+                        - img
+                    - listitem:
+                      - link:
+                        - /url: /customer-manager/customers
+                        - img
+          - generic:
+            - generic:
+              - paragraph: ร้านค้า
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - link [expanded]:
+                        - /url: "#"
+                        - generic: จัดการสินค้า
+                        - img
+                      - generic:
+                        - generic:
+                          - list:
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/warehouses
+                                - img
+                                - generic: คลังสินค้า
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/products
+                                - img
+                                - generic: Products
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/products-by-orders
+                                - img
+                                - generic: Marketplace Option
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/enterprise-products
+                                - img
+                                - generic: Commucial Products
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/comsets
+                                - img
+                                - generic: Comsets
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/spec-categories
+                                - img
+                                - generic: Comset - Parts
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/template-attributes
+                                - img
+                                - generic: Spec Templates
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/template-options
+                                - img
+                                - generic: Mapping - Values
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/template-mapping-conditions
+                                - img
+                                - generic: Mapping - Conditions
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/categories
+                                - img
+                                - generic: Categories
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/enterprise-categories
+                                - img
+                                - generic: Category - Commucial
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/brands
+                                - img
+                                - generic: Brands
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/suppliers
+                                - img
+                                - generic: Suppliers
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/tags
+                                - img
+                                - generic: Tags
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/usage-type
+                                - img
+                                - generic: ประเภทการใช้งาน - Comsets
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/filters
+                                - img
+                                - generic: Filters
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/warranties
+                                - img
+                                - generic: Warranties
+                            - listitem:
+                              - link:
+                                - /url: /store/product-manager/additional-services
+                                - img
+                                - generic: Services
+                    - separator
+                  - generic:
+                    - generic:
+                      - link [expanded]:
+                        - /url: "#"
+                        - generic: จัดการออร์เดอร์
+                        - img
+                      - generic:
+                        - generic:
+                          - list:
+                            - listitem:
+                              - link:
+                                - /url: /store/order-manager/orders
+                                - img
+                                - generic: รายการคำสั่งซื้อ
+                            - listitem:
+                              - link:
+                                - /url: /store/order-manager/orders-by-order
+                                - img
+                                - generic: รายการคำสั่งซื้อ By Order
+                    - separator
+                  - generic:
+                    - generic:
+                      - link [expanded]:
+                        - /url: "#"
+                        - generic: จัดการใบเสนอราคา
+                        - img
+                      - generic:
+                        - generic:
+                          - list:
+                            - listitem:
+                              - link:
+                                - /url: /store/quotation-manager/quotations
+                                - img
+                                - generic: ใบเสนอราคา
+                            - listitem:
+                              - link:
+                                - /url: /store/quotation-manager/settings
+                                - img
+                                - generic: ตั้งค่าเงื่อนไขใบเสนอราคา
+                    - separator
+                  - generic:
+                    - generic:
+                      - link [expanded]:
+                        - /url: "#"
+                        - generic: ตั้งค่า
+                        - img
+                      - generic:
+                        - generic:
+                          - list:
+                            - listitem:
+                              - link:
+                                - /url: /store/settings/payment-settings
+                                - img
+                                - generic: การตั้งค่าการชำระเงิน
+                            - listitem:
+                              - link:
+                                - /url: /store/settings/shipping-methods
+                                - img
+                                - generic: วิธีการจัดส่ง
+                            - listitem:
+                              - link:
+                                - /url: /store/settings/system-configs
+                                - img
+                                - generic: ค่าการตั้งค่าระบบ
+                    - separator
+                  - generic:
+                    - generic:
+                      - link [expanded]:
+                        - /url: "#"
+                        - generic: จัดการโปรโมชั่น
+                        - img
+                      - generic:
+                        - generic:
+                          - list:
+                            - listitem:
+                              - link:
+                                - /url: /store/promotion-manager/promotions
+                                - img
+                                - generic: โปรโมชัน
+                            - listitem:
+                              - link:
+                                - /url: /store/promotion-manager/freebie-products
+                                - img
+                                - generic: สินค้าของแถม
+                            - listitem:
+                              - link:
+                                - /url: /store/promotion-manager/free-gifts
+                                - img
+                                - generic: ของแถม
+                            - listitem:
+                              - link:
+                                - /url: /store/promotion-manager/coupons
+                                - img
+                                - generic: คูปอง
+    - main:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - img
+            - generic:
+              - paragraph: อังคาร 2026-06-16
+              - paragraph: "15 : 18 : 14"
+          - generic:
+            - button:
+              - img
+            - generic:
+              - generic:
+                - paragraph: ศิรัณย์ สุนันทศิลป์
+                - paragraph: test-1, test
+              - generic:
+                - button:
+                  - generic:
+                    - generic: ศส
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - group:
+                        - button:
+                          - img
+                        - button [disabled]:
+                          - img
+                      - navigation:
+                        - list:
+                          - listitem:
+                            - link:
+                              - /url: "#"
+                              - text: ร้านค้า
+                          - listitem:
+                            - img
+                          - listitem:
+                            - button:
+                              - generic:
+                                - img
+                                - generic: More
+                              - generic: Toggle menu
+                          - listitem:
+                            - img
+                          - listitem:
+                            - link:
+                              - /url: /store/product-manager/filters
+                              - text: Filters
+                          - listitem:
+                            - img
+                          - listitem:
+                            - link [disabled]: สร้าง
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: ฉบับร่าง
+                          - switch
+                          - checkbox
+                      - generic:
+                        - button:
+                          - img
+                          - text: บันทึก
+                        - button:
+                          - img
+              - generic:
+                - generic:
+                  - generic:
+                    - img
+                  - generic:
+                    - paragraph: เพิ่มตัวกรองสินค้า
+                    - paragraph: ระบุรายละเอียดต่างๆ เพื่อเพิ่มตัวกรองสินค้า
+                - generic:
+                  - button:
+                    - generic:
+                      - img
+                      - generic: ยังไม่มีข้อมูล
+                      - generic: 0%
+                      - img
+              - generic:
+                - heading [level=3]: ข้อมูลตัวกรองสินค้า
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - text: Category 1 (หมวดหมู่ลำดับที่ 1)
+                        - generic: "*"
+                      - generic:
+                        - button:
+                          - generic:
+                            - generic: เลือก Category 1
+                          - img
+                    - generic:
+                      - generic:
+                        - text: Category 2 (หมวดหมู่ลำดับที่ 2)
+                        - generic: "*"
+                      - generic:
+                        - button [disabled]:
+                          - generic:
+                            - generic: เลือก Category 2
+                          - img
+              - generic:
+                - generic:
+                  - heading [level=3]: รายละเอียดค่าตัวกรองสินค้า
+                  - button:
+                    - img
+                    - text: เพิ่ม Filter
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: "#"
+                          - generic: Filter name
+                          - generic: Filter value
+                          - generic: จัดการ
+                        - generic: ไม่มีรายการ
+  - region "Notifications alt+T"
+  - alert
+  - dialog "เพิ่ม Filter 1" [ref=e398]:
+    - generic [ref=e399]:
+      - heading "เพิ่ม Filter 1" [level=2] [ref=e400]
+      - paragraph [ref=e401]: กรอกข้อมูลตัวกรองสินค้า
+    - generic [ref=e404]:
+      - generic [ref=e405]:
+        - generic [ref=e406]: Filter name 1
+        - generic [ref=e408]:
+          - generic [ref=e409] [cursor=pointer]:
+            - switch "ใช้เหมือนกันทั้ง 2 ภาษา" [checked] [active] [ref=e410]
+            - checkbox [checked]
+            - paragraph [ref=e411]: ใช้เหมือนกันทั้ง 2 ภาษา
+          - generic [ref=e412]:
+            - generic [ref=e413]:
+              - text: Filter name 1 - ภาษาไทย
+              - generic [ref=e414]: "*"
+            - textbox "Filter name 1 - ภาษาไทย *" [ref=e415]:
+              - /placeholder: Filter name 1 - ภาษาไทย
+          - generic [ref=e416]:
+            - generic [ref=e417]:
+              - text: Filter name 1 - ภาษาอังกฤษ
+              - generic [ref=e418]: "*"
+            - textbox "Filter name 1 - ภาษาอังกฤษ *" [disabled]:
+              - /placeholder: Filter name 1 - ภาษาอังกฤษ
+      - generic [ref=e419]:
+        - tablist [ref=e420]:
+          - tab "Filter value 1" [selected] [ref=e421] [cursor=pointer]
+          - tab "Filter 2" [ref=e422] [cursor=pointer]
+        - tabpanel "Filter value 1" [ref=e423]:
+          - generic [ref=e425]:
+            - status [ref=e426]
+            - generic [ref=e427]:
+              - generic [ref=e428]: คลิกเพื่อเพิ่ม Filter valueในหัวข้อหมวดหมู่นี้
+              - button "เพิ่ม Filter value" [ref=e429] [cursor=pointer]:
+                - img
+                - generic [ref=e430]: เพิ่ม Filter value
+    - generic [ref=e432]:
+      - button "ยกเลิก" [ref=e433] [cursor=pointer]
+      - button "ยืนยัน" [ref=e434] [cursor=pointer]
+    - button "Close" [ref=e435] [cursor=pointer]:
+      - img
+      - generic [ref=e436]: Close

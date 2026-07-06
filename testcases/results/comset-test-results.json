@@ -1,0 +1,142 @@
+{
+  "J-COMSET-LP001": {
+    "actual": "โหลดสำเร็จ",
+    "result": "Pass"
+  },
+  "J-COMSET-LP002": {
+    "actual": "พบ heading",
+    "result": "Pass"
+  },
+  "J-COMSET-LP003": {
+    "actual": "แถว=2",
+    "result": "Pass"
+  },
+  "J-COMSET-LP004": {
+    "actual": "คอลัมน์ 30",
+    "result": "Pass"
+  },
+  "J-COMSET-LP005": {
+    "actual": "search=true filter=true",
+    "result": "Pass"
+  },
+  "J-COMSET-LP006": {
+    "actual": "OK",
+    "result": "Pass"
+  },
+  "J-COMSET-LP007": {
+    "actual": "มีปุ่มเพิ่ม",
+    "result": "Pass"
+  },
+  "J-COMSET-LP010": {
+    "actual": "ค้นหา OK",
+    "result": "Pass"
+  },
+  "J-COMSET-LP011": {
+    "actual": "empty search OK",
+    "result": "Pass"
+  },
+  "J-COMSET-LP012": {
+    "actual": "XSS safe",
+    "result": "Pass"
+  },
+  "J-COMSET-LP013": {
+    "actual": "clear search",
+    "result": "Pass"
+  },
+  "J-COMSET-LP020": {
+    "actual": "เปิดตัวกรอง",
+    "result": "Pass"
+  },
+  "J-COMSET-LP021": {
+    "actual": "ESC OK",
+    "result": "Pass"
+  },
+  "J-COMSET-LP022": {
+    "actual": "filter OK",
+    "result": "Pass"
+  },
+  "J-COMSET-LP030": {
+    "actual": "customize OK",
+    "result": "Pass"
+  },
+  "J-COMSET-LP031": {
+    "actual": "toggle OK",
+    "result": "Pass"
+  },
+  "J-COMSET-LP040": {
+    "actual": "pagination OK",
+    "result": "Pass"
+  },
+  "J-COMSET-LP041": {
+    "actual": "rows selector",
+    "result": "Pass"
+  },
+  "J-COMSET-LP042": {
+    "actual": "pagination nav",
+    "result": "Pass"
+  },
+  "J-COMSET-LP050": {
+    "actual": "มี edit",
+    "result": "Pass"
+  },
+  "J-COMSET-LP051": {
+    "actual": "row menu",
+    "result": "Pass"
+  },
+  "J-COMSET-CR001": {
+    "actual": "create page OK",
+    "result": "Pass"
+  },
+  "J-COMSET-CR002": {
+    "actual": "inputs=17",
+    "result": "Pass"
+  },
+  "J-COMSET-CR003": {
+    "actual": "มีบันทึก",
+    "result": "Pass"
+  },
+  "J-COMSET-CR004": {
+    "actual": "validation OK",
+    "result": "Pass"
+  },
+  "J-COMSET-CR005": {
+    "actual": "กรอกชื่อ OK",
+    "result": "Pass"
+  },
+  "J-COMSET-CR006": {
+    "actual": "XSS safe",
+    "result": "Pass"
+  },
+  "J-COMSET-CR007": {
+    "actual": "sync toggle checked",
+    "result": "Pass"
+  },
+  "J-COMSET-CR008": {
+    "actual": "no E2E save",
+    "result": "Warning"
+  },
+  "J-COMSET-ED001": {
+    "actual": "empty form bug",
+    "result": "Fail"
+  },
+  "J-COMSET-ED002": {
+    "actual": "edit real record — skip",
+    "result": "Warning"
+  },
+  "J-COMSET-ED003": {
+    "actual": "save edit — skip",
+    "result": "Warning"
+  },
+  "J-COMSET-UX001": {
+    "actual": "desktop 1920",
+    "result": "Pass"
+  },
+  "J-COMSET-UX002": {
+    "actual": "Chromium",
+    "result": "Pass"
+  },
+  "J-COMSET-SEC001": {
+    "actual": "authenticated access",
+    "result": "Pass"
+  }
+}

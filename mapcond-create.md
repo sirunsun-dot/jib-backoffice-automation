@@ -1,0 +1,488 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - button [ref=e10] [cursor=pointer]:
+              - img
+        - separator [ref=e11]
+        - list [ref=e15]:
+          - listitem [ref=e16]:
+            - link "หน้าหลัก" [ref=e17] [cursor=pointer]:
+              - /url: /main
+              - img [ref=e18]
+              - generic: หน้าหลัก
+          - listitem [ref=e20]:
+            - link "ร้านค้า" [ref=e21] [cursor=pointer]:
+              - /url: /store/product-manager/warehouses
+              - img [ref=e23]
+              - generic: ร้านค้า
+          - listitem [ref=e25]:
+            - link "จัดการลูกค้า" [ref=e26] [cursor=pointer]:
+              - /url: /customer-manager/customers
+              - img [ref=e27]
+              - generic: จัดการลูกค้า
+      - generic [ref=e29]:
+        - paragraph [ref=e31]: ร้านค้า
+        - generic [ref=e34]:
+          - generic "จัดการสินค้า" [ref=e35]:
+            - generic [ref=e36]:
+              - link "จัดการสินค้า" [expanded] [ref=e37] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e38]: จัดการสินค้า
+                - img [ref=e39]
+              - list [ref=e43]:
+                - listitem [ref=e44]:
+                  - link "คลังสินค้า" [ref=e45] [cursor=pointer]:
+                    - /url: /store/product-manager/warehouses
+                    - img [ref=e46]
+                    - generic [ref=e48]: คลังสินค้า
+                - listitem [ref=e49]:
+                  - link "Products" [ref=e50] [cursor=pointer]:
+                    - /url: /store/product-manager/products
+                    - img [ref=e51]
+                    - generic [ref=e55]: Products
+                - listitem [ref=e56]:
+                  - link "Marketplace Option" [ref=e57] [cursor=pointer]:
+                    - /url: /store/product-manager/products-by-orders
+                    - img [ref=e58]
+                    - generic [ref=e62]: Marketplace Option
+                - listitem [ref=e63]:
+                  - link "Commucial Products" [ref=e64] [cursor=pointer]:
+                    - /url: /store/product-manager/enterprise-products
+                    - img [ref=e65]
+                    - generic [ref=e67]: Commucial Products
+                - listitem [ref=e68]:
+                  - link "Comsets" [ref=e69] [cursor=pointer]:
+                    - /url: /store/product-manager/comsets
+                    - img [ref=e70]
+                    - generic [ref=e74]: Comsets
+                - listitem [ref=e75]:
+                  - link "Comset - Parts" [ref=e76] [cursor=pointer]:
+                    - /url: /store/product-manager/spec-categories
+                    - img [ref=e77]
+                    - generic [ref=e84]: Comset - Parts
+                - listitem [ref=e85]:
+                  - link "Spec Templates" [ref=e86] [cursor=pointer]:
+                    - /url: /store/product-manager/template-attributes
+                    - img [ref=e87]
+                    - generic [ref=e89]: Spec Templates
+                - listitem [ref=e90]:
+                  - link "Mapping - Values" [ref=e91] [cursor=pointer]:
+                    - /url: /store/product-manager/template-options
+                    - img [ref=e92]
+                    - generic [ref=e99]: Mapping - Values
+                - listitem [ref=e100]:
+                  - link "Mapping - Conditions" [ref=e101] [cursor=pointer]:
+                    - /url: /store/product-manager/template-mapping-conditions
+                    - img [ref=e102]
+                    - generic [ref=e106]: Mapping - Conditions
+                - listitem [ref=e107]:
+                  - link "Categories" [ref=e108] [cursor=pointer]:
+                    - /url: /store/product-manager/categories
+                    - img [ref=e109]
+                    - generic [ref=e114]: Categories
+                - listitem [ref=e115]:
+                  - link "Category - Commucial" [ref=e116] [cursor=pointer]:
+                    - /url: /store/product-manager/enterprise-categories
+                    - img [ref=e117]
+                    - generic [ref=e122]: Category - Commucial
+                - listitem [ref=e123]:
+                  - link "Brands" [ref=e124] [cursor=pointer]:
+                    - /url: /store/product-manager/brands
+                    - img [ref=e125]
+                    - generic [ref=e127]: Brands
+                - listitem [ref=e128]:
+                  - link "Suppliers" [ref=e129] [cursor=pointer]:
+                    - /url: /store/product-manager/suppliers
+                    - img [ref=e130]
+                    - generic [ref=e134]: Suppliers
+                - listitem [ref=e135]:
+                  - link "Tags" [ref=e136] [cursor=pointer]:
+                    - /url: /store/product-manager/tags
+                    - img [ref=e137]
+                    - generic [ref=e140]: Tags
+                - listitem [ref=e141]:
+                  - link "ประเภทการใช้งาน - Comsets" [ref=e142] [cursor=pointer]:
+                    - /url: /store/product-manager/usage-type
+                    - img [ref=e143]
+                    - generic [ref=e147]: ประเภทการใช้งาน - Comsets
+                - listitem [ref=e148]:
+                  - link "Filters" [ref=e149] [cursor=pointer]:
+                    - /url: /store/product-manager/filters
+                    - img [ref=e150]
+                    - generic [ref=e152]: Filters
+                - listitem [ref=e153]:
+                  - link "Warranties" [ref=e154] [cursor=pointer]:
+                    - /url: /store/product-manager/warranties
+                    - img [ref=e155]
+                    - generic [ref=e158]: Warranties
+                - listitem [ref=e159]:
+                  - link "Services" [ref=e160] [cursor=pointer]:
+                    - /url: /store/product-manager/additional-services
+                    - img [ref=e161]
+                    - generic [ref=e164]: Services
+            - separator [ref=e165]
+          - generic "จัดการออร์เดอร์" [ref=e166]:
+            - generic [ref=e167]:
+              - link "จัดการออร์เดอร์" [expanded] [ref=e168] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e169]: จัดการออร์เดอร์
+                - img [ref=e170]
+              - list [ref=e174]:
+                - listitem [ref=e175]:
+                  - link "รายการคำสั่งซื้อ" [ref=e176] [cursor=pointer]:
+                    - /url: /store/order-manager/orders
+                    - img [ref=e177]
+                    - generic [ref=e180]: รายการคำสั่งซื้อ
+                - listitem [ref=e181]:
+                  - link "รายการคำสั่งซื้อ By Order" [ref=e182] [cursor=pointer]:
+                    - /url: /store/order-manager/orders-by-order
+                    - img [ref=e183]
+                    - generic [ref=e186]: รายการคำสั่งซื้อ By Order
+            - separator [ref=e187]
+          - generic "จัดการใบเสนอราคา" [ref=e188]:
+            - generic [ref=e189]:
+              - link "จัดการใบเสนอราคา" [expanded] [ref=e190] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e191]: จัดการใบเสนอราคา
+                - img [ref=e192]
+              - list [ref=e196]:
+                - listitem [ref=e197]:
+                  - link "ใบเสนอราคา" [ref=e198] [cursor=pointer]:
+                    - /url: /store/quotation-manager/quotations
+                    - img [ref=e199]
+                    - generic [ref=e202]: ใบเสนอราคา
+                - listitem [ref=e203]:
+                  - link "ตั้งค่าเงื่อนไขใบเสนอราคา" [ref=e204] [cursor=pointer]:
+                    - /url: /store/quotation-manager/settings
+                    - img [ref=e205]
+                    - generic [ref=e208]: ตั้งค่าเงื่อนไขใบเสนอราคา
+            - separator [ref=e209]
+          - generic "ตั้งค่า" [ref=e210]:
+            - generic [ref=e211]:
+              - link "ตั้งค่า" [expanded] [ref=e212] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e213]: ตั้งค่า
+                - img [ref=e214]
+              - list [ref=e218]:
+                - listitem [ref=e219]:
+                  - link "การตั้งค่าการชำระเงิน" [ref=e220] [cursor=pointer]:
+                    - /url: /store/settings/payment-settings
+                    - img [ref=e221]
+                    - generic [ref=e223]: การตั้งค่าการชำระเงิน
+                - listitem [ref=e224]:
+                  - link "วิธีการจัดส่ง" [ref=e225] [cursor=pointer]:
+                    - /url: /store/settings/shipping-methods
+                    - img [ref=e226]
+                    - generic [ref=e231]: วิธีการจัดส่ง
+                - listitem [ref=e232]:
+                  - link "ค่าการตั้งค่าระบบ" [ref=e233] [cursor=pointer]:
+                    - /url: /store/settings/system-configs
+                    - img [ref=e234]
+                    - generic [ref=e237]: ค่าการตั้งค่าระบบ
+            - separator [ref=e238]
+          - generic "จัดการโปรโมชั่น" [ref=e239]:
+            - generic [ref=e240]:
+              - link "จัดการโปรโมชั่น" [expanded] [ref=e241] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e242]: จัดการโปรโมชั่น
+                - img [ref=e243]
+              - list [ref=e247]:
+                - listitem [ref=e248]:
+                  - link "โปรโมชัน" [ref=e249] [cursor=pointer]:
+                    - /url: /store/promotion-manager/promotions
+                    - img [ref=e250]
+                    - generic [ref=e253]: โปรโมชัน
+                - listitem [ref=e254]:
+                  - link "สินค้าของแถม" [ref=e255] [cursor=pointer]:
+                    - /url: /store/promotion-manager/freebie-products
+                    - img [ref=e256]
+                    - generic [ref=e260]: สินค้าของแถม
+                - listitem [ref=e261]:
+                  - link "ของแถม" [ref=e262] [cursor=pointer]:
+                    - /url: /store/promotion-manager/free-gifts
+                    - img [ref=e263]
+                    - generic [ref=e267]: ของแถม
+                - listitem [ref=e268]:
+                  - link "คูปอง" [ref=e269] [cursor=pointer]:
+                    - /url: /store/promotion-manager/coupons
+                    - img [ref=e270]
+                    - generic [ref=e273]: คูปอง
+    - main [ref=e274]:
+      - generic [ref=e276]:
+        - generic [ref=e277]:
+          - img "jib" [ref=e279]
+          - generic [ref=e547]:
+            - paragraph [ref=e548]: อังคาร 2026-06-16
+            - paragraph [ref=e549]: "11 : 37 : 51"
+        - generic [ref=e283]:
+          - button [ref=e284] [cursor=pointer]:
+            - img
+          - generic [ref=e286]:
+            - generic [ref=e287]:
+              - paragraph [ref=e550]: ศิรัณย์ สุนันทศิลป์
+              - paragraph [ref=e551]: test-1, test
+            - button "ศส" [ref=e292] [cursor=pointer]:
+              - generic [ref=e294]: ศส
+      - generic [ref=e299]:
+        - generic [ref=e301]:
+          - generic [ref=e303]:
+            - group [ref=e304]:
+              - button [ref=e305] [cursor=pointer]:
+                - img
+              - button [disabled]:
+                - img
+            - navigation "breadcrumb" [ref=e306]:
+              - list [ref=e307]:
+                - listitem [ref=e308]:
+                  - link "ร้านค้า" [ref=e309] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e310]:
+                  - img [ref=e311]
+                - listitem [ref=e313]:
+                  - button "Toggle menu" [ref=e314]:
+                    - generic [ref=e315]:
+                      - img [ref=e316]
+                      - generic [ref=e320]: More
+                    - generic [ref=e321]: Toggle menu
+                - listitem [ref=e322]:
+                  - img [ref=e323]
+                - listitem [ref=e325]:
+                  - link "Mapping - Conditions" [ref=e326] [cursor=pointer]:
+                    - /url: /store/product-manager/template-mapping-conditions
+                - listitem [ref=e327]:
+                  - img [ref=e328]
+                - listitem [ref=e330]:
+                  - link "สร้าง" [disabled] [ref=e331]
+          - generic [ref=e333]:
+            - generic [ref=e335] [cursor=pointer]:
+              - generic [ref=e336]: กำลังเปิดใช้งาน
+              - switch [checked]
+              - checkbox [checked]
+            - button "บันทึก" [ref=e339] [cursor=pointer]:
+              - img
+              - text: บันทึก
+        - generic [ref=e340]:
+          - generic [ref=e341]:
+            - img [ref=e343]
+            - generic [ref=e347]:
+              - paragraph [ref=e348]: เพิ่มเงื่อนไข Template Mapping
+              - paragraph [ref=e349]: กำหนดเงื่อนไขเปรียบเทียบรูปแบบ LHS (operator) RHS — แต่ละฝั่งสามารถมีหลาย term จาก template ต่างๆ ได้
+          - button "กำลังดำเนินการ 75%" [ref=e351] [cursor=pointer]:
+            - generic [ref=e352]:
+              - img [ref=e353]
+              - generic [ref=e356]: กำลังดำเนินการ
+              - generic [ref=e357]: 75%
+              - img [ref=e358]
+        - generic [ref=e362]:
+          - heading "ข้อมูลเงื่อนไข" [level=3] [ref=e363]
+          - generic [ref=e364]:
+            - generic [ref=e365]:
+              - generic [ref=e366]:
+                - text: ชื่อเงื่อนไข
+                - generic [ref=e367]: "*"
+              - textbox "ชื่อเงื่อนไข *" [ref=e368]:
+                - /placeholder: เช่น PSU watt ≥ Σ component watt
+            - generic [ref=e369]:
+              - generic [ref=e370]:
+                - text: คำอธิบาย
+                - generic [ref=e371]: (ถ้ามี)
+              - textbox "คำอธิบาย (ถ้ามี)" [ref=e372]:
+                - /placeholder: คำอธิบายเงื่อนไข
+        - generic [ref=e373]:
+          - generic [ref=e374]:
+            - generic [ref=e375]:
+              - heading "ฝั่งซ้าย (LHS)" [level=3] [ref=e376]
+              - paragraph [ref=e377]: ฝั่งซ้ายของอสมการ — รวม term ทั้งหมดด้วยกลยุทธ์ที่เลือก
+            - button "เพิ่ม term" [ref=e378] [cursor=pointer]:
+              - img
+              - text: เพิ่ม term
+          - generic [ref=e379]:
+            - generic [ref=e380]:
+              - generic [ref=e381]:
+                - text: วิธีรวมค่าระหว่าง term
+                - generic [ref=e382]: "*"
+              - radiogroup [ref=e383]:
+                - generic [ref=e384]:
+                  - radio "บวกรวม (SUM)" [checked] [ref=e385] [cursor=pointer]:
+                    - img [ref=e386]
+                  - radio [checked]
+                  - generic [ref=e388] [cursor=pointer]: บวกรวม (SUM)
+                - generic [ref=e389]:
+                  - radio "ลำดับสำรอง (COALESCE)" [ref=e390] [cursor=pointer]
+                  - radio
+                  - generic [ref=e391] [cursor=pointer]: ลำดับสำรอง (COALESCE)
+                - generic [ref=e392]:
+                  - radio "ค่าสูงสุดในฝั่ง (MAX)" [ref=e393] [cursor=pointer]
+                  - radio
+                  - generic [ref=e394] [cursor=pointer]: ค่าสูงสุดในฝั่ง (MAX)
+                - generic [ref=e395]:
+                  - radio "ค่าต่ำสุดในฝั่ง (MIN)" [ref=e396] [cursor=pointer]
+                  - radio
+                  - generic [ref=e397] [cursor=pointer]: ค่าต่ำสุดในฝั่ง (MIN)
+            - generic [ref=e398]:
+              - generic [ref=e401]:
+                - 'button "ลากเพื่อจัดลำดับ ฝั่งซ้าย (LHS) #1" [ref=e402]':
+                  - img
+                - generic [ref=e403]:
+                  - generic [ref=e404]:
+                    - generic [ref=e405]:
+                      - text: "ฝั่งซ้าย (LHS) #1 · Template"
+                      - generic [ref=e406]: "*"
+                    - button "เลือก template" [ref=e408] [cursor=pointer]:
+                      - generic [ref=e410]: เลือก template
+                      - img [ref=e411]
+                  - generic [ref=e413]:
+                    - generic [ref=e414]:
+                      - text: หัวข้อ
+                      - generic [ref=e415]: "*"
+                    - generic [ref=e416]:
+                      - button "เลือก template ก่อน" [disabled]:
+                        - generic:
+                          - generic: เลือก template ก่อน
+                        - img
+                  - generic [ref=e417]:
+                    - generic [ref=e418]: วิธีรวมในชิ้น
+                    - button "ไม่รวม" [ref=e420] [cursor=pointer]:
+                      - generic [ref=e422]: ไม่รวม
+                      - img [ref=e423]
+                  - generic [ref=e425]:
+                    - generic [ref=e426]: ค่าคูณ
+                    - spinbutton "ค่าคูณ" [ref=e427]: "1"
+                  - generic [ref=e428]:
+                    - 'button "ลบ ฝั่งซ้าย (LHS) #1" [disabled]':
+                      - img
+              - status [ref=e429]
+        - generic [ref=e430]:
+          - heading "ตัวเปรียบเทียบ" [level=3] [ref=e431]
+          - generic [ref=e432]:
+            - generic [ref=e433]:
+              - generic [ref=e434]:
+                - text: Operator
+                - generic [ref=e435]: "*"
+              - button "น้อยกว่าหรือเท่ากับ (≤)" [ref=e437] [cursor=pointer]:
+                - generic [ref=e439]: น้อยกว่าหรือเท่ากับ (≤)
+                - img [ref=e440]
+            - generic [ref=e442]:
+              - generic [ref=e443]: จำนวนต่ำสุด (RHS)
+              - spinbutton "จำนวนต่ำสุด (RHS)" [ref=e444]
+            - generic [ref=e445]:
+              - generic [ref=e446]: จำนวนสูงสุด (RHS)
+              - spinbutton "จำนวนสูงสุด (RHS)" [ref=e447]
+        - generic [ref=e448]:
+          - generic [ref=e449]:
+            - generic [ref=e450]:
+              - heading "ฝั่งขวา (RHS)" [level=3] [ref=e451]
+              - paragraph [ref=e452]: ฝั่งขวาของอสมการ — รวม term ทั้งหมดด้วยกลยุทธ์ที่เลือก
+            - button "เพิ่ม term" [ref=e453] [cursor=pointer]:
+              - img
+              - text: เพิ่ม term
+          - generic [ref=e454]:
+            - generic [ref=e455]:
+              - generic [ref=e456]:
+                - text: วิธีรวมค่าระหว่าง term
+                - generic [ref=e457]: "*"
+              - radiogroup [ref=e458]:
+                - generic [ref=e459]:
+                  - radio "บวกรวม (SUM)" [checked] [ref=e460] [cursor=pointer]:
+                    - img [ref=e461]
+                  - radio [checked]
+                  - generic [ref=e463] [cursor=pointer]: บวกรวม (SUM)
+                - generic [ref=e464]:
+                  - radio "ลำดับสำรอง (COALESCE)" [ref=e465] [cursor=pointer]
+                  - radio
+                  - generic [ref=e466] [cursor=pointer]: ลำดับสำรอง (COALESCE)
+                - generic [ref=e467]:
+                  - radio "ค่าสูงสุดในฝั่ง (MAX)" [ref=e468] [cursor=pointer]
+                  - radio
+                  - generic [ref=e469] [cursor=pointer]: ค่าสูงสุดในฝั่ง (MAX)
+                - generic [ref=e470]:
+                  - radio "ค่าต่ำสุดในฝั่ง (MIN)" [ref=e471] [cursor=pointer]
+                  - radio
+                  - generic [ref=e472] [cursor=pointer]: ค่าต่ำสุดในฝั่ง (MIN)
+            - generic [ref=e473]:
+              - generic [ref=e476]:
+                - 'button "ลากเพื่อจัดลำดับ ฝั่งขวา (RHS) #2" [ref=e477]':
+                  - img
+                - generic [ref=e478]:
+                  - generic [ref=e479]:
+                    - generic [ref=e480]:
+                      - text: "ฝั่งขวา (RHS) #2 · Template"
+                      - generic [ref=e481]: "*"
+                    - button "เลือก template" [ref=e483] [cursor=pointer]:
+                      - generic [ref=e485]: เลือก template
+                      - img [ref=e486]
+                  - generic [ref=e488]:
+                    - generic [ref=e489]:
+                      - text: หัวข้อ
+                      - generic [ref=e490]: "*"
+                    - generic [ref=e491]:
+                      - button "เลือก template ก่อน" [disabled]:
+                        - generic:
+                          - generic: เลือก template ก่อน
+                        - img
+                  - generic [ref=e492]:
+                    - generic [ref=e493]: วิธีรวมในชิ้น
+                    - button "ไม่รวม" [ref=e495] [cursor=pointer]:
+                      - generic [ref=e497]: ไม่รวม
+                      - img [ref=e498]
+                  - generic [ref=e500]:
+                    - generic [ref=e501]: ค่าคูณ
+                    - spinbutton "ค่าคูณ" [ref=e502]: "1"
+                  - generic [ref=e503]:
+                    - 'button "ลบ ฝั่งขวา (RHS) #2" [disabled]':
+                      - img
+              - status [ref=e504]
+        - generic [ref=e505]:
+          - heading "การแจ้งเตือน" [level=3] [ref=e506]
+          - generic [ref=e507]:
+            - generic [ref=e508]:
+              - generic [ref=e509]:
+                - generic [ref=e510]:
+                  - text: ระดับความเข้ากันได้
+                  - generic [ref=e511]: "*"
+                - radiogroup [ref=e512]:
+                  - generic [ref=e513]:
+                    - radio "เข้ากัน" [checked] [ref=e514] [cursor=pointer]:
+                      - img [ref=e515]
+                    - radio [checked]
+                    - generic [ref=e517] [cursor=pointer]: เข้ากัน
+                  - generic [ref=e518]:
+                    - radio "คำเตือน" [ref=e519] [cursor=pointer]
+                    - radio
+                    - generic [ref=e520] [cursor=pointer]: คำเตือน
+                  - generic [ref=e521]:
+                    - radio "หมายเหตุ" [ref=e522] [cursor=pointer]
+                    - radio
+                    - generic [ref=e523] [cursor=pointer]: หมายเหตุ
+                  - generic [ref=e524]:
+                    - radio "พบปัญหา" [ref=e525] [cursor=pointer]
+                    - radio
+                    - generic [ref=e526] [cursor=pointer]: พบปัญหา
+              - generic [ref=e527]:
+                - generic [ref=e528]:
+                  - text: รูปแบบการแสดง
+                  - generic [ref=e529]: "*"
+                - radiogroup [ref=e530]:
+                  - generic [ref=e531]:
+                    - radio "แสดงเมื่อเงื่อนไขไม่ผ่าน" [checked] [ref=e532] [cursor=pointer]:
+                      - img [ref=e533]
+                    - radio [checked]
+                    - generic [ref=e535] [cursor=pointer]: แสดงเมื่อเงื่อนไขไม่ผ่าน
+                  - generic [ref=e536]:
+                    - radio "แสดงตลอด" [ref=e537] [cursor=pointer]
+                    - radio
+                    - generic [ref=e538] [cursor=pointer]: แสดงตลอด
+            - generic [ref=e539]:
+              - generic [ref=e540]:
+                - generic [ref=e541]: ข้อความแจ้งเตือน - ภาษาไทย
+                - textbox "ข้อความแจ้งเตือน - ภาษาไทย" [ref=e542]:
+                  - /placeholder: เช่น CPU Socket ไม่ตรงกับ Mainboard
+              - generic [ref=e543]:
+                - generic [ref=e544]: ข้อความแจ้งเตือน - ภาษาอังกฤษ
+                - textbox "ข้อความแจ้งเตือน - ภาษาอังกฤษ" [ref=e545]:
+                  - /placeholder: e.g., CPU socket does not match the mainboard
+  - region "Notifications alt+T"
+  - alert [ref=e546]

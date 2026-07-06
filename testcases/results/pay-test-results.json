@@ -1,0 +1,30 @@
+{
+  "J-PAY-ST001": {
+    "actual": "หน้าโหลดสำเร็จ",
+    "result": "Pass"
+  },
+  "J-PAY-ST002": {
+    "actual": "inputs=2 rows=3",
+    "result": "Pass"
+  },
+  "J-PAY-ST003": {
+    "actual": "ไม่พบปุ่มบันทึก",
+    "result": "Warning"
+  },
+  "J-PAY-ST004": {
+    "actual": "ไม่ได้ทดสอบ save E2E (เลี่ยงกระทบ config)",
+    "result": "Warning"
+  },
+  "J-PAY-UX001": {
+    "actual": "viewport 1920x1080",
+    "result": "Pass"
+  },
+  "J-PAY-UX002": {
+    "actual": "Chromium Puppeteer",
+    "result": "Pass"
+  },
+  "J-PAY-SEC001": {
+    "actual": "เข้าได้หลัง login",
+    "result": "Pass"
+  }
+}

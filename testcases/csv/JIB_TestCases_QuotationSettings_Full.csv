@@ -1,0 +1,31 @@
+Project Name :,JIB-Ecommerce,,,Create Date :,2026-06-15,,
+Project ID :,,,,Start Test Date :,2026-06-15,,
+Tester Name :,sirun.sun@codelabdev.co,,,Finish Test Date :,2026-06-15,,
+Project Release / Version :,1.0,,,Module / Function :,ตั้งค่าเงื่อนไขใบเสนอราคา,,
+URL List :,https://devstorex.jibc.codelabdev.co/store/quotation-manager/settings,,,,,,
+URL Create :,-,,,,,,
+,,,,,,,
+Test Case ID,Category,Test case Objective,Test Description / Procedure,Test Data,Expected Result,Actual Result,Result (Pass/Fail)
+,,,,,,,
+---- PART 1: หน้าตั้งค่า ----,,,,,,,
+,,,,,,,
+J-QUOS-ST001,Page Load,เปิดหน้าตั้งค่า,1. เข้า https://devstorex.jibc.codelabdev.co/store/quotation-manager/settings,-,หน้าโหลดสำเร็จ,หน้าโหลดสำเร็จ,Pass
+J-QUOS-ST002,UI,แสดงฟอร์ม/ตาราง,1. ดูเนื้อหา,-,มี input หรือตารางตั้งค่า,inputs=6 rows=0,Pass
+J-QUOS-ST003,UI,ปุ่มบันทึก (ถ้ามี),1. ดูปุ่ม,-,มีปุ่มบันทึกหรือแก้ไข,มีปุ่มบันทึก,Pass
+J-QUOS-ST004,Save,บันทึกการตั้งค่า,1. แก้ค่า + บันทึก,-,บันทึกสำเร็จ / toast,ไม่ได้ทดสอบ save E2E (เลี่ยงกระทบ config),Warning
+---- PART 2: การเข้าถึง ----,,,,,,,
+,,,,,,,
+---- PART 3: UI/UX + Security ----,,,,,,,
+,,,,,,,
+J-QUOS-UX001,Responsive,Desktop 1920px,1. เปิด viewport 1920,-,Layout ปกติ,viewport 1920x1080,Pass
+J-QUOS-UX002,Browser,Chromium,1. เปิดบน Chrome,-,ทำงานปกติ,Chromium Puppeteer,Pass
+J-QUOS-SEC001,Session,เข้าหน้าหลัง login,1. login แล้วเข้า URL,-,เข้าได้ไม่ redirect,เข้าได้หลัง login,Pass
+,,,,,,,
+-- สรุปผลทดสอบรวม (Summary) --,,,,,,,
+Total Test Cases :,7,,,,,,
+Pass :,6,,,Fail :,0,,
+Warning :,1,,,Not Tested :,0,,
+,,,,,,,
+Pass Rate :,85.7%,,,Fail Rate :,0.0%,,
+,,,,,,,
+Notes :,Automated via Puppeteer — จัดการใบเสนอราคา / ตั้งค่าเงื่อนไขใบเสนอราคา,,,,,,

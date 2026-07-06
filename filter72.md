@@ -1,0 +1,345 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - button [ref=e10] [cursor=pointer]:
+              - img
+        - separator [ref=e11]
+        - list [ref=e15]:
+          - listitem [ref=e16]:
+            - link "หน้าหลัก" [ref=e17] [cursor=pointer]:
+              - /url: /main
+              - img [ref=e18]
+              - generic: หน้าหลัก
+          - listitem [ref=e20]:
+            - link "ร้านค้า" [ref=e21] [cursor=pointer]:
+              - /url: /store/product-manager/warehouses
+              - img [ref=e23]
+              - generic: ร้านค้า
+          - listitem [ref=e25]:
+            - link "จัดการลูกค้า" [ref=e26] [cursor=pointer]:
+              - /url: /customer-manager/customers
+              - img [ref=e27]
+              - generic: จัดการลูกค้า
+      - generic [ref=e29]:
+        - paragraph [ref=e31]: ร้านค้า
+        - generic [ref=e34]:
+          - generic "จัดการสินค้า" [ref=e35]:
+            - generic [ref=e36]:
+              - link "จัดการสินค้า" [expanded] [ref=e37] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e38]: จัดการสินค้า
+                - img [ref=e39]
+              - list [ref=e43]:
+                - listitem [ref=e44]:
+                  - link "คลังสินค้า" [ref=e45] [cursor=pointer]:
+                    - /url: /store/product-manager/warehouses
+                    - img [ref=e46]
+                    - generic [ref=e48]: คลังสินค้า
+                - listitem [ref=e49]:
+                  - link "Products" [ref=e50] [cursor=pointer]:
+                    - /url: /store/product-manager/products
+                    - img [ref=e51]
+                    - generic [ref=e55]: Products
+                - listitem [ref=e56]:
+                  - link "Marketplace Option" [ref=e57] [cursor=pointer]:
+                    - /url: /store/product-manager/products-by-orders
+                    - img [ref=e58]
+                    - generic [ref=e62]: Marketplace Option
+                - listitem [ref=e63]:
+                  - link "Commucial Products" [ref=e64] [cursor=pointer]:
+                    - /url: /store/product-manager/enterprise-products
+                    - img [ref=e65]
+                    - generic [ref=e67]: Commucial Products
+                - listitem [ref=e68]:
+                  - link "Comsets" [ref=e69] [cursor=pointer]:
+                    - /url: /store/product-manager/comsets
+                    - img [ref=e70]
+                    - generic [ref=e74]: Comsets
+                - listitem [ref=e75]:
+                  - link "Comset - Parts" [ref=e76] [cursor=pointer]:
+                    - /url: /store/product-manager/spec-categories
+                    - img [ref=e77]
+                    - generic [ref=e84]: Comset - Parts
+                - listitem [ref=e85]:
+                  - link "Spec Templates" [ref=e86] [cursor=pointer]:
+                    - /url: /store/product-manager/template-attributes
+                    - img [ref=e87]
+                    - generic [ref=e89]: Spec Templates
+                - listitem [ref=e90]:
+                  - link "Mapping - Values" [ref=e91] [cursor=pointer]:
+                    - /url: /store/product-manager/template-options
+                    - img [ref=e92]
+                    - generic [ref=e99]: Mapping - Values
+                - listitem [ref=e100]:
+                  - link "Mapping - Conditions" [ref=e101] [cursor=pointer]:
+                    - /url: /store/product-manager/template-mapping-conditions
+                    - img [ref=e102]
+                    - generic [ref=e106]: Mapping - Conditions
+                - listitem [ref=e107]:
+                  - link "Categories" [ref=e108] [cursor=pointer]:
+                    - /url: /store/product-manager/categories
+                    - img [ref=e109]
+                    - generic [ref=e114]: Categories
+                - listitem [ref=e115]:
+                  - link "Category - Commucial" [ref=e116] [cursor=pointer]:
+                    - /url: /store/product-manager/enterprise-categories
+                    - img [ref=e117]
+                    - generic [ref=e122]: Category - Commucial
+                - listitem [ref=e123]:
+                  - link "Brands" [ref=e124] [cursor=pointer]:
+                    - /url: /store/product-manager/brands
+                    - img [ref=e125]
+                    - generic [ref=e127]: Brands
+                - listitem [ref=e128]:
+                  - link "Suppliers" [ref=e129] [cursor=pointer]:
+                    - /url: /store/product-manager/suppliers
+                    - img [ref=e130]
+                    - generic [ref=e134]: Suppliers
+                - listitem [ref=e135]:
+                  - link "Tags" [ref=e136] [cursor=pointer]:
+                    - /url: /store/product-manager/tags
+                    - img [ref=e137]
+                    - generic [ref=e140]: Tags
+                - listitem [ref=e141]:
+                  - link "ประเภทการใช้งาน - Comsets" [ref=e142] [cursor=pointer]:
+                    - /url: /store/product-manager/usage-type
+                    - img [ref=e143]
+                    - generic [ref=e147]: ประเภทการใช้งาน - Comsets
+                - listitem [ref=e148]:
+                  - link "Filters" [ref=e149] [cursor=pointer]:
+                    - /url: /store/product-manager/filters
+                    - img [ref=e150]
+                    - generic [ref=e152]: Filters
+                - listitem [ref=e153]:
+                  - link "Warranties" [ref=e154] [cursor=pointer]:
+                    - /url: /store/product-manager/warranties
+                    - img [ref=e155]
+                    - generic [ref=e158]: Warranties
+                - listitem [ref=e159]:
+                  - link "Services" [ref=e160] [cursor=pointer]:
+                    - /url: /store/product-manager/additional-services
+                    - img [ref=e161]
+                    - generic [ref=e164]: Services
+            - separator [ref=e165]
+          - generic "จัดการออร์เดอร์" [ref=e166]:
+            - generic [ref=e167]:
+              - link "จัดการออร์เดอร์" [expanded] [ref=e168] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e169]: จัดการออร์เดอร์
+                - img [ref=e170]
+              - list [ref=e174]:
+                - listitem [ref=e175]:
+                  - link "รายการคำสั่งซื้อ" [ref=e176] [cursor=pointer]:
+                    - /url: /store/order-manager/orders
+                    - img [ref=e177]
+                    - generic [ref=e180]: รายการคำสั่งซื้อ
+                - listitem [ref=e181]:
+                  - link "รายการคำสั่งซื้อ By Order" [ref=e182] [cursor=pointer]:
+                    - /url: /store/order-manager/orders-by-order
+                    - img [ref=e183]
+                    - generic [ref=e186]: รายการคำสั่งซื้อ By Order
+            - separator [ref=e187]
+          - generic "จัดการใบเสนอราคา" [ref=e188]:
+            - generic [ref=e189]:
+              - link "จัดการใบเสนอราคา" [expanded] [ref=e190] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e191]: จัดการใบเสนอราคา
+                - img [ref=e192]
+              - list [ref=e196]:
+                - listitem [ref=e197]:
+                  - link "ใบเสนอราคา" [ref=e198] [cursor=pointer]:
+                    - /url: /store/quotation-manager/quotations
+                    - img [ref=e199]
+                    - generic [ref=e202]: ใบเสนอราคา
+                - listitem [ref=e203]:
+                  - link "ตั้งค่าเงื่อนไขใบเสนอราคา" [ref=e204] [cursor=pointer]:
+                    - /url: /store/quotation-manager/settings
+                    - img [ref=e205]
+                    - generic [ref=e208]: ตั้งค่าเงื่อนไขใบเสนอราคา
+            - separator [ref=e209]
+          - generic "ตั้งค่า" [ref=e210]:
+            - generic [ref=e211]:
+              - link "ตั้งค่า" [expanded] [ref=e212] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e213]: ตั้งค่า
+                - img [ref=e214]
+              - list [ref=e218]:
+                - listitem [ref=e219]:
+                  - link "การตั้งค่าการชำระเงิน" [ref=e220] [cursor=pointer]:
+                    - /url: /store/settings/payment-settings
+                    - img [ref=e221]
+                    - generic [ref=e223]: การตั้งค่าการชำระเงิน
+                - listitem [ref=e224]:
+                  - link "วิธีการจัดส่ง" [ref=e225] [cursor=pointer]:
+                    - /url: /store/settings/shipping-methods
+                    - img [ref=e226]
+                    - generic [ref=e231]: วิธีการจัดส่ง
+                - listitem [ref=e232]:
+                  - link "ค่าการตั้งค่าระบบ" [ref=e233] [cursor=pointer]:
+                    - /url: /store/settings/system-configs
+                    - img [ref=e234]
+                    - generic [ref=e237]: ค่าการตั้งค่าระบบ
+            - separator [ref=e238]
+          - generic "จัดการโปรโมชั่น" [ref=e239]:
+            - generic [ref=e240]:
+              - link "จัดการโปรโมชั่น" [expanded] [ref=e241] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e242]: จัดการโปรโมชั่น
+                - img [ref=e243]
+              - list [ref=e247]:
+                - listitem [ref=e248]:
+                  - link "โปรโมชัน" [ref=e249] [cursor=pointer]:
+                    - /url: /store/promotion-manager/promotions
+                    - img [ref=e250]
+                    - generic [ref=e253]: โปรโมชัน
+                - listitem [ref=e254]:
+                  - link "สินค้าของแถม" [ref=e255] [cursor=pointer]:
+                    - /url: /store/promotion-manager/freebie-products
+                    - img [ref=e256]
+                    - generic [ref=e260]: สินค้าของแถม
+                - listitem [ref=e261]:
+                  - link "ของแถม" [ref=e262] [cursor=pointer]:
+                    - /url: /store/promotion-manager/free-gifts
+                    - img [ref=e263]
+                    - generic [ref=e267]: ของแถม
+                - listitem [ref=e268]:
+                  - link "คูปอง" [ref=e269] [cursor=pointer]:
+                    - /url: /store/promotion-manager/coupons
+                    - img [ref=e270]
+                    - generic [ref=e273]: คูปอง
+    - main [ref=e274]:
+      - generic [ref=e276]:
+        - generic [ref=e277]:
+          - img "jib" [ref=e279]
+          - generic [ref=e280]:
+            - paragraph [ref=e281]: อังคาร 2026-06-16
+            - paragraph [ref=e282]: "15 : 20 : 17"
+        - generic [ref=e283]:
+          - button [ref=e284] [cursor=pointer]:
+            - img
+          - generic [ref=e286]:
+            - generic [ref=e287]:
+              - paragraph [ref=e288]: ศิรัณย์ สุนันทศิลป์
+              - paragraph [ref=e289]: test-1, test
+            - button "ศส" [ref=e291] [cursor=pointer]:
+              - generic [ref=e293]: ศส
+      - generic [ref=e301]:
+        - generic [ref=e303]:
+          - generic [ref=e305]:
+            - group [ref=e306]:
+              - button [ref=e307] [cursor=pointer]:
+                - img
+              - button [disabled]:
+                - img
+            - navigation "breadcrumb" [ref=e308]:
+              - list [ref=e309]:
+                - listitem [ref=e310]:
+                  - link "ร้านค้า" [ref=e311] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e312]:
+                  - img [ref=e313]
+                - listitem [ref=e315]:
+                  - button "Toggle menu" [ref=e316]:
+                    - generic [ref=e317]:
+                      - img [ref=e318]
+                      - generic [ref=e322]: More
+                    - generic [ref=e323]: Toggle menu
+                - listitem [ref=e324]:
+                  - img [ref=e325]
+                - listitem [ref=e327]:
+                  - link "Filters" [ref=e328] [cursor=pointer]:
+                    - /url: /store/product-manager/filters
+                - listitem [ref=e329]:
+                  - img [ref=e330]
+                - listitem [ref=e332]:
+                  - link "แก้ไข" [disabled] [ref=e333]
+          - generic [ref=e335]:
+            - generic [ref=e337] [cursor=pointer]:
+              - generic [ref=e338]: กำลังเปิดใช้งาน
+              - switch [checked]
+              - checkbox [checked]
+            - generic [ref=e340]:
+              - button "บันทึก" [ref=e341] [cursor=pointer]:
+                - img
+                - text: บันทึก
+              - button "Open menu" [ref=e342] [cursor=pointer]:
+                - img
+        - generic [ref=e343]:
+          - generic [ref=e344]:
+            - img [ref=e346]
+            - generic [ref=e348]:
+              - paragraph [ref=e349]: แก้ไข
+              - paragraph [ref=e350]: ระบุรายละเอียดต่างๆ เพื่อเพิ่มตัวกรองสินค้า
+          - button "ข้อมูลครบถ้วน 100%" [ref=e352] [cursor=pointer]:
+            - generic [ref=e353]:
+              - img [ref=e354]
+              - generic [ref=e357]: ข้อมูลครบถ้วน
+              - generic [ref=e358]: 100%
+              - img [ref=e359]
+        - generic [ref=e361]:
+          - heading "ข้อมูลตัวกรองสินค้า" [level=3] [ref=e362]
+          - generic [ref=e364]:
+            - generic [ref=e365]:
+              - generic [ref=e366]:
+                - text: Category 1 (หมวดหมู่ลำดับที่ 1)
+                - generic [ref=e367]: "*"
+              - button "MONITOR / จอคอมพิวเตอร์" [ref=e369] [cursor=pointer]:
+                - generic [ref=e371]: MONITOR / จอคอมพิวเตอร์
+                - img [ref=e372]
+            - generic [ref=e374]:
+              - generic [ref=e375]:
+                - text: Category 2 (หมวดหมู่ลำดับที่ 2)
+                - generic [ref=e376]: "*"
+              - button "เลือก Category 2" [ref=e378] [cursor=pointer]:
+                - generic [ref=e380]: เลือก Category 2
+                - img [ref=e381]
+        - generic [ref=e383]:
+          - generic [ref=e384]:
+            - heading "รายละเอียดค่าตัวกรองสินค้า" [level=3] [ref=e385]
+            - button "เพิ่ม Filter" [ref=e386] [cursor=pointer]:
+              - img
+              - text: เพิ่ม Filter
+          - generic [ref=e390]:
+            - generic [ref=e391]:
+              - generic [ref=e393]: "#"
+              - generic [ref=e394]: Filter name
+              - generic [ref=e395]: Filter value
+              - generic [ref=e396]: จัดการ
+            - generic [ref=e397]:
+              - button [ref=e399]:
+                - img
+              - generic [ref=e400]: "1"
+              - paragraph [ref=e402]: ชนิดพาเนล
+              - generic [ref=e405]: Panel (5)
+              - button [ref=e407] [cursor=pointer]:
+                - img
+            - generic [ref=e408]:
+              - button [ref=e410]:
+                - img
+              - generic [ref=e411]: "2"
+              - paragraph [ref=e413]: อัตรารีเฟรช
+              - generic [ref=e416]: Refresh Rate (Hz) (5)
+              - button [ref=e418] [cursor=pointer]:
+                - img
+            - generic [ref=e419]:
+              - button [ref=e421]:
+                - img
+              - generic [ref=e422]: "3"
+              - paragraph [ref=e424]: ความละเอียดจอ
+              - generic [ref=e427]: ความละเอียด (4)
+              - button [ref=e429] [cursor=pointer]:
+                - img
+            - generic [ref=e430]:
+              - button [ref=e432]:
+                - img
+              - generic [ref=e433]: "4"
+              - paragraph [ref=e435]: ขนาดจอ
+              - generic [ref=e438]: ขนาดจอ (นิ้ว) (4)
+              - button [ref=e440] [cursor=pointer]:
+                - img
+            - status [ref=e441]
+  - region "Notifications alt+T"
+  - alert [ref=e300]

@@ -1,4 +1,4 @@
-const BASE = 'https://backoffice.jibc.codelabdev.co'
+const BASE = 'https://devstorex.jibc.codelabdev.co'
 const LIST_URL = `${BASE}/store/product-manager/tags`
 const CREATE_URL = `${LIST_URL}/create`
 
@@ -6,7 +6,7 @@ describe('จัดการแท็กสินค้า (Tag)', () => {
 
   beforeEach(() => {
     cy.session('jib-admin', () => {
-      cy.loginJIB('admin00@email.com', 'password123')
+      cy.loginJIB('sirun.sun@codelabdev.co', 'test123')
     })
     cy.visit(LIST_URL)
     cy.contains('p', 'แท็กสินค้า', { timeout: 10000 }).should('be.visible')

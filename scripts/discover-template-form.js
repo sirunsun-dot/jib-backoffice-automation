@@ -11,9 +11,9 @@ const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
 
-const EMAIL = 'admin00@email.com';
-const PASSWORD = 'password123';
-const BASE_URL = 'https://backoffice.jibc.codelabdev.co';
+const EMAIL = 'sirun.sun@codelabdev.co';
+const PASSWORD = 'test123';
+const BASE_URL = 'https://devstorex.jibc.codelabdev.co';
 const TARGET_URL = `${BASE_URL}/store/product-manager/template-attributes`;
 const OUT_DIR = path.join(__dirname);
 const OUT_HTML = path.join(OUT_DIR, 'template-form.html');

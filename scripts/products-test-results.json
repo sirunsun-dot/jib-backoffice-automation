@@ -1,0 +1,10 @@
+{
+  "J-PROD-CRUD001": {
+    "actual": "สร้างสำเร็จ E2E (sku=AUTO-1781508404788)",
+    "result": "Pass"
+  },
+  "J-PROD-CR166": {
+    "actual": "Happy path save",
+    "result": "Pass"
+  }
+}

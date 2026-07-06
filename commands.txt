@@ -4,7 +4,7 @@
 
 ชุด E2E test อัตโนมัติสำหรับเว็บ Backoffice ของ JIB
 ใช้ Cypress 15 + รายงาน mochawesome
-Environment ทดสอบ: https://backoffice.jibc.codelabdev.co/
+Environment ทดสอบ: https://devstorex.jibc.codelabdev.co/
 
 
 ------------------------------------------
@@ -113,8 +113,8 @@ scripts/
   ข้อมูล Login สำหรับเทส
 ------------------------------------------
 
-  email:    admin00@email.com
-  password: password123
+  email:    sirun.sun@codelabdev.co
+  password: test123
 
 ทุก spec ใช้ cy.session('jib-admin', ...) cache session ไว้
 จึง login แค่ครั้งแรกของแต่ละไฟล์

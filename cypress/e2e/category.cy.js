@@ -1,11 +1,11 @@
-const BASE = 'https://backoffice.jibc.codelabdev.co'
+const BASE = 'https://devstorex.jibc.codelabdev.co'
 const LIST_URL = `${BASE}/store/product-manager/categories`
 
 describe('จัดการหมวดหมู่สินค้า', () => {
 
   beforeEach(() => {
     cy.session('jib-admin', () => {
-      cy.loginJIB('admin00@email.com', 'password123')
+      cy.loginJIB('sirun.sun@codelabdev.co', 'test123')
     })
     cy.visit(LIST_URL)
     cy.contains('p', 'หมวดหมู่สินค้า').should('be.visible')

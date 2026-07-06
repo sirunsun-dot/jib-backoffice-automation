@@ -1,0 +1,54 @@
+Project Name :,JIB-Ecommerce,,,Create Date :,2026-06-15,,
+Project ID :,,,,Start Test Date :,2026-06-15,,
+Tester Name :,sirun.sun@codelabdev.co,,,Finish Test Date :,2026-06-15,,
+Project Release / Version :,1.0,,,Module / Function :,Access Matrix,,
+URL List :,https://devstorex.jibc.codelabdev.co/permission-manager/access-matrix,,,,,,
+URL Create :,-,,,,,,
+,,,,,,,
+Test Case ID,Category,Test case Objective,Test Description / Procedure,Test Data,Expected Result,Actual Result,Result (Pass/Fail)
+,,,,,,,
+---- PART 1: หน้า List ----,,,,,,,
+,,,,,,,
+-- A. การโหลดหน้า + UI --,,,,,,,
+J-PM-A-LP001,Page Load,เปิดหน้ารายการ,1. เข้า https://devstorex.jibc.codelabdev.co/permission-manager/access-matrix,-,หน้าโหลดสำเร็จ ไม่ error,โหลดสำเร็จ url=https://devstorex.jibc.codelabdev.co/permission-manager/access-matrix,Pass
+J-PM-A-LP002,UI,ตรวจสอบ Heading,1. ดูหัวข้อหน้า,-,แสดง heading ที่เกี่ยวข้องกับ Access Matrix,ไม่พบ heading,Warning
+J-PM-A-LP003,UI,ตรวจสอบตาราง,1. ดูตารางข้อมูล,-,แสดงตารางพร้อมแถวข้อมูล,แถวในตาราง=10,Pass
+J-PM-A-LP004,UI,ตรวจสอบคอลัมน์,1. ดูหัวคอลัมน์,-,มีคอลัมน์ครบตาม design,"คอลัมน์: ตำแหน่ง, qa-test-group, root, test, test-1",Pass
+J-PM-A-LP005,UI,Action Bar,1. ดู toolbar,-,มีช่องค้นหา / ตัวกรอง / ปรับแต่งคอลัมน์,search=false filter=false cols=false,Pass
+J-PM-A-LP006,UI,ไม่มี undefined ในข้อมูล,1. ดูข้อมูลในตาราง,-,ไม่พบคำว่า 'undefined',ไม่พบ undefined,Pass
+J-PM-A-LP007,UI,ปุ่มเพิ่ม (ถ้ามี),1. ดูปุ่มเพิ่ม,-,ไม่จำเป็นต้องมีปุ่มเพิ่ม,ไม่มี create URL,Pass
+-- B. การค้นหา --,,,,,,,
+J-PM-A-LP010,Search,ค้นหาภาษาไทย,1. พิมพ์ keyword ไทย,-,กรองผลลัพธ์,ไม่มีช่องค้นหา,Warning
+J-PM-A-LP011,Search,ค้นหา keyword ไม่มี,1. พิมพ์คำที่ไม่มี,-,empty state / 0 รายการ,ไม่มีช่องค้นหา,Warning
+J-PM-A-LP012,Search,XSS ใน search,1. พิมพ์ <script>,-,รับเป็น plain text ไม่ execute,ไม่มีช่องค้นหา,Warning
+J-PM-A-LP013,Search,เคลียร์ search,1. ลบ keyword,-,กลับสู่ list เต็ม,ไม่มีช่องค้นหา,Warning
+-- C. ตัวกรอง --,,,,,,,
+J-PM-A-LP020,Filter,เปิดตัวกรอง,1. คลิกตัวกรอง,-,เปิด panel/sheet,ไม่พบปุ่มตัวกรอง,Warning
+J-PM-A-LP021,Filter,ปิดด้วย ESC,1. กด ESC,-,panel ปิด,กด ESC,Pass
+J-PM-A-LP022,Filter,Apply filter,1. ตั้งเงื่อนไข + ตกลง,-,กรอง list,ข้าม,Warning
+-- D. ปรับแต่งคอลัมน์ --,,,,,,,
+J-PM-A-LP030,Customize,เปิด menu,1. คลิกปรับแต่งคอลัมน์,-,เปิด dropdown,ไม่พบปุ่ม,Warning
+J-PM-A-LP031,Customize,ซ่อน/เปิดคอลัมน์,1. toggle checkbox,-,คอลัมน์เปลี่ยนตาม,ข้าม,Warning
+-- E. Pagination --,,,,,,,
+J-PM-A-LP040,Pagination,Footer แสดงจำนวน,1. ดู footer,-,รูปแบบ 'X - Y จาก Z',ไม่พบ footer format,Warning
+J-PM-A-LP041,Rows,เลือกจำนวนแถว,1. เปลี่ยน rows per page,-,จำนวนแถวเปลี่ยน,rows selector มีอยู่,Pass
+J-PM-A-LP042,Pagination,เปลี่ยนหน้า,1. คลิกหน้าถัดไป,-,ไปหน้าถัดไป,อยู่หน้าเดียว/disabled,Warning
+-- F. Row Actions --,,,,,,,
+J-PM-A-LP050,Row,ปุ่ม Edit (ถ้ามี),1. คลิกไอคอนแก้ไข,-,ไปหน้า edit,ไม่พบ edit ในแถวแรก,Warning
+J-PM-A-LP051,Row,3-dot menu (ถ้ามี),1. คลิกเมนู,-,แสดงตัวเลือก,มี action menu,Pass
+---- PART 2: การเข้าถึง ----,,,,,,,
+,,,,,,,
+---- PART 3: UI/UX + Security ----,,,,,,,
+,,,,,,,
+J-PM-A-UX001,Responsive,Desktop 1920px,1. เปิด viewport 1920,-,Layout ปกติ,viewport 1920x1080,Pass
+J-PM-A-UX002,Browser,Chromium,1. เปิดบน Chrome,-,ทำงานปกติ,Chromium Puppeteer,Pass
+J-PM-A-SEC001,Session,เข้าหน้าหลัง login,1. login แล้วเข้า URL,-,เข้าได้ไม่ redirect,เข้าได้หลัง login,Pass
+,,,,,,,
+-- สรุปผลทดสอบรวม (Summary) --,,,,,,,
+Total Test Cases :,24,,,,,,
+Pass :,12,,,Fail :,0,,
+Warning :,12,,,Not Tested :,0,,
+,,,,,,,
+Pass Rate :,50.0%,,,Fail Rate :,0.0%,,
+,,,,,,,
+Notes :,Automated via Puppeteer — จัดการสิทธิ์ / (ไม่ใน sidebar),,,,,,

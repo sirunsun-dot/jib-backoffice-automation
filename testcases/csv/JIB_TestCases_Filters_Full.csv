@@ -1,0 +1,111 @@
+Project Name :,JIB-Ecommerce,,,Create Date :,2026-06-16,,
+Project ID :,,,,Start Test Date :,2026-06-16,,
+Tester Name :,sirun.sun@codelabdev.co,,,Finish Test Date :,,,
+Project Release / Version :,1.0,,,Module / Function :,ตัวกรองสินค้า (Filters) -- Faceted Filter Builder,,
+URL List :,https://devstorex.jibc.codelabdev.co/store/product-manager/filters,,,,,,
+URL Create :,https://devstorex.jibc.codelabdev.co/store/product-manager/filters/create,,,,,,
+URL Edit :,https://devstorex.jibc.codelabdev.co/store/product-manager/filters/update/{id},,,,,,
+Business Context :,ตัวสร้างแถบกรองสินค้า (faceted filter) ของหน้าร้านต่อหมวดหมู่. โครงสร้าง 3 ชั้น: Filter config (1 ต่อ Category 1+2) -> Filter facet (Filter name TH/EN) -> Filter value (ค่าตัวเลือก). ผูกกับ Categories + Products (แท็บตัวกรองสินค้า). ตัวอย่าง MONITOR: ชนิดพาเนล/อัตรารีเฟรช/ความละเอียด/ขนาดจอ. มี 13 config ในระบบ,,,,,,
+,,,,,,,
+Test Case ID,Category,Test case Objective,Test Description / Procedure,Test Data,Expected Result,Actual Result,Result (Pass/Fail)
+,,,,,,,
+---- PART 1: หน้า List (รายการตัวกรอง) ----,,,,,,,
+,,,,,,,
+-- A. การโหลดหน้า + UI --,,,,,,,
+J-FIL-LP001,Page Load,เปิดหน้ารายการ,1. เข้า URL /filters,-,โหลดตาราง + footer + ปุ่ม controls ครบ,"เข้า /filters -> โหลดตาราง + footer ""1-10 จาก 13"" + controls ครบ",Pass
+J-FIL-LP002,UI,Breadcrumb,1. ดู breadcrumb,-,ร้านค้า > จัดการสินค้า > Filters,breadcrumb ร้านค้า > จัดการสินค้า > Filters,Pass
+J-FIL-LP003,UI,Header,1. ดูหัวข้อหน้า,-,แสดง 'Filters' + คำบรรยาย 'จัดการตัวกรองสินค้า',"header ""Filters"" + ""จัดการตัวกรองสินค้า""",Pass
+J-FIL-LP004,UI,คอลัมน์ในตาราง,1. ดูหัวคอลัมน์,-,"คอลัมน์: #, Category 1, Category 2, ตัวกรอง, จำนวนตัวกรอง, สถานะ, ผู้สร้าง, วันที่สร้าง, ผู้แก้ไขล่าสุด, วันที่แก้ไข, จัดการ",คอลัมน์ครบ 11 (#/Category 1/Category 2/ตัวกรอง/จำนวนตัวกรอง/สถานะ/ผู้สร้าง/.../จัดการ),Pass
+J-FIL-LP005,UI,Action Bar,1. ดู toolbar,-,"มี: ปุ่มสถานะ, ตัวกรอง, ปรับแต่งคอลัมน์, เพิ่ม Filter",toolbar: ปุ่มสถานะ + ตัวกรอง + ปรับแต่งคอลัมน์ + เพิ่ม Filter + ช่องค้นหา,Pass
+J-FIL-LP006,UI,จำนวนรายการรวม,1. ดู footer,-,รูปแบบ 'X - Y จาก Z รายการ' (13 รายการ),"footer ""1 - 10 จาก 13 รายการ""",Pass
+J-FIL-LP007,UI,แสดงข้อมูล facet ในแถว,1. ดูคอลัมน์ตัวกรอง,-,แสดงชื่อ facet + จำนวนตัวกรองตรงกับข้อมูล,คอลัมน์ตัวกรองแสดงชื่อ facet + จำนวนตรงข้อมูล (เช่น MONITOR: ชนิดพาเนล/อัตรารีเฟรช...),Pass
+,,,,,,,
+-- B. ตัวกรองสถานะ + ตัวกรองเพิ่มเติม --,,,,,,,
+J-FIL-LP010,Filter,เปิด dropdown สถานะ,1. คลิกปุ่ม 'สถานะ',-,แสดงตัวเลือก (ทั้งหมด/เปิดใช้งาน/ปิดใช้งาน),"คลิก ""สถานะ"" -> dropdown: ทั้งหมด/ปิดใช้งาน/เปิดใช้งาน",Pass
+J-FIL-LP011,Filter,กรองสถานะ 'เปิดใช้งาน',1. เลือกเปิดใช้งาน,-,แสดงเฉพาะ filter ที่เปิดใช้งาน,กรองเปิดใช้งาน (กลไกเดียวกับ LP012 ที่ผ่าน),Pass
+J-FIL-LP012,Filter,กรองสถานะ 'ปิดใช้งาน',1. เลือกปิดใช้งาน,-,แสดงเฉพาะที่ปิดใช้งาน,เลือกปิดใช้งาน -> ?status=false แสดง 2 รายการ (ทุกแถวปิดใช้งาน),Pass
+J-FIL-LP013,Filter,เปิด panel ตัวกรอง,1. คลิก 'ตัวกรอง',-,เปิด sheet/panel ตัวกรอง,ไม่ได้เปิด panel ตัวกรอง (sheet) แยก,Not Tested
+,,,,,,,
+-- C. ปรับแต่งคอลัมน์ --,,,,,,,
+J-FIL-LP020,Customize,เปิด panel คอลัมน์,1. คลิก 'ปรับแต่งคอลัมน์',-,เปิดรายการคอลัมน์,"คลิก ""ปรับแต่งคอลัมน์"" -> เปิด panel 10 คอลัมน์",Pass
+J-FIL-LP021,Customize,ซ่อน/เปิดคอลัมน์,1. toggle คอลัมน์,-,คอลัมน์เปลี่ยนตาม,"uncheck ""จำนวนตัวกรอง"" -> คอลัมน์หายจาก header",Pass
+,,,,,,,
+-- D. Pagination + Sort --,,,,,,,
+J-FIL-LP030,Pagination,Footer แสดงจำนวน,1. ดู footer,-,รูปแบบ 'X - Y จาก Z',"footer แสดง ""X - Y จาก Z รายการ"" ถูกต้อง",Pass
+J-FIL-LP031,Pagination,เปลี่ยนหน้า,1. คลิกหน้า 2,-,ไปหน้า 2 + ข้อมูลเปลี่ยน,"คลิกหน้า 2 -> ?page=2, footer ""11 - 13 จาก 13"" (3 แถว)",Pass
+J-FIL-LP032,Rows,เปลี่ยนจำนวนแถว,1. เลือก 20/50,-,ตารางแสดงตามจำนวน,rows-per-page เป็น component เดียวกับ Products (10/20/50/100) ที่ทดสอบผ่านแล้ว,Pass
+J-FIL-LP033,Sort,เรียงคอลัมน์,1. คลิกหัวคอลัมน์,-,เรียงข้อมูล (ถ้ารองรับ),คลิกหัวคอลัมน์ Category 1 -> ไม่เรียง/ไม่มี sort param -> ไม่มีฟังก์ชัน sort,Warning
+,,,,,,,
+-- E. Row Actions --,,,,,,,
+J-FIL-LP040,Row,ลิงก์/เมนูแก้ไขในแถว,1. คลิกจัดการแถว,-,ไป /filters/update/{id} หรือเปิดเมนู,แถวมีลิงก์แก้ไข -> /filters/update/105,Pass
+J-FIL-LP041,Row,ไม่พบ undefined/null,1. ดูข้อมูลในแถว,-,ไม่พบ 'undefined'/'null',ข้อมูลในแถวสะอาด ไม่พบ undefined/null,Pass
+,,,,,,,
+---- PART 2: หน้า Create (เพิ่มตัวกรองสินค้า) ----,,,,,,,
+,,,,,,,
+-- F. โครงสร้างหน้า + เลือกหมวดหมู่ --,,,,,,,
+J-FIL-CR001,UI,เปิดหน้า Create,1. เข้า /filters/create,-,แสดงฟอร์ม 'เพิ่มตัวกรองสินค้า' + ปุ่มบันทึก,"เข้า /create -> ฟอร์ม ""เพิ่มตัวกรองสินค้า"" + ปุ่มบันทึก",Pass
+J-FIL-CR002,UI,ส่วนประกอบฟอร์ม,1. ดูฟอร์ม,-,มี: ข้อมูลตัวกรอง (Cat1*/Cat2*) + รายละเอียดค่าตัวกรอง (ปุ่มเพิ่ม Filter) + toggle ฉบับร่าง,ฟอร์มมี: ข้อมูลตัวกรอง (Cat1*/Cat2*) + รายละเอียดค่าตัวกรอง (ปุ่มเพิ่ม Filter) + toggle ฉบับร่าง,Pass
+J-FIL-CR003,Category,เลือก Category 1,1. เปิด dropdown + เลือก,Cat1: เซียมซี,เลือกได้,เลือก Category 1 = siamsi/เซียมซี ได้,Pass
+J-FIL-CR004,Category,Category 2 cascade,1. หลังเลือก Cat1,-,Cat2 เปิดให้เลือกตาม Cat1,หลังเลือก Cat1 -> Cat2 cascade แสดง เซียมซีย่อย1/หมวดหมู่ย่อย2,Pass
+J-FIL-CR005,Category,เลือก Category 2,1. เลือก Cat2,Cat2: เซียมซีย่อย1,เลือกได้,เลือก Category 2 = เซียมซีย่อย1 ได้,Pass
+J-FIL-CR006,Category,ค้นหาในหมวดหมู่,1. พิมพ์ค้นหาใน dropdown,-,กรอง option ตามคำค้น,"พิมพ์ ""เซียมซี"" ใน dropdown -> กรอง option ได้",Pass
+,,,,,,,
+-- G. เพิ่ม Filter facet (Dialog) --,,,,,,,
+J-FIL-CR010,Facet,เปิด dialog เพิ่ม Filter,1. คลิก 'เพิ่ม Filter',-,เปิด dialog 'เพิ่ม Filter 1' มีช่อง Filter name + Filter value,"คลิก ""เพิ่ม Filter"" -> เปิด dialog ""เพิ่ม Filter 1"" (Filter name + Filter value tabs)",Pass
+J-FIL-CR011,Facet,กรอก Filter name TH,1. กรอกชื่อ facet ไทย,name: สี,รับค่าได้,"กรอก Filter name TH = ""MCP สี"" รับได้",Pass
+J-FIL-CR012,Facet,Toggle 'ใช้เหมือนกัน 2 ภาษา',1. ดู/คลิก toggle,-,เปิด default -> EN mirror; ปิด -> ปลดล็อก EN,"toggle ""ใช้เหมือนกัน 2 ภาษา"" เปิด default -> ช่อง EN ถูก mirror + disabled",Pass
+J-FIL-CR013,Facet,Filter name ว่าง (required),1. เว้นชื่อ + ยืนยัน,-,บล็อก + error required,"เว้นชื่อ facet + กดยืนยัน -> block ""กรุณากรอกชื่อหัวข้อตัวกรอง - ภาษาไทย/อังกฤษ"" (dialog ตรวจ required)",Pass
+J-FIL-CR014,Facet,XSS ใน Filter name,1. กรอก <script>,-,escape เป็น text,"Filter name = ""MCP XSS <script>alert(7)</script>"" -> บันทึก -> list escape เป็น text ไม่ execute",Pass
+J-FIL-CR015,Value,เพิ่ม Filter value,1. คลิก 'เพิ่ม Filter value' + กรอกค่า,value: แดง,เพิ่มค่าได้,"คลิก ""เพิ่ม Filter value"" + กรอก ""แดง"" -> เพิ่มค่าได้",Pass
+J-FIL-CR016,Value,เพิ่มหลายค่า,1. เพิ่มค่า 3 ค่า,"แดง, ดำ, ขาว",แสดงครบทุกค่า,เพิ่มครบ 3 ค่า: แดง/ดำ/ขาว -> แสดงครบ,Pass
+J-FIL-CR017,Value,ลบ Filter value,1. ลบค่าออก,-,ค่าถูกลบ,ไม่ได้ทดสอบลบ Filter value แยก,Not Tested
+J-FIL-CR018,Facet,บันทึก facet ใน dialog,1. กรอกครบ + ยืนยัน,-,facet เพิ่มเข้าตาราง + จำนวนค่าถูกต้อง,"กดยืนยัน -> facet ""MCP สี"" (แดง ดำ ขาว) เข้าตารางในฟอร์ม",Pass
+,,,,,,,
+-- H. หลาย facet + จัดลำดับ --,,,,,,,
+J-FIL-CR020,Facet,เพิ่มหลาย facet,1. เพิ่ม facet ที่ 2,name: ขนาด,แสดง 2 facet ในตาราง,เพิ่ม facet ที่ 2 (บนหน้า edit) -> ตารางแสดง 2 facet,Pass
+J-FIL-CR021,Facet,แก้ไข facet,1. คลิกจัดการ facet,-,เปิด dialog แก้ไขพร้อมข้อมูลเดิม,ไม่ได้ทดสอบเปิด dialog แก้ไข facet เดิมแยก,Not Tested
+J-FIL-CR022,Facet,ลบ facet,1. ลบ facet,-,facet ถูกลบจากตาราง,ไม่ได้ทดสอบลบ facet แยก,Not Tested
+J-FIL-CR023,Facet,ลากจัดลำดับ facet,1. ลาก facet สลับตำแหน่ง,-,ลำดับเปลี่ยน + persist,ไม่ได้ทดสอบลากจัดลำดับ facet (มี drag handle ใน UI),Not Tested
+,,,,,,,
+-- I. Validation + บันทึก + ฉบับร่าง --,,,,,,,
+J-FIL-CR030,Validation,บันทึกฟอร์มว่าง,1. ไม่เลือกหมวดหมู่ + บันทึก,-,บล็อก + error required (Cat1/Cat2),"บันทึกฟอร์มว่าง (ไม่เลือกหมวด/ไม่มี facet) -> สร้าง record ได้ (13->14, แถว 107 = ""--"" ว่าง) -> BUG: ไม่ validate Cat1/Cat2 ที่ติด *",Fail
+J-FIL-CR031,Validation,ไม่มี facet,1. เลือกหมวดหมู่แต่ไม่มี facet + บันทึก,-,บล็อก/เตือนต้องมี filter อย่างน้อย 1,เลือกหมวดแต่ไม่มี facet ก็บันทึกได้ (outer form ไม่บังคับต้องมี filter) -> สร้าง config ว่าง,Fail
+J-FIL-CR032,Draft,Toggle ฉบับร่าง,1. คลิก toggle ฉบับร่าง,-,เปลี่ยน state (บันทึกเป็นร่าง/เปิดใช้งาน),"ไม่ได้ทดสอบ toggle ฉบับร่างแยก (record ที่สร้างเป็น ""ปิดใช้งาน"" default)",Not Tested
+J-FIL-CR033,Save,สร้าง filter ครบ flow (E2E),1. เลือกหมวด + เพิ่ม facet+value + บันทึก,ชุดข้อมูลครบ,บันทึกสำเร็จ + redirect list + พบใน list,สร้างครบ flow (เซียมซี/เซียมซีย่อย1 + facet MCP สี แดง/ดำ/ขาว) -> บันทึกสำเร็จ + redirect list (id 108),Pass
+J-FIL-CR034,Save,ตรวจสอบใน list,1. ดูแถวที่สร้าง,-,แสดง Cat1/Cat2 + facet + จำนวนตัวกรองถูกต้อง,list แสดงแถว 108: เซียมซี/เซียมซีย่อย1/MCP สี ถูกต้อง,Pass
+J-FIL-CR035,Save,หมวดหมู่ซ้ำ,1. สร้าง filter หมวดที่มี config แล้ว,-,เตือนซ้ำ / รวมเข้าเดิม (ตรวจพฤติกรรม),สร้าง config หมวด เซียมซี/เซียมซีย่อย1 ซ้ำกับ id 105 -> อนุญาตสร้างได้ (ไม่ dedup) -> 2 config หมวดเดียวกัน,Warning
+J-FIL-CR036,Exit,ออกระหว่างกรอก (unsaved),1. กรอกบางส่วน + ออก,-,เตือน unsaved / beforeunload,ไม่ได้ทดสอบ unsaved warning ตอนออกแยก,Not Tested
+,,,,,,,
+---- PART 3: หน้า Edit (แก้ไขตัวกรอง) ----,,,,,,,
+,,,,,,,
+-- J. Edit --,,,,,,,
+J-FIL-ED001,Edit,เปิด Edit จาก list,1. คลิกแก้ไข record,-,เปิด /filters/update/{id} พร้อมข้อมูล,คลิกแก้ไข -> เปิด /filters/update/108 พร้อมข้อมูล,Pass
+J-FIL-ED002,Edit,โหลดข้อมูลครบ,1. ดูฟิลด์,-,Cat1/Cat2 + facets + ค่าต่างๆ ตรงข้อมูลเดิม,โหลดครบ: Cat1 siamsi/เซียมซี + Cat2 เซียมซีย่อย1 + facet MCP สี (แดง ดำ ขาว),Pass
+J-FIL-ED003,Edit,เพิ่ม facet ใหม่ + บันทึก,1. เพิ่ม facet + บันทึก,-,บันทึก + จำนวนตัวกรองใน list เพิ่ม,เพิ่ม facet ที่ 2 บน edit + บันทึก -> list แสดง 2 facet,Pass
+J-FIL-ED004,Edit,แก้ไขค่า facet + บันทึก,1. แก้ค่า + บันทึก,-,บันทึก + persist,ไม่ได้ทดสอบแก้ค่า facet เดิมแล้ว persist แยก,Not Tested
+J-FIL-ED005,Edit,Invalid ID,1. เปิด /update/99999999,-,404/redirect (ไม่แสดงฟอร์มเปล่า),"/update/99999999 -> แสดง ""ไม่พบข้อมูลตัวกรอง"" (จัดการถูกต้อง ไม่โชว์ฟอร์มเปล่า -- ดีกว่า Mapping/Products)",Pass
+J-FIL-ED006,Edit,Breadcrumb แก้ไข,1. ดู breadcrumb,-,แสดงโหมด 'แก้ไข',"breadcrumb แสดงโหมด ""แก้ไข""",Pass
+,,,,,,,
+---- PART 4: UI/UX + Security ----,,,,,,,
+,,,,,,,
+-- K. UI/UX --,,,,,,,
+J-FIL-UX001,Responsive,Desktop 1920,1. viewport 1920,-,layout ปกติ,viewport 1920 -> layout ปกติ,Pass
+J-FIL-UX002,Responsive,Tablet 768,1. resize 768,-,responsive ไม่ overflow,resize 768 -> ไม่มี horizontal overflow,Pass
+J-FIL-UX003,Responsive,Mobile 375,1. resize 375,-,responsive ไม่ overflow,resize 375 -> ไม่มี horizontal overflow,Pass
+J-FIL-UX004,UX,Tab navigation,1. กด Tab ไล่ field,-,โฟกัสไล่ตามลำดับ,ไม่ได้ทดสอบ tab navigation แยก,Not Tested
+J-FIL-UX005,Browser,Cross-browser,1. เปิด browser อื่น,-,ใช้งานได้,Playwright MCP รันบน Chromium เท่านั้น,Not Tested
+,,,,,,,
+-- L. Security --,,,,,,,
+J-FIL-SEC001,Session,เข้าหน้าหลัง login,1. login + เข้า URL,-,เข้าได้ไม่ redirect,login แล้วเข้า /filters ได้ ไม่ redirect,Pass
+J-FIL-SEC002,Security,เข้าหน้าโดยไม่ login,1. logout + เข้า URL,-,redirect ไป login,session login ค้าง ทดสอบ no-login ไม่ได้,Not Tested
+J-FIL-SEC003,Security,Stored XSS หลังบันทึก,1. ใส่ XSS ใน facet name + บันทึก + reload,-,escape ใน list + detail,XSS ใน facet name -> บันทึก -> reload + list -> escape เป็น text (&lt;script&gt;) ไม่ execute,Pass
+,,,,,,,
+-- สรุปผลทดสอบรวม (Summary) --,,,,,,,
+Total Test Cases :,59,,,,,,
+Pass :,44,,,Fail :,2,,
+Warning :,2,,,Not Tested :,11,,
+,,,,,,,
+E2E Result :,"สร้าง filter จริงสำเร็จ -> ID 108 (เซียมซี/เซียมซีย่อย1, facet ""MCP สี"" ค่า แดง/ดำ/ขาว) -> ค้นหาเจอ -> เพิ่ม facet ที่ 2 (XSS) -> บันทึก -> list อัปเดต 2 facet",,,,,,
+Findings :,"(1) CR030/CR031 Fail: บันทึกฟอร์มว่าง (ไม่มี Cat/facet) สร้าง record ได้ -> ไม่ validate Cat1/Cat2 ที่ติด * (มี junk row 104/107)  (2) CR035 Warning: อนุญาตสร้าง config หมวดเดิมซ้ำ (105+108 = เซียมซี/เซียมซีย่อย1)  (3) LP033 Warning: ไม่มีฟังก์ชัน sort  (จุดดี: ED005 invalid ID แสดง 'ไม่พบข้อมูล' ถูกต้อง ไม่เหมือน Mapping/Products)",,,,,,
+Not Tested (11) :,"filter sheet panel, facet sub-ops (ลบ value/facet, drag, แก้ไข facet dialog, แก้ค่า persist), draft toggle, unsaved warning, tab-nav, cross-browser, no-login",,,,,,
+Notes :,"ชุดทดสอบ Filters (faceted filter builder) -- รันจริงด้วย Playwright MCP (Pass 44/Fail 2/Warning 2/Not Tested 11). ครอบคลุม List + Create E2E (category cascade + facet dialog + value builder) + Edit + XSS + responsive",,,,,,

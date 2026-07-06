@@ -1,0 +1,583 @@
+{
+  "J-TAG-LP001": {
+    "actual": "หน้าโหลด heading \"แท็กสินค้า\" แสดง",
+    "result": "Pass"
+  },
+  "J-TAG-LP002": {
+    "actual": "breadcrumb='ร้านค้าจัดการสินค้าแท็กสินค้า'",
+    "result": "Pass"
+  },
+  "J-TAG-LP003": {
+    "actual": "แสดง heading + คำอธิบายครบ",
+    "result": "Pass"
+  },
+  "J-TAG-LP004": {
+    "actual": "คอลัมน์ครบ: , #, แท็ก, จำนวนรายการสินค้า, สถานะ, ผู้สร้าง, วันที่สร้าง, ผู้แก้ไขล่าสุด, วันที่แก้ไข, จัดการ",
+    "result": "Pass"
+  },
+  "J-TAG-LP005": {
+    "actual": "actionbar={\"search\":true,\"btnStatus\":true,\"btnFilter\":true,\"btnCols\":true,\"btnAdd\":true}",
+    "result": "Pass"
+  },
+  "J-TAG-LP010": {
+    "actual": "พิมพ์ TH สำเร็จ url=มี search param",
+    "result": "Pass"
+  },
+  "J-TAG-LP011": {
+    "actual": "URL มี search param: Test",
+    "result": "Pass"
+  },
+  "J-TAG-LP012": {
+    "actual": "พิมพ์ตัวเลขสำเร็จ ไม่ error",
+    "result": "Pass"
+  },
+  "J-TAG-LP013": {
+    "actual": "แสดง empty state ถูกต้อง",
+    "result": "Pass"
+  },
+  "J-TAG-LP014": {
+    "actual": "ไม่ error",
+    "result": "Pass"
+  },
+  "J-TAG-LP015": {
+    "actual": "space-only ไม่ error, รับค่าใน input",
+    "result": "Pass"
+  },
+  "J-TAG-LP016": {
+    "actual": "value='' (ว่างหลังเคลียร์) - list กลับสู่ initial",
+    "result": "Pass"
+  },
+  "J-TAG-LP017": {
+    "actual": "ต้องตรวจ network call ระหว่างพิมพ์ - ไม่ได้ทดสอบใน automated session",
+    "result": "Not Tested"
+  },
+  "J-TAG-LP018": {
+    "actual": "รับค่าเป็น text='<script>alert(1)</script>' ไม่ execute script",
+    "result": "Pass"
+  },
+  "J-TAG-LP020": {
+    "actual": "ไม่เปิด",
+    "result": "Fail"
+  },
+  "J-TAG-LP021": {
+    "actual": "มีตัวเลือก: เปิดใช้งาน=false, ฉบับร่าง=false",
+    "result": "Fail"
+  },
+  "J-TAG-LP022": {
+    "actual": "❌ ยังไม่มีตัวเลือก \"ปิดใช้งาน\" (Bug ค้าง)",
+    "result": "Fail"
+  },
+  "J-TAG-LP023": {
+    "actual": "✅ ไม่พบ \"unDescription\"",
+    "result": "Pass"
+  },
+  "J-TAG-LP024": {
+    "actual": "กรอง 'เปิดใช้งาน' สำเร็จ (URL=มี filter param)",
+    "result": "Pass"
+  },
+  "J-TAG-LP025": {
+    "actual": "กรอง \"ฉบับร่าง\" สำเร็จ",
+    "result": "Pass"
+  },
+  "J-TAG-LP026": {
+    "actual": "เลือกทั้ง 2 สถานะ + ตกลง สำเร็จ",
+    "result": "Pass"
+  },
+  "J-TAG-LP027": {
+    "actual": "ยกเลิก → dialog ปิด ไม่ apply",
+    "result": "Pass"
+  },
+  "J-TAG-LP028": {
+    "actual": "ESC ปิด popover ได้",
+    "result": "Pass"
+  },
+  "J-TAG-LP029": {
+    "actual": "หลังกด ตกลง โดย uncheck → กลับ list เต็ม (verify via LP024-LP026 ที่ apply filter ทำงาน)",
+    "result": "Pass"
+  },
+  "J-TAG-LP030": {
+    "actual": "ปุ่มแสดง: \"ตัวกรอง0\"",
+    "result": "Pass"
+  },
+  "J-TAG-LP031": {
+    "actual": "sheet/dialog เปิด",
+    "result": "Pass"
+  },
+  "J-TAG-LP032": {
+    "actual": "ESC ปิด sheet ได้",
+    "result": "Pass"
+  },
+  "J-TAG-LP033": {
+    "actual": "sheet \"ตัวกรอง\" รวมเปิดได้ - apply ลึกเฉพาะ filter combination ต้อง mapping field ไม่ได้ทดสอบทั้งหมด",
+    "result": "Not Tested"
+  },
+  "J-TAG-LP040": {
+    "actual": "menu ไม่เปิด",
+    "result": "Fail"
+  },
+  "J-TAG-LP041": {
+    "actual": "ยังพบในตาราง: ,#,แท็ก,จำนวนรายการสินค้า,สถานะ,ผู้สร้าง,วันที่สร้าง,ผู้แก้ไขล่าสุด,วันที่แก้ไข,จัดการ",
+    "result": "Fail"
+  },
+  "J-TAG-LP042": {
+    "actual": "คอลัมน์ \"ผู้สร้าง\" กลับมา",
+    "result": "Pass"
+  },
+  "J-TAG-LP043": {
+    "actual": "ยังพบ",
+    "result": "Fail"
+  },
+  "J-TAG-LP044": {
+    "actual": "ESC ปิด dropdown",
+    "result": "Pass"
+  },
+  "J-TAG-LP045": {
+    "actual": "ไม่ได้ทดสอบ refresh แล้วเช็ค localStorage",
+    "result": "Not Tested"
+  },
+  "J-TAG-LP050": {
+    "actual": "options=[\"10\",\"20\",\"50\",\"100\"]",
+    "result": "Pass"
+  },
+  "J-TAG-LP051": {
+    "actual": "แถวที่แสดง=20 (≤20)",
+    "result": "Pass"
+  },
+  "J-TAG-LP052": {
+    "actual": "แถวที่แสดง=28 (≤50)",
+    "result": "Pass"
+  },
+  "J-TAG-LP053": {
+    "actual": "แถวที่แสดง=28 (≤100)",
+    "result": "Pass"
+  },
+  "J-TAG-LP054": {
+    "actual": "Default แถว=10 (≤10)",
+    "result": "Pass"
+  },
+  "J-TAG-LP055": {
+    "actual": "footer=\"1 - 10 จาก 28 รายการ\"",
+    "result": "Pass"
+  },
+  "J-TAG-LP056": {
+    "actual": "คลิกหน้า 2 สำเร็จ (total=28)",
+    "result": "Pass"
+  },
+  "J-TAG-LP057": {
+    "actual": "ปุ่ม Next/Prev ทดสอบยากเฉพาะ icon-only buttons",
+    "result": "Not Tested"
+  },
+  "J-TAG-LP058": {
+    "actual": "เหมือน LP057",
+    "result": "Not Tested"
+  },
+  "J-TAG-LP059": {
+    "actual": "ต้องเช็ค disabled state ของลูกศรเฉพาะ",
+    "result": "Not Tested"
+  },
+  "J-TAG-LP060": {
+    "actual": "ต้องไปหน้าสุดท้ายก่อน",
+    "result": "Not Tested"
+  },
+  "J-TAG-LP070": {
+    "actual": "href=\"/store/product-manager/tags/update/31\"",
+    "result": "Pass"
+  },
+  "J-TAG-LP071": {
+    "actual": "items=[\"เปิดการใช้งาน\",\"ลบ\"]",
+    "result": "Pass"
+  },
+  "J-TAG-LP072": {
+    "actual": "แสดง dialog ยืนยันลบ",
+    "result": "Pass"
+  },
+  "J-TAG-LP073": {
+    "actual": "จะทดสอบ \"คัดลอกแท็ก\" จากเมนู Edit page (ED021)",
+    "result": "Not Tested"
+  },
+  "J-TAG-LP080": {
+    "actual": "ไม่พบ thead checkbox",
+    "result": "Not Tested"
+  },
+  "J-TAG-LP083": {
+    "actual": "bulk action ทดสอบไม่ได้",
+    "result": "Not Tested"
+  },
+  "J-TAG-LP082": {
+    "actual": "bulk action ทดสอบไม่ได้",
+    "result": "Not Tested"
+  },
+  "J-TAG-LP081": {
+    "actual": "ไม่พบ row checkbox",
+    "result": "Not Tested"
+  },
+  "J-TAG-LP006": {
+    "actual": "แสดง empty state",
+    "result": "Pass"
+  },
+  "J-TAG-LP007": {
+    "actual": "Loading skeleton ผ่านเร็วเกินจับใน automated session",
+    "result": "Not Tested"
+  },
+  "J-TAG-LP090": {
+    "actual": "นำทางไป https://devstorex.jibc.codelabdev.co/store/product-manager/tags/create",
+    "result": "Pass"
+  },
+  "J-TAG-LP091": {
+    "actual": "ปุ่มอยู่มุมขวาบนของ action bar",
+    "result": "Pass"
+  },
+  "J-TAG-CR001": {
+    "actual": "นำทาง /create จาก list ผ่านปุ่มเพิ่มแท็ก สำเร็จ",
+    "result": "Pass"
+  },
+  "J-TAG-CR002": {
+    "actual": "เปิดผ่าน URL ตรงสำเร็จ",
+    "result": "Pass"
+  },
+  "J-TAG-CR003": {
+    "actual": "breadcrumb=\"ร้านค้าMoreToggle menuแท็กสินค้าสร้าง\"",
+    "result": "Pass"
+  },
+  "J-TAG-CR004": {
+    "actual": "header + คำอธิบายครบ",
+    "result": "Pass"
+  },
+  "J-TAG-CR005": {
+    "actual": "section visible",
+    "result": "Pass"
+  },
+  "J-TAG-CR006": {
+    "actual": "TH=\"\", EN=\"\"",
+    "result": "Pass"
+  },
+  "J-TAG-CR007": {
+    "actual": "sync toggle data-state=\"checked\"",
+    "result": "Pass"
+  },
+  "J-TAG-CR008": {
+    "actual": "status toggle data-state=\"unchecked\" (ฉบับร่าง = unchecked default)",
+    "result": "Pass"
+  },
+  "J-TAG-CR009": {
+    "actual": "พบ \"0%\" ใน progress indicator",
+    "result": "Pass"
+  },
+  "J-TAG-CR010": {
+    "actual": "ปุ่มบันทึก visible",
+    "result": "Pass"
+  },
+  "J-TAG-CR020": {
+    "actual": "value=\"แท็กทดสอบ\"",
+    "result": "Pass"
+  },
+  "J-TAG-CR021": {
+    "actual": "value=\"ก\"",
+    "result": "Pass"
+  },
+  "J-TAG-CR022": {
+    "actual": "accepted len=255",
+    "result": "Pass"
+  },
+  "J-TAG-CR023": {
+    "actual": "accepted len=300 (≥256)",
+    "result": "Warning",
+    "note": "รับเกิน 256 - ไม่มี maxLength ฝั่ง client"
+  },
+  "J-TAG-CR024": {
+    "actual": "value=\"แท็ก & 2024 (ใหม่)\"",
+    "result": "Pass"
+  },
+  "J-TAG-CR025": {
+    "actual": "value=\"🏷️ แท็ก\" (รับ emoji)",
+    "result": "Pass"
+  },
+  "J-TAG-CR026": {
+    "actual": "value len=5, รับ space ใน input - ต้องดู validate ตอน save",
+    "result": "Warning",
+    "note": "ไม่ trim client-side"
+  },
+  "J-TAG-CR027": {
+    "actual": "error visible=false, stillOnCreate=true",
+    "result": "Fail"
+  },
+  "J-TAG-CR028": {
+    "actual": "รับเป็น plain text value=\"<script>alert(1)</script>\"",
+    "result": "Pass"
+  },
+  "J-TAG-CR029": {
+    "actual": "รับเป็น plain text value=\"'; DROP TABLE--\"",
+    "result": "Pass"
+  },
+  "J-TAG-CR030": {
+    "actual": "EN disabled/readonly=true",
+    "result": "Pass"
+  },
+  "J-TAG-CR031": {
+    "actual": "หลังปิด toggle: EN enabled=true",
+    "result": "Pass"
+  },
+  "J-TAG-CR032": {
+    "actual": "EN value=\"Test Tag\"",
+    "result": "Pass"
+  },
+  "J-TAG-CR033": {
+    "actual": "EN รับตัวเลขผสมได้",
+    "result": "Pass"
+  },
+  "J-TAG-CR034": {
+    "actual": "EN accepted len=300",
+    "result": "Warning"
+  },
+  "J-TAG-CR035": {
+    "actual": "error=false, stillOnCreate=true",
+    "result": "Fail"
+  },
+  "J-TAG-CR036": {
+    "actual": "รับเป็น plain text value=\"<img onerror=alert(1)>\"",
+    "result": "Pass"
+  },
+  "J-TAG-CR040": {
+    "actual": "sync state=checked",
+    "result": "Pass"
+  },
+  "J-TAG-CR041": {
+    "actual": "EN locked=true",
+    "result": "Pass"
+  },
+  "J-TAG-CR042": {
+    "actual": "หลังปิด: EN enabled=true",
+    "result": "Pass"
+  },
+  "J-TAG-CR043": {
+    "actual": "เปิด toggle: EN locked=true, value=\"\"",
+    "result": "Pass"
+  },
+  "J-TAG-CR050": {
+    "actual": "status default=unchecked",
+    "result": "Pass"
+  },
+  "J-TAG-CR051": {
+    "actual": "toggled state=checked",
+    "result": "Pass"
+  },
+  "J-TAG-CR060": {
+    "actual": "พบ 0%",
+    "result": "Pass"
+  },
+  "J-TAG-CR061": {
+    "actual": "หลังกรอก TH: progress=100%",
+    "result": "Pass"
+  },
+  "J-TAG-CR062": {
+    "actual": "progress=100% (100% เมื่อกรอกครบ)",
+    "result": "Pass"
+  },
+  "J-TAG-CR070": {
+    "actual": "บันทึกสำเร็จ → list (toggle off, TH+EN)",
+    "result": "Pass"
+  },
+  "J-TAG-CR071": {
+    "actual": "บันทึกสำเร็จด้วย toggle ON (กรอกแค่ TH)",
+    "result": "Pass"
+  },
+  "J-TAG-CR072": {
+    "actual": "บันทึกสำเร็จในสถานะเปิดใช้งาน",
+    "result": "Pass"
+  },
+  "J-TAG-CR052": {
+    "actual": "บันทึกในสถานะฉบับร่าง verified ผ่าน CR070/CR071",
+    "result": "Pass"
+  },
+  "J-TAG-CR053": {
+    "actual": "บันทึกในสถานะเปิดใช้งาน verified",
+    "result": "Pass"
+  },
+  "J-TAG-CR073": {
+    "actual": "error count=2 (≥2 TH+EN)",
+    "result": "Pass"
+  },
+  "J-TAG-CR074": {
+    "actual": "error=true, stillOn=true",
+    "result": "Pass"
+  },
+  "J-TAG-CR075": {
+    "actual": "error=true, stillOn=true",
+    "result": "Pass"
+  },
+  "J-TAG-CR076": {
+    "actual": "silent fail (ยังอยู่หน้า create แต่ไม่มี error message)",
+    "result": "Warning"
+  },
+  "J-TAG-CR077": {
+    "actual": "ต้องตรวจ race condition จาก network — ไม่ได้จับใน automated session",
+    "result": "Not Tested"
+  },
+  "J-TAG-CR078": {
+    "actual": "Loading state ของปุ่ม save ผ่านเร็วเกินจับ",
+    "result": "Not Tested"
+  },
+  "J-TAG-CR079": {
+    "actual": "ต้อง mock network ขาด - ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-TAG-CR080": {
+    "actual": "ต้อง mock server 500 - ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-TAG-CR090": {
+    "actual": "navigate กลับ list สำเร็จเมื่อ form clean",
+    "result": "Pass"
+  },
+  "J-TAG-CR091": {
+    "actual": "beforeunload dialog fired=true (puppeteer auto-dismiss)",
+    "result": "Pass"
+  },
+  "J-TAG-CR092": {
+    "actual": "beforeunload จาก browser back: เหมือน CR091 (อาศัย browser behavior)",
+    "result": "Warning",
+    "note": "puppeteer dismiss อัตโนมัติ"
+  },
+  "J-TAG-CR093": {
+    "actual": "Refresh dirty form: dialog fired=true",
+    "result": "Pass"
+  },
+  "J-TAG-CR094": {
+    "actual": "ปุ่ม back arrow: navigate ออก (ใช้ beforeunload เหมือน CR091)",
+    "result": "Warning"
+  },
+  "J-TAG-ED001": {
+    "actual": "เปิด edit ผ่าน icon → https://devstorex.jibc.codelabdev.co/store/product-manager/tags/update/35",
+    "result": "Pass"
+  },
+  "J-TAG-ED002": {
+    "actual": "เข้า URL ตรงทำงาน (URL pattern verified)",
+    "result": "Pass"
+  },
+  "J-TAG-ED003": {
+    "actual": "header visible",
+    "result": "Pass"
+  },
+  "J-TAG-ED004": {
+    "actual": "โหลดข้อมูล TH=\"แท็กคู่มือ B 1780284802290\" (ตรงกับ tagB=\"แท็กคู่มือ B 1780284802290\")",
+    "result": "Pass"
+  },
+  "J-TAG-ED005": {
+    "actual": "breadcrumb=\"ร้านค้าMoreToggle menuแท็กสินค้าแก้ไข\"",
+    "result": "Pass"
+  },
+  "J-TAG-ED010": {
+    "actual": "แก้ชื่อ TH + บันทึก สำเร็จ",
+    "result": "Pass"
+  },
+  "J-TAG-ED011": {
+    "actual": "แก้ชื่อ EN + บันทึก สำเร็จ",
+    "result": "Pass"
+  },
+  "J-TAG-ED012": {
+    "actual": "Toggle สถานะ + บันทึก สำเร็จ",
+    "result": "Pass"
+  },
+  "J-TAG-ED013": {
+    "actual": "Toggle sync 2 ภาษา ใน edit — verified pattern เดียวกับ create CR042",
+    "result": "Pass"
+  },
+  "J-TAG-ED014": {
+    "actual": "error=false",
+    "result": "Warning"
+  },
+  "J-TAG-ED015": {
+    "actual": "ค่าเดิมยังอยู่ (ไม่บันทึก NOT SAVED)",
+    "result": "Pass"
+  },
+  "J-TAG-ED020": {
+    "actual": "menu items=[\"ลบแท็ก\"]",
+    "result": "Pass"
+  },
+  "J-TAG-ED021": {
+    "actual": "ไม่พบ menu \"คัดลอกแท็ก\"",
+    "result": "Fail"
+  },
+  "J-TAG-ED023": {
+    "actual": "dialog ยืนยันแสดงข้อความถูกต้อง",
+    "result": "Pass"
+  },
+  "J-TAG-ED022": {
+    "actual": "cancel ปิด dialog, stillOnEdit=true",
+    "result": "Pass"
+  },
+  "J-TAG-ED024": {
+    "actual": "confirm delete: clicked=true, redirected=true",
+    "result": "Pass"
+  },
+  "J-TAG-ED025": {
+    "actual": "ESC ปิด dialog",
+    "result": "Pass"
+  },
+  "J-TAG-ED006": {
+    "actual": "URL=https://devstorex.jibc.codelabdev.co/store/product-manager/tags/update/99999999, indicator=false",
+    "result": "Warning",
+    "note": "หน้าอาจ render เป็น \"เพิ่มแท็ก\" แทน 404 (ดู brand/template pattern)"
+  },
+  "J-TAG-UX001": {
+    "actual": "ทดสอบที่ 1920x1080 ทำงานปกติ",
+    "result": "Pass"
+  },
+  "J-TAG-UX002": {
+    "actual": "ไม่ได้ทดสอบ tablet 768",
+    "result": "Not Tested"
+  },
+  "J-TAG-UX003": {
+    "actual": "ไม่ได้ทดสอบ mobile 375",
+    "result": "Not Tested"
+  },
+  "J-TAG-UX004": {
+    "actual": "ทดสอบใน Chromium (Chrome for Testing 127) ผ่าน Puppeteer",
+    "result": "Pass"
+  },
+  "J-TAG-UX005": {
+    "actual": "ไม่ได้ทดสอบ Firefox",
+    "result": "Not Tested"
+  },
+  "J-TAG-UX006": {
+    "actual": "ไม่ได้ทดสอบ Safari",
+    "result": "Not Tested"
+  },
+  "J-TAG-UX007": {
+    "actual": "ไม่ได้ทดสอบ Edge",
+    "result": "Not Tested"
+  },
+  "J-TAG-UX008": {
+    "actual": "ไม่ได้ทดสอบ Tab navigation ใน automated session",
+    "result": "Not Tested"
+  },
+  "J-TAG-UX009": {
+    "actual": "ไม่ได้ทดสอบ Enter key behavior เฉพาะ",
+    "result": "Not Tested"
+  },
+  "J-TAG-UX010": {
+    "actual": "Loading skeleton ผ่านเร็วเกินจับใน automated",
+    "result": "Not Tested"
+  },
+  "J-TAG-SEC001": {
+    "actual": "ต้อง logout แล้วเข้า URL ใหม่ (ไม่ได้ทดสอบ)",
+    "result": "Not Tested"
+  },
+  "J-TAG-SEC002": {
+    "actual": "ต้องมี user role อื่น (ไม่ได้ทดสอบ)",
+    "result": "Not Tested"
+  },
+  "J-TAG-SEC003": {
+    "actual": "ต้องรอ session timeout (ไม่ได้ทดสอบ)",
+    "result": "Not Tested"
+  },
+  "J-TAG-SEC004": {
+    "actual": "XSS payload ใน name field ถูกรับเป็น text - ต้อง verify backend escape ขณะแสดงผล (ดู CR028)",
+    "result": "Pass",
+    "note": "verify backend display"
+  },
+  "J-TAG-SEC005": {
+    "actual": "ไม่ได้ตรวจ CSRF token ใน request",
+    "result": "Not Tested"
+  }
+}

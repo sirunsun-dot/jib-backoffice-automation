@@ -1,0 +1,52 @@
+Project Name :,JIB-Ecommerce,,,Create Date :,2026-07-02,,
+Project ID :,,,,Start Test Date :,2026-07-02,,
+Tester Name :,sirun.sun@codelabdev.co,,,Finish Test Date :,2026-07-02,,
+Project Release / Version :,1.0,,,Module / Function :,จัดการธนาคาร (Installment Banks),,
+URL List :,https://devstorex.jibc.codelabdev.co/store/installment/installment-banks,,,,,,
+URL Create :,-,,,,,,
+,,,,,,,
+Test Case ID,Category,Test case Objective,Test Description / Procedure,Test Data,Expected Result,Actual Result,Result (Pass/Fail)
+,,,,,,,
+---- PART 1: หน้า List — จัดการธนาคาร ----,,,,,,,
+,,,,,,,
+,,,,-,,ยังไม่ได้รัน automated test,Not Tested
+-- A. การโหลดหน้า + UI --,,,,,,,
+J-IBK-LP001,Page Load,เปิดหน้ารายการ,1. เข้า /store/installment/installment-banks,-,หน้าโหลดสำเร็จ,หน้า list โหลดสำเร็จ,Pass
+J-IBK-LP002,UI,Heading,1. ดูหัวข้อหน้า,-,แสดง heading เกี่ยวกับธนาคาร/ผู้ให้บริการ,"heading=""""",Warning
+J-IBK-LP003,UI,คอลัมน์ตาราง,1. ดู thead,-,"#, ธนาคาร/ผู้ให้บริการ, อัตราดอกเบี้ย, สถานะ, ผู้แก้ไข, วันที่แก้ไข, จัดการ",คอลัมน์ครบ (7),Pass
+J-IBK-LP004,UI,จำนวนแถว,1. นับ tbody tr,-,"มีธนาคารล่วงหน้า ≥ 4 (kbank, ktc, ktc_proud, kcc)",แถว=4,Pass
+J-IBK-LP005,UI,Action bar,1. ดู toolbar,-,"ค้นหา, ตัวกรอง, ปรับแต่งคอลัมน์","actionbar={""search"":true,""filter"":true,""cols"":true,""add"":false}",Pass
+J-IBK-LP006,UI,ไม่มีปุ่มเพิ่ม,1. ตรวจปุ่มสร้าง,-,ไม่มี create — master data,ไม่มีปุ่มเพิ่ม — master data ล่วงหน้า,Pass
+J-IBK-LP007,UI,ข้อมูลธนาคาร,1. ดูแถวในตาราง,-,แสดง code + อัตราดอกเบี้ย + สถานะ,"records=[""1 kcc 1.5% เปิด ศส ศิรัณย์ สุนันทศิลป์ 2026-07-02 14:21:07"",""2 ktc_proud 0% เปิด AZ admin zero 2026-07-01 11:49:24"",""3 ktc 0% เปิด AZ admin zero 2026-07-01 11:49:20"",""4 kbank 1.25% เปิด ศส ศิรัณย์ สุนันทศิลป์ 2026-07-02 14:11:49""]",Pass
+-- B. การค้นหา --,,,,,,,
+J-IBK-LP010,Search,ค้นหา kbank,1. พิมพ์ kbank,-,กรองพบ kbank,ค้นหา kbank พบ,Pass
+J-IBK-LP011,Search,คำไม่มี,1. พิมพ์คำสุ่ม,-,empty state,empty search OK,Pass
+J-IBK-LP012,Search,เคลียร์,1. ลบ keyword,-,กลับ list เต็ม,เคลียร์ search,Pass
+-- C. ตัวกรอง + คอลัมน์ --,,,,,,,
+J-IBK-LP020,Filter,เปิดตัวกรอง,1. คลิกตัวกรอง,-,sheet เปิด,sheet เปิด,Pass
+J-IBK-LP021,Filter,ESC ปิด,1. กด ESC,-,sheet ปิด,ESC ปิด,Pass
+J-IBK-LP030,Customize,ปรับแต่งคอลัมน์,1. คลิกปรับแต่งคอลัมน์,-,menu เปิด,menu เปิด,Pass
+J-IBK-LP031,Customize,ปิด menu,1. ESC,-,ปิดได้,ปิด menu,Pass
+-- D. Pagination + Edit link --,,,,,,,
+J-IBK-LP040,Pagination,Footer,1. ดู footer,-,รูปแบบ X - Y จาก Z,"footer=""1 - 4 จาก 4""",Pass
+J-IBK-LP050,Row,ลิงก์แก้ไข,1. ดูคอลัมน์จัดการ,-,มี /installment-banks/update/{id},"edit href=""/store/installment/installment-banks/update/4""",Pass
+J-IBK-LP060,Negative,ไม่มีหน้า Create,1. เข้า /create,-,404 หรือ redirect,create URL → 404/redirect,Pass
+---- PART 2: หน้า Edit ----,,,,,,,
+,,,,,,,
+,,,,-,,ยังไม่ได้รัน automated test,Not Tested
+J-IBK-ED001,Edit,เปิดหน้าแก้ไข,1. คลิกแก้ไขจาก list,-,แสดงฟอร์ม edit,เปิด edit id=4,Pass
+J-IBK-ED002,Edit,รหัสระบบ (code),1. ดู input code,-,readonly — kbank/ktc/kcc/ktc_proud,"code=""kcc"" (readonly)",Pass
+J-IBK-ED003,Edit,ฟิลด์หลัก,1. ดูฟอร์ม,-,"ชื่อ TH/EN, ดอกเบี้ยบัตรเครดิต",TH=true EN=true rate=true,Pass
+J-IBK-ED004,Edit,Sync TH/EN,1. ดู toggle sync,-,มี toggle ใช้เหมือนกันทั้ง 2 ภาษา,sync TH/EN default=checked,Pass
+J-IBK-ED005,Edit,สถานะ,1. ดู switch สถานะ,-,เปิด/ปิดใช้งานได้,status switch=checked,Pass
+J-IBK-ED006,Edit,โลโก้ธนาคาร,1. ดูส่วนอัปโหลด,-,อัปโหลดไฟล์หรือแนบลิงก์,มีส่วนอัปโหลดโลโก้,Pass
+J-IBK-ED010,Validation,ดอกเบี้ยว่าง,1. ลบดอกเบี้ย + บันทึก,-,แสดง validation error,บันทึกผ่าน/ไม่มี error,Warning
+J-IBK-ED020,Save,บันทึกแก้ไข,1. เปลี่ยนอัตราดอกเบี้ย + บันทึก,-,redirect กลับ list + ค่าถูกบันทึก,"Waiting for selector `input[placeholder=""0""]` failed",Fail
+J-IBK-ED021,Save,verify หลัง reopen,1. เปิด edit อีกครั้ง,-,ค่าดอกเบี้ยตรงกับที่บันทึก,skip,Warning
+J-IBK-ED030,Negative,Invalid ID,1. เข้า /update/99999999,-,404 หรือข้อความไม่พบ,invalid id indicator=true url=https://devstorex.jibc.codelabdev.co/store/installment/installment-banks/update/99999999,Pass
+J-IBK-ED031,Data,ID mapping,1. เปรียบเทียบ id กับ code,-,บันทึก mapping id→code (ลำดับ list ≠ id),"id→code mapping: 1=kbank, 2=ktc, 3=ktc_proud, 4=kcc",Pass
+,,,,,,,
+-- สรุปผลทดสอบรวม (Summary) --,,,,,,,
+Total Test Cases :,28,,,,,,
+Pass :,24,,,Fail :,1,,
+Warning :,3,,,Not Tested :,2,,

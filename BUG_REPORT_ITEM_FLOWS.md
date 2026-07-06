@@ -2,7 +2,7 @@
 
 วันที่ทดสอบ: 2026-05-25
 ระบบ: https://devstorex.jibc.codelabdev.co
-บัญชี: admin00@email.com
+บัญชี: sirun.sun@codelabdev.co
 รูปแบบ: ทดสอบ flow "เพิ่มรายการ" ของทั้ง Free-Gifts และ Coupons หลาย scenario
 
 ---

@@ -1,0 +1,1580 @@
+{
+  "started": "2026-06-15T03:44:33.794Z",
+  "account": "sirun.sun@codelabdev.co",
+  "totalModules": 35,
+  "modules": {
+    "LOGIN": {
+      "name": "เข้าสู่ระบบ (Login)",
+      "group": "ทั่วไป",
+      "url": "https://devstorex.jibc.codelabdev.co/auth/sign-in",
+      "list": {
+        "status": "Pass",
+        "note": "→ https://devstorex.jibc.codelabdev.co/store/product-manager/products"
+      },
+      "overall": "Pass"
+    },
+    "MAIN": {
+      "name": "หน้าหลัก",
+      "group": "ทั่วไป",
+      "sidebar": "หน้าหลัก",
+      "url": "https://devstorex.jibc.codelabdev.co/main",
+      "list": {
+        "status": "Fail",
+        "checks": {
+          "notFound": true
+        },
+        "note": "หน้า 404 — URL อาจย้ายหรือถูกลบ"
+      },
+      "create": null,
+      "invalidEdit": null,
+      "overall": "Fail",
+      "issues": [
+        "List: หน้า 404 — URL อาจย้ายหรือถูกลบ"
+      ]
+    },
+    "CUST": {
+      "name": "จัดการลูกค้า (Customers)",
+      "group": "จัดการลูกค้า",
+      "sidebar": "จัดการลูกค้า",
+      "url": "https://devstorex.jibc.codelabdev.co/customer-manager/customers",
+      "list": {
+        "status": "Warning",
+        "checks": {
+          "hasHeading": true,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": false,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 10
+        },
+        "note": "ไม่พบปุ่มเพิ่ม",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Fail",
+        "checks": {
+          "is404": true,
+          "inputs": 0,
+          "saveBtn": false
+        },
+        "note": "หน้า Create 404"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/customer-manager/customers/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Fail",
+      "issues": [
+        "List: ไม่พบปุ่มเพิ่ม",
+        "Create: หน้า Create 404",
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "PROD": {
+      "name": "สินค้า (Products)",
+      "group": "จัดการสินค้า",
+      "sidebar": "Products",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/products",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 20,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": false,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 20
+        },
+        "note": "โหลดสำเร็จ — 20 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 20,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/product-manager/products/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/product-manager/products/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "MKT": {
+      "name": "Marketplace Option",
+      "group": "จัดการสินค้า",
+      "sidebar": "Marketplace Option",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/products-by-orders",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": false,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 10
+        },
+        "note": "โหลดสำเร็จ — 10 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": null,
+      "invalidEdit": null,
+      "overall": "Pass",
+      "issues": []
+    },
+    "ENTP": {
+      "name": "Commercial Products",
+      "group": "จัดการสินค้า",
+      "sidebar": "Commucial Products",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/enterprise-products",
+      "list": {
+        "status": "Warning",
+        "checks": {
+          "hasHeading": false,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": false,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": true,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": false,
+          "tableRows": 10
+        },
+        "note": "ไม่พบปุ่มเพิ่ม",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Fail",
+        "checks": {
+          "is404": true,
+          "inputs": 0,
+          "saveBtn": false
+        },
+        "note": "หน้า Create 404"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/product-manager/enterprise-products/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Fail",
+      "issues": [
+        "List: ไม่พบปุ่มเพิ่ม",
+        "Create: หน้า Create 404",
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "COMSET": {
+      "name": "Comsets",
+      "group": "จัดการสินค้า",
+      "sidebar": "Comsets",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/comsets",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 2,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 2
+        },
+        "note": "โหลดสำเร็จ — 2 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 17,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/product-manager/comsets/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/product-manager/comsets/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "COMPT": {
+      "name": "Comset - Parts",
+      "group": "จัดการสินค้า",
+      "sidebar": "Comset - Parts",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/spec-categories",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 10
+        },
+        "note": "โหลดสำเร็จ — 10 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 10,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/product-manager/spec-categories/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/product-manager/spec-categories/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "TA": {
+      "name": "เทมเพลตคุณสมบัติ (Spec Templates)",
+      "group": "จัดการสินค้า",
+      "sidebar": "Spec Templates",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/template-attributes",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 10
+        },
+        "note": "โหลดสำเร็จ — 10 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 3,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/product-manager/template-attributes/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/product-manager/template-attributes/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "TO": {
+      "name": "กลุ่มตัวเลือก Mapping (Mapping - Values)",
+      "group": "จัดการสินค้า",
+      "sidebar": "Mapping - Values",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/template-options",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 10
+        },
+        "note": "โหลดสำเร็จ — 10 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 7,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/product-manager/template-options/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/product-manager/template-options/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "MC": {
+      "name": "เงื่อนไขความเข้ากันได้ (Mapping - Conditions)",
+      "group": "จัดการสินค้า",
+      "sidebar": "Mapping - Conditions",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/template-mapping-conditions",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 5,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 5
+        },
+        "note": "โหลดสำเร็จ — 5 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 23,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/product-manager/template-mapping-conditions/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/product-manager/template-mapping-conditions/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "CAT": {
+      "name": "หมวดหมู่ (Categories)",
+      "group": "จัดการสินค้า",
+      "sidebar": "Categories",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/categories",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 10
+        },
+        "note": "โหลดสำเร็จ — 10 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 10,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/product-manager/categories/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/product-manager/categories/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "ENTC": {
+      "name": "Category - Commercial",
+      "group": "จัดการสินค้า",
+      "sidebar": "Category - Commucial",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/enterprise-categories",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": false,
+          "rows": 1,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": false,
+          "tableRows": 1
+        },
+        "note": "โหลดสำเร็จ — 1 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 10,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/product-manager/enterprise-categories/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/product-manager/enterprise-categories/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "BR": {
+      "name": "แบรนด์ (Brands)",
+      "group": "จัดการสินค้า",
+      "sidebar": "Brands",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/brands",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 10
+        },
+        "note": "โหลดสำเร็จ — 10 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 9,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/product-manager/brands/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/product-manager/brands/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "SUP": {
+      "name": "ผู้จัดจำหน่าย (Suppliers)",
+      "group": "จัดการสินค้า",
+      "sidebar": "Suppliers",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/suppliers",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 10
+        },
+        "note": "โหลดสำเร็จ — 10 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 10,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/product-manager/suppliers/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/product-manager/suppliers/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "TAG": {
+      "name": "แท็ก (Tags)",
+      "group": "จัดการสินค้า",
+      "sidebar": "Tags",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/tags",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 10
+        },
+        "note": "โหลดสำเร็จ — 10 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 4,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/product-manager/tags/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/product-manager/tags/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "USG": {
+      "name": "ประเภทการใช้งาน - Comsets",
+      "group": "จัดการสินค้า",
+      "sidebar": "ประเภทการใช้งาน - Comsets",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/usage-type",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 10
+        },
+        "note": "โหลดสำเร็จ — 10 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 9,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/product-manager/usage-type/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/product-manager/usage-type/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "FLT": {
+      "name": "ตัวกรองสินค้า (Filters)",
+      "group": "จัดการสินค้า",
+      "sidebar": "Filters",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/filters",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 10
+        },
+        "note": "โหลดสำเร็จ — 10 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Warning",
+        "checks": {
+          "inputs": 1,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/product-manager/filters/create"
+        },
+        "note": "input น้อย (1)"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/product-manager/filters/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "Create: input น้อย (1)",
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "WAR": {
+      "name": "Warranties",
+      "group": "จัดการสินค้า",
+      "sidebar": "Warranties",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/warranties",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 6,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 6
+        },
+        "note": "โหลดสำเร็จ — 6 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 7,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/product-manager/warranties/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/product-manager/warranties/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "SVC": {
+      "name": "Services",
+      "group": "จัดการสินค้า",
+      "sidebar": "Services",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/additional-services",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 2,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 2
+        },
+        "note": "โหลดสำเร็จ — 2 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 10,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/product-manager/additional-services/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/product-manager/additional-services/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "WH": {
+      "name": "ร้านค้า / คลังสินค้า (Warehouses)",
+      "group": "จัดการสินค้า",
+      "sidebar": "ร้านค้า",
+      "url": "https://devstorex.jibc.codelabdev.co/store/product-manager/warehouses",
+      "list": {
+        "status": "Warning",
+        "checks": {
+          "hasHeading": true,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": false,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": true,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 10
+        },
+        "note": "ไม่พบปุ่มเพิ่ม",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Fail",
+        "checks": {
+          "is404": true,
+          "inputs": 0,
+          "saveBtn": false
+        },
+        "note": "หน้า Create 404"
+      },
+      "invalidEdit": {
+        "status": "Pass",
+        "checks": {
+          "is404": true,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/product-manager/warehouses/update/99999999"
+        },
+        "note": "Invalid ID → 404/redirect ถูกต้อง"
+      },
+      "overall": "Fail",
+      "issues": [
+        "List: ไม่พบปุ่มเพิ่ม",
+        "Create: หน้า Create 404"
+      ]
+    },
+    "ORD": {
+      "name": "รายการคำสั่งซื้อ (Orders)",
+      "group": "จัดการออร์เดอร์",
+      "sidebar": "รายการคำสั่งซื้อ",
+      "url": "https://devstorex.jibc.codelabdev.co/store/order-manager/orders",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": false,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 10
+        },
+        "note": "โหลดสำเร็จ — 10 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": null,
+      "invalidEdit": null,
+      "overall": "Pass",
+      "issues": []
+    },
+    "ORDBO": {
+      "name": "รายการคำสั่งซื้อ By Order",
+      "group": "จัดการออร์เดอร์",
+      "sidebar": "รายการคำสั่งซื้อ By Order",
+      "url": "https://devstorex.jibc.codelabdev.co/store/order-manager/orders-by-order",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": false,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 10
+        },
+        "note": "โหลดสำเร็จ — 10 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": null,
+      "invalidEdit": null,
+      "overall": "Pass",
+      "issues": []
+    },
+    "QUO": {
+      "name": "ใบเสนอราคา (Quotations)",
+      "group": "จัดการใบเสนอราคา",
+      "sidebar": "ใบเสนอราคา",
+      "url": "https://devstorex.jibc.codelabdev.co/store/quotation-manager/quotations",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 10
+        },
+        "note": "โหลดสำเร็จ — 10 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Fail",
+        "checks": {
+          "inputs": 0,
+          "saveBtn": false,
+          "isCreate": false,
+          "is404": false,
+          "url": "/store/quotation-manager/quotations/create"
+        },
+        "note": "input น้อย (0); ไม่พบปุ่มบันทึก; ไม่พบข้อความ เพิ่ม/สร้าง"
+      },
+      "invalidEdit": {
+        "status": "Pass",
+        "checks": {
+          "is404": true,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/quotation-manager/quotations/update/99999999"
+        },
+        "note": "Invalid ID → 404/redirect ถูกต้อง"
+      },
+      "overall": "Fail",
+      "issues": [
+        "Create: input น้อย (0); ไม่พบปุ่มบันทึก; ไม่พบข้อความ เพิ่ม/สร้าง"
+      ]
+    },
+    "QUOS": {
+      "name": "ตั้งค่าเงื่อนไขใบเสนอราคา",
+      "group": "จัดการใบเสนอราคา",
+      "sidebar": "ตั้งค่าเงื่อนไขใบเสนอราคา",
+      "url": "https://devstorex.jibc.codelabdev.co/store/quotation-manager/settings",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 0,
+          "hasUndefined": false,
+          "hasSearch": false,
+          "hasFilter": false,
+          "hasAdd": true,
+          "hasCols": false,
+          "pagination": false,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 0
+        },
+        "note": "โหลดสำเร็จ — 0 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": null,
+      "invalidEdit": null,
+      "overall": "Pass",
+      "issues": []
+    },
+    "PAY": {
+      "name": "การตั้งค่าการชำระเงิน",
+      "group": "ตั้งค่า",
+      "sidebar": "การตั้งค่าการชำระเงิน",
+      "url": "https://devstorex.jibc.codelabdev.co/store/settings/payment-settings",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 3,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 3
+        },
+        "note": "โหลดสำเร็จ — 3 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": null,
+      "invalidEdit": null,
+      "overall": "Pass",
+      "issues": []
+    },
+    "SHIP": {
+      "name": "วิธีการจัดส่ง (Shipping Methods)",
+      "group": "ตั้งค่า",
+      "sidebar": "วิธีการจัดส่ง",
+      "url": "https://devstorex.jibc.codelabdev.co/store/settings/shipping-methods",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 4,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 4
+        },
+        "note": "โหลดสำเร็จ — 4 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 15,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/settings/shipping-methods/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/settings/shipping-methods/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "SYSC": {
+      "name": "ค่าการตั้งค่าระบบ",
+      "group": "ตั้งค่า",
+      "sidebar": "ค่าการตั้งค่าระบบ",
+      "url": "https://devstorex.jibc.codelabdev.co/store/settings/system-configs",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 5,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": false,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 5
+        },
+        "note": "โหลดสำเร็จ — 5 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": null,
+      "invalidEdit": null,
+      "overall": "Pass",
+      "issues": []
+    },
+    "PRM": {
+      "name": "โปรโมชั่น (Promotions)",
+      "group": "จัดการโปรโมชั่น",
+      "sidebar": "โปรโมชัน",
+      "url": "https://devstorex.jibc.codelabdev.co/store/promotion-manager/promotions",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 3,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 3
+        },
+        "note": "โหลดสำเร็จ — 3 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 16,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/promotion-manager/promotions/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/promotion-manager/promotions/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "FG": {
+      "name": "ของแถม (Free Gifts)",
+      "group": "จัดการโปรโมชั่น",
+      "sidebar": "ของแถม",
+      "url": "https://devstorex.jibc.codelabdev.co/store/promotion-manager/free-gifts",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 1,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 1
+        },
+        "note": "โหลดสำเร็จ — 1 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 16,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/promotion-manager/free-gifts/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/promotion-manager/free-gifts/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "FB": {
+      "name": "สินค้าของแถม (Freebie Products)",
+      "group": "จัดการโปรโมชั่น",
+      "sidebar": "สินค้าของแถม",
+      "url": "https://devstorex.jibc.codelabdev.co/store/promotion-manager/freebie-products",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 10
+        },
+        "note": "โหลดสำเร็จ — 10 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 9,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/promotion-manager/freebie-products/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/promotion-manager/freebie-products/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "CPN": {
+      "name": "คูปอง (Coupons)",
+      "group": "จัดการโปรโมชั่น",
+      "sidebar": "คูปอง",
+      "url": "https://devstorex.jibc.codelabdev.co/store/promotion-manager/coupons",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 2,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 2
+        },
+        "note": "โหลดสำเร็จ — 2 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 9,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/store/promotion-manager/coupons/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/store/promotion-manager/coupons/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "PM-P": {
+      "name": "จัดการสิทธิ์ (Permissions)",
+      "group": "จัดการสิทธิ์",
+      "sidebar": "(ไม่ใน sidebar)",
+      "url": "https://devstorex.jibc.codelabdev.co/permission-manager/permissions",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 4,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": false,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 4
+        },
+        "note": "โหลดสำเร็จ — 4 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Fail",
+        "checks": {
+          "inputs": 1,
+          "saveBtn": false,
+          "isCreate": true,
+          "is404": false,
+          "url": "/permission-manager/permissions/create"
+        },
+        "note": "input น้อย (1); ไม่พบปุ่มบันทึก"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/permission-manager/permissions/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Fail",
+      "issues": [
+        "Create: input น้อย (1); ไม่พบปุ่มบันทึก",
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    },
+    "PM-A": {
+      "name": "Access Matrix",
+      "group": "จัดการสิทธิ์",
+      "sidebar": "(ไม่ใน sidebar)",
+      "url": "https://devstorex.jibc.codelabdev.co/permission-manager/access-matrix",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": false,
+          "rows": 10,
+          "hasUndefined": false,
+          "hasSearch": false,
+          "hasFilter": false,
+          "hasAdd": false,
+          "hasCols": false,
+          "pagination": false,
+          "emptyState": false,
+          "hasForm": false,
+          "title": "JIB | Back Office",
+          "heading": false,
+          "tableRows": 10
+        },
+        "note": "โหลดสำเร็จ — 10 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": null,
+      "invalidEdit": null,
+      "overall": "Pass",
+      "issues": []
+    },
+    "PM-U": {
+      "name": "ผู้ใช้งาน (Users)",
+      "group": "จัดการสิทธิ์",
+      "sidebar": "(ไม่ใน sidebar)",
+      "url": "https://devstorex.jibc.codelabdev.co/permission-manager/users",
+      "list": {
+        "status": "Pass",
+        "checks": {
+          "hasHeading": true,
+          "rows": 7,
+          "hasUndefined": false,
+          "hasSearch": true,
+          "hasFilter": true,
+          "hasAdd": true,
+          "hasCols": true,
+          "pagination": true,
+          "emptyState": true,
+          "hasForm": true,
+          "title": "JIB | Back Office",
+          "heading": true,
+          "tableRows": 7
+        },
+        "note": "โหลดสำเร็จ — 7 แถว",
+        "title": "JIB | Back Office"
+      },
+      "create": {
+        "status": "Pass",
+        "checks": {
+          "inputs": 16,
+          "saveBtn": true,
+          "isCreate": true,
+          "is404": false,
+          "url": "/permission-manager/users/create"
+        },
+        "note": "Create โหลดสำเร็จ"
+      },
+      "invalidEdit": {
+        "status": "Warning",
+        "checks": {
+          "is404": false,
+          "isCreateLike": false,
+          "emptyForm": true,
+          "path": "/permission-manager/users/update/99999999"
+        },
+        "note": "Invalid ID ฟอร์มว่าง"
+      },
+      "overall": "Warning",
+      "issues": [
+        "InvalidEdit: Invalid ID ฟอร์มว่าง"
+      ]
+    }
+  },
+  "finished": "2026-06-15T03:47:56.388Z",
+  "summary": {
+    "Pass": 8,
+    "Warning": 21,
+    "Fail": 6,
+    "Not Tested": 0
+  }
+}

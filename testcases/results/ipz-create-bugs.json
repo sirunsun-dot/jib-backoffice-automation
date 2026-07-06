@@ -1,0 +1,44 @@
+[
+  {
+    "id": "IPZ-DATE-001",
+    "title": "วันสิ้นสุดก่อนวันเริ่มยังกดใช้งานได้",
+    "detail": "เลือกวันสิ้นสุดก่อนวันเริ่มแล้วกดใช้งาน — ไม่มี validation error",
+    "severity": "high"
+  },
+  {
+    "id": "IPZ-UI-001",
+    "title": "Toggle สถานะปิดไม่ทำงาน",
+    "detail": "state ยังเป็น checked",
+    "severity": "medium"
+  },
+  {
+    "id": "IPZ-UI-002",
+    "title": "Progress 0% ทั้งที่กรอกครบ",
+    "detail": "J-IPZ-CD060 บันทึกสำเร็จแต่ progress ยัง 0%",
+    "severity": "low"
+  },
+  {
+    "id": "IPZ-UI-002",
+    "title": "Progress 0% ทั้งที่กรอกครบ",
+    "detail": "J-IPZ-CD061 บันทึกสำเร็จแต่ progress ยัง 0%",
+    "severity": "low"
+  },
+  {
+    "id": "IPZ-UI-002",
+    "title": "Progress 0% ทั้งที่กรอกครบ",
+    "detail": "J-IPZ-CD062 บันทึกสำเร็จแต่ progress ยัง 0%",
+    "severity": "low"
+  },
+  {
+    "id": "IPZ-UI-002",
+    "title": "Progress 0% ทั้งที่กรอกครบ",
+    "detail": "J-IPZ-CD063 บันทึกสำเร็จแต่ progress ยัง 0%",
+    "severity": "low"
+  },
+  {
+    "id": "IPZ-UI-002",
+    "title": "Progress 0% ทั้งที่กรอกครบ",
+    "detail": "J-IPZ-CD064 บันทึกสำเร็จแต่ progress ยัง 0%",
+    "severity": "low"
+  }
+]

@@ -1,0 +1,142 @@
+{
+  "J-TA-LP001": {
+    "actual": "โหลดสำเร็จ",
+    "result": "Pass"
+  },
+  "J-TA-LP002": {
+    "actual": "พบ heading",
+    "result": "Pass"
+  },
+  "J-TA-LP003": {
+    "actual": "แถว=10",
+    "result": "Pass"
+  },
+  "J-TA-LP004": {
+    "actual": "คอลัมน์ 15",
+    "result": "Pass"
+  },
+  "J-TA-LP005": {
+    "actual": "search=true filter=true",
+    "result": "Pass"
+  },
+  "J-TA-LP006": {
+    "actual": "OK",
+    "result": "Pass"
+  },
+  "J-TA-LP007": {
+    "actual": "มีปุ่มเพิ่ม",
+    "result": "Pass"
+  },
+  "J-TA-LP010": {
+    "actual": "ค้นหา OK",
+    "result": "Pass"
+  },
+  "J-TA-LP011": {
+    "actual": "empty search OK",
+    "result": "Pass"
+  },
+  "J-TA-LP012": {
+    "actual": "XSS safe",
+    "result": "Pass"
+  },
+  "J-TA-LP013": {
+    "actual": "clear search",
+    "result": "Pass"
+  },
+  "J-TA-LP020": {
+    "actual": "ไม่มีตัวกรอง",
+    "result": "Warning"
+  },
+  "J-TA-LP021": {
+    "actual": "ESC OK",
+    "result": "Pass"
+  },
+  "J-TA-LP022": {
+    "actual": "skip",
+    "result": "Warning"
+  },
+  "J-TA-LP030": {
+    "actual": "customize OK",
+    "result": "Pass"
+  },
+  "J-TA-LP031": {
+    "actual": "toggle OK",
+    "result": "Pass"
+  },
+  "J-TA-LP040": {
+    "actual": "pagination OK",
+    "result": "Pass"
+  },
+  "J-TA-LP041": {
+    "actual": "rows selector",
+    "result": "Pass"
+  },
+  "J-TA-LP042": {
+    "actual": "pagination nav",
+    "result": "Pass"
+  },
+  "J-TA-LP050": {
+    "actual": "มี edit",
+    "result": "Pass"
+  },
+  "J-TA-LP051": {
+    "actual": "row menu",
+    "result": "Pass"
+  },
+  "J-TA-CR001": {
+    "actual": "create page OK",
+    "result": "Pass"
+  },
+  "J-TA-CR002": {
+    "actual": "inputs=3",
+    "result": "Pass"
+  },
+  "J-TA-CR003": {
+    "actual": "มีบันทึก",
+    "result": "Pass"
+  },
+  "J-TA-CR004": {
+    "actual": "validation OK",
+    "result": "Pass"
+  },
+  "J-TA-CR005": {
+    "actual": "กรอกชื่อ OK",
+    "result": "Pass"
+  },
+  "J-TA-CR006": {
+    "actual": "XSS safe",
+    "result": "Pass"
+  },
+  "J-TA-CR007": {
+    "actual": "sync toggle checked",
+    "result": "Pass"
+  },
+  "J-TA-CR008": {
+    "actual": "no E2E save",
+    "result": "Warning"
+  },
+  "J-TA-ED001": {
+    "actual": "empty form bug",
+    "result": "Fail"
+  },
+  "J-TA-ED002": {
+    "actual": "edit real record — skip",
+    "result": "Warning"
+  },
+  "J-TA-ED003": {
+    "actual": "save edit — skip",
+    "result": "Warning"
+  },
+  "J-TA-UX001": {
+    "actual": "desktop 1920",
+    "result": "Pass"
+  },
+  "J-TA-UX002": {
+    "actual": "Chromium",
+    "result": "Pass"
+  },
+  "J-TA-SEC001": {
+    "actual": "authenticated access",
+    "result": "Pass"
+  }
+}

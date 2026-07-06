@@ -57,7 +57,7 @@ const fillDiscountOnStep2 = () => {
 describe('Screenshots: โปรโมชั่น (คู่มือ)', () => {
   before(() => {
     cy.session('jib-admin-screenshots-promo', () => {
-      cy.loginJIB('admin00@email.com', 'password123')
+      cy.loginJIB('sirun.sun@codelabdev.co', 'test123')
     })
   })
 

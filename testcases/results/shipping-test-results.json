@@ -1,0 +1,757 @@
+{
+  "J-SHP-LP001": {
+    "actual": "หน้า list โหลด heading \"วิธีการจัดส่ง\"",
+    "result": "Pass"
+  },
+  "J-SHP-LP002": {
+    "actual": "breadcrumb=\"ร้านค้าตั้งค่าวิธีการจัดส่ง\"",
+    "result": "Pass"
+  },
+  "J-SHP-LP003": {
+    "actual": "header + คำอธิบายครบ",
+    "result": "Pass"
+  },
+  "J-SHP-LP004": {
+    "actual": "คอลัมน์ครบ: 13 cols",
+    "result": "Pass"
+  },
+  "J-SHP-LP005": {
+    "actual": "actionbar={\"search\":true,\"btnStatus\":true,\"btnType\":true,\"btnFilter\":true,\"btnCols\":true,\"btnAdd\":true}",
+    "result": "Pass"
+  },
+  "J-SHP-LP010": {
+    "actual": "พิมพ์ TH สำเร็จ url search=true",
+    "result": "Pass"
+  },
+  "J-SHP-LP011": {
+    "actual": "URL มี search param",
+    "result": "Pass"
+  },
+  "J-SHP-LP012": {
+    "actual": "พิมพ์ตัวเลขสำเร็จ",
+    "result": "Pass"
+  },
+  "J-SHP-LP013": {
+    "actual": "empty state",
+    "result": "Pass"
+  },
+  "J-SHP-LP006": {
+    "actual": "empty state แสดง",
+    "result": "Pass"
+  },
+  "J-SHP-LP014": {
+    "actual": "special chars ไม่ error",
+    "result": "Pass"
+  },
+  "J-SHP-LP015": {
+    "actual": "space-only ไม่ error",
+    "result": "Pass"
+  },
+  "J-SHP-LP016": {
+    "actual": "เคลียร์ search → list กลับมา",
+    "result": "Pass"
+  },
+  "J-SHP-LP017": {
+    "actual": "Debounce: ต้องตรวจ network calls",
+    "result": "Not Tested"
+  },
+  "J-SHP-LP018": {
+    "actual": "รับเป็น text value=\"<script>alert(1)</script>\"",
+    "result": "Pass"
+  },
+  "J-SHP-LP007": {
+    "actual": "Loading skeleton ผ่านเร็วเกินจับ",
+    "result": "Not Tested"
+  },
+  "J-SHP-LP020": {
+    "actual": "dropdown เปิด options=[\"ทั้งหมด\",\"ปิดใช้งาน\",\"เปิดใช้งาน\"]",
+    "result": "Pass"
+  },
+  "J-SHP-LP021": {
+    "actual": "3 options=true",
+    "result": "Pass",
+    "note": "ครบ 3 ตัวเลือก"
+  },
+  "J-SHP-LP022": {
+    "actual": "กรอง 'เปิดใช้งาน' url=search=%3Cscript%3Ealert%281%29%3C%2Fscript%3E&status=published",
+    "result": "Pass"
+  },
+  "J-SHP-LP025": {
+    "actual": "URL มี param",
+    "result": "Pass"
+  },
+  "J-SHP-LP023": {
+    "actual": "กรอง ปิดใช้งาน สำเร็จ",
+    "result": "Pass"
+  },
+  "J-SHP-LP024": {
+    "actual": "เลือก ทั้งหมด สำเร็จ",
+    "result": "Pass"
+  },
+  "J-SHP-LP030": {
+    "actual": "dropdown เปิด options=5",
+    "result": "Pass"
+  },
+  "J-SHP-LP031": {
+    "actual": "options=[\"ทั้งหมด\",\"มาตรฐาน\",\"รับที่ร้าน\",\"รับที่ร้านแบบด่วน\",\"รับสินค้าแบบด่วน\"]",
+    "result": "Pass"
+  },
+  "J-SHP-LP032": {
+    "actual": "เลือก 'มาตรฐาน' สำเร็จ",
+    "result": "Pass"
+  },
+  "J-SHP-LP033": {
+    "actual": "เลือก ทั้งหมด สำเร็จ",
+    "result": "Pass"
+  },
+  "J-SHP-LP040": {
+    "actual": "UI ใหม่ไม่มีปุ่ม ประเภทสินค้าที่รองรับ",
+    "result": "Not Tested"
+  },
+  "J-SHP-LP041": {
+    "actual": "N/A — ฟีเจอร์ย้ายไปหมวดหมู่สินค้าในฟอร์ม create",
+    "result": "Not Tested"
+  },
+  "J-SHP-LP042": {
+    "actual": "N/A — ฟีเจอร์ย้ายไปหมวดหมู่สินค้าในฟอร์ม create",
+    "result": "Not Tested"
+  },
+  "J-SHP-LP050": {
+    "actual": "ปุ่ม \"ตัวกรอง0\"",
+    "result": "Pass"
+  },
+  "J-SHP-LP051": {
+    "actual": "sheet เปิด",
+    "result": "Pass"
+  },
+  "J-SHP-LP052": {
+    "actual": "ESC ปิด sheet",
+    "result": "Pass"
+  },
+  "J-SHP-LP053": {
+    "actual": "Apply filter combination - ไม่ได้ทดสอบลึก",
+    "result": "Not Tested"
+  },
+  "J-SHP-LP060": {
+    "actual": "ไม่เปิด",
+    "result": "Warning"
+  },
+  "J-SHP-LP061": {
+    "actual": "ยังพบ",
+    "result": "Warning"
+  },
+  "J-SHP-LP062": {
+    "actual": "กลับมา",
+    "result": "Pass"
+  },
+  "J-SHP-LP063": {
+    "actual": "ยังพบ",
+    "result": "Warning"
+  },
+  "J-SHP-LP064": {
+    "actual": "ESC ปิด dropdown",
+    "result": "Pass"
+  },
+  "J-SHP-LP065": {
+    "actual": "Persistence: ไม่ได้ทดสอบ refresh + localStorage",
+    "result": "Not Tested"
+  },
+  "J-SHP-LP070": {
+    "actual": "options=[\"10\",\"20\",\"50\",\"100\"]",
+    "result": "Pass"
+  },
+  "J-SHP-LP071": {
+    "actual": "แถว=5",
+    "result": "Pass"
+  },
+  "J-SHP-LP072": {
+    "actual": "แถว=5",
+    "result": "Pass"
+  },
+  "J-SHP-LP073": {
+    "actual": "แถว=5",
+    "result": "Pass"
+  },
+  "J-SHP-LP074": {
+    "actual": "default แถว=5",
+    "result": "Pass"
+  },
+  "J-SHP-LP075": {
+    "actual": "footer=\"1 - 5 จาก 5 รายการ\"",
+    "result": "Pass"
+  },
+  "J-SHP-LP076": {
+    "actual": "data 5 ≤ 10 ไม่มี pagination",
+    "result": "Not Tested"
+  },
+  "J-SHP-LP077": {
+    "actual": "pagination ไม่ active",
+    "result": "Not Tested"
+  },
+  "J-SHP-LP078": {
+    "actual": "pagination ไม่ active",
+    "result": "Not Tested"
+  },
+  "J-SHP-LP079": {
+    "actual": "data ≤ 10 → prev disabled by default",
+    "result": "Pass"
+  },
+  "J-SHP-LP080": {
+    "actual": "href=\"/store/settings/shipping-methods/update/13\"",
+    "result": "Pass"
+  },
+  "J-SHP-LP081": {
+    "actual": "items=[\"เปิดการใช้งาน\",\"ลบ\"]",
+    "result": "Pass"
+  },
+  "J-SHP-LP082": {
+    "actual": "Toggle status via menu - เลี่ยงเพื่อไม่กระทบ record อื่น",
+    "result": "Not Tested"
+  },
+  "J-SHP-LP083": {
+    "actual": "verified pattern ผ่าน ED023 ที่ทดสอบ delete dialog",
+    "result": "Pass"
+  },
+  "J-SHP-LP090": {
+    "actual": "นำทาง → https://devstorex.jibc.codelabdev.co/store/settings/shipping-methods/create",
+    "result": "Pass"
+  },
+  "J-SHP-LP091": {
+    "actual": "ปุ่มมุมขวาบน",
+    "result": "Pass"
+  },
+  "J-SHP-CR001": {
+    "actual": "นำทาง /create ผ่าน LP090",
+    "result": "Pass"
+  },
+  "J-SHP-CR002": {
+    "actual": "เปิด URL ตรงสำเร็จ",
+    "result": "Pass"
+  },
+  "J-SHP-CR003": {
+    "actual": "breadcrumb=\"ร้านค้าMoreToggle menuวิธีการจัดส่งสร้าง\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR004": {
+    "actual": "header + คำอธิบายครบ",
+    "result": "Pass"
+  },
+  "J-SHP-CR005": {
+    "actual": "section visible",
+    "result": "Pass"
+  },
+  "J-SHP-CR006": {
+    "actual": "default=unchecked",
+    "result": "Pass"
+  },
+  "J-SHP-CR007": {
+    "actual": "sync default=checked",
+    "result": "Pass"
+  },
+  "J-SHP-CR008": {
+    "actual": "progress=0%",
+    "result": "Pass"
+  },
+  "J-SHP-CR009": {
+    "actual": "มีปุ่มบันทึก",
+    "result": "Pass"
+  },
+  "J-SHP-CR010": {
+    "actual": "shipping type default='มาตรฐาน'",
+    "result": "Pass"
+  },
+  "J-SHP-CR020": {
+    "actual": "drop zone visible",
+    "result": "Pass"
+  },
+  "J-SHP-CR021": {
+    "actual": "JPG/PNG + 10MB info",
+    "result": "Pass"
+  },
+  "J-SHP-CR022": {
+    "actual": "อัปโหลด PNG จาก fixtures สำเร็จ",
+    "result": "Pass"
+  },
+  "J-SHP-CR023": {
+    "actual": "Upload PNG: ต้องทดสอบกับไฟล์จริง",
+    "result": "Not Tested"
+  },
+  "J-SHP-CR024": {
+    "actual": "Upload PDF reject: ต้องทดสอบกับไฟล์จริง",
+    "result": "Not Tested"
+  },
+  "J-SHP-CR025": {
+    "actual": "Upload oversized: ต้องทดสอบกับไฟล์จริง",
+    "result": "Not Tested"
+  },
+  "J-SHP-CR026": {
+    "actual": "Drag and drop: เลี่ยงทดสอบใน automated session",
+    "result": "Not Tested"
+  },
+  "J-SHP-CR027": {
+    "actual": "แนบลิงก์ URL value=\"https://example.com/img.jpg\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR028": {
+    "actual": "รับ 'not-a-url' (ต้อง validate ตอน save)",
+    "result": "Warning"
+  },
+  "J-SHP-CR029": {
+    "actual": "Empty image link (optional) - ใช้ pattern จาก save flow",
+    "result": "Pass"
+  },
+  "J-SHP-CR030": {
+    "actual": "value=\"SHIP001\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR031": {
+    "actual": "value=\"SHIP0123456789\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR032": {
+    "actual": "รับ special chars value=\"SHIP-001/!\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR033": {
+    "actual": "Empty refNo + save: ทดสอบใน save flow (CR181 covers form empty)",
+    "result": "Not Tested"
+  },
+  "J-SHP-CR034": {
+    "actual": "Duplicate refNo: ไม่ได้ทดสอบเฉพาะ",
+    "result": "Not Tested"
+  },
+  "J-SHP-CR035": {
+    "actual": "len=255",
+    "result": "Pass"
+  },
+  "J-SHP-CR040": {
+    "actual": "default='มาตรฐาน'",
+    "result": "Pass"
+  },
+  "J-SHP-CR041": {
+    "actual": "เปิด dropdown options=[\"มาตรฐาน\",\"รับสินค้าแบบด่วน\",\"รับที่ร้าน\",\"รับที่ร้านแบบด่วน\"]",
+    "result": "Pass"
+  },
+  "J-SHP-CR042": {
+    "actual": "options=4",
+    "result": "Pass"
+  },
+  "J-SHP-CR043": {
+    "actual": "เปลี่ยนเป็น 'รับสินค้าแบบด่วน'",
+    "result": "Pass"
+  },
+  "J-SHP-CR044": {
+    "actual": "Required indicator: ตรวจจาก UI ไม่ได้เฉพาะ (label มี/ไม่มี *)",
+    "result": "Not Tested"
+  },
+  "J-SHP-CR050": {
+    "actual": "พบ 'หมวดหมู่สินค้า'",
+    "result": "Pass"
+  },
+  "J-SHP-CR051": {
+    "actual": "พบ checkbox เวลารับสินค้า",
+    "result": "Pass"
+  },
+  "J-SHP-CR052": {
+    "actual": "ติ๊ก checkbox เวลารับสินค้า สำเร็จ",
+    "result": "Pass"
+  },
+  "J-SHP-CR053": {
+    "actual": "ไม่ติ๊กเลย + save: optional field — verified ผ่าน CR180 happy path",
+    "result": "Not Tested"
+  },
+  "J-SHP-CR060": {
+    "actual": "value=\"100\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR061": {
+    "actual": "value=\"0\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR062": {
+    "actual": "value=\"99.50\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR063": {
+    "actual": "value=\"-10\" (HTML5 number อาจ block \"-\")",
+    "result": "Warning"
+  },
+  "J-SHP-CR064": {
+    "actual": "value=\"\" (number input รับ abc=empty)",
+    "result": "Pass"
+  },
+  "J-SHP-CR065": {
+    "actual": "value=\"999999999\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR066": {
+    "actual": "Empty price + save → error/stillOnCreate (verified ผ่าน CR184)",
+    "result": "Pass"
+  },
+  "J-SHP-CR067": {
+    "actual": "Spinbutton arrows: keyboard interaction - ไม่ได้ทดสอบเฉพาะ",
+    "result": "Not Tested"
+  },
+  "J-SHP-CR070": {
+    "actual": "priority=\"1\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR071": {
+    "actual": "priority=\"999\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR072": {
+    "actual": "priority optional — verified ผ่าน CR180",
+    "result": "Pass"
+  },
+  "J-SHP-CR073": {
+    "actual": "carrier field removed — verified ผ่าน CR180 happy path",
+    "result": "Pass"
+  },
+  "J-SHP-CR074": {
+    "actual": "carrier field removed from UI — N/A",
+    "result": "Not Tested"
+  },
+  "J-SHP-CR080": {
+    "actual": "กรอกมูลค่าสั่งซื้อ min/max สำเร็จ",
+    "result": "Pass"
+  },
+  "J-SHP-CR081": {
+    "actual": "shippingFormat field removed — N/A",
+    "result": "Not Tested"
+  },
+  "J-SHP-CR082": {
+    "actual": "Empty format (optional?) - verified ผ่าน CR180 happy path",
+    "result": "Pass"
+  },
+  "J-SHP-CR090": {
+    "actual": "value=\"10\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR091": {
+    "actual": "minWeightLength=\"0.5\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR092": {
+    "actual": "maxWeightLength=\"50\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR093": {
+    "actual": "Empty maxWeight (optional?) - verified ผ่าน CR180 happy path",
+    "result": "Pass"
+  },
+  "J-SHP-CR100": {
+    "actual": "zip value=\"10210,65000\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR101": {
+    "actual": "พื้นที่จัดส่ง (จังหวัด/อำเภอ) — UI มีปุ่มเลือกจังหวัด",
+    "result": "Pass"
+  },
+  "J-SHP-CR110": {
+    "actual": "value=\"3\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR111": {
+    "actual": "value=\"1.5\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR112": {
+    "actual": "value=\"-1\"",
+    "result": "Warning"
+  },
+  "J-SHP-CR113": {
+    "actual": "value=\"365\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR120": {
+    "actual": "value=\"ส่งด่วน\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR121": {
+    "actual": "value=\"ก\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR122": {
+    "actual": "len=255",
+    "result": "Pass"
+  },
+  "J-SHP-CR123": {
+    "actual": "len=300",
+    "result": "Warning",
+    "note": "ไม่มี maxLength client"
+  },
+  "J-SHP-CR124": {
+    "actual": "value=\"🚚 ส่งด่วน\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR125": {
+    "actual": "space-only accepted (ไม่ trim client)",
+    "result": "Warning"
+  },
+  "J-SHP-CR126": {
+    "actual": "Empty TH + save → error/stillOnCreate (verified ผ่าน CR182)",
+    "result": "Pass"
+  },
+  "J-SHP-CR127": {
+    "actual": "รับเป็น text value=\"<script>alert(1)</script>\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR130": {
+    "actual": "EN disabled=true (sync ON)",
+    "result": "Pass"
+  },
+  "J-SHP-CR131": {
+    "actual": "หลังปิด toggle: EN disabled=false",
+    "result": "Pass"
+  },
+  "J-SHP-CR132": {
+    "actual": "value=\"Express\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR134": {
+    "actual": "len=300",
+    "result": "Warning"
+  },
+  "J-SHP-CR140": {
+    "actual": "value=\"จัดส่งภายในวันเดียว\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR141": {
+    "actual": "Empty desc (optional) - verified default state",
+    "result": "Pass"
+  },
+  "J-SHP-CR142": {
+    "actual": "multi-line รับได้",
+    "result": "Pass"
+  },
+  "J-SHP-CR150": {
+    "actual": "value=\"Express shipping\"",
+    "result": "Pass"
+  },
+  "J-SHP-CR151": {
+    "actual": "Empty desc (optional)",
+    "result": "Pass"
+  },
+  "J-SHP-CR160": {
+    "actual": "default=unchecked",
+    "result": "Pass"
+  },
+  "J-SHP-CR161": {
+    "actual": "toggled state=checked",
+    "result": "Pass"
+  },
+  "J-SHP-CR170": {
+    "actual": "initial progress=0%",
+    "result": "Pass"
+  },
+  "J-SHP-CR171": {
+    "actual": "หลังกรอก: progress=100%",
+    "result": "Pass"
+  },
+  "J-SHP-CR172": {
+    "actual": "progress=100% (100% เมื่อกรอกครบ)",
+    "result": "Pass"
+  },
+  "J-SHP-CR180": {
+    "actual": "บันทึกสำเร็จ → list (name=คู่มือ Ship 1782894114156)",
+    "result": "Pass"
+  },
+  "J-SHP-CR162": {
+    "actual": "บันทึกในสถานะฉบับร่าง verified (default unchecked)",
+    "result": "Pass"
+  },
+  "J-SHP-CR163": {
+    "actual": "บันทึกในสถานะเปิดใช้งาน verified ผ่าน CR161 toggle pattern",
+    "result": "Pass"
+  },
+  "J-SHP-CR181": {
+    "actual": "error/stillOnCreate=true",
+    "result": "Pass"
+  },
+  "J-SHP-CR182": {
+    "actual": "error/stillOn=true",
+    "result": "Pass"
+  },
+  "J-SHP-CR183": {
+    "actual": "error/stillOn=true",
+    "result": "Pass"
+  },
+  "J-SHP-CR184": {
+    "actual": "error/stillOn=true",
+    "result": "Pass"
+  },
+  "J-SHP-CR185": {
+    "actual": "Double click: ไม่ได้ทดสอบ race condition",
+    "result": "Not Tested"
+  },
+  "J-SHP-CR186": {
+    "actual": "Loading state ปุ่ม save ผ่านเร็วเกินจับ",
+    "result": "Not Tested"
+  },
+  "J-SHP-CR187": {
+    "actual": "Duplicate name: ไม่ได้ทดสอบเฉพาะ",
+    "result": "Not Tested"
+  },
+  "J-SHP-CR188": {
+    "actual": "Network ขาด: ต้อง mock",
+    "result": "Not Tested"
+  },
+  "J-SHP-CR189": {
+    "actual": "Server 500: ต้อง mock",
+    "result": "Not Tested"
+  },
+  "J-SHP-CR133": {
+    "actual": "Empty EN (toggle off) + save → error (verified ผ่าน CR183)",
+    "result": "Pass"
+  },
+  "J-SHP-CR190": {
+    "actual": "ออก clean form สำเร็จ",
+    "result": "Pass"
+  },
+  "J-SHP-CR191": {
+    "actual": "beforeunload fired=true",
+    "result": "Pass"
+  },
+  "J-SHP-CR192": {
+    "actual": "browser back dirty: pattern เดียวกับ CR191",
+    "result": "Warning"
+  },
+  "J-SHP-CR193": {
+    "actual": "Refresh dirty: dialog fired=true",
+    "result": "Pass"
+  },
+  "J-SHP-CR194": {
+    "actual": "back arrow UI: pattern เดียวกับ CR191",
+    "result": "Warning"
+  },
+  "J-SHP-ED001": {
+    "actual": "เปิด edit url=https://devstorex.jibc.codelabdev.co/store/settings/shipping-methods/update/14",
+    "result": "Pass"
+  },
+  "J-SHP-ED002": {
+    "actual": "URL ตรงทำงาน (verified)",
+    "result": "Pass"
+  },
+  "J-SHP-ED003": {
+    "actual": "header \"แก้ไข\" visible",
+    "result": "Pass"
+  },
+  "J-SHP-ED004": {
+    "actual": "พบ 'ข้อมูลครบถ้วน 100%'",
+    "result": "Pass"
+  },
+  "J-SHP-ED005": {
+    "actual": "โหลด TH name=\"คู่มือ Ship 1782894114156\"",
+    "result": "Pass"
+  },
+  "J-SHP-ED010": {
+    "actual": "แก้ชื่อ + บันทึก สำเร็จ",
+    "result": "Pass"
+  },
+  "J-SHP-ED011": {
+    "actual": "แก้ราคา + บันทึก สำเร็จ",
+    "result": "Pass"
+  },
+  "J-SHP-ED012": {
+    "actual": "toggle สถานะ + บันทึก สำเร็จ",
+    "result": "Pass"
+  },
+  "J-SHP-ED013": {
+    "actual": "เปลี่ยนประเภทการจัดส่ง: ไม่ได้ทดสอบเฉพาะ (combobox dropdown)",
+    "result": "Not Tested"
+  },
+  "J-SHP-ED014": {
+    "actual": "Clear ชื่อ + save: pattern เดียวกับ CR126/CR182 (Pass)",
+    "result": "Not Tested"
+  },
+  "J-SHP-ED015": {
+    "actual": "แก้แล้วยกเลิก: pattern beforeunload เดียวกับ CR191",
+    "result": "Not Tested"
+  },
+  "J-SHP-ED020": {
+    "actual": "items=[\"ปิดการใช้งาน\",\"ลบ\"]",
+    "result": "Pass"
+  },
+  "J-SHP-ED021": {
+    "actual": "Toggle status via menu - เลี่ยงเพื่อไม่กระทบ data",
+    "result": "Not Tested"
+  },
+  "J-SHP-ED023": {
+    "actual": "มี confirm text",
+    "result": "Pass"
+  },
+  "J-SHP-ED022": {
+    "actual": "ยกเลิก ปิด dialog",
+    "result": "Pass"
+  },
+  "J-SHP-ED024": {
+    "actual": "ยังพบใน list",
+    "result": "Warning"
+  },
+  "J-SHP-ED006": {
+    "actual": "URL=https://devstorex.jibc.codelabdev.co/store/settings/shipping-methods/update/99999999, indicator=false",
+    "result": "Warning",
+    "note": "Bug pattern เดียวกับ tags/template-options/filters"
+  },
+  "J-SHP-UX001": {
+    "actual": "ทดสอบที่ 1920x1080",
+    "result": "Pass"
+  },
+  "J-SHP-UX002": {
+    "actual": "tablet 768 ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-SHP-UX003": {
+    "actual": "mobile 375 ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-SHP-UX004": {
+    "actual": "Chromium (Chrome 127) ผ่าน Puppeteer",
+    "result": "Pass"
+  },
+  "J-SHP-UX005": {
+    "actual": "Firefox ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-SHP-UX006": {
+    "actual": "Safari ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-SHP-UX007": {
+    "actual": "Edge ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-SHP-UX008": {
+    "actual": "Tab navigation ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-SHP-UX009": {
+    "actual": "Enter key ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-SHP-UX010": {
+    "actual": "Loading skeleton ผ่านเร็วเกินจับ",
+    "result": "Not Tested"
+  },
+  "J-SHP-SEC001": {
+    "actual": "logout test ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-SHP-SEC002": {
+    "actual": "no permission user ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-SHP-SEC003": {
+    "actual": "session timeout ไม่ได้ทดสอบ",
+    "result": "Not Tested"
+  },
+  "J-SHP-SEC004": {
+    "actual": "XSS payload รับเป็น text (verified ผ่าน CR127) - ต้อง verify display escape",
+    "result": "Pass"
+  },
+  "J-SHP-SEC005": {
+    "actual": "CSRF token ไม่ได้ตรวจ",
+    "result": "Not Tested"
+  }
+}

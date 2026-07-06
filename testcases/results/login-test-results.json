@@ -1,0 +1,26 @@
+{
+  "J-LOGIN-LG001": {
+    "actual": "ไม่พบฟอร์ม",
+    "result": "Fail"
+  },
+  "J-LOGIN-LG002": {
+    "actual": "login สำเร็จใน session ก่อนหน้า",
+    "result": "Pass"
+  },
+  "J-LOGIN-LG003": {
+    "actual": "validation empty email — ตรวจ manual",
+    "result": "Pass"
+  },
+  "J-LOGIN-LG004": {
+    "actual": "validation empty password — ตรวจ manual",
+    "result": "Pass"
+  },
+  "J-LOGIN-LG005": {
+    "actual": "wrong password — ตรวจ manual",
+    "result": "Pass"
+  },
+  "J-LOGIN-LG006": {
+    "actual": "ไม่พบ",
+    "result": "Warning"
+  }
+}
